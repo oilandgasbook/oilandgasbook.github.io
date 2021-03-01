@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Functions | Basic Reservoir Engineering in Python</title>
+  <meta name="description" content="7 Functions | Basic Reservoir Engineering in Python" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Functions | Basic Reservoir Engineering in Python" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Functions | Basic Reservoir Engineering in Python" />
+  
+  
+  
+
+<meta name="author" content="Pramod Azad" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="built-in-modules-and-functions.html"/>
+<link rel="next" href="introduction-to-numpy.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.1</b> Getting Started with Python</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#datatypes"><i class="fa fa-check"></i><b>2.1.1</b> Datatypes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>2.2</b> Lists</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#list-comprehensions"><i class="fa fa-check"></i><b>2.3</b> List comprehensions</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#tuples"><i class="fa fa-check"></i><b>2.4</b> Tuples</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#dictionaries"><i class="fa fa-check"></i><b>2.5</b> Dictionaries</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#set"><i class="fa fa-check"></i><b>2.6</b> Set</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>3</b> Simple Mathematics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>3.1</b> Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conditionals.html"><a href="conditionals.html"><i class="fa fa-check"></i><b>4</b> Conditionals</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="conditionals.html"><a href="conditionals.html#if-elif-and-else"><i class="fa fa-check"></i><b>4.1</b> if, elif, and else</a></li>
+<li class="chapter" data-level="4.2" data-path="conditionals.html"><a href="conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>4.2</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="loops.html"><a href="loops.html"><i class="fa fa-check"></i><b>5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="loops.html"><a href="loops.html#for-loops"><i class="fa fa-check"></i><b>5.1</b> For loops</a></li>
+<li class="chapter" data-level="5.2" data-path="loops.html"><a href="loops.html#while-loop"><i class="fa fa-check"></i><b>5.2</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="loops.html"><a href="loops.html#break-statement"><i class="fa fa-check"></i><b>5.2.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="5.2.2" data-path="loops.html"><a href="loops.html#continue-statement"><i class="fa fa-check"></i><b>5.2.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>6</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>6.1</b> Creating a module</a></li>
+<li class="chapter" data-level="6.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>6.2</b> Installing external modules using pip</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>7</b> Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="functions.html"><a href="functions.html#lambda-function"><i class="fa fa-check"></i><b>7.1</b> Lambda function</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>8</b> Introduction to Numpy</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>8.1</b> Why is NumPy Fast?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="basic-reservoir-engineering.html"><a href="basic-reservoir-engineering.html"><i class="fa fa-check"></i>Basic Reservoir Engineering</a></li>
+<li class="chapter" data-level="9" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html"><i class="fa fa-check"></i><b>9</b> Fundamental Properties of Fluid</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#review-of-gas-properties"><i class="fa fa-check"></i><b>9.1</b> Review of Gas Properties</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#real-gas-law"><i class="fa fa-check"></i><b>9.1.1</b> Real Gas law</a></li>
+<li class="chapter" data-level="9.1.2" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-z-factor"><i class="fa fa-check"></i><b>9.1.2</b> Gas z Factor</a></li>
+<li class="chapter" data-level="9.1.3" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-density"><i class="fa fa-check"></i><b>9.1.3</b> Gas Density</a></li>
+<li class="chapter" data-level="9.1.4" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>9.1.4</b> Isothermal Gas Compressibility</a></li>
+<li class="chapter" data-level="9.1.5" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>9.1.5</b> Gas formation volume factor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>10</b> Properties of Oil</a></li>
+<li class="chapter" data-level="11" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>11</b> Rock Properties</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>11.1</b> Surface and Interfacial Tension</a></li>
+<li class="chapter" data-level="11.2" data-path="rock-properties.html"><a href="rock-properties.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>11.2</b> Simplified Fractional Flow Equation</a></li>
+<li class="chapter" data-level="11.3" data-path="rock-properties.html"><a href="rock-properties.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>11.3</b> Buckley-Leverett Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>12</b> Pattern Floods</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>12.1</b> Recovery Efficiency</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>12.1.1</b> Patterns and Spacing</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>12.2</b> Pattern Recovery</a></li>
+<li class="chapter" data-level="12.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>12.3</b> aa</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>13</b> Volumetrics</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>13.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>14</b> Gas and Water Coning</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>14.1</b> Coning in Vertical wells</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>14.1.1</b> Meyer-Garder Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>14.2</b> Coning in Horizontal wells</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Reservoir Engineering in Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functions" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Functions</h1>
+<p>Functions in Python provide organized, reusable and modular code to perform a set of specific actions. Functions simplify the coding process, prevent redundant logic, and make the code easier to follow. This section describes the declaration and utilization of functions in Python.</p>
+<p>Python has many built-in functions like <code>print()</code>, <code>input()</code>, <code>len()</code>. Besides built-ins you can also create your own functions to do more specific jobs—these are called user-defined functions.</p>
+<p><strong>Defining and calling simple functions</strong></p>
+<p>Using the <code>def</code> statement is the most common way to define a function in python.
+Here’s an example of a simple function definition which purpose is to print Hello each time it’s called:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="functions.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
+<span id="cb90-2"><a href="functions.html#cb90-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello&quot;</span>)</span>
+<span id="cb90-3"><a href="functions.html#cb90-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-4"><a href="functions.html#cb90-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Now let’s call the defined greet() function:</span></span>
+<span id="cb90-5"><a href="functions.html#cb90-5" aria-hidden="true" tabindex="-1"></a>greet()</span>
+<span id="cb90-6"><a href="functions.html#cb90-6" aria-hidden="true" tabindex="-1"></a>Hello</span></code></pre></div>
+<p>That’s another example of a function definition which takes one single argument and displays the passed in value each time the function is called:</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="functions.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span>  greet_two(greeting):</span>
+<span id="cb91-2"><a href="functions.html#cb91-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(greeting)</span>
+<span id="cb91-3"><a href="functions.html#cb91-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-4"><a href="functions.html#cb91-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Now let’s call the greet_two() function. Note that we have to give an argument to this function</span></span>
+<span id="cb91-5"><a href="functions.html#cb91-5" aria-hidden="true" tabindex="-1"></a>greet_two(<span class="st">&quot;Howdy&quot;</span>)</span>
+<span id="cb91-6"><a href="functions.html#cb91-6" aria-hidden="true" tabindex="-1"></a>Howdy</span></code></pre></div>
+<p>Also you can give a default value to that function argument:</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="functions.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span>  greet_three(greeting<span class="op">=</span><span class="st">&quot;Howdy&quot;</span>):</span>
+<span id="cb92-2"><a href="functions.html#cb92-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(greeting)</span>
+<span id="cb92-3"><a href="functions.html#cb92-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-4"><a href="functions.html#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Now you can also call this function without giving argument, in that case it will use default value.</span></span>
+<span id="cb92-5"><a href="functions.html#cb92-5" aria-hidden="true" tabindex="-1"></a>greet_three()</span>
+<span id="cb92-6"><a href="functions.html#cb92-6" aria-hidden="true" tabindex="-1"></a>Howdy</span>
+<span id="cb92-7"><a href="functions.html#cb92-7" aria-hidden="true" tabindex="-1"></a>greet_three(<span class="st">&quot;Hello&quot;</span>)</span>
+<span id="cb92-8"><a href="functions.html#cb92-8" aria-hidden="true" tabindex="-1"></a>Hello</span></code></pre></div>
+<p>You’ll notice that unlike many other languages, you do not need to explicitly declare a return type of the function. Python functions can return values of any type via the return keyword. One function can return any number of different types.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="functions.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> many_types(x):</span>
+<span id="cb93-2"><a href="functions.html#cb93-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb93-3"><a href="functions.html#cb93-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Hello!&quot;</span></span>
+<span id="cb93-4"><a href="functions.html#cb93-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb93-5"><a href="functions.html#cb93-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb93-6"><a href="functions.html#cb93-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-7"><a href="functions.html#cb93-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(many_types(<span class="dv">1</span>))</span>
+<span id="cb93-8"><a href="functions.html#cb93-8" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
+<span id="cb93-9"><a href="functions.html#cb93-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(many_types(<span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb93-10"><a href="functions.html#cb93-10" aria-hidden="true" tabindex="-1"></a>Hello<span class="op">!</span></span></code></pre></div>
+<p>As long as this is handled correctly by the caller, this is perfectly valid Python code.</p>
+<p><strong>Arbitrary number of positional arguments</strong></p>
+<p>Defining a function capable of taking an arbitrary number of arguments can be done by prefixing one of the
+arguments with a <code>*</code></p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="functions.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(<span class="op">*</span>args):</span>
+<span id="cb94-2"><a href="functions.html#cb94-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># args will be a tuple containing all values that are passed in</span></span>
+<span id="cb94-3"><a href="functions.html#cb94-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> args:</span>
+<span id="cb94-4"><a href="functions.html#cb94-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span>
+<span id="cb94-5"><a href="functions.html#cb94-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb94-6"><a href="functions.html#cb94-6" aria-hidden="true" tabindex="-1"></a>func(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="co"># Calling it with 3 arguments</span></span>
+<span id="cb94-7"><a href="functions.html#cb94-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb94-8"><a href="functions.html#cb94-8" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span>
+<span id="cb94-9"><a href="functions.html#cb94-9" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span></code></pre></div>
+<p>You can’t provide a default for args, for example <code>func(*args=[1, 2, 3])</code> will raise a syntax error</p>
+<p><strong>Arbitrary number of keyword arguments</strong></p>
+<p>You can take an arbitrary number of arguments with a name by defining an argument in the definition with two <code>*</code> in front of it:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="functions.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(<span class="op">**</span>kwargs):</span>
+<span id="cb95-2"><a href="functions.html#cb95-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># kwargs will be a dictionary containing the names as keys and the values as values</span></span>
+<span id="cb95-3"><a href="functions.html#cb95-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, value <span class="kw">in</span> kwargs.items():</span>
+<span id="cb95-4"><a href="functions.html#cb95-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(name, value)</span>
+<span id="cb95-5"><a href="functions.html#cb95-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-6"><a href="functions.html#cb95-6" aria-hidden="true" tabindex="-1"></a>func(value1<span class="op">=</span><span class="dv">1</span>, value2<span class="op">=</span><span class="dv">2</span>, value3<span class="op">=</span><span class="dv">3</span>) <span class="co"># Calling it with 3 arguments</span></span>
+<span id="cb95-7"><a href="functions.html#cb95-7" aria-hidden="true" tabindex="-1"></a>value1 <span class="dv">1</span></span>
+<span id="cb95-8"><a href="functions.html#cb95-8" aria-hidden="true" tabindex="-1"></a>value2 <span class="dv">2</span></span>
+<span id="cb95-9"><a href="functions.html#cb95-9" aria-hidden="true" tabindex="-1"></a>value3 <span class="dv">3</span></span>
+<span id="cb95-10"><a href="functions.html#cb95-10" aria-hidden="true" tabindex="-1"></a>func() <span class="co"># Calling it without arguments. no output</span></span>
+<span id="cb95-11"><a href="functions.html#cb95-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-12"><a href="functions.html#cb95-12" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">&#39;foo&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;bar&#39;</span>: <span class="dv">2</span>}</span>
+<span id="cb95-13"><a href="functions.html#cb95-13" aria-hidden="true" tabindex="-1"></a>func(<span class="op">**</span>my_dict) <span class="co"># Calling it with a dictionary</span></span>
+<span id="cb95-14"><a href="functions.html#cb95-14" aria-hidden="true" tabindex="-1"></a>foo <span class="dv">1</span></span>
+<span id="cb95-15"><a href="functions.html#cb95-15" aria-hidden="true" tabindex="-1"></a>bar <span class="dv">2</span></span></code></pre></div>
+<p>You can’t provide these without names, for example <code>func(1, 2, 3)</code> will raise a <code>TypeError</code>. kwargs is a plain native python dictionary</p>
+<p><strong>Returning values from functions</strong></p>
+<p>A function with no <code>return</code> statement implicitly returns <code>None</code>. Similarly a function with a <code>return</code> statement, but no return value or variable returns <code>None</code>.</p>
+<p>if <code>return</code> is encountered in the function the function will be exited immediately and subsequent operations will not be evaluated:</p>
+<p><strong>Function unpacking</strong></p>
+<p>Functions allow you to specify these types of parameters: positional, named, variable positional, Keyword args
+(kwargs). Here is a clear and concise use of each type.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="functions.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unpacking(a, b, c<span class="op">=</span><span class="dv">45</span>, d<span class="op">=</span><span class="dv">60</span>, <span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb96-2"><a href="functions.html#cb96-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a, b, c, d, args, kwargs)</span>
+<span id="cb96-3"><a href="functions.html#cb96-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-4"><a href="functions.html#cb96-4" aria-hidden="true" tabindex="-1"></a>unpacking(<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb96-5"><a href="functions.html#cb96-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2</span> <span class="dv">45</span> <span class="dv">60</span> () {}</span>
+<span id="cb96-6"><a href="functions.html#cb96-6" aria-hidden="true" tabindex="-1"></a>unpacking(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb96-7"><a href="functions.html#cb96-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> () {}</span>
+<span id="cb96-8"><a href="functions.html#cb96-8" aria-hidden="true" tabindex="-1"></a>unpacking(<span class="dv">1</span>,<span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>, d<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb96-9"><a href="functions.html#cb96-9" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> () {}</span>
+<span id="cb96-10"><a href="functions.html#cb96-10" aria-hidden="true" tabindex="-1"></a>unpacking(<span class="dv">1</span>,<span class="dv">2</span>,  d<span class="op">=</span><span class="dv">4</span>, c<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb96-11"><a href="functions.html#cb96-11" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> () {}</span></code></pre></div>
+<div id="lambda-function" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Lambda function</h2>
+<p>The <code>lambda</code> keyword creates an inline function that contains a single expression. The value of this expression is what the function returns when invoked.
+A lambda function can be written as follows:
+<code>greet_me = lambda: "Hello"</code></p>
+<p>Once assigned to a variable, it can be used just like a regular function:
+<code>print(greet_me())</code></p>
+<p><code>lambdas</code> can take arguments, too: They can also take arbitrary number of arguments / keyword arguments, like normal functions.</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="functions.html#cb97-1" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="kw">lambda</span> x, <span class="op">*</span>args, <span class="op">**</span>kwargs: <span class="bu">print</span>(x, args, kwargs)</span>
+<span id="cb97-2"><a href="functions.html#cb97-2" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;world&#39;</span>, world<span class="op">=</span><span class="st">&#39;world&#39;</span>)</span>
+<span id="cb97-3"><a href="functions.html#cb97-3" aria-hidden="true" tabindex="-1"></a>hello (<span class="st">&#39;world&#39;</span>,) {<span class="st">&#39;world&#39;</span>: <span class="st">&#39;world&#39;</span>}</span></code></pre></div>
+<p><code>lambdas</code> are commonly used for short functions that are convenient to define at the point where they are called (typically with sorted, filter and map).</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="built-in-modules-and-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-numpy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

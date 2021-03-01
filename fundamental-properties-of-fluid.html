@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 Fundamental Properties of Fluid | Basic Reservoir Engineering in Python</title>
+  <meta name="description" content="9 Fundamental Properties of Fluid | Basic Reservoir Engineering in Python" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 Fundamental Properties of Fluid | Basic Reservoir Engineering in Python" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 Fundamental Properties of Fluid | Basic Reservoir Engineering in Python" />
+  
+  
+  
+
+<meta name="author" content="Pramod Azad" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basic-reservoir-engineering.html"/>
+<link rel="next" href="properties-of-oil.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.1</b> Getting Started with Python</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#datatypes"><i class="fa fa-check"></i><b>2.1.1</b> Datatypes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>2.2</b> Lists</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#list-comprehensions"><i class="fa fa-check"></i><b>2.3</b> List comprehensions</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#tuples"><i class="fa fa-check"></i><b>2.4</b> Tuples</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#dictionaries"><i class="fa fa-check"></i><b>2.5</b> Dictionaries</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#set"><i class="fa fa-check"></i><b>2.6</b> Set</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>3</b> Simple Mathematics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>3.1</b> Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conditionals.html"><a href="conditionals.html"><i class="fa fa-check"></i><b>4</b> Conditionals</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="conditionals.html"><a href="conditionals.html#if-elif-and-else"><i class="fa fa-check"></i><b>4.1</b> if, elif, and else</a></li>
+<li class="chapter" data-level="4.2" data-path="conditionals.html"><a href="conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>4.2</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="loops.html"><a href="loops.html"><i class="fa fa-check"></i><b>5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="loops.html"><a href="loops.html#for-loops"><i class="fa fa-check"></i><b>5.1</b> For loops</a></li>
+<li class="chapter" data-level="5.2" data-path="loops.html"><a href="loops.html#while-loop"><i class="fa fa-check"></i><b>5.2</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="loops.html"><a href="loops.html#break-statement"><i class="fa fa-check"></i><b>5.2.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="5.2.2" data-path="loops.html"><a href="loops.html#continue-statement"><i class="fa fa-check"></i><b>5.2.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>6</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>6.1</b> Creating a module</a></li>
+<li class="chapter" data-level="6.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>6.2</b> Installing external modules using pip</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>7</b> Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="functions.html"><a href="functions.html#lambda-function"><i class="fa fa-check"></i><b>7.1</b> Lambda function</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>8</b> Introduction to Numpy</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>8.1</b> Why is NumPy Fast?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="basic-reservoir-engineering.html"><a href="basic-reservoir-engineering.html"><i class="fa fa-check"></i>Basic Reservoir Engineering</a></li>
+<li class="chapter" data-level="9" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html"><i class="fa fa-check"></i><b>9</b> Fundamental Properties of Fluid</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#review-of-gas-properties"><i class="fa fa-check"></i><b>9.1</b> Review of Gas Properties</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#real-gas-law"><i class="fa fa-check"></i><b>9.1.1</b> Real Gas law</a></li>
+<li class="chapter" data-level="9.1.2" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-z-factor"><i class="fa fa-check"></i><b>9.1.2</b> Gas z Factor</a></li>
+<li class="chapter" data-level="9.1.3" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-density"><i class="fa fa-check"></i><b>9.1.3</b> Gas Density</a></li>
+<li class="chapter" data-level="9.1.4" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>9.1.4</b> Isothermal Gas Compressibility</a></li>
+<li class="chapter" data-level="9.1.5" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>9.1.5</b> Gas formation volume factor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>10</b> Properties of Oil</a></li>
+<li class="chapter" data-level="11" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>11</b> Rock Properties</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>11.1</b> Surface and Interfacial Tension</a></li>
+<li class="chapter" data-level="11.2" data-path="rock-properties.html"><a href="rock-properties.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>11.2</b> Simplified Fractional Flow Equation</a></li>
+<li class="chapter" data-level="11.3" data-path="rock-properties.html"><a href="rock-properties.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>11.3</b> Buckley-Leverett Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>12</b> Pattern Floods</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>12.1</b> Recovery Efficiency</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>12.1.1</b> Patterns and Spacing</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>12.2</b> Pattern Recovery</a></li>
+<li class="chapter" data-level="12.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>12.3</b> aa</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>13</b> Volumetrics</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>13.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>14</b> Gas and Water Coning</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>14.1</b> Coning in Vertical wells</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>14.1.1</b> Meyer-Garder Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>14.2</b> Coning in Horizontal wells</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Reservoir Engineering in Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="fundamental-properties-of-fluid" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Fundamental Properties of Fluid</h1>
+<div id="review-of-gas-properties" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Review of Gas Properties</h2>
+<div id="real-gas-law" class="section level3" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> Real Gas law</h3>
+<p>There are no gas that behaves as Ideal gas. The volume of Real gas is more that Ideal gas. The number that measure the amount of gas deviates from perfect gas is actually a ratio.
+this ratio is called as compressibility factor or gas deviation factor. this is a dimensionless quantity.</p>
+<p>If the gas deviation factor is not measured it can be estimated from the specific gravity of the gas.
+Sutton developed a correlation that estimates</p>
+<p><span class="math display" id="eq:azad">\[\begin{equation}
+    \tag{9.1}
+    Ppc = 756.8 -131*Sg - 3.6 * Sg^2 \\
+    Tpc = 169.2 -349.5*Sg - 74 * Sg^2
+\end{equation}\]</span></p>
+<p>We will write a small code to plot this correlation.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="fundamental-properties-of-fluid.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb100-2"><a href="fundamental-properties-of-fluid.html#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb100-3"><a href="fundamental-properties-of-fluid.html#cb100-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-4"><a href="fundamental-properties-of-fluid.html#cb100-4" aria-hidden="true" tabindex="-1"></a>Sg <span class="op">=</span> np.arange(<span class="fl">0.57</span>,<span class="fl">1.68</span>,<span class="fl">0.05</span>)</span>
+<span id="cb100-5"><a href="fundamental-properties-of-fluid.html#cb100-5" aria-hidden="true" tabindex="-1"></a>Ppc <span class="op">=</span> [<span class="fl">756.8</span> <span class="op">-</span><span class="dv">131</span><span class="op">*</span>sg <span class="op">-</span> <span class="fl">3.6</span> <span class="op">*</span> sg<span class="op">*</span>sg <span class="cf">for</span> sg <span class="kw">in</span> Sg]</span>
+<span id="cb100-6"><a href="fundamental-properties-of-fluid.html#cb100-6" aria-hidden="true" tabindex="-1"></a>Tpc <span class="op">=</span> [<span class="fl">169.2</span> <span class="op">+</span> <span class="fl">349.5</span><span class="op">*</span>sg <span class="op">-</span> <span class="dv">74</span> <span class="op">*</span> sg<span class="op">*</span>sg <span class="cf">for</span> sg <span class="kw">in</span> Sg]</span>
+<span id="cb100-7"><a href="fundamental-properties-of-fluid.html#cb100-7" aria-hidden="true" tabindex="-1"></a>plt.plot(Sg, Ppc, <span class="st">&#39;r-&#39;</span>)</span>
+<span id="cb100-8"><a href="fundamental-properties-of-fluid.html#cb100-8" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x0000000056877A30</span><span class="op">&gt;</span>]</span>
+<span id="cb100-9"><a href="fundamental-properties-of-fluid.html#cb100-9" aria-hidden="true" tabindex="-1"></a>plt.plot(Sg, Tpc, <span class="st">&#39;b-&#39;</span>)</span>
+<span id="cb100-10"><a href="fundamental-properties-of-fluid.html#cb100-10" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x0000000056877E50</span><span class="op">&gt;</span>]</span>
+<span id="cb100-11"><a href="fundamental-properties-of-fluid.html#cb100-11" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb100-12"><a href="fundamental-properties-of-fluid.html#cb100-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
+<span id="cb100-13"><a href="fundamental-properties-of-fluid.html#cb100-13" aria-hidden="true" tabindex="-1"></a>Text(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
+<span id="cb100-14"><a href="fundamental-properties-of-fluid.html#cb100-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Gas specific gravity&#39;</span>)</span>
+<span id="cb100-15"><a href="fundamental-properties-of-fluid.html#cb100-15" aria-hidden="true" tabindex="-1"></a>Text(<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="st">&#39;Gas specific gravity&#39;</span>)</span>
+<span id="cb100-16"><a href="fundamental-properties-of-fluid.html#cb100-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="images/pyplot-1.png" /><!-- --></p>
+<p>Wiechert-Aziz have developed a correlation to account for gases that contain CO2 and H2S</p>
+<p><span class="math display">\[\begin{equation}
+    e = 120(A^{0.9} - A^{1.6}) + 15(B^{0.5} - B^4)
+\end{equation}\]</span></p>
+<p>A = sum of mole fraction of H2S and CO2</p>
+<p>B = sum of mole fraction of H2S</p>
+<p>with this correation the modified equation becomes:</p>
+<p><span class="math display" id="eq:mod">\[\begin{equation}
+\tag{9.2}
+    T&#39;_{pc} = T_{pc} -e \\
+    P&#39;_{pc} = \frac{P_{pc}T&#39;_{pc}}{(T_{pc}- B(1-B)e)}
+\end{equation}\]</span></p>
+<p>Lets assume H2S mole fraction of 0.05 and CO2 mole fraction of 0.1 and compare the plots</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="fundamental-properties-of-fluid.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># same code as above</span></span>
+<span id="cb101-2"><a href="fundamental-properties-of-fluid.html#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-3"><a href="fundamental-properties-of-fluid.html#cb101-3" aria-hidden="true" tabindex="-1"></a>x_h2s<span class="op">=</span><span class="fl">0.05</span></span>
+<span id="cb101-4"><a href="fundamental-properties-of-fluid.html#cb101-4" aria-hidden="true" tabindex="-1"></a>x_co2 <span class="op">=</span><span class="fl">0.1</span></span>
+<span id="cb101-5"><a href="fundamental-properties-of-fluid.html#cb101-5" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> (<span class="dv">120</span> <span class="op">*</span> (((x_h2s <span class="op">+</span> x_co2)<span class="op">**</span><span class="fl">0.9</span>) <span class="op">-</span> ((x_h2s <span class="op">+</span> x_co2)<span class="op">**</span><span class="fl">1.6</span>))) <span class="op">+</span> (<span class="dv">15</span> <span class="op">*</span> (x_h2s<span class="op">**</span><span class="fl">0.5</span> <span class="op">-</span> x_h2s<span class="op">**</span><span class="dv">4</span>))</span>
+<span id="cb101-6"><a href="fundamental-properties-of-fluid.html#cb101-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-7"><a href="fundamental-properties-of-fluid.html#cb101-7" aria-hidden="true" tabindex="-1"></a>T_pc_corr <span class="op">=</span> [T <span class="op">-</span> e <span class="cf">for</span> T <span class="kw">in</span> Tpc]</span>
+<span id="cb101-8"><a href="fundamental-properties-of-fluid.html#cb101-8" aria-hidden="true" tabindex="-1"></a>P_pc_corr <span class="op">=</span> [(Ppc[i] <span class="op">*</span> T_pc_corr[i]) <span class="op">/</span> (Tpc[i] <span class="op">-</span> x_h2s <span class="op">*</span> e <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>x_h2s)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(Tpc))]</span>
+<span id="cb101-9"><a href="fundamental-properties-of-fluid.html#cb101-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb101-10"><a href="fundamental-properties-of-fluid.html#cb101-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb101-11"><a href="fundamental-properties-of-fluid.html#cb101-11" aria-hidden="true" tabindex="-1"></a>ax.plot(Sg, Ppc, <span class="st">&#39;r-&#39;</span>)</span>
+<span id="cb101-12"><a href="fundamental-properties-of-fluid.html#cb101-12" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x0000000056822E50</span><span class="op">&gt;</span>]</span>
+<span id="cb101-13"><a href="fundamental-properties-of-fluid.html#cb101-13" aria-hidden="true" tabindex="-1"></a>ax.plot(Sg, Tpc, <span class="st">&#39;b-&#39;</span>)</span>
+<span id="cb101-14"><a href="fundamental-properties-of-fluid.html#cb101-14" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x00000000568220A0</span><span class="op">&gt;</span>]</span>
+<span id="cb101-15"><a href="fundamental-properties-of-fluid.html#cb101-15" aria-hidden="true" tabindex="-1"></a>ax.plot(Sg, P_pc_corr, <span class="st">&#39;r--&#39;</span>)</span>
+<span id="cb101-16"><a href="fundamental-properties-of-fluid.html#cb101-16" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000005554D1C0</span><span class="op">&gt;</span>]</span>
+<span id="cb101-17"><a href="fundamental-properties-of-fluid.html#cb101-17" aria-hidden="true" tabindex="-1"></a>ax.plot(Sg, T_pc_corr, <span class="st">&#39;b--&#39;</span>)</span>
+<span id="cb101-18"><a href="fundamental-properties-of-fluid.html#cb101-18" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x00000000567F3C10</span><span class="op">&gt;</span>]</span>
+<span id="cb101-19"><a href="fundamental-properties-of-fluid.html#cb101-19" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
+<span id="cb101-20"><a href="fundamental-properties-of-fluid.html#cb101-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
+<span id="cb101-21"><a href="fundamental-properties-of-fluid.html#cb101-21" aria-hidden="true" tabindex="-1"></a>Text(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
+<span id="cb101-22"><a href="fundamental-properties-of-fluid.html#cb101-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Gas specific gravity&#39;</span>)</span>
+<span id="cb101-23"><a href="fundamental-properties-of-fluid.html#cb101-23" aria-hidden="true" tabindex="-1"></a>Text(<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="st">&#39;Gas specific gravity&#39;</span>)</span>
+<span id="cb101-24"><a href="fundamental-properties-of-fluid.html#cb101-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="images/pyplot1-1.png" /><!-- --></p>
+</div>
+<div id="gas-z-factor" class="section level3" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> Gas z Factor</h3>
+<p><strong>Dranchuk and Aboukassem equation of state</strong></p>
+<p>The form of equation is as follow:
+<span class="math display" id="eq:Dranchuk">\[\begin{equation}
+\begin{split}
+    
+    z = 1 + c_{1}(T_{pr}) p_{r} + c_{2}(T_{pr})p_{r}^2 - c_{3}(T_{pr})p_{r}^5 + c_{4}(T_{pr}p_{r})  \\
+    where : \\
+p_{r} = 0.27 P_{pr}/(zT_{pr}) \\
+c_{1}(T_{pr})  = A_{1} + A_{2}/T_{pr} + A_{3}/T_{pr}^3 + A_{4}/T_{pr}^4 + A_{5}/T_{pr}^5\\
+c_{2}(T_{pr})  = A_{6} + A_{7}/T_{pr} + A_{8}/T_{pr}^2 \\
+c_{3}(T_{pr})  = A_{9}(A_{7}/T_{pr} + A_{8}/T_{pr}^2) \\
+c_{4}(T_{pr}p_{r})  = A_{10}( 1 + A_{11}p_{r}^2)(p_{r}^2/T_{pr}^3) exp(-A_{11}p_{r}^2) \\
+
+
+\end{split}
+\tag{9.3}
+\end{equation}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\begin{equation}
+A_{1} = 0.3265; A_{2} = -1.0700; A_{3} = -0.5339; A_{4} = 0.01569; A_{5} = -0.05165; A_{6} = 0.5475 \\
+A_{7} = -0.7361; A_{8} = 0.1844; A_{9} = 0.1056; A_{10} = 0.6134; A_{11} = 0.7210
+\end{equation}\]</span></p>
+<p>The above equation has z-factor on both side of the equation. To solve such equation a trial and error solution is required. However, in Python we can solve this equation using <code>fsolve</code> function of <code>scipy</code> library, which is a non-linear solver.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="fundamental-properties-of-fluid.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb102-2"><a href="fundamental-properties-of-fluid.html#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve <span class="co"># non-linear solver</span></span>
+<span id="cb102-3"><a href="fundamental-properties-of-fluid.html#cb102-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-4"><a href="fundamental-properties-of-fluid.html#cb102-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getZ_dranchuk(T_pr, P_pr):</span>
+<span id="cb102-5"><a href="fundamental-properties-of-fluid.html#cb102-5" aria-hidden="true" tabindex="-1"></a>    a1 <span class="op">=</span> <span class="fl">0.3265</span><span class="op">;</span> a2 <span class="op">=</span> <span class="op">-</span><span class="fl">1.0700</span><span class="op">;</span> a3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5339</span><span class="op">;</span> a4 <span class="op">=</span> <span class="fl">0.01569</span><span class="op">;</span> a5 <span class="op">=</span> <span class="op">-</span><span class="fl">0.05165</span><span class="op">;</span> a6 <span class="op">=</span> <span class="fl">0.5475</span></span>
+<span id="cb102-6"><a href="fundamental-properties-of-fluid.html#cb102-6" aria-hidden="true" tabindex="-1"></a>    a7 <span class="op">=</span> <span class="op">-</span><span class="fl">0.7361</span><span class="op">;</span> a8 <span class="op">=</span> <span class="fl">0.1844</span><span class="op">;</span> a9 <span class="op">=</span> <span class="fl">0.1056</span><span class="op">;</span> a10 <span class="op">=</span> <span class="fl">0.6134</span><span class="op">;</span> a11 <span class="op">=</span> <span class="fl">0.7210</span></span>
+<span id="cb102-7"><a href="fundamental-properties-of-fluid.html#cb102-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> func(y):</span>
+<span id="cb102-8"><a href="fundamental-properties-of-fluid.html#cb102-8" aria-hidden="true" tabindex="-1"></a>        rho_pr, z <span class="op">=</span> y</span>
+<span id="cb102-9"><a href="fundamental-properties-of-fluid.html#cb102-9" aria-hidden="true" tabindex="-1"></a>        c1 <span class="op">=</span> a1 <span class="op">+</span> (a2<span class="op">/</span>T_pr) <span class="op">+</span> (a3<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">3</span>))<span class="op">+</span> (a4<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">4</span>))<span class="op">+</span> (a5<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">5</span>))</span>
+<span id="cb102-10"><a href="fundamental-properties-of-fluid.html#cb102-10" aria-hidden="true" tabindex="-1"></a>        c2 <span class="op">=</span> a6 <span class="op">+</span> (a7<span class="op">/</span>T_pr) <span class="op">+</span> (a8<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb102-11"><a href="fundamental-properties-of-fluid.html#cb102-11" aria-hidden="true" tabindex="-1"></a>        c3 <span class="op">=</span> a9<span class="op">*</span>((a7<span class="op">/</span>T_pr) <span class="op">+</span> (a8<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">2</span>)))</span>
+<span id="cb102-12"><a href="fundamental-properties-of-fluid.html#cb102-12" aria-hidden="true" tabindex="-1"></a>        c4 <span class="op">=</span> (a10)<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>(a11<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">2</span>)))<span class="op">*</span>((rho_pr<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">3</span>))<span class="op">*</span>(np.exp(<span class="op">-</span>a11<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">2</span>)))</span>
+<span id="cb102-13"><a href="fundamental-properties-of-fluid.html#cb102-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-14"><a href="fundamental-properties-of-fluid.html#cb102-14" aria-hidden="true" tabindex="-1"></a>        f1 <span class="op">=</span> z <span class="op">+</span> (c3<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">5</span>)) <span class="op">-</span> (c2<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">2</span>)) <span class="op">-</span> (c1<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">1</span>)) <span class="op">-</span> c4 <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb102-15"><a href="fundamental-properties-of-fluid.html#cb102-15" aria-hidden="true" tabindex="-1"></a>        f2 <span class="op">=</span> rho_pr <span class="op">-</span> ((<span class="fl">0.27</span> <span class="op">*</span> P_pr) <span class="op">/</span> (z <span class="op">*</span> T_pr))</span>
+<span id="cb102-16"><a href="fundamental-properties-of-fluid.html#cb102-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>[f1, f2]</span>
+<span id="cb102-17"><a href="fundamental-properties-of-fluid.html#cb102-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-18"><a href="fundamental-properties-of-fluid.html#cb102-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> dranchuk():</span>
+<span id="cb102-19"><a href="fundamental-properties-of-fluid.html#cb102-19" aria-hidden="true" tabindex="-1"></a>        solve <span class="op">=</span> fsolve(func, [<span class="dv">1</span>, <span class="dv">1</span>]) <span class="co"># initial guess</span></span>
+<span id="cb102-20"><a href="fundamental-properties-of-fluid.html#cb102-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span>(solve[<span class="dv">0</span>], solve[<span class="dv">1</span>]) </span>
+<span id="cb102-21"><a href="fundamental-properties-of-fluid.html#cb102-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb102-22"><a href="fundamental-properties-of-fluid.html#cb102-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dranchuk()[<span class="dv">1</span>]</span>
+<span id="cb102-23"><a href="fundamental-properties-of-fluid.html#cb102-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-24"><a href="fundamental-properties-of-fluid.html#cb102-24" aria-hidden="true" tabindex="-1"></a><span class="co"># lets Assume </span></span>
+<span id="cb102-25"><a href="fundamental-properties-of-fluid.html#cb102-25" aria-hidden="true" tabindex="-1"></a>T_pr <span class="op">=</span> <span class="fl">1.8</span></span>
+<span id="cb102-26"><a href="fundamental-properties-of-fluid.html#cb102-26" aria-hidden="true" tabindex="-1"></a>P_pr <span class="op">=</span> <span class="fl">4.87</span></span>
+<span id="cb102-27"><a href="fundamental-properties-of-fluid.html#cb102-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-28"><a href="fundamental-properties-of-fluid.html#cb102-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Gas Deviation factor Z : = </span><span class="sc">{</span>getZ_dranchuk(T_pr, P_pr)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb102-29"><a href="fundamental-properties-of-fluid.html#cb102-29" aria-hidden="true" tabindex="-1"></a>Gas Deviation factor Z : <span class="op">=</span> <span class="fl">0.9110107290176761</span></span></code></pre></div>
+</div>
+<div id="gas-density" class="section level3" number="9.1.3">
+<h3><span class="header-section-number">9.1.3</span> Gas Density</h3>
+<p>Density of a real gas can be calculated using the formula given below:
+<span class="math display" id="eq:gasDensity">\[\begin{equation}
+    \tag{9.4}
+    \rho_g  = \frac{1}{v} = \frac{pM_a}{zRT}
+\end{equation}\]</span></p>
+<p>Using the data in below assuming real gas behavior, let’s calculate the density of the gas phase under initial reservoir conditions.</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="fundamental-properties-of-fluid.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Component [CO2, N2, C1, C2, C3, i-C4, n-c4]</span></span>
+<span id="cb103-2"><a href="fundamental-properties-of-fluid.html#cb103-2" aria-hidden="true" tabindex="-1"></a>gasComposition <span class="op">=</span> [<span class="fl">0.02</span>, <span class="fl">0.01</span>, <span class="fl">0.85</span>, <span class="fl">0.04</span>, <span class="fl">0.03</span>, <span class="fl">0.03</span>, <span class="fl">0.02</span>]</span>
+<span id="cb103-3"><a href="fundamental-properties-of-fluid.html#cb103-3" aria-hidden="true" tabindex="-1"></a>MW <span class="op">=</span> [<span class="fl">44.01</span>, <span class="fl">28.01</span>, <span class="fl">16.04</span>, <span class="fl">30.1</span>, <span class="fl">44.1</span>, <span class="fl">58.1</span>, <span class="fl">58.1</span>]</span>
+<span id="cb103-4"><a href="fundamental-properties-of-fluid.html#cb103-4" aria-hidden="true" tabindex="-1"></a>Tc <span class="op">=</span> [<span class="fl">547.91</span>, <span class="fl">227.49</span> , <span class="fl">343.33</span>, <span class="fl">549.92</span>, <span class="fl">666.06</span>, <span class="fl">734.46</span>, <span class="fl">765.62</span>] <span class="co">#Rankine</span></span>
+<span id="cb103-5"><a href="fundamental-properties-of-fluid.html#cb103-5" aria-hidden="true" tabindex="-1"></a>Pc <span class="op">=</span> [<span class="dv">1071</span>, <span class="fl">493.1</span>, <span class="fl">666.4</span>, <span class="fl">706.5</span>, <span class="fl">616.4</span>, <span class="fl">527.9</span>, <span class="fl">550.6</span>]</span>
+<span id="cb103-6"><a href="fundamental-properties-of-fluid.html#cb103-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-7"><a href="fundamental-properties-of-fluid.html#cb103-7" aria-hidden="true" tabindex="-1"></a>Ma <span class="op">=</span> <span class="bu">sum</span>([y<span class="op">*</span>M <span class="cf">for</span> y, M <span class="kw">in</span> <span class="bu">zip</span>(gasComposition, MW)])</span>
+<span id="cb103-8"><a href="fundamental-properties-of-fluid.html#cb103-8" aria-hidden="true" tabindex="-1"></a>Tpc <span class="op">=</span> <span class="bu">sum</span>([y<span class="op">*</span>T <span class="cf">for</span> y, T <span class="kw">in</span> <span class="bu">zip</span>(gasComposition, Tc)])</span>
+<span id="cb103-9"><a href="fundamental-properties-of-fluid.html#cb103-9" aria-hidden="true" tabindex="-1"></a>Ppc <span class="op">=</span> <span class="bu">sum</span>([y<span class="op">*</span>P <span class="cf">for</span> y, P <span class="kw">in</span> <span class="bu">zip</span>(gasComposition, Pc)])</span>
+<span id="cb103-10"><a href="fundamental-properties-of-fluid.html#cb103-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-11"><a href="fundamental-properties-of-fluid.html#cb103-11" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> <span class="dv">3000</span> <span class="co"># Reservoir Pressure in psi</span></span>
+<span id="cb103-12"><a href="fundamental-properties-of-fluid.html#cb103-12" aria-hidden="true" tabindex="-1"></a>T  <span class="op">=</span> <span class="dv">640</span> <span class="co"># Reservoir Temperature in R</span></span>
+<span id="cb103-13"><a href="fundamental-properties-of-fluid.html#cb103-13" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> <span class="fl">10.73</span> <span class="co">#</span></span>
+<span id="cb103-14"><a href="fundamental-properties-of-fluid.html#cb103-14" aria-hidden="true" tabindex="-1"></a>T_pr <span class="op">=</span> T<span class="op">/</span>Tpc</span>
+<span id="cb103-15"><a href="fundamental-properties-of-fluid.html#cb103-15" aria-hidden="true" tabindex="-1"></a>P_pr <span class="op">=</span> P<span class="op">/</span>Ppc</span>
+<span id="cb103-16"><a href="fundamental-properties-of-fluid.html#cb103-16" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> getZ_dranchuk(T_pr, P_pr)</span>
+<span id="cb103-17"><a href="fundamental-properties-of-fluid.html#cb103-17" aria-hidden="true" tabindex="-1"></a>density <span class="op">=</span> P<span class="op">*</span>Ma<span class="op">/</span>(Z<span class="op">*</span>R<span class="op">*</span>T)</span>
+<span id="cb103-18"><a href="fundamental-properties-of-fluid.html#cb103-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-19"><a href="fundamental-properties-of-fluid.html#cb103-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Results</span></span>
+<span id="cb103-20"><a href="fundamental-properties-of-fluid.html#cb103-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;-&#39;</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb103-21"><a href="fundamental-properties-of-fluid.html#cb103-21" aria-hidden="true" tabindex="-1"></a><span class="op">--------------------------------------------------</span></span>
+<span id="cb103-22"><a href="fundamental-properties-of-fluid.html#cb103-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Apparent molecular weight : = </span><span class="sc">{</span><span class="bu">round</span>(Ma, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb103-23"><a href="fundamental-properties-of-fluid.html#cb103-23" aria-hidden="true" tabindex="-1"></a>Apparent molecular weight : <span class="op">=</span> <span class="fl">20.23</span></span>
+<span id="cb103-24"><a href="fundamental-properties-of-fluid.html#cb103-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Pseudo-critical pressure : = </span><span class="sc">{</span><span class="bu">round</span>(Ppc, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> psi&#39;</span>)</span>
+<span id="cb103-25"><a href="fundamental-properties-of-fluid.html#cb103-25" aria-hidden="true" tabindex="-1"></a>Pseudo<span class="op">-</span>critical pressure : <span class="op">=</span> <span class="fl">666.39</span> psi</span>
+<span id="cb103-26"><a href="fundamental-properties-of-fluid.html#cb103-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Pseudo-critical temperature : = </span><span class="sc">{</span><span class="bu">round</span>(Tpc, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> R&#39;</span>)</span>
+<span id="cb103-27"><a href="fundamental-properties-of-fluid.html#cb103-27" aria-hidden="true" tabindex="-1"></a>Pseudo<span class="op">-</span>critical temperature : <span class="op">=</span> <span class="fl">384.39</span> R</span>
+<span id="cb103-28"><a href="fundamental-properties-of-fluid.html#cb103-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Pseudo-reduced pressure : = </span><span class="sc">{</span><span class="bu">round</span>(P_pr, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb103-29"><a href="fundamental-properties-of-fluid.html#cb103-29" aria-hidden="true" tabindex="-1"></a>Pseudo<span class="op">-</span>reduced pressure : <span class="op">=</span> <span class="fl">4.5</span></span>
+<span id="cb103-30"><a href="fundamental-properties-of-fluid.html#cb103-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Pseudo-reduced temperature : = </span><span class="sc">{</span><span class="bu">round</span>(T_pr, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb103-31"><a href="fundamental-properties-of-fluid.html#cb103-31" aria-hidden="true" tabindex="-1"></a>Pseudo<span class="op">-</span>reduced temperature : <span class="op">=</span> <span class="fl">1.66</span></span>
+<span id="cb103-32"><a href="fundamental-properties-of-fluid.html#cb103-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Gas Deviation factor : = </span><span class="sc">{</span><span class="bu">round</span>(Z, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb103-33"><a href="fundamental-properties-of-fluid.html#cb103-33" aria-hidden="true" tabindex="-1"></a>Gas Deviation factor : <span class="op">=</span> <span class="fl">0.86</span></span>
+<span id="cb103-34"><a href="fundamental-properties-of-fluid.html#cb103-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Gas Density : = </span><span class="sc">{</span><span class="bu">round</span>(density, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> lb/ft3&#39;</span>)</span>
+<span id="cb103-35"><a href="fundamental-properties-of-fluid.html#cb103-35" aria-hidden="true" tabindex="-1"></a>Gas Density : <span class="op">=</span> <span class="fl">10.28</span> lb<span class="op">/</span>ft3</span></code></pre></div>
+</div>
+<div id="isothermal-gas-compressibility" class="section level3" number="9.1.4">
+<h3><span class="header-section-number">9.1.4</span> Isothermal Gas Compressibility</h3>
+<p>Isothermal compressibility is defined as change in volume with pressure for gas under isothermal condition.</p>
+<p><span class="math display" id="eq:compress">\[\begin{equation}
+    \tag{9.5}
+    V = znR&#39;T/P  \\
+    or  \\ V = constant * z/P 
+\end{equation}\]</span></p>
+<p>Mattar, Brar, and Aziz developed an analytical expression for calculating pseudo-reduced compressibility.</p>
+<p><img src="./images/isothermal-compressibility_1.JPG" /></p>
+<p>By taking the derivative of equation of state developed by Dranchuck and Abou-Kassem developed the following equation.
+<img src="./images/isothermal-compressibility_2.JPG" /></p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="fundamental-properties-of-fluid.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code for Isothermal Gas Compressibility using Dranchuck and Abou-Kassem equation</span></span>
+<span id="cb104-2"><a href="fundamental-properties-of-fluid.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb104-3"><a href="fundamental-properties-of-fluid.html#cb104-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-4"><a href="fundamental-properties-of-fluid.html#cb104-4" aria-hidden="true" tabindex="-1"></a>a1 <span class="op">=</span> <span class="fl">0.3265</span><span class="op">;</span> a2 <span class="op">=</span> <span class="op">-</span><span class="fl">1.0700</span><span class="op">;</span> a3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5339</span><span class="op">;</span> a4 <span class="op">=</span> <span class="fl">0.01569</span><span class="op">;</span> a5 <span class="op">=</span> <span class="op">-</span><span class="fl">0.05165</span><span class="op">;</span> a6 <span class="op">=</span> <span class="fl">0.5475</span></span>
+<span id="cb104-5"><a href="fundamental-properties-of-fluid.html#cb104-5" aria-hidden="true" tabindex="-1"></a>a7 <span class="op">=</span> <span class="op">-</span><span class="fl">0.7361</span><span class="op">;</span> a8 <span class="op">=</span> <span class="fl">0.1844</span><span class="op">;</span> a9 <span class="op">=</span> <span class="fl">0.1056</span><span class="op">;</span> a10 <span class="op">=</span> <span class="fl">0.6134</span><span class="op">;</span> a11 <span class="op">=</span> <span class="fl">0.7210</span></span>
+<span id="cb104-6"><a href="fundamental-properties-of-fluid.html#cb104-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-7"><a href="fundamental-properties-of-fluid.html#cb104-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mattar(T_pr, P_pr, rho_pr, z, P_pc_corr):</span>
+<span id="cb104-8"><a href="fundamental-properties-of-fluid.html#cb104-8" aria-hidden="true" tabindex="-1"></a>    do <span class="op">=</span> ((a1 <span class="op">+</span> (a2<span class="op">/</span>T_pr) <span class="op">+</span> (a3<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">3</span>) <span class="op">+</span>(a4<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">4</span>) <span class="op">+</span> (a5<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">5</span>)) <span class="op">*</span> rho_pr) <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb104-9"><a href="fundamental-properties-of-fluid.html#cb104-9" aria-hidden="true" tabindex="-1"></a>      (<span class="dv">2</span> <span class="op">*</span> ((a6 <span class="op">+</span> (a7<span class="op">/</span>T_pr) <span class="op">+</span> (a8<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">2</span>))) <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> <span class="op">\</span></span>
+<span id="cb104-10"><a href="fundamental-properties-of-fluid.html#cb104-10" aria-hidden="true" tabindex="-1"></a>      (<span class="dv">5</span> <span class="op">*</span> a9 <span class="op">*</span> (((a7<span class="op">/</span>T_pr) <span class="op">+</span> (a8<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">2</span>))) <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">4</span>) <span class="op">+</span> (<span class="dv">1</span> <span class="op">+</span> (a11 <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> (a11 <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>) <span class="op">\</span></span>
+<span id="cb104-11"><a href="fundamental-properties-of-fluid.html#cb104-11" aria-hidden="true" tabindex="-1"></a>      <span class="op">*</span> ((<span class="dv">2</span> <span class="op">*</span> a10 <span class="op">*</span> rho_pr <span class="op">/</span> T_pr<span class="op">**</span><span class="dv">3</span>)<span class="op">*</span>np.exp(<span class="op">-</span>a11 <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb104-12"><a href="fundamental-properties-of-fluid.html#cb104-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-13"><a href="fundamental-properties-of-fluid.html#cb104-13" aria-hidden="true" tabindex="-1"></a>    c_pr_analytical <span class="op">=</span> (<span class="dv">1</span> <span class="op">/</span> P_pr) <span class="op">-</span> ((<span class="fl">0.27</span> <span class="op">/</span> (z<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> T_pr)) <span class="op">*</span> (do <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> ((rho_pr <span class="op">/</span> z) <span class="op">*</span> do))))</span>
+<span id="cb104-14"><a href="fundamental-properties-of-fluid.html#cb104-14" aria-hidden="true" tabindex="-1"></a>    cgas_analytical <span class="op">=</span> c_pr_analytical <span class="op">/</span> P_pc_corr</span>
+<span id="cb104-15"><a href="fundamental-properties-of-fluid.html#cb104-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(cgas_analytical)</span>
+<span id="cb104-16"><a href="fundamental-properties-of-fluid.html#cb104-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-17"><a href="fundamental-properties-of-fluid.html#cb104-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mattar(<span class="fl">1.44</span>, <span class="fl">7.08</span>, <span class="fl">0.80</span>, <span class="fl">0.91</span>, <span class="dv">636</span>))</span>
+<span id="cb104-18"><a href="fundamental-properties-of-fluid.html#cb104-18" aria-hidden="true" tabindex="-1"></a><span class="fl">0.00021157987661567598</span></span></code></pre></div>
+</div>
+<div id="gas-formation-volume-factor" class="section level3" number="9.1.5">
+<h3><span class="header-section-number">9.1.5</span> Gas formation volume factor</h3>
+<p>Gas formation volume factor relates the volume of gas in the reservoir to the volume of gas on the surface at standard conditions
+so, Bg can be written as Bg = 0.02829 zT/p in ft3/scf = 0.00504 zT/P bbl/scf.</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb105-1"><a href="fundamental-properties-of-fluid.html#cb105-1" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span> <span class="fl">0.91</span></span>
+<span id="cb105-2"><a href="fundamental-properties-of-fluid.html#cb105-2" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> <span class="dv">3250</span> <span class="co"># psia</span></span>
+<span id="cb105-3"><a href="fundamental-properties-of-fluid.html#cb105-3" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">213</span> <span class="co"># F</span></span>
+<span id="cb105-4"><a href="fundamental-properties-of-fluid.html#cb105-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-5"><a href="fundamental-properties-of-fluid.html#cb105-5" aria-hidden="true" tabindex="-1"></a>Bg <span class="op">=</span>  <span class="fl">0.02829</span><span class="op">*</span>z<span class="op">*</span>(T<span class="op">+</span><span class="dv">460</span>)<span class="op">/</span>P</span>
+<span id="cb105-6"><a href="fundamental-properties-of-fluid.html#cb105-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="ss">f&#39;Gas formation volume Factor : </span><span class="sc">{Bg}</span><span class="ss">&#39;</span>)</span>
+<span id="cb105-7"><a href="fundamental-properties-of-fluid.html#cb105-7" aria-hidden="true" tabindex="-1"></a>Gas formation volume Factor : <span class="fl">0.005330967600000001</span></span></code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basic-reservoir-engineering.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="properties-of-oil.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

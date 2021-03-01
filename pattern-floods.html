@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>12 Pattern Floods | Basic Reservoir Engineering in Python</title>
+  <meta name="description" content="12 Pattern Floods | Basic Reservoir Engineering in Python" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="12 Pattern Floods | Basic Reservoir Engineering in Python" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12 Pattern Floods | Basic Reservoir Engineering in Python" />
+  
+  
+  
+
+<meta name="author" content="Pramod Azad" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="rock-properties.html"/>
+<link rel="next" href="volumetrics.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.1</b> Getting Started with Python</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#datatypes"><i class="fa fa-check"></i><b>2.1.1</b> Datatypes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>2.2</b> Lists</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#list-comprehensions"><i class="fa fa-check"></i><b>2.3</b> List comprehensions</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#tuples"><i class="fa fa-check"></i><b>2.4</b> Tuples</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#dictionaries"><i class="fa fa-check"></i><b>2.5</b> Dictionaries</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#set"><i class="fa fa-check"></i><b>2.6</b> Set</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>3</b> Simple Mathematics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>3.1</b> Comparisons</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conditionals.html"><a href="conditionals.html"><i class="fa fa-check"></i><b>4</b> Conditionals</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="conditionals.html"><a href="conditionals.html#if-elif-and-else"><i class="fa fa-check"></i><b>4.1</b> if, elif, and else</a></li>
+<li class="chapter" data-level="4.2" data-path="conditionals.html"><a href="conditionals.html#boolean-operators"><i class="fa fa-check"></i><b>4.2</b> Boolean Operators</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="loops.html"><a href="loops.html"><i class="fa fa-check"></i><b>5</b> Loops</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="loops.html"><a href="loops.html#for-loops"><i class="fa fa-check"></i><b>5.1</b> For loops</a></li>
+<li class="chapter" data-level="5.2" data-path="loops.html"><a href="loops.html#while-loop"><i class="fa fa-check"></i><b>5.2</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="loops.html"><a href="loops.html#break-statement"><i class="fa fa-check"></i><b>5.2.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="5.2.2" data-path="loops.html"><a href="loops.html#continue-statement"><i class="fa fa-check"></i><b>5.2.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>6</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>6.1</b> Creating a module</a></li>
+<li class="chapter" data-level="6.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>6.2</b> Installing external modules using pip</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>7</b> Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="functions.html"><a href="functions.html#lambda-function"><i class="fa fa-check"></i><b>7.1</b> Lambda function</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>8</b> Introduction to Numpy</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>8.1</b> Why is NumPy Fast?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="basic-reservoir-engineering.html"><a href="basic-reservoir-engineering.html"><i class="fa fa-check"></i>Basic Reservoir Engineering</a></li>
+<li class="chapter" data-level="9" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html"><i class="fa fa-check"></i><b>9</b> Fundamental Properties of Fluid</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#review-of-gas-properties"><i class="fa fa-check"></i><b>9.1</b> Review of Gas Properties</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#real-gas-law"><i class="fa fa-check"></i><b>9.1.1</b> Real Gas law</a></li>
+<li class="chapter" data-level="9.1.2" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-z-factor"><i class="fa fa-check"></i><b>9.1.2</b> Gas z Factor</a></li>
+<li class="chapter" data-level="9.1.3" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-density"><i class="fa fa-check"></i><b>9.1.3</b> Gas Density</a></li>
+<li class="chapter" data-level="9.1.4" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>9.1.4</b> Isothermal Gas Compressibility</a></li>
+<li class="chapter" data-level="9.1.5" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>9.1.5</b> Gas formation volume factor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>10</b> Properties of Oil</a></li>
+<li class="chapter" data-level="11" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>11</b> Rock Properties</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>11.1</b> Surface and Interfacial Tension</a></li>
+<li class="chapter" data-level="11.2" data-path="rock-properties.html"><a href="rock-properties.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>11.2</b> Simplified Fractional Flow Equation</a></li>
+<li class="chapter" data-level="11.3" data-path="rock-properties.html"><a href="rock-properties.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>11.3</b> Buckley-Leverett Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>12</b> Pattern Floods</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>12.1</b> Recovery Efficiency</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>12.1.1</b> Patterns and Spacing</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>12.2</b> Pattern Recovery</a></li>
+<li class="chapter" data-level="12.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>12.3</b> aa</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>13</b> Volumetrics</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>13.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>14</b> Gas and Water Coning</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>14.1</b> Coning in Vertical wells</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>14.1.1</b> Meyer-Garder Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>14.2</b> Coning in Horizontal wells</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Reservoir Engineering in Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pattern-floods" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Pattern Floods</h1>
+<p>The effectiveness of a displacement process depends on many factors. These factors include reservoir and fluid characteristics that are beyond our control, such as depth, structure, and fluid type. Other factors that influence
+displacement efficiency can be controlled, however. They include the number
+and type of wells, well rates, and well locations. The distribution of wells is
+known as the well pattern. The impact of well pattern on displacement effectiveness is discussed after definitions of recovery efficiency are presented.</p>
+<div id="recovery-efficiency" class="section level2" number="12.1">
+<h2><span class="header-section-number">12.1</span> Recovery Efficiency</h2>
+<p>Recovery efficiency is quantified by comparing initial and final volumes
+of fluid in place. It takes into account volumetric and displacement efficiencies.
+The different aspects of recovery efficiency are defined and then combined to
+form overall recovery efficiency.</p>
+<p>Displacement efficiency accounts for the efficiency of recovering mobile
+hydrocarbon. To be specific, we define displacement efficiency for oil as the
+ratio of mobile oil to original oil in place at reservoir conditions</p>
+<p><span class="math display" id="eq:DisplacementEfficency">\[\begin{equation}
+    \tag{12.1}
+
+    E_{D} = \frac{S_{oi} - S_{or}}{S_{oi}}
+    
+\end{equation}\]</span></p>
+<p>Displacement efficiency is a measure of how effectively mobile hydrocarbons can be recovered.</p>
+<p>In addition to displacement efficiency, volumetric factors are needed to
+determine overall recovery efficiency. Areal and vertical sweep efficiencies are
+defined by
+<span class="math display" id="eq:ArialEfficency">\[\begin{equation}
+    \tag{12.2}
+
+    E_{A} = \frac{Sweep Area}{Total Area} \\
+    E_{V} = \frac{Sweep Thickness}{Total Thickness}
+    
+\end{equation}\]</span></p>
+<p>Reservoir flow models are useful tools for quantifying both swept area and swept
+thickness. The product of areal and vertical sweep efficiency is the volumetric
+sweep efficiency</p>
+<p><span class="math display" id="eq:VolEfficency">\[\begin{equation}
+    \tag{12.3}
+    E_{vol} = E_{A}E_{V}
+\end{equation}\]</span></p>
+<p>Overall recovery efficiency must account for both volumetric and
+displacement effects. It is therefore defined as the product of volumetric sweep
+efficiency and displacement efficiency.</p>
+<p>Notice that each of the efficiency factors in recovery efficiency can be relatively
+large,, and yet recovery efficiency will be relatively small. For example, suppose
+the areal and vertical efficiencies are each 70% and displacement efficiency is
+80%, the product of these efficiencies is approximately 39%. This means that
+even the reservoirs with the best recovery efficiency often have a substantial
+volume of unrecovered hydrocarbon remaining in the ground. The most
+important goal of improved recovery techniques is to recover this remaining
+resource</p>
+<div id="patterns-and-spacing" class="section level3" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> Patterns and Spacing</h3>
+<p>The alignment
+of the injector-producer pair represents a linear displacement process. It is the
+simplest pattern involving injection and production wells. A variety of other patterns may be defined by alining Injector producer pairs.</p>
+<p>The ratio of the number of producing wells to the number of injection wells is
+shown in Table 7-1. The patterns depicted in Table 7-1 and Figure 7-1 are
+symmetric patterns that are especially effective for reservoirs with relatively
+small dip and large areal extent. The injectors and producers are generally
+interspersed. Other patterns in which injectors and producers are grouped
+together may be needed for reservoirs with significant dip. For example, a
+peripheral or flank injection pattern may be needed to effectively flood an
+anticlinal or monoclinal reservoir</p>
+<table>
+<caption><span id="tab:unnamed-chunk-97">Table 12.1: </span>Producer-to-Injector Ratios for Common Well Patterns</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Well Pattern</th>
+<th align="left">Producer : Injector Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1.</td>
+<td align="left">Four-Spot</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="left">2.</td>
+<td align="left">Five-Spot</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">3.</td>
+<td align="left">Direct Line-drive</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">4.</td>
+<td align="left">Staggered Line-drive</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">5.</td>
+<td align="left">Seven-Spot</td>
+<td align="left">1/2</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">Nine- Spot</td>
+<td align="left">1/3</td>
+</tr>
+</tbody>
+</table>
+<p>The location of injection wells depends on factors such as reservoir
+structure, injected fluid type, and displacement mechanism. For example,
+up structure gas injection can be an effective displacement process for producing
+a monoclinal reservoir containing oil. It relies on the movement of a gas-oil
+contact and the displacement of oil to down structure production wells. On the
+other hand, down structure peripheral injection of water can be used to displace
+oil to up structure producers in an anticlinal reservoir. In this case, down structure
+water injection is used to move the oil-water contact up structure and displace
+oil to up structure production wells. The same displacement concept applies to
+production of an anticlinal oil reservoir with strong aquifer support.
+In addition to reservoir geometry and displacement process, the well
+pattern depends on the distribution of existing production wells and the desired
+spacing of wells. Well spacing is an estimate of the area being drained by a production well. A reduction in well spacing requires an increase in the density
+of production wells. The density of production wells is the number of production
+wells in a specified area. Well density can be increased by drilling additional
+wells in the space between wells in a process called infill drilling. Infill drilling
+is an effective means of altering flow patterns and improving recovery efficiency,
+but can be more expensive than a fluid displacement process. The selection of
+a development plan depends on a comparison of the economics of alternative
+development concepts. Reservoir models are especially useful tools for
+performing these studies.</p>
+</div>
+</div>
+<div id="pattern-recovery" class="section level2" number="12.2">
+<h2><span class="header-section-number">12.2</span> Pattern Recovery</h2>
+<p>Optimum performance may be achieved with the patterns defined in the
+previous section by controlling the rates of injectors and producers. These
+calculations can be performed analytically if we assume the displacing and
+displaced fluids are incompressible, the mobility ratio is one, and the reservoir
+has uniform properties. Values of injection rates for the three patterns.
+The calculation of analytical injection rates, even under a set of restrictive
+assumptions, provides a methodology for designing well patterns without using
+a reservoir simulator. More accurate estimates of injection rates under a less
+restrictive set of assumptions are obtained using reservoir simulators. For
+example, simulators have been used to correlate volumetric sweep efficiency
+with mobility ratio and permeability variation in a reservoir that is being
+subjected to a pattern flood.
+One measure of permeability
+variation is the <em>Dykstra-Parsons coefficient</em> of permeability variation.
+The <em>Dykstra-Parsons coefficient</em> can be estimated for a log-normal
+permeability distribution as</p>
+<p><span class="math display" id="eq:DPC">\[\begin{equation}
+    \tag{12.4}
+    V_{DP} = 1- exp\Big( - \sqrt {ln \Big(\frac{K_{A}}{K_{H}}\Big)} \Big)
+\end{equation}\]</span></p>
+<p>where</p>
+<p><span class="math display" id="eq:KA">\[\begin{equation}
+    \tag{12.5}
+    K_{A} = \frac{1}{n} \displaystyle\sum_{i=1}^{n} K_i \\
+    K_{H} = \frac{1}{n} \displaystyle\sum_{i=1}^{n} \frac{1}{K_i} 
+\end{equation}\]</span></p>
+<p>The Dykstra-Parsons coefficient should be in the range <code>0 &lt; VDP &lt; 1</code>. For a
+perfectly homogeneous reservoir, <code>VDP = 0</code> because <code>KA = KH</code>. An increase in
+reservoir heterogeneity increases VDP. Typical values of the Dykstra-Parsons
+coefficient are in the range 0.4 &lt; VDP &lt; 0.9.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="pattern-floods.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math <span class="im">as</span> M</span>
+<span id="cb113-2"><a href="pattern-floods.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="co"># let&#39;s take the layer-wise permeability data of an arbitrary reservoir</span></span>
+<span id="cb113-3"><a href="pattern-floods.html#cb113-3" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> [<span class="fl">365.0</span>, <span class="fl">275.0</span>, <span class="fl">165.0</span>, <span class="fl">121.0</span>, <span class="fl">73.0</span>, <span class="fl">37.0</span>, <span class="fl">19.0</span>, <span class="fl">9.3</span>, <span class="fl">3.5</span>, <span class="fl">1.9</span>]  <span class="co"># md</span></span>
+<span id="cb113-4"><a href="pattern-floods.html#cb113-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate KA</span></span>
+<span id="cb113-5"><a href="pattern-floods.html#cb113-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-6"><a href="pattern-floods.html#cb113-6" aria-hidden="true" tabindex="-1"></a>KA <span class="op">=</span> <span class="bu">sum</span>(K) <span class="op">/</span> <span class="bu">len</span>(K)</span>
+<span id="cb113-7"><a href="pattern-floods.html#cb113-7" aria-hidden="true" tabindex="-1"></a>KH <span class="op">=</span> <span class="bu">sum</span>([<span class="dv">1</span><span class="op">/</span>k <span class="cf">for</span> k <span class="kw">in</span> K])<span class="op">/</span><span class="bu">len</span>(K)</span>
+<span id="cb113-8"><a href="pattern-floods.html#cb113-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-9"><a href="pattern-floods.html#cb113-9" aria-hidden="true" tabindex="-1"></a>VDP <span class="op">=</span> <span class="dv">1</span><span class="op">-</span> M.exp(<span class="op">-</span>M.sqrt(M.log(KA<span class="op">/</span>KH)))</span>
+<span id="cb113-10"><a href="pattern-floods.html#cb113-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VDP)</span>
+<span id="cb113-11"><a href="pattern-floods.html#cb113-11" aria-hidden="true" tabindex="-1"></a><span class="fl">0.9282653209184065</span></span></code></pre></div>
+</div>
+<div id="aa" class="section level2" number="12.3">
+<h2><span class="header-section-number">12.3</span> aa</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="rock-properties.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="volumetrics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
