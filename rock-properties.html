@@ -241,7 +241,7 @@ length, e.g., <code>dynes/cm</code>,
 Assuming the radius of the capillary tube is <code>r</code>, the
 total upward force <code>Fup</code>, which holds the liquid up, is equal to the force per
 unit length of surface times the total length of surface, or
-<span class="math display" id="eq:SurfaceTension">\[\begin{equation}
+<span class="math display" id="eq:upForce">\[\begin{equation}
     \tag{11.1}
     F_{up} = 2\pi r \sigma_{gw} (cos\theta)
 \end{equation}\]</span></p>
@@ -261,8 +261,12 @@ g = acceleration due to gravity, cm/sec2<br />
 Rho_w = density of water, gm/cm3<br />
 Rho_air = density of gas, gm/cm3<br />
 </p>
-<p>Equating <span class="citation">@ref</span>(SurfaceTension) and <span class="citation">@ref</span>(downForce) solving for the surface tension
+<p>Equating <span class="citation">@ref</span>(upForce) and <span class="citation">@ref</span>(downForce) solving for the surface tension
 gives:</p>
+<p><span class="math display" id="eq:SurfaceTension">\[\begin{equation}
+    \tag{11.3}
+    F_{down} = \pi r^2 h (\rho_{w} -\rho_{air})g
+\end{equation}\]</span></p>
 <p><strong>Currey Function fitting on experimental data</strong></p>
 <div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb107-1"><a href="rock-properties.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> optimize</span>
 <span id="cb107-2"><a href="rock-properties.html#cb107-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -326,7 +330,7 @@ gives:</p>
 The fractional flow of water is the ratio of water production rate to total production rate. In the case of an oil-water system, the fractional flow of water is given by:
 <span class="math display" id="eq:Fwsimple">\[\begin{equation}
     f_{w} = \frac{q_{w}}{q_{w} + q_{o} }
-    \tag{11.3}
+    \tag{11.4}
 \end{equation}\]</span></p>
 <p>Notice that the flow rates are expressed in terms of reservoir volumes. The fractional flow of oil <code>fw</code>, and the fractional flow of water are related by <code>fw= 1 - fw</code> for an oil-water system. Based on the definition of fractional flow, we see that fractional flow should be a value between 0 and 1.</p>
 </div>
@@ -335,21 +339,21 @@ The fractional flow of water is the ratio of water production rate to total prod
 <p>A simplified fractional flow equation is obtained by replacing flow rates with Darcy’s Law in the definition of fractional flow. If we neglect capillary pressure and gravity for simplicity, we obtain
 <span class="math display" id="eq:qwEquation">\[\begin{equation}
         q_{w} = \frac{kk_{r_{w}}A}{\mu_{w}}\frac{\partial P_{w}}{\partial x}
-        \tag{11.4}
+        \tag{11.5}
     \end{equation}\]</span>
-where A is cross-sectional area and P is pressure of phase. Since capillary pressure is neglected, we have equal phase pressure so <code>Pw = Po</code>. if we put <a href="rock-properties.html#eq:qwEquation">(11.4)</a> in fractional flow equation given <a href="rock-properties.html#eq:Fwsimple">(11.3)</a> and simplify it we will get</p>
+where A is cross-sectional area and P is pressure of phase. Since capillary pressure is neglected, we have equal phase pressure so <code>Pw = Po</code>. if we put <a href="rock-properties.html#eq:qwEquation">(11.5)</a> in fractional flow equation given <a href="rock-properties.html#eq:Fwsimple">(11.4)</a> and simplify it we will get</p>
 <p><span class="math display" id="eq:fwFinal">\[\begin{equation}
-    \tag{11.5}
+    \tag{11.6}
     f_{w} = \frac{\frac{k_{r_{w}}}{\mu_{w}}}{\frac{k_{r_{w}}}{\mu_{w}} + \frac{k_{r_{o}}}{\mu_{o}}}
 \end{equation}\]</span></p>
 <p>Mobility of a phase can be defined as</p>
 <p><span class="math display" id="eq:mobility">\[\begin{equation}
-    \tag{11.6}
+    \tag{11.7}
     \lambda_{w} = \frac{k_{r_{w}}}{\mu_{w}}
 \end{equation}\]</span></p>
-<p>expressing <a href="rock-properties.html#eq:fwFinal">(11.5)</a> in term of <a href="rock-properties.html#eq:mobility">(11.6)</a></p>
+<p>expressing <a href="rock-properties.html#eq:fwFinal">(11.6)</a> in term of <a href="rock-properties.html#eq:mobility">(11.7)</a></p>
 <p><span class="math display" id="eq:fwmobility">\[\begin{equation}
-    \tag{11.7}
+    \tag{11.8}
     f_{w} = \frac{1}{1 + \frac{\lambda_{o}}{\lambda_{w}}}
 \end{equation}\]</span></p>
 <div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="rock-properties.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># taking the data from above</span></span>
@@ -380,16 +384,16 @@ where A is cross-sectional area and P is pressure of phase. Since capillary pres
 
         q_{o} = - \frac{kk_{r_{o}}A}{\mu_{o}}\Bigg(\frac{\partial P_{o}}{\partial x} + \rho_{o}g\sin\alpha&#39; \Bigg)
 
-        \tag{11.8}
+        \tag{11.9}
 \end{equation}\]</span></p>
 <p>If we differentiate capillary pressure for a water-wet system with respect to position x along the dipping bed, we find</p>
 <p><span class="math display" id="eq:capillary">\[\begin{equation}
-    \tag{11.9}
+    \tag{11.10}
     \frac{\partial P_{cow}}{\partial x} = \frac{\partial P_{o}}{\partial x} -\frac{\partial P_{w}}{\partial x}
 \end{equation}\]</span></p>
 <p>Rearranging and collecting terms gives the fractional flow to water fw in conventional oilfield units:</p>
 <p><span class="math display" id="eq:fwGravity">\[\begin{equation}
-    \tag{11.10}
+    \tag{11.11}
     f_{w} = \frac{1+0.001127 \frac{Akk_{ro}}{\mu_{o}q_{t}}\Big(\frac{\partial P_{cow}}{\partial x}  - 0.433(\gamma_{w} - \gamma_{o})\sin\alpha  \Big)}{1 + \frac{k_{ro}}{k_{rw}}\frac{\mu_{w}}{\mu_{o}}}
 \end{equation}\]</span></p>
 <p>where</p>
@@ -418,7 +422,7 @@ water viscosity <code>cp</code>,
 <p>Frontal advance theory is an application of the law of conservation of mass. Flow through a small volume element with length x and cross-sectional area A</p>
 <p>The change in water saturation per unit time can be written as</p>
 <p><span class="math display" id="eq:BLEquation">\[\begin{equation}
-    \tag{11.11}
+    \tag{11.12}
     \frac{\partial S_{w}}{\partial t} = \frac{-q}{A \phi} \frac{\partial f_{w}}{\partial S_{w}}\frac{\partial S_{w}}{\partial x}
 \end{equation}\]</span></p>
 <p>The python code to solve BL curve is given <a href="https://github.com/yohanesnuwara/pyreservoir">below</a></p>

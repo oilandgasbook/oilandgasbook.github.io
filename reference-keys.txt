@@ -3,8 +3,9 @@ eq:mod
 eq:Dranchuk
 eq:gasDensity
 eq:compress
-eq:SurfaceTension
+eq:upForce
 eq:downForce
+eq:SurfaceTension
 eq:Fwsimple
 eq:qwEquation
 eq:fwFinal
