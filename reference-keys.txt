@@ -20,8 +20,13 @@ eq:Klinkenberg
 eq:b
 eq:JohnK
 exr:unnamed-chunk-101
+eq:Dykstra
+exr:exDykstra
 exr:unnamed-chunk-103
-exr:unnamed-chunk-104
+eq:OilWaterKro
+eq:OilWaterKrw
+exr:unnamed-chunk-105
+exr:unnamed-chunk-106
 eq:Fwsimple
 eq:qwEquation
 eq:fwFinal
@@ -34,7 +39,7 @@ eq:BLEquation
 eq:DisplacementEfficency
 eq:ArialEfficency
 eq:VolEfficency
-tab:unnamed-chunk-106
+tab:unnamed-chunk-108
 eq:DPC
 eq:KA
 license
@@ -76,6 +81,8 @@ surface-and-interfacial-tension
 capillary-pressure
 leverett-j-function
 permeability
+reservoir-heterogeneity
+vertical-heterogeneity
 relative-permeability
 simplified-fractional-flow-equation
 buckley-leverett-theory
