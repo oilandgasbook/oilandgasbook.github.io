@@ -36,6 +36,8 @@ eq:qwEquationGravity
 eq:capillary
 eq:fwGravity
 eq:BLEquation
+eq:compressibility
+eq:compressibilityDensity
 eq:DisplacementEfficency
 eq:ArialEfficency
 eq:VolEfficency
@@ -84,8 +86,12 @@ permeability
 reservoir-heterogeneity
 vertical-heterogeneity
 relative-permeability
+three-phase-relative-permeability
 simplified-fractional-flow-equation
 buckley-leverett-theory
+fundamentals-of-fluid-flow-in-reservoirs
+type-of-fluids-in-reservoir
+fluid-flow-equation
 pattern-floods
 recovery-efficiency
 patterns-and-spacing
