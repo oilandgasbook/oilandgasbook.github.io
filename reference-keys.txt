@@ -8,7 +8,6 @@ eq:downForce
 eq:SurfaceTension
 eq:Pc
 exr:unnamed-chunk-95
-fig:waters
 eq:FWL
 eq:JFunction
 exr:unnamed-chunk-97
@@ -97,6 +96,7 @@ recovery-efficiency
 patterns-and-spacing
 pattern-recovery
 aa
+pressure-transient-analysis
 volumetrics
 calculating-the-gas-inplace-by-volumetric-methods
 gas-and-water-coning

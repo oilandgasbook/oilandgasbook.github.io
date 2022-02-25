@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Properties of Oil | Basic Reservoir Engineering in Python</title>
   <meta name="description" content="8 Properties of Oil | Basic Reservoir Engineering in Python" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Properties of Oil | Basic Reservoir Engineering in Python" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="fundamental-properties-of-fluid.html"/>
 <link rel="next" href="rock-properties.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,13 +50,15 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -115,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 </head>
 
@@ -212,17 +216,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>12.2</b> Pattern Recovery</a></li>
 <li class="chapter" data-level="12.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>12.3</b> aa</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>13</b> Volumetrics</a>
+<li class="chapter" data-level="13" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html"><i class="fa fa-check"></i><b>13</b> Pressure Transient Analysis</a></li>
+<li class="chapter" data-level="14" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>14</b> Volumetrics</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>13.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+<li class="chapter" data-level="14.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>14.1</b> Calculating the Gas inplace by volumetric methods</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>14</b> Gas and Water Coning</a>
+<li class="chapter" data-level="15" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>15</b> Gas and Water Coning</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>14.1</b> Coning in Vertical wells</a>
+<li class="chapter" data-level="15.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>15.1</b> Coning in Vertical wells</a>
 <ul>
-<li class="chapter" data-level="14.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>14.1.1</b> Meyer-Garder Correlation</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>15.1.1</b> Meyer-Garder Correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>14.2</b> Coning in Horizontal wells</a></li>
+<li class="chapter" data-level="15.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>15.2</b> Coning in Horizontal wells</a></li>
 </ul></li>
 </ul>
 
@@ -246,31 +251,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Basic oil properties from compositions</strong></p>
 <p>The properties of mixture of oil can be calculated from molar fraction of individual components.</p>
 <p>for example</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="properties-of-oil.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lets take four component</span></span>
-<span id="cb111-2"><a href="properties-of-oil.html#cb111-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&#39;C3&#39;</span>, <span class="st">&#39;nC4&#39;</span>, <span class="st">&#39;nC5&#39;</span>, <span class="st">&#39;nC6&#39;</span>]     <span class="co"># name of component</span></span>
-<span id="cb111-3"><a href="properties-of-oil.html#cb111-3" aria-hidden="true" tabindex="-1"></a>frac <span class="op">=</span> [<span class="fl">0.05</span>, <span class="fl">0.15</span>, <span class="fl">0.2</span>, <span class="fl">0.6</span>]           <span class="co"># volume fraction</span></span>
-<span id="cb111-4"><a href="properties-of-oil.html#cb111-4" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> [<span class="fl">507.2</span>, <span class="fl">583.9</span>, <span class="fl">629.5</span>, <span class="fl">659.8</span>]      <span class="co"># Mass density</span></span>
-<span id="cb111-5"><a href="properties-of-oil.html#cb111-5" aria-hidden="true" tabindex="-1"></a>MW <span class="op">=</span> [<span class="fl">44.09</span>, <span class="fl">58.12</span>, <span class="fl">72.15</span>, <span class="fl">86.17</span>]       <span class="co"># Molecular weight</span></span>
-<span id="cb111-6"><a href="properties-of-oil.html#cb111-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-7"><a href="properties-of-oil.html#cb111-7" aria-hidden="true" tabindex="-1"></a>ncomp <span class="op">=</span> <span class="bu">len</span>(names)</span>
-<span id="cb111-8"><a href="properties-of-oil.html#cb111-8" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> [rho[i]<span class="op">*</span>frac[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)] <span class="co"># Mass of each component</span></span>
-<span id="cb111-9"><a href="properties-of-oil.html#cb111-9" aria-hidden="true" tabindex="-1"></a>n  <span class="op">=</span> [m[i]<span class="op">/</span>MW[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (ncomp)]   <span class="co"># MOles of each component</span></span>
-<span id="cb111-10"><a href="properties-of-oil.html#cb111-10" aria-hidden="true" tabindex="-1"></a>Mass <span class="op">=</span> <span class="bu">sum</span>(m)</span>
-<span id="cb111-11"><a href="properties-of-oil.html#cb111-11" aria-hidden="true" tabindex="-1"></a>moles <span class="op">=</span> <span class="bu">sum</span>(n)</span>
-<span id="cb111-12"><a href="properties-of-oil.html#cb111-12" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> [m[i]<span class="op">/</span> Mass <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)]          <span class="co"># Weight Fraction</span></span>
-<span id="cb111-13"><a href="properties-of-oil.html#cb111-13" aria-hidden="true" tabindex="-1"></a>mol_frac <span class="op">=</span> [n[i]<span class="op">/</span> moles <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)]  <span class="co"># Mole fraction</span></span>
-<span id="cb111-14"><a href="properties-of-oil.html#cb111-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-15"><a href="properties-of-oil.html#cb111-15" aria-hidden="true" tabindex="-1"></a>Total_MW <span class="op">=</span> Mass <span class="op">/</span> moles     <span class="co"># Molecular weight of total composition</span></span>
-<span id="cb111-16"><a href="properties-of-oil.html#cb111-16" aria-hidden="true" tabindex="-1"></a>Sg <span class="op">=</span> Mass <span class="op">/</span> <span class="dv">1000</span>            <span class="co"># specific gravity</span></span>
-<span id="cb111-17"><a href="properties-of-oil.html#cb111-17" aria-hidden="true" tabindex="-1"></a>API <span class="op">=</span> <span class="fl">141.5</span> <span class="op">/</span> Sg <span class="op">-</span> <span class="fl">131.5</span>    <span class="co"># Oil API</span></span>
-<span id="cb111-18"><a href="properties-of-oil.html#cb111-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture MW:&#39;</span>, <span class="bu">round</span>(Total_MW,<span class="dv">3</span>), <span class="st">&#39;lbm/lbm mol&#39;</span>)</span>
-<span id="cb111-19"><a href="properties-of-oil.html#cb111-19" aria-hidden="true" tabindex="-1"></a>Mixture MW: <span class="fl">75.371</span> lbm<span class="op">/</span>lbm mol</span>
-<span id="cb111-20"><a href="properties-of-oil.html#cb111-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture Density:&#39;</span>, <span class="bu">round</span>(Mass, <span class="dv">3</span>), <span class="st">&#39;kg/m3&#39;</span>)</span>
-<span id="cb111-21"><a href="properties-of-oil.html#cb111-21" aria-hidden="true" tabindex="-1"></a>Mixture Density: <span class="fl">634.725</span> kg<span class="op">/</span>m3</span>
-<span id="cb111-22"><a href="properties-of-oil.html#cb111-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture SG::&#39;</span>, <span class="bu">round</span>(Sg ,<span class="dv">3</span>))</span>
-<span id="cb111-23"><a href="properties-of-oil.html#cb111-23" aria-hidden="true" tabindex="-1"></a>Mixture SG:: <span class="fl">0.635</span></span>
-<span id="cb111-24"><a href="properties-of-oil.html#cb111-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;degrees API:&#39;</span>, <span class="bu">round</span>(API,<span class="dv">3</span>), <span class="st">&#39;API&#39;</span>)</span>
-<span id="cb111-25"><a href="properties-of-oil.html#cb111-25" aria-hidden="true" tabindex="-1"></a>degrees API: <span class="fl">91.431</span> API</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb107-1"><a href="properties-of-oil.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lets take four component</span></span>
+<span id="cb107-2"><a href="properties-of-oil.html#cb107-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&#39;C3&#39;</span>, <span class="st">&#39;nC4&#39;</span>, <span class="st">&#39;nC5&#39;</span>, <span class="st">&#39;nC6&#39;</span>]     <span class="co"># name of component</span></span>
+<span id="cb107-3"><a href="properties-of-oil.html#cb107-3" aria-hidden="true" tabindex="-1"></a>frac <span class="op">=</span> [<span class="fl">0.05</span>, <span class="fl">0.15</span>, <span class="fl">0.2</span>, <span class="fl">0.6</span>]           <span class="co"># volume fraction</span></span>
+<span id="cb107-4"><a href="properties-of-oil.html#cb107-4" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> [<span class="fl">507.2</span>, <span class="fl">583.9</span>, <span class="fl">629.5</span>, <span class="fl">659.8</span>]      <span class="co"># Mass density</span></span>
+<span id="cb107-5"><a href="properties-of-oil.html#cb107-5" aria-hidden="true" tabindex="-1"></a>MW <span class="op">=</span> [<span class="fl">44.09</span>, <span class="fl">58.12</span>, <span class="fl">72.15</span>, <span class="fl">86.17</span>]       <span class="co"># Molecular weight</span></span>
+<span id="cb107-6"><a href="properties-of-oil.html#cb107-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-7"><a href="properties-of-oil.html#cb107-7" aria-hidden="true" tabindex="-1"></a>ncomp <span class="op">=</span> <span class="bu">len</span>(names)</span>
+<span id="cb107-8"><a href="properties-of-oil.html#cb107-8" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> [rho[i]<span class="op">*</span>frac[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)] <span class="co"># Mass of each component</span></span>
+<span id="cb107-9"><a href="properties-of-oil.html#cb107-9" aria-hidden="true" tabindex="-1"></a>n  <span class="op">=</span> [m[i]<span class="op">/</span>MW[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (ncomp)]   <span class="co"># MOles of each component</span></span>
+<span id="cb107-10"><a href="properties-of-oil.html#cb107-10" aria-hidden="true" tabindex="-1"></a>Mass <span class="op">=</span> <span class="bu">sum</span>(m)</span>
+<span id="cb107-11"><a href="properties-of-oil.html#cb107-11" aria-hidden="true" tabindex="-1"></a>moles <span class="op">=</span> <span class="bu">sum</span>(n)</span>
+<span id="cb107-12"><a href="properties-of-oil.html#cb107-12" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> [m[i]<span class="op">/</span> Mass <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)]          <span class="co"># Weight Fraction</span></span>
+<span id="cb107-13"><a href="properties-of-oil.html#cb107-13" aria-hidden="true" tabindex="-1"></a>mol_frac <span class="op">=</span> [n[i]<span class="op">/</span> moles <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)]  <span class="co"># Mole fraction</span></span>
+<span id="cb107-14"><a href="properties-of-oil.html#cb107-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-15"><a href="properties-of-oil.html#cb107-15" aria-hidden="true" tabindex="-1"></a>Total_MW <span class="op">=</span> Mass <span class="op">/</span> moles     <span class="co"># Molecular weight of total composition</span></span>
+<span id="cb107-16"><a href="properties-of-oil.html#cb107-16" aria-hidden="true" tabindex="-1"></a>Sg <span class="op">=</span> Mass <span class="op">/</span> <span class="dv">1000</span>            <span class="co"># specific gravity</span></span>
+<span id="cb107-17"><a href="properties-of-oil.html#cb107-17" aria-hidden="true" tabindex="-1"></a>API <span class="op">=</span> <span class="fl">141.5</span> <span class="op">/</span> Sg <span class="op">-</span> <span class="fl">131.5</span>    <span class="co"># Oil API</span></span>
+<span id="cb107-18"><a href="properties-of-oil.html#cb107-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture MW:&#39;</span>, <span class="bu">round</span>(Total_MW,<span class="dv">3</span>), <span class="st">&#39;lbm/lbm mol&#39;</span>)</span>
+<span id="cb107-19"><a href="properties-of-oil.html#cb107-19" aria-hidden="true" tabindex="-1"></a>Mixture MW: <span class="fl">75.371</span> lbm<span class="op">/</span>lbm mol</span>
+<span id="cb107-20"><a href="properties-of-oil.html#cb107-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture Density:&#39;</span>, <span class="bu">round</span>(Mass, <span class="dv">3</span>), <span class="st">&#39;kg/m3&#39;</span>)</span>
+<span id="cb107-21"><a href="properties-of-oil.html#cb107-21" aria-hidden="true" tabindex="-1"></a>Mixture Density: <span class="fl">634.725</span> kg<span class="op">/</span>m3</span>
+<span id="cb107-22"><a href="properties-of-oil.html#cb107-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture SG::&#39;</span>, <span class="bu">round</span>(Sg ,<span class="dv">3</span>))</span>
+<span id="cb107-23"><a href="properties-of-oil.html#cb107-23" aria-hidden="true" tabindex="-1"></a>Mixture SG:: <span class="fl">0.635</span></span>
+<span id="cb107-24"><a href="properties-of-oil.html#cb107-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;degrees API:&#39;</span>, <span class="bu">round</span>(API,<span class="dv">3</span>), <span class="st">&#39;API&#39;</span>)</span>
+<span id="cb107-25"><a href="properties-of-oil.html#cb107-25" aria-hidden="true" tabindex="-1"></a>degrees API: <span class="fl">91.431</span> API</span></code></pre></div>
 
 </div>
             </section>
@@ -283,7 +288,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -302,6 +306,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -322,6 +327,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }

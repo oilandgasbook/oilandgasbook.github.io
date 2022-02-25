@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>13 Volumetrics | Basic Reservoir Engineering in Python</title>
-  <meta name="description" content="13 Volumetrics | Basic Reservoir Engineering in Python" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <title>14 Volumetrics | Basic Reservoir Engineering in Python</title>
+  <meta name="description" content="14 Volumetrics | Basic Reservoir Engineering in Python" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="13 Volumetrics | Basic Reservoir Engineering in Python" />
+  <meta property="og:title" content="14 Volumetrics | Basic Reservoir Engineering in Python" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="13 Volumetrics | Basic Reservoir Engineering in Python" />
+  <meta name="twitter:title" content="14 Volumetrics | Basic Reservoir Engineering in Python" />
   
   
   
@@ -30,10 +30,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="pattern-floods.html"/>
+<link rel="prev" href="pressure-transient-analysis.html"/>
 <link rel="next" href="gas-and-water-coning.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,13 +50,15 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -115,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 </head>
 
@@ -212,17 +216,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>12.2</b> Pattern Recovery</a></li>
 <li class="chapter" data-level="12.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>12.3</b> aa</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>13</b> Volumetrics</a>
+<li class="chapter" data-level="13" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html"><i class="fa fa-check"></i><b>13</b> Pressure Transient Analysis</a></li>
+<li class="chapter" data-level="14" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>14</b> Volumetrics</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>13.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+<li class="chapter" data-level="14.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>14.1</b> Calculating the Gas inplace by volumetric methods</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>14</b> Gas and Water Coning</a>
+<li class="chapter" data-level="15" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>15</b> Gas and Water Coning</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>14.1</b> Coning in Vertical wells</a>
+<li class="chapter" data-level="15.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>15.1</b> Coning in Vertical wells</a>
 <ul>
-<li class="chapter" data-level="14.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>14.1.1</b> Meyer-Garder Correlation</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>15.1.1</b> Meyer-Garder Correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>14.2</b> Coning in Horizontal wells</a></li>
+<li class="chapter" data-level="15.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>15.2</b> Coning in Horizontal wells</a></li>
 </ul></li>
 </ul>
 
@@ -241,60 +246,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="volumetrics" class="section level1" number="13">
-<h1><span class="header-section-number">13</span> Volumetrics</h1>
-<div id="calculating-the-gas-inplace-by-volumetric-methods" class="section level2" number="13.1">
-<h2><span class="header-section-number">13.1</span> Calculating the Gas inplace by volumetric methods</h2>
+<div id="volumetrics" class="section level1" number="14">
+<h1><span class="header-section-number">14</span> Volumetrics</h1>
+<div id="calculating-the-gas-inplace-by-volumetric-methods" class="section level2" number="14.1">
+<h2><span class="header-section-number">14.1</span> Calculating the Gas inplace by volumetric methods</h2>
 <p>The standard cubic feet gas inplace, G is given by:</p>
 <p><span class="math display">\[\begin{equation}
 G = \frac{43,560 V_{b} \phi (1-S_{w})}{B_{g}}    
 \end{equation}\]</span></p>
 <p><strong>Contour Methods using trangulation mmethods</strong></p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb124-1"><a href="volumetrics.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tricontour (triangulation) method&quot;</span></span>
-<span id="cb124-2"><a href="volumetrics.html#cb124-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-3"><a href="volumetrics.html#cb124-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.tri <span class="im">as</span> tri</span>
-<span id="cb124-4"><a href="volumetrics.html#cb124-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb124-5"><a href="volumetrics.html#cb124-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.cm <span class="im">as</span> cm</span>
-<span id="cb124-6"><a href="volumetrics.html#cb124-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb124-7"><a href="volumetrics.html#cb124-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb124-8"><a href="volumetrics.html#cb124-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb124-9"><a href="volumetrics.html#cb124-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.interpolate <span class="im">import</span> griddata</span>
-<span id="cb124-10"><a href="volumetrics.html#cb124-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-11"><a href="volumetrics.html#cb124-11" aria-hidden="true" tabindex="-1"></a><span class="co"># data</span></span>
-<span id="cb124-12"><a href="volumetrics.html#cb124-12" aria-hidden="true" tabindex="-1"></a>welldat <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/data_volumetrics.csv&#39;</span>)</span>
-<span id="cb124-13"><a href="volumetrics.html#cb124-13" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> welldat.x, welldat.y, welldat.z</span>
-<span id="cb124-14"><a href="volumetrics.html#cb124-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-15"><a href="volumetrics.html#cb124-15" aria-hidden="true" tabindex="-1"></a>triang <span class="op">=</span> tri.Triangulation(x, y)</span>
-<span id="cb124-16"><a href="volumetrics.html#cb124-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-17"><a href="volumetrics.html#cb124-17" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
-<span id="cb124-18"><a href="volumetrics.html#cb124-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Refine data</span></span>
-<span id="cb124-19"><a href="volumetrics.html#cb124-19" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
-<span id="cb124-20"><a href="volumetrics.html#cb124-20" aria-hidden="true" tabindex="-1"></a>refiner <span class="op">=</span> tri.UniformTriRefiner(triang)</span>
-<span id="cb124-21"><a href="volumetrics.html#cb124-21" aria-hidden="true" tabindex="-1"></a>tri_refi, z_test_refi <span class="op">=</span> refiner.refine_field(z, subdiv<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb124-22"><a href="volumetrics.html#cb124-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-23"><a href="volumetrics.html#cb124-23" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
-<span id="cb124-24"><a href="volumetrics.html#cb124-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the triangulation and the high-res iso-contours</span></span>
-<span id="cb124-25"><a href="volumetrics.html#cb124-25" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
-<span id="cb124-26"><a href="volumetrics.html#cb124-26" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">20</span>))</span>
-<span id="cb124-27"><a href="volumetrics.html#cb124-27" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Figure size <span class="dv">200</span><span class="bn">0x2000</span> <span class="cf">with</span> <span class="dv">0</span> Axes<span class="op">&gt;</span></span>
-<span id="cb124-28"><a href="volumetrics.html#cb124-28" aria-hidden="true" tabindex="-1"></a>plt.gca().set_aspect(<span class="st">&#39;equal&#39;</span>)</span>
-<span id="cb124-29"><a href="volumetrics.html#cb124-29" aria-hidden="true" tabindex="-1"></a>plt.triplot(triang, lw<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">&#39;white&#39;</span>)</span>
-<span id="cb124-30"><a href="volumetrics.html#cb124-30" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x0000000064AC4B80</span><span class="op">&gt;</span>, <span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x0000000064AC4EB0</span><span class="op">&gt;</span>]</span>
-<span id="cb124-31"><a href="volumetrics.html#cb124-31" aria-hidden="true" tabindex="-1"></a>levels <span class="op">=</span> np.linspace(<span class="bu">min</span>(z)<span class="op">+</span><span class="dv">10</span>, <span class="bu">max</span>(z)<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)  <span class="co">##contour range, divided by 10 levels</span></span>
-<span id="cb124-32"><a href="volumetrics.html#cb124-32" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> cm.get_cmap(name<span class="op">=</span><span class="st">&#39;terrain&#39;</span>, lut<span class="op">=</span><span class="va">None</span>)</span>
-<span id="cb124-33"><a href="volumetrics.html#cb124-33" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.tricontourf(tri_refi, z_test_refi, levels<span class="op">=</span>levels, cmap<span class="op">=</span>cmap)</span>
-<span id="cb124-34"><a href="volumetrics.html#cb124-34" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.tricontour(tri_refi, z_test_refi, levels<span class="op">=</span>levels,</span>
-<span id="cb124-35"><a href="volumetrics.html#cb124-35" aria-hidden="true" tabindex="-1"></a>               colors<span class="op">=</span>[<span class="st">&#39;0.25&#39;</span>, <span class="st">&#39;0.5&#39;</span>, <span class="st">&#39;0.5&#39;</span>, <span class="st">&#39;0.5&#39;</span>, <span class="st">&#39;0.5&#39;</span>],</span>
-<span id="cb124-36"><a href="volumetrics.html#cb124-36" aria-hidden="true" tabindex="-1"></a>               linewidths<span class="op">=</span>[<span class="fl">1.0</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>])</span>
-<span id="cb124-37"><a href="volumetrics.html#cb124-37" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, <span class="st">&#39;ko&#39;</span>, ms<span class="op">=</span><span class="dv">3</span>) <span class="co"># plot the well points</span></span>
-<span id="cb124-38"><a href="volumetrics.html#cb124-38" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x0000000064BD7610</span><span class="op">&gt;</span>]</span>
-<span id="cb124-39"><a href="volumetrics.html#cb124-39" aria-hidden="true" tabindex="-1"></a>plt.clabel(fig, fig.levels[::<span class="dv">5</span>], inline<span class="op">=</span><span class="dv">1</span>, fontsize<span class="op">=</span><span class="dv">10</span>) <span class="co"># give labels for contours, fig.levels[::x] controls the frequency of labels</span></span>
-<span id="cb124-40"><a href="volumetrics.html#cb124-40" aria-hidden="true" tabindex="-1"></a>                                                        <span class="co"># lesser ::x, more populated by labels</span></span>
-<span id="cb124-41"><a href="volumetrics.html#cb124-41" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a <span class="bu">list</span> of <span class="dv">4</span> text.Text objects<span class="op">&gt;</span></span>
-<span id="cb124-42"><a href="volumetrics.html#cb124-42" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Structure Map using Triangulation Method&quot;</span>, pad<span class="op">=</span><span class="dv">10</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb124-43"><a href="volumetrics.html#cb124-43" aria-hidden="true" tabindex="-1"></a>Text(<span class="fl">0.5</span>, <span class="fl">1.0</span>, <span class="st">&#39;Structure Map using Triangulation Method&#39;</span>)</span>
-<span id="cb124-44"><a href="volumetrics.html#cb124-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="images/Tricontour-1.png" /><!-- --></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb120-1"><a href="volumetrics.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tricontour (triangulation) method&quot;</span></span>
+<span id="cb120-2"><a href="volumetrics.html#cb120-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-3"><a href="volumetrics.html#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.tri <span class="im">as</span> tri</span>
+<span id="cb120-4"><a href="volumetrics.html#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb120-5"><a href="volumetrics.html#cb120-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.cm <span class="im">as</span> cm</span>
+<span id="cb120-6"><a href="volumetrics.html#cb120-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb120-7"><a href="volumetrics.html#cb120-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb120-8"><a href="volumetrics.html#cb120-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb120-9"><a href="volumetrics.html#cb120-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.interpolate <span class="im">import</span> griddata</span>
+<span id="cb120-10"><a href="volumetrics.html#cb120-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-11"><a href="volumetrics.html#cb120-11" aria-hidden="true" tabindex="-1"></a><span class="co"># data</span></span>
+<span id="cb120-12"><a href="volumetrics.html#cb120-12" aria-hidden="true" tabindex="-1"></a>welldat <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/data_volumetrics.csv&#39;</span>)</span>
+<span id="cb120-13"><a href="volumetrics.html#cb120-13" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> welldat.x, welldat.y, welldat.z</span>
+<span id="cb120-14"><a href="volumetrics.html#cb120-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-15"><a href="volumetrics.html#cb120-15" aria-hidden="true" tabindex="-1"></a>triang <span class="op">=</span> tri.Triangulation(x, y)</span>
+<span id="cb120-16"><a href="volumetrics.html#cb120-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-17"><a href="volumetrics.html#cb120-17" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
+<span id="cb120-18"><a href="volumetrics.html#cb120-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Refine data</span></span>
+<span id="cb120-19"><a href="volumetrics.html#cb120-19" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
+<span id="cb120-20"><a href="volumetrics.html#cb120-20" aria-hidden="true" tabindex="-1"></a>refiner <span class="op">=</span> tri.UniformTriRefiner(triang)</span>
+<span id="cb120-21"><a href="volumetrics.html#cb120-21" aria-hidden="true" tabindex="-1"></a>tri_refi, z_test_refi <span class="op">=</span> refiner.refine_field(z, subdiv<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb120-22"><a href="volumetrics.html#cb120-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-23"><a href="volumetrics.html#cb120-23" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
+<span id="cb120-24"><a href="volumetrics.html#cb120-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the triangulation and the high-res iso-contours</span></span>
+<span id="cb120-25"><a href="volumetrics.html#cb120-25" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
+<span id="cb120-26"><a href="volumetrics.html#cb120-26" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">20</span>))</span>
+<span id="cb120-27"><a href="volumetrics.html#cb120-27" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Figure size <span class="dv">200</span><span class="bn">0x2000</span> <span class="cf">with</span> <span class="dv">0</span> Axes<span class="op">&gt;</span></span>
+<span id="cb120-28"><a href="volumetrics.html#cb120-28" aria-hidden="true" tabindex="-1"></a>plt.gca().set_aspect(<span class="st">&#39;equal&#39;</span>)</span>
+<span id="cb120-29"><a href="volumetrics.html#cb120-29" aria-hidden="true" tabindex="-1"></a>plt.triplot(triang, lw<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">&#39;white&#39;</span>)</span>
+<span id="cb120-30"><a href="volumetrics.html#cb120-30" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x0000000030897D90</span><span class="op">&gt;</span>, <span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000003118DFD0</span><span class="op">&gt;</span>]</span>
+<span id="cb120-31"><a href="volumetrics.html#cb120-31" aria-hidden="true" tabindex="-1"></a>levels <span class="op">=</span> np.linspace(<span class="bu">min</span>(z)<span class="op">+</span><span class="dv">10</span>, <span class="bu">max</span>(z)<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)  <span class="co">##contour range, divided by 10 levels</span></span>
+<span id="cb120-32"><a href="volumetrics.html#cb120-32" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> cm.get_cmap(name<span class="op">=</span><span class="st">&#39;terrain&#39;</span>, lut<span class="op">=</span><span class="va">None</span>)</span>
+<span id="cb120-33"><a href="volumetrics.html#cb120-33" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.tricontourf(tri_refi, z_test_refi, levels<span class="op">=</span>levels, cmap<span class="op">=</span>cmap)</span>
+<span id="cb120-34"><a href="volumetrics.html#cb120-34" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.tricontour(tri_refi, z_test_refi, levels<span class="op">=</span>levels,</span>
+<span id="cb120-35"><a href="volumetrics.html#cb120-35" aria-hidden="true" tabindex="-1"></a>               colors<span class="op">=</span>[<span class="st">&#39;0.25&#39;</span>, <span class="st">&#39;0.5&#39;</span>, <span class="st">&#39;0.5&#39;</span>, <span class="st">&#39;0.5&#39;</span>, <span class="st">&#39;0.5&#39;</span>],</span>
+<span id="cb120-36"><a href="volumetrics.html#cb120-36" aria-hidden="true" tabindex="-1"></a>               linewidths<span class="op">=</span>[<span class="fl">1.0</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>])</span>
+<span id="cb120-37"><a href="volumetrics.html#cb120-37" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, <span class="st">&#39;ko&#39;</span>, ms<span class="op">=</span><span class="dv">3</span>) <span class="co"># plot the well points</span></span>
+<span id="cb120-38"><a href="volumetrics.html#cb120-38" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000003088A880</span><span class="op">&gt;</span>]</span>
+<span id="cb120-39"><a href="volumetrics.html#cb120-39" aria-hidden="true" tabindex="-1"></a>plt.clabel(fig, fig.levels[::<span class="dv">5</span>], inline<span class="op">=</span><span class="dv">1</span>, fontsize<span class="op">=</span><span class="dv">10</span>) <span class="co"># give labels for contours, fig.levels[::x] controls the frequency of labels</span></span>
+<span id="cb120-40"><a href="volumetrics.html#cb120-40" aria-hidden="true" tabindex="-1"></a>                                                        <span class="co"># lesser ::x, more populated by labels</span></span>
+<span id="cb120-41"><a href="volumetrics.html#cb120-41" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a <span class="bu">list</span> of <span class="dv">4</span> text.Text objects<span class="op">&gt;</span></span>
+<span id="cb120-42"><a href="volumetrics.html#cb120-42" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Structure Map using Triangulation Method&quot;</span>, pad<span class="op">=</span><span class="dv">10</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb120-43"><a href="volumetrics.html#cb120-43" aria-hidden="true" tabindex="-1"></a>Text(<span class="fl">0.5</span>, <span class="fl">1.0</span>, <span class="st">&#39;Structure Map using Triangulation Method&#39;</span>)</span>
+<span id="cb120-44"><a href="volumetrics.html#cb120-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="images/Tricontour-1.png" width="1920" /></p>
 
 </div>
 </div>
@@ -303,12 +308,11 @@ G = \frac{43,560 V_{b} \phi (1-S_{w})}{B_{g}}
           </div>
         </div>
       </div>
-<a href="pattern-floods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pressure-transient-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="gas-and-water-coning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -327,6 +331,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -347,6 +352,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }

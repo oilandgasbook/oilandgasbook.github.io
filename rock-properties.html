@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Rock Properties | Basic Reservoir Engineering in Python</title>
   <meta name="description" content="9 Rock Properties | Basic Reservoir Engineering in Python" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Rock Properties | Basic Reservoir Engineering in Python" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="properties-of-oil.html"/>
 <link rel="next" href="relative-permeability.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,13 +50,15 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -115,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 </head>
 
@@ -212,17 +216,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>12.2</b> Pattern Recovery</a></li>
 <li class="chapter" data-level="12.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>12.3</b> aa</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>13</b> Volumetrics</a>
+<li class="chapter" data-level="13" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html"><i class="fa fa-check"></i><b>13</b> Pressure Transient Analysis</a></li>
+<li class="chapter" data-level="14" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>14</b> Volumetrics</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>13.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+<li class="chapter" data-level="14.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>14.1</b> Calculating the Gas inplace by volumetric methods</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>14</b> Gas and Water Coning</a>
+<li class="chapter" data-level="15" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>15</b> Gas and Water Coning</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>14.1</b> Coning in Vertical wells</a>
+<li class="chapter" data-level="15.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>15.1</b> Coning in Vertical wells</a>
 <ul>
-<li class="chapter" data-level="14.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>14.1.1</b> Meyer-Garder Correlation</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>15.1.1</b> Meyer-Garder Correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>14.2</b> Coning in Horizontal wells</a></li>
+<li class="chapter" data-level="15.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>15.2</b> Coning in Horizontal wells</a></li>
 </ul></li>
 </ul>
 
@@ -310,24 +315,24 @@ fluid at a value greater than that in the wetting fluid</p>
 theta = 30° rhow = 1.0 gm/cm3 rhooil = 0.75 gm/cm3
 r = 0.0001 cm sigma = 25 dynes/cm
 </div>
-<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="rock-properties.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb112-2"><a href="rock-properties.html#cb112-2" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">30</span></span>
-<span id="cb112-3"><a href="rock-properties.html#cb112-3" aria-hidden="true" tabindex="-1"></a>rhow <span class="op">=</span> <span class="fl">1.0</span> <span class="co"># gm/cm3 </span></span>
-<span id="cb112-4"><a href="rock-properties.html#cb112-4" aria-hidden="true" tabindex="-1"></a>rhooil <span class="op">=</span> <span class="fl">0.75</span> <span class="co">#gm/cm3</span></span>
-<span id="cb112-5"><a href="rock-properties.html#cb112-5" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="fl">0.0001</span> <span class="co">#cm </span></span>
-<span id="cb112-6"><a href="rock-properties.html#cb112-6" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="dv">25</span> <span class="co">#dynes/cm</span></span>
-<span id="cb112-7"><a href="rock-properties.html#cb112-7" aria-hidden="true" tabindex="-1"></a>Pc <span class="op">=</span> <span class="dv">2</span><span class="op">*</span> sigma <span class="op">*</span> math.cos(math.pi<span class="op">*</span>theta<span class="op">/</span><span class="dv">180</span>)<span class="op">/</span>r</span>
-<span id="cb112-8"><a href="rock-properties.html#cb112-8" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">2</span><span class="op">*</span> sigma <span class="op">*</span> math.cos(math.pi<span class="op">*</span>theta<span class="op">/</span><span class="dv">180</span>)<span class="op">/</span>(r<span class="op">*</span><span class="fl">980.7</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.75</span>))</span>
-<span id="cb112-9"><a href="rock-properties.html#cb112-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb112-10"><a href="rock-properties.html#cb112-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;capillary pressure : = </span><span class="sc">{Pc}</span><span class="ss"> dynes/cm2 &#39;</span>)</span>
-<span id="cb112-11"><a href="rock-properties.html#cb112-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Since 1 dyne/cm2 = 1.45 * 10^-5 psi, then</span></span>
-<span id="cb112-12"><a href="rock-properties.html#cb112-12" aria-hidden="true" tabindex="-1"></a>capillary pressure : <span class="op">=</span> <span class="fl">433012.70189221937</span> dynes<span class="op">/</span>cm2 </span>
-<span id="cb112-13"><a href="rock-properties.html#cb112-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;capillary pressure : = </span><span class="sc">{Pc</span> <span class="op">*</span> <span class="fl">1.45</span><span class="op">*</span><span class="dv">10</span><span class="op">**</span>(<span class="op">-</span><span class="dv">5</span>)<span class="sc">}</span><span class="ss"> psi &#39;</span>)</span>
-<span id="cb112-14"><a href="rock-properties.html#cb112-14" aria-hidden="true" tabindex="-1"></a>capillary pressure : <span class="op">=</span> <span class="fl">6.278684177437181</span> psi </span>
-<span id="cb112-15"><a href="rock-properties.html#cb112-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39; Capillary rise : = </span><span class="sc">{h}</span><span class="ss"> cm &#39;</span>)</span>
-<span id="cb112-16"><a href="rock-properties.html#cb112-16" aria-hidden="true" tabindex="-1"></a> Capillary rise : <span class="op">=</span> <span class="fl">1766.1372566216758</span> cm </span>
-<span id="cb112-17"><a href="rock-properties.html#cb112-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39; Capillary rise : = </span><span class="sc">{h</span><span class="op">*</span> <span class="fl">0.032808</span><span class="sc">}</span><span class="ss"> ft &#39;</span>)</span>
-<span id="cb112-18"><a href="rock-properties.html#cb112-18" aria-hidden="true" tabindex="-1"></a> Capillary rise : <span class="op">=</span> <span class="fl">57.94343111524393</span> ft </span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="rock-properties.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb108-2"><a href="rock-properties.html#cb108-2" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb108-3"><a href="rock-properties.html#cb108-3" aria-hidden="true" tabindex="-1"></a>rhow <span class="op">=</span> <span class="fl">1.0</span> <span class="co"># gm/cm3 </span></span>
+<span id="cb108-4"><a href="rock-properties.html#cb108-4" aria-hidden="true" tabindex="-1"></a>rhooil <span class="op">=</span> <span class="fl">0.75</span> <span class="co">#gm/cm3</span></span>
+<span id="cb108-5"><a href="rock-properties.html#cb108-5" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="fl">0.0001</span> <span class="co">#cm </span></span>
+<span id="cb108-6"><a href="rock-properties.html#cb108-6" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="dv">25</span> <span class="co">#dynes/cm</span></span>
+<span id="cb108-7"><a href="rock-properties.html#cb108-7" aria-hidden="true" tabindex="-1"></a>Pc <span class="op">=</span> <span class="dv">2</span><span class="op">*</span> sigma <span class="op">*</span> math.cos(math.pi<span class="op">*</span>theta<span class="op">/</span><span class="dv">180</span>)<span class="op">/</span>r</span>
+<span id="cb108-8"><a href="rock-properties.html#cb108-8" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">2</span><span class="op">*</span> sigma <span class="op">*</span> math.cos(math.pi<span class="op">*</span>theta<span class="op">/</span><span class="dv">180</span>)<span class="op">/</span>(r<span class="op">*</span><span class="fl">980.7</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.75</span>))</span>
+<span id="cb108-9"><a href="rock-properties.html#cb108-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-10"><a href="rock-properties.html#cb108-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;capillary pressure : = </span><span class="sc">{Pc}</span><span class="ss"> dynes/cm2 &#39;</span>)</span>
+<span id="cb108-11"><a href="rock-properties.html#cb108-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Since 1 dyne/cm2 = 1.45 * 10^-5 psi, then</span></span>
+<span id="cb108-12"><a href="rock-properties.html#cb108-12" aria-hidden="true" tabindex="-1"></a>capillary pressure : <span class="op">=</span> <span class="fl">433012.70189221937</span> dynes<span class="op">/</span>cm2 </span>
+<span id="cb108-13"><a href="rock-properties.html#cb108-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;capillary pressure : = </span><span class="sc">{Pc</span> <span class="op">*</span> <span class="fl">1.45</span><span class="op">*</span><span class="dv">10</span><span class="op">**</span>(<span class="op">-</span><span class="dv">5</span>)<span class="sc">}</span><span class="ss"> psi &#39;</span>)</span>
+<span id="cb108-14"><a href="rock-properties.html#cb108-14" aria-hidden="true" tabindex="-1"></a>capillary pressure : <span class="op">=</span> <span class="fl">6.278684177437181</span> psi </span>
+<span id="cb108-15"><a href="rock-properties.html#cb108-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39; Capillary rise : = </span><span class="sc">{h}</span><span class="ss"> cm &#39;</span>)</span>
+<span id="cb108-16"><a href="rock-properties.html#cb108-16" aria-hidden="true" tabindex="-1"></a> Capillary rise : <span class="op">=</span> <span class="fl">1766.1372566216758</span> cm </span>
+<span id="cb108-17"><a href="rock-properties.html#cb108-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39; Capillary rise : = </span><span class="sc">{h</span><span class="op">*</span> <span class="fl">0.032808</span><span class="sc">}</span><span class="ss"> ft &#39;</span>)</span>
+<span id="cb108-18"><a href="rock-properties.html#cb108-18" aria-hidden="true" tabindex="-1"></a> Capillary rise : <span class="op">=</span> <span class="fl">57.94343111524393</span> ft </span></code></pre></div>
 <p><strong>Capillary Hysteresis</strong></p>
 <p>It is generally agreed that the pore spaces of reservoir rocks were originally filled with water, after which oil moved into the reservoir, displacing some of the water and reducing the water to some residual saturation. When discovered, the reservoir pore spaces are filled with a connatewater saturation and an oil saturation. The process
 of generating the capillary pressure curve by displacing the wetting
@@ -341,13 +346,8 @@ contact angles of fluid interfaces on solids are different</p>
 <p><strong>Initial Saturation Distribution in a Reservoir</strong></p>
 <p>An important application of the concept of capillary pressures pertains
 to the fluid distribution in a reservoir prior to its exploitation</p>
-<div class="figure" style="text-align: center"><span id="fig:waters"></span>
-<img src="images/Water_saturation.JPG" alt="Water saturation profile"  />
-<p class="caption">
-Figure 9.1: Water saturation profile
-</p>
-</div>
-<p>Figure <a href="rock-properties.html#fig:waters">9.1</a> illustrates an idealized gas, oil, and water distribution in a
+<p><img src="images/Water_saturation.JPG" alt="Water saturation profile"  />
+Figure <a href="#fig:waters"><strong>??</strong></a> illustrates an idealized gas, oil, and water distribution in a
 reservoir. The figure indicates that the saturations are gradually charging
 from 100% water in the water zone to irreducible water saturation some
 vertical distance above the water zone. This vertical area is referred to as
@@ -403,14 +403,14 @@ engineering analysis indicated that the reservoir is better described at a
 porosity value of 19% and an absolute permeability of 120 md. Generate
 the capillary pressure data for the reservoir.
 </div>
-<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="rock-properties.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb113-2"><a href="rock-properties.html#cb113-2" aria-hidden="true" tabindex="-1"></a>Sw <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.8</span>, <span class="fl">0.6</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>]</span>
-<span id="cb113-3"><a href="rock-properties.html#cb113-3" aria-hidden="true" tabindex="-1"></a>Pc <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">0.6</span>, <span class="fl">0.75</span>, <span class="fl">1.05</span>, <span class="fl">1.75</span>]</span>
-<span id="cb113-4"><a href="rock-properties.html#cb113-4" aria-hidden="true" tabindex="-1"></a>Jsw <span class="op">=</span> [<span class="fl">0.21645</span><span class="op">*</span>(pc <span class="op">/</span><span class="dv">50</span>)<span class="op">*</span>math.sqrt(<span class="dv">80</span><span class="op">/</span><span class="fl">0.16</span>) <span class="cf">for</span> pc <span class="kw">in</span> Pc]</span>
-<span id="cb113-5"><a href="rock-properties.html#cb113-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb113-6"><a href="rock-properties.html#cb113-6" aria-hidden="true" tabindex="-1"></a>Pc_reservoir <span class="op">=</span> [J<span class="op">*</span><span class="dv">50</span><span class="op">/</span>(<span class="fl">0.21645</span> <span class="op">*</span> math.sqrt(<span class="dv">120</span><span class="op">/</span><span class="fl">0.19</span>)) <span class="cf">for</span> J <span class="kw">in</span> Jsw]</span>
-<span id="cb113-7"><a href="rock-properties.html#cb113-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Pc_reservoir  )</span>
-<span id="cb113-8"><a href="rock-properties.html#cb113-8" aria-hidden="true" tabindex="-1"></a>[<span class="fl">0.44487826050130475</span>, <span class="fl">0.5338539126015657</span>, <span class="fl">0.6673173907519571</span>, <span class="fl">0.9342443470527398</span>, <span class="fl">1.5570739117545664</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb109-1"><a href="rock-properties.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb109-2"><a href="rock-properties.html#cb109-2" aria-hidden="true" tabindex="-1"></a>Sw <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.8</span>, <span class="fl">0.6</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>]</span>
+<span id="cb109-3"><a href="rock-properties.html#cb109-3" aria-hidden="true" tabindex="-1"></a>Pc <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">0.6</span>, <span class="fl">0.75</span>, <span class="fl">1.05</span>, <span class="fl">1.75</span>]</span>
+<span id="cb109-4"><a href="rock-properties.html#cb109-4" aria-hidden="true" tabindex="-1"></a>Jsw <span class="op">=</span> [<span class="fl">0.21645</span><span class="op">*</span>(pc <span class="op">/</span><span class="dv">50</span>)<span class="op">*</span>math.sqrt(<span class="dv">80</span><span class="op">/</span><span class="fl">0.16</span>) <span class="cf">for</span> pc <span class="kw">in</span> Pc]</span>
+<span id="cb109-5"><a href="rock-properties.html#cb109-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-6"><a href="rock-properties.html#cb109-6" aria-hidden="true" tabindex="-1"></a>Pc_reservoir <span class="op">=</span> [J<span class="op">*</span><span class="dv">50</span><span class="op">/</span>(<span class="fl">0.21645</span> <span class="op">*</span> math.sqrt(<span class="dv">120</span><span class="op">/</span><span class="fl">0.19</span>)) <span class="cf">for</span> J <span class="kw">in</span> Jsw]</span>
+<span id="cb109-7"><a href="rock-properties.html#cb109-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Pc_reservoir  )</span>
+<span id="cb109-8"><a href="rock-properties.html#cb109-8" aria-hidden="true" tabindex="-1"></a>[<span class="fl">0.44487826050130475</span>, <span class="fl">0.5338539126015657</span>, <span class="fl">0.6673173907519571</span>, <span class="fl">0.9342443470527398</span>, <span class="fl">1.5570739117545664</span>]</span></code></pre></div>
 </div>
 <div id="permeability" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> Permeability</h2>
@@ -443,14 +443,14 @@ The rock sample is 4 cm long and 3 cm2 in cross section. The brine has a
 viscosity of 1.0 cp and is flowing a constant rate of 0.5 cm3/sec under a
 2.0 atm pressure differential. Calculate the absolute permeability
 </div>
-<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="rock-properties.html#cb114-1" aria-hidden="true" tabindex="-1"></a>Q  <span class="op">=</span> <span class="fl">0.5</span> </span>
-<span id="cb114-2"><a href="rock-properties.html#cb114-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb114-3"><a href="rock-properties.html#cb114-3" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb114-4"><a href="rock-properties.html#cb114-4" aria-hidden="true" tabindex="-1"></a>mu <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb114-5"><a href="rock-properties.html#cb114-5" aria-hidden="true" tabindex="-1"></a>dp <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb114-6"><a href="rock-properties.html#cb114-6" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> Q <span class="op">*</span> mu <span class="op">*</span> L <span class="op">/</span>(dp<span class="op">*</span>A)</span>
-<span id="cb114-7"><a href="rock-properties.html#cb114-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Absolute permeability := </span><span class="sc">{K}</span><span class="ss"> darcys&#39;</span> )</span>
-<span id="cb114-8"><a href="rock-properties.html#cb114-8" aria-hidden="true" tabindex="-1"></a>Absolute permeability :<span class="op">=</span> <span class="fl">0.3333333333333333</span> darcys</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="rock-properties.html#cb110-1" aria-hidden="true" tabindex="-1"></a>Q  <span class="op">=</span> <span class="fl">0.5</span> </span>
+<span id="cb110-2"><a href="rock-properties.html#cb110-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb110-3"><a href="rock-properties.html#cb110-3" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb110-4"><a href="rock-properties.html#cb110-4" aria-hidden="true" tabindex="-1"></a>mu <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb110-5"><a href="rock-properties.html#cb110-5" aria-hidden="true" tabindex="-1"></a>dp <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb110-6"><a href="rock-properties.html#cb110-6" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> Q <span class="op">*</span> mu <span class="op">*</span> L <span class="op">/</span>(dp<span class="op">*</span>A)</span>
+<span id="cb110-7"><a href="rock-properties.html#cb110-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Absolute permeability := </span><span class="sc">{K}</span><span class="ss"> darcys&#39;</span> )</span>
+<span id="cb110-8"><a href="rock-properties.html#cb110-8" aria-hidden="true" tabindex="-1"></a>Absolute permeability :<span class="op">=</span> <span class="fl">0.3333333333333333</span> darcys</span></code></pre></div>
 <p>In using dry gas in measuring the permeability, the gas volumetric
 flow rate <code>q</code> varies with pressure because the gas is a highly compressible
 fluid. Therefore, the value of <code>q</code> at the average pressure in the core must
@@ -512,15 +512,15 @@ liquid permeability by the following expression:
 <div class="exercise">
 <span id="exr:unnamed-chunk-101" class="exercise"><strong>Exercise 9.4  </strong></span>The permeability of a core plug is measured by air. Only one measurement is made at a mean pressure of 2.152 psi. The air permeability is 46.6 md. Estimate the absolute permeability of the core sample.
 </div>
-<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="rock-properties.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span>
-<span id="cb115-2"><a href="rock-properties.html#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun_Klink(K):</span>
-<span id="cb115-3"><a href="rock-properties.html#cb115-3" aria-hidden="true" tabindex="-1"></a>    pm <span class="op">=</span> <span class="fl">2.152</span></span>
-<span id="cb115-4"><a href="rock-properties.html#cb115-4" aria-hidden="true" tabindex="-1"></a>    Kg <span class="op">=</span> <span class="fl">46.6</span></span>
-<span id="cb115-5"><a href="rock-properties.html#cb115-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">6.9</span><span class="op">*</span>K[<span class="dv">0</span>]<span class="op">**</span><span class="fl">0.64</span> <span class="op">+</span> pm <span class="op">*</span>K[<span class="dv">0</span>] <span class="op">-</span> pm<span class="op">*</span> Kg</span>
-<span id="cb115-6"><a href="rock-properties.html#cb115-6" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> fsolve(fun_Klink, [<span class="dv">30</span>])</span>
-<span id="cb115-7"><a href="rock-properties.html#cb115-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-8"><a href="rock-properties.html#cb115-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Liquid permeability := </span><span class="sc">{</span>root[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">&#39;</span>)</span>
-<span id="cb115-9"><a href="rock-properties.html#cb115-9" aria-hidden="true" tabindex="-1"></a>Liquid permeability :<span class="op">=</span> <span class="fl">22.849002279471133</span></span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="rock-properties.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span>
+<span id="cb111-2"><a href="rock-properties.html#cb111-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fun_Klink(K):</span>
+<span id="cb111-3"><a href="rock-properties.html#cb111-3" aria-hidden="true" tabindex="-1"></a>    pm <span class="op">=</span> <span class="fl">2.152</span></span>
+<span id="cb111-4"><a href="rock-properties.html#cb111-4" aria-hidden="true" tabindex="-1"></a>    Kg <span class="op">=</span> <span class="fl">46.6</span></span>
+<span id="cb111-5"><a href="rock-properties.html#cb111-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">6.9</span><span class="op">*</span>K[<span class="dv">0</span>]<span class="op">**</span><span class="fl">0.64</span> <span class="op">+</span> pm <span class="op">*</span>K[<span class="dv">0</span>] <span class="op">-</span> pm<span class="op">*</span> Kg</span>
+<span id="cb111-6"><a href="rock-properties.html#cb111-6" aria-hidden="true" tabindex="-1"></a>root <span class="op">=</span> fsolve(fun_Klink, [<span class="dv">30</span>])</span>
+<span id="cb111-7"><a href="rock-properties.html#cb111-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-8"><a href="rock-properties.html#cb111-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Liquid permeability := </span><span class="sc">{</span>root[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb111-9"><a href="rock-properties.html#cb111-9" aria-hidden="true" tabindex="-1"></a>Liquid permeability :<span class="op">=</span> <span class="fl">22.849002279471133</span></span></code></pre></div>
 </div>
 <div id="reservoir-heterogeneity" class="section level2" number="9.5">
 <h2><span class="header-section-number">9.5</span> Reservoir Heterogeneity</h2>
@@ -570,31 +570,31 @@ steps for determining the coefficient V are summarized below:</p>
 <p>K = [435.0, 254.0, 196.0, 172.0, 166.0, 158.0, 153.0, 147.0, 128.0, 105.0, 100.0, 91.0, 90.0, 83.0, 72.0 , 62.0, 49.0, 44.0, 40.0, 35.0, 32.0, 30.0, 28.0, 27.0, 20.0, 9.0]</p>
 h = [2.0, 2.0, 2.0, 3.0, 2.0, 2.0, 2.0, 2.0, 1.0, 2.0, 1.0, 2.5, 2.5, 2.0, 1.5, 2.0, 6.5, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
 </div>
-<div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="rock-properties.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> cumsum</span>
-<span id="cb116-2"><a href="rock-properties.html#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb116-3"><a href="rock-properties.html#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
-<span id="cb116-4"><a href="rock-properties.html#cb116-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-5"><a href="rock-properties.html#cb116-5" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> [<span class="fl">435.0</span>, <span class="fl">254.0</span>, <span class="fl">196.0</span>,   <span class="fl">172.0</span>,  <span class="fl">166.0</span>,  <span class="fl">158.0</span>,  <span class="fl">153.0</span>,  <span class="fl">147.0</span>,  <span class="fl">128.0</span>,  <span class="fl">105.0</span>,  <span class="fl">100.0</span>,  <span class="fl">91.0</span>,   <span class="fl">90.0</span>,   <span class="fl">83.0</span>,   <span class="fl">72.0</span> , <span class="fl">62.0</span>,    <span class="fl">49.0</span>,   <span class="fl">44.0</span>,   <span class="fl">40.0</span>,   <span class="fl">35.0</span>,   <span class="fl">32.0</span>,   <span class="fl">30.0</span>,   <span class="fl">28.0</span>,   <span class="fl">27.0</span>,   <span class="fl">20.0</span>,   <span class="fl">9.0</span>]</span>
-<span id="cb116-6"><a href="rock-properties.html#cb116-6" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> [<span class="fl">2.0</span>,   <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">3.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">1.0</span>,    <span class="fl">2.0</span>,    <span class="fl">1.0</span>,    <span class="fl">2.5</span>,    <span class="fl">2.5</span>,    <span class="fl">2.0</span>,    <span class="fl">1.5</span>,    <span class="fl">2.0</span>,    <span class="fl">6.5</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>, <span class="fl">2.0</span>,   <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>]</span>
-<span id="cb116-7"><a href="rock-properties.html#cb116-7" aria-hidden="true" tabindex="-1"></a>cum_h <span class="op">=</span> <span class="bu">list</span>(cumsum(h))</span>
-<span id="cb116-8"><a href="rock-properties.html#cb116-8" aria-hidden="true" tabindex="-1"></a>max_h <span class="op">=</span> <span class="bu">max</span>(cum_h)</span>
-<span id="cb116-9"><a href="rock-properties.html#cb116-9" aria-hidden="true" tabindex="-1"></a>percent_h <span class="op">=</span> [x<span class="op">*</span><span class="dv">100</span><span class="op">/</span>max_h <span class="cf">for</span> x <span class="kw">in</span> cum_h]</span>
-<span id="cb116-10"><a href="rock-properties.html#cb116-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-11"><a href="rock-properties.html#cb116-11" aria-hidden="true" tabindex="-1"></a>sublist_K <span class="op">=</span> [math.log(K[idx]) <span class="cf">for</span> idx <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(percent_h)) <span class="cf">if</span> (percent_h[idx]<span class="op">&gt;</span><span class="dv">40</span>) <span class="op">&amp;</span> (percent_h[idx]<span class="op">&lt;</span><span class="dv">90</span>) ]</span>
-<span id="cb116-12"><a href="rock-properties.html#cb116-12" aria-hidden="true" tabindex="-1"></a>sublist_h <span class="op">=</span> [percent_h[idx] <span class="cf">for</span> idx <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(percent_h)) <span class="cf">if</span> (percent_h[idx]<span class="op">&gt;</span><span class="dv">40</span>) <span class="op">&amp;</span> (percent_h[idx]<span class="op">&lt;</span><span class="dv">90</span>) ]</span>
-<span id="cb116-13"><a href="rock-properties.html#cb116-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-14"><a href="rock-properties.html#cb116-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> line(x, a, b):</span>
-<span id="cb116-15"><a href="rock-properties.html#cb116-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">*</span>x <span class="op">+</span> b</span>
-<span id="cb116-16"><a href="rock-properties.html#cb116-16" aria-hidden="true" tabindex="-1"></a>popt, _ <span class="op">=</span> curve_fit(line, sublist_h, sublist_K)</span>
-<span id="cb116-17"><a href="rock-properties.html#cb116-17" aria-hidden="true" tabindex="-1"></a>K_50 <span class="op">=</span> math.exp(line(<span class="dv">50</span>, popt[<span class="dv">0</span>], popt[<span class="dv">1</span>]))</span>
-<span id="cb116-18"><a href="rock-properties.html#cb116-18" aria-hidden="true" tabindex="-1"></a>K_84 <span class="op">=</span> math.exp(line(<span class="fl">84.1</span>, popt[<span class="dv">0</span>], popt[<span class="dv">1</span>]))</span>
-<span id="cb116-19"><a href="rock-properties.html#cb116-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(K_50)</span>
-<span id="cb116-20"><a href="rock-properties.html#cb116-20" aria-hidden="true" tabindex="-1"></a><span class="fl">77.69782663556242</span></span>
-<span id="cb116-21"><a href="rock-properties.html#cb116-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(K_84)</span>
-<span id="cb116-22"><a href="rock-properties.html#cb116-22" aria-hidden="true" tabindex="-1"></a><span class="fl">31.19170566168342</span></span>
-<span id="cb116-23"><a href="rock-properties.html#cb116-23" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> (K_50<span class="op">-</span> K_84)<span class="op">/</span>K_50</span>
-<span id="cb116-24"><a href="rock-properties.html#cb116-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(V)</span>
-<span id="cb116-25"><a href="rock-properties.html#cb116-25" aria-hidden="true" tabindex="-1"></a><span class="fl">0.5985511176781497</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="rock-properties.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy <span class="im">import</span> cumsum</span>
+<span id="cb112-2"><a href="rock-properties.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb112-3"><a href="rock-properties.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
+<span id="cb112-4"><a href="rock-properties.html#cb112-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-5"><a href="rock-properties.html#cb112-5" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> [<span class="fl">435.0</span>, <span class="fl">254.0</span>, <span class="fl">196.0</span>,   <span class="fl">172.0</span>,  <span class="fl">166.0</span>,  <span class="fl">158.0</span>,  <span class="fl">153.0</span>,  <span class="fl">147.0</span>,  <span class="fl">128.0</span>,  <span class="fl">105.0</span>,  <span class="fl">100.0</span>,  <span class="fl">91.0</span>,   <span class="fl">90.0</span>,   <span class="fl">83.0</span>,   <span class="fl">72.0</span> , <span class="fl">62.0</span>,    <span class="fl">49.0</span>,   <span class="fl">44.0</span>,   <span class="fl">40.0</span>,   <span class="fl">35.0</span>,   <span class="fl">32.0</span>,   <span class="fl">30.0</span>,   <span class="fl">28.0</span>,   <span class="fl">27.0</span>,   <span class="fl">20.0</span>,   <span class="fl">9.0</span>]</span>
+<span id="cb112-6"><a href="rock-properties.html#cb112-6" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> [<span class="fl">2.0</span>,   <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">3.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">1.0</span>,    <span class="fl">2.0</span>,    <span class="fl">1.0</span>,    <span class="fl">2.5</span>,    <span class="fl">2.5</span>,    <span class="fl">2.0</span>,    <span class="fl">1.5</span>,    <span class="fl">2.0</span>,    <span class="fl">6.5</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>, <span class="fl">2.0</span>,   <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>,    <span class="fl">2.0</span>]</span>
+<span id="cb112-7"><a href="rock-properties.html#cb112-7" aria-hidden="true" tabindex="-1"></a>cum_h <span class="op">=</span> <span class="bu">list</span>(cumsum(h))</span>
+<span id="cb112-8"><a href="rock-properties.html#cb112-8" aria-hidden="true" tabindex="-1"></a>max_h <span class="op">=</span> <span class="bu">max</span>(cum_h)</span>
+<span id="cb112-9"><a href="rock-properties.html#cb112-9" aria-hidden="true" tabindex="-1"></a>percent_h <span class="op">=</span> [x<span class="op">*</span><span class="dv">100</span><span class="op">/</span>max_h <span class="cf">for</span> x <span class="kw">in</span> cum_h]</span>
+<span id="cb112-10"><a href="rock-properties.html#cb112-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-11"><a href="rock-properties.html#cb112-11" aria-hidden="true" tabindex="-1"></a>sublist_K <span class="op">=</span> [math.log(K[idx]) <span class="cf">for</span> idx <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(percent_h)) <span class="cf">if</span> (percent_h[idx]<span class="op">&gt;</span><span class="dv">40</span>) <span class="op">&amp;</span> (percent_h[idx]<span class="op">&lt;</span><span class="dv">90</span>) ]</span>
+<span id="cb112-12"><a href="rock-properties.html#cb112-12" aria-hidden="true" tabindex="-1"></a>sublist_h <span class="op">=</span> [percent_h[idx] <span class="cf">for</span> idx <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(percent_h)) <span class="cf">if</span> (percent_h[idx]<span class="op">&gt;</span><span class="dv">40</span>) <span class="op">&amp;</span> (percent_h[idx]<span class="op">&lt;</span><span class="dv">90</span>) ]</span>
+<span id="cb112-13"><a href="rock-properties.html#cb112-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-14"><a href="rock-properties.html#cb112-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> line(x, a, b):</span>
+<span id="cb112-15"><a href="rock-properties.html#cb112-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">*</span>x <span class="op">+</span> b</span>
+<span id="cb112-16"><a href="rock-properties.html#cb112-16" aria-hidden="true" tabindex="-1"></a>popt, _ <span class="op">=</span> curve_fit(line, sublist_h, sublist_K)</span>
+<span id="cb112-17"><a href="rock-properties.html#cb112-17" aria-hidden="true" tabindex="-1"></a>K_50 <span class="op">=</span> math.exp(line(<span class="dv">50</span>, popt[<span class="dv">0</span>], popt[<span class="dv">1</span>]))</span>
+<span id="cb112-18"><a href="rock-properties.html#cb112-18" aria-hidden="true" tabindex="-1"></a>K_84 <span class="op">=</span> math.exp(line(<span class="fl">84.1</span>, popt[<span class="dv">0</span>], popt[<span class="dv">1</span>]))</span>
+<span id="cb112-19"><a href="rock-properties.html#cb112-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(K_50)</span>
+<span id="cb112-20"><a href="rock-properties.html#cb112-20" aria-hidden="true" tabindex="-1"></a><span class="fl">77.69782663556242</span></span>
+<span id="cb112-21"><a href="rock-properties.html#cb112-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(K_84)</span>
+<span id="cb112-22"><a href="rock-properties.html#cb112-22" aria-hidden="true" tabindex="-1"></a><span class="fl">31.19170566168342</span></span>
+<span id="cb112-23"><a href="rock-properties.html#cb112-23" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> (K_50<span class="op">-</span> K_84)<span class="op">/</span>K_50</span>
+<span id="cb112-24"><a href="rock-properties.html#cb112-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(V)</span>
+<span id="cb112-25"><a href="rock-properties.html#cb112-25" aria-hidden="true" tabindex="-1"></a><span class="fl">0.5985511176781497</span></span></code></pre></div>
 <p>It should be noted that if all the permeabilities are equal, the numerator or <a href="rock-properties.html#eq:Dykstra">(9.13)</a> would be zero, and the V would also be zero. This
 would be the case for a completely homogeneous system.</p>
 <p><strong>Lorenz Coefficient L</strong></p>
@@ -615,16 +615,16 @@ quantitatively by calculating the Lorenz coefficient. The coefficient is defined
 <div class="exercise">
 <span id="exr:unnamed-chunk-103" class="exercise"><strong>Exercise 9.6  </strong></span>Using data given in exercise <a href="rock-properties.html#exr:exDykstra">9.5</a> calculate Lorenz Coefficient.
 </div>
-<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="rock-properties.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
-<span id="cb117-2"><a href="rock-properties.html#cb117-2" aria-hidden="true" tabindex="-1"></a>KH <span class="op">=</span> [K[i]<span class="op">*</span>h[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(h))]</span>
-<span id="cb117-3"><a href="rock-properties.html#cb117-3" aria-hidden="true" tabindex="-1"></a>Norm_KH <span class="op">=</span> [(<span class="bu">max</span>(KH)<span class="op">-</span>KH[i])<span class="op">/</span>(<span class="bu">max</span>(KH)<span class="op">-</span><span class="bu">min</span>(KH)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(h))]</span>
-<span id="cb117-4"><a href="rock-properties.html#cb117-4" aria-hidden="true" tabindex="-1"></a>Norm_h <span class="op">=</span> [(percent_h[i]<span class="op">-</span> <span class="bu">min</span>(percent_h))<span class="op">/</span>(<span class="bu">max</span>(percent_h)<span class="op">-</span><span class="bu">min</span>(percent_h)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(h))]</span>
-<span id="cb117-5"><a href="rock-properties.html#cb117-5" aria-hidden="true" tabindex="-1"></a>Area <span class="op">=</span> integrate.simpson(Norm_KH, Norm_h)</span>
-<span id="cb117-6"><a href="rock-properties.html#cb117-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Area)</span>
-<span id="cb117-7"><a href="rock-properties.html#cb117-7" aria-hidden="true" tabindex="-1"></a><span class="fl">0.7621997578319712</span></span>
-<span id="cb117-8"><a href="rock-properties.html#cb117-8" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> (Area <span class="op">-</span> <span class="fl">0.5</span>)<span class="op">/</span><span class="fl">0.5</span></span>
-<span id="cb117-9"><a href="rock-properties.html#cb117-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(L)</span>
-<span id="cb117-10"><a href="rock-properties.html#cb117-10" aria-hidden="true" tabindex="-1"></a><span class="fl">0.5243995156639425</span></span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="rock-properties.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> integrate</span>
+<span id="cb113-2"><a href="rock-properties.html#cb113-2" aria-hidden="true" tabindex="-1"></a>KH <span class="op">=</span> [K[i]<span class="op">*</span>h[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(h))]</span>
+<span id="cb113-3"><a href="rock-properties.html#cb113-3" aria-hidden="true" tabindex="-1"></a>Norm_KH <span class="op">=</span> [(<span class="bu">max</span>(KH)<span class="op">-</span>KH[i])<span class="op">/</span>(<span class="bu">max</span>(KH)<span class="op">-</span><span class="bu">min</span>(KH)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(h))]</span>
+<span id="cb113-4"><a href="rock-properties.html#cb113-4" aria-hidden="true" tabindex="-1"></a>Norm_h <span class="op">=</span> [(percent_h[i]<span class="op">-</span> <span class="bu">min</span>(percent_h))<span class="op">/</span>(<span class="bu">max</span>(percent_h)<span class="op">-</span><span class="bu">min</span>(percent_h)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(h))]</span>
+<span id="cb113-5"><a href="rock-properties.html#cb113-5" aria-hidden="true" tabindex="-1"></a>Area <span class="op">=</span> integrate.simpson(Norm_KH, Norm_h)</span>
+<span id="cb113-6"><a href="rock-properties.html#cb113-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Area)</span>
+<span id="cb113-7"><a href="rock-properties.html#cb113-7" aria-hidden="true" tabindex="-1"></a><span class="fl">0.7621997578319712</span></span>
+<span id="cb113-8"><a href="rock-properties.html#cb113-8" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> (Area <span class="op">-</span> <span class="fl">0.5</span>)<span class="op">/</span><span class="fl">0.5</span></span>
+<span id="cb113-9"><a href="rock-properties.html#cb113-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(L)</span>
+<span id="cb113-10"><a href="rock-properties.html#cb113-10" aria-hidden="true" tabindex="-1"></a><span class="fl">0.5243995156639425</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -638,7 +638,6 @@ quantitatively by calculating the Lorenz coefficient. The coefficient is defined
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -657,6 +656,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -677,6 +677,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }

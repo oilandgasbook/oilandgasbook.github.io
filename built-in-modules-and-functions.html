@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Built in Modules and Functions | Basic Reservoir Engineering in Python</title>
   <meta name="description" content="4 Built in Modules and Functions | Basic Reservoir Engineering in Python" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Built in Modules and Functions | Basic Reservoir Engineering in Python" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="simple-mathematics.html"/>
 <link rel="next" href="functions.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,13 +50,15 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -115,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 </head>
 
@@ -212,17 +216,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>12.2</b> Pattern Recovery</a></li>
 <li class="chapter" data-level="12.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>12.3</b> aa</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>13</b> Volumetrics</a>
+<li class="chapter" data-level="13" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html"><i class="fa fa-check"></i><b>13</b> Pressure Transient Analysis</a></li>
+<li class="chapter" data-level="14" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>14</b> Volumetrics</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>13.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+<li class="chapter" data-level="14.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>14.1</b> Calculating the Gas inplace by volumetric methods</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>14</b> Gas and Water Coning</a>
+<li class="chapter" data-level="15" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>15</b> Gas and Water Coning</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>14.1</b> Coning in Vertical wells</a>
+<li class="chapter" data-level="15.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>15.1</b> Coning in Vertical wells</a>
 <ul>
-<li class="chapter" data-level="14.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>14.1.1</b> Meyer-Garder Correlation</a></li>
+<li class="chapter" data-level="15.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>15.1.1</b> Meyer-Garder Correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>14.2</b> Coning in Horizontal wells</a></li>
+<li class="chapter" data-level="15.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>15.2</b> Coning in Horizontal wells</a></li>
 </ul></li>
 </ul>
 
@@ -246,49 +251,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>A module is a file containing Python definitions and statements. Function is a piece of code which execute some
 logic.</p>
 <p>To check the built in function in python we can use <em>dir()</em>.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="built-in-modules-and-functions.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(__builtins__)   <span class="co"># returns list of all the builtin modules and function available in python</span></span>
-<span id="cb87-2"><a href="built-in-modules-and-functions.html#cb87-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-3"><a href="built-in-modules-and-functions.html#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb87-4"><a href="built-in-modules-and-functions.html#cb87-4" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(math)           <span class="co"># return all the function available in math package</span></span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="built-in-modules-and-functions.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(__builtins__)   <span class="co"># returns list of all the builtin modules and function available in python</span></span>
+<span id="cb83-2"><a href="built-in-modules-and-functions.html#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="built-in-modules-and-functions.html#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb83-4"><a href="built-in-modules-and-functions.html#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(math)           <span class="co"># return all the function available in math package</span></span></code></pre></div>
 <p>To know the functionality of any function, we can use built in function <em>help()</em>.</p>
 <div id="creating-a-module" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Creating a module</h2>
 <p>A module is an importable file containing definitions and statements. A module can be created by creating a .py file.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="built-in-modules-and-functions.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  create a file and name it hello.py</span></span>
-<span id="cb88-2"><a href="built-in-modules-and-functions.html#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> say_hello():</span>
-<span id="cb88-3"><a href="built-in-modules-and-functions.html#cb88-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="built-in-modules-and-functions.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  create a file and name it hello.py</span></span>
+<span id="cb84-2"><a href="built-in-modules-and-functions.html#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> say_hello():</span>
+<span id="cb84-3"><a href="built-in-modules-and-functions.html#cb84-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello!&quot;</span>)</span></code></pre></div>
 <p>Functions in a module can be used by importing the module. For modules that you have made, they will need to be in the same directory as the file that you are importing them into. Modules can be imported by other modules.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="built-in-modules-and-functions.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># in another file greet.py</span></span>
-<span id="cb89-2"><a href="built-in-modules-and-functions.html#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hello</span>
-<span id="cb89-3"><a href="built-in-modules-and-functions.html#cb89-3" aria-hidden="true" tabindex="-1"></a>hello.say_hello()</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="built-in-modules-and-functions.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># in another file greet.py</span></span>
+<span id="cb85-2"><a href="built-in-modules-and-functions.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hello</span>
+<span id="cb85-3"><a href="built-in-modules-and-functions.html#cb85-3" aria-hidden="true" tabindex="-1"></a>hello.say_hello()</span></code></pre></div>
 <p>Specific functions of a module can be imported</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="built-in-modules-and-functions.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greet.py</span></span>
-<span id="cb90-2"><a href="built-in-modules-and-functions.html#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> hello <span class="im">import</span> say_hello</span>
-<span id="cb90-3"><a href="built-in-modules-and-functions.html#cb90-3" aria-hidden="true" tabindex="-1"></a>say_hello()</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="built-in-modules-and-functions.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greet.py</span></span>
+<span id="cb86-2"><a href="built-in-modules-and-functions.html#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> hello <span class="im">import</span> say_hello</span>
+<span id="cb86-3"><a href="built-in-modules-and-functions.html#cb86-3" aria-hidden="true" tabindex="-1"></a>say_hello()</span></code></pre></div>
 <p>Modules can be aliased. we can give an alias to the module if required. <em>as</em> keyword is used to alias a module.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="built-in-modules-and-functions.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greet.py</span></span>
-<span id="cb91-2"><a href="built-in-modules-and-functions.html#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hello <span class="im">as</span> ai</span>
-<span id="cb91-3"><a href="built-in-modules-and-functions.html#cb91-3" aria-hidden="true" tabindex="-1"></a>ai.say_hello()</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="built-in-modules-and-functions.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greet.py</span></span>
+<span id="cb87-2"><a href="built-in-modules-and-functions.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hello <span class="im">as</span> ai</span>
+<span id="cb87-3"><a href="built-in-modules-and-functions.html#cb87-3" aria-hidden="true" tabindex="-1"></a>ai.say_hello()</span></code></pre></div>
 </div>
 <div id="installing-external-modules-using-pip" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Installing external modules using pip</h2>
 <p><em>pip</em> is your friend when you need to install any package from the plethora of choices available at the python
 package index. <em>pip</em> is already installed if you’re using Python 2 &gt;= 2.7.9 or Python 3 &gt;= 3.4.</p>
 <p><strong>Finding a package</strong></p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="built-in-modules-and-functions.html#cb92-1" aria-hidden="true" tabindex="-1"></a>$ pip search <span class="op">&lt;</span>query<span class="op">&gt;</span></span>
-<span id="cb92-2"><a href="built-in-modules-and-functions.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Searches for packages whose name or summary contains &lt;query&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="built-in-modules-and-functions.html#cb88-1" aria-hidden="true" tabindex="-1"></a>$ pip search <span class="op">&lt;</span>query<span class="op">&gt;</span></span>
+<span id="cb88-2"><a href="built-in-modules-and-functions.html#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Searches for packages whose name or summary contains &lt;query&gt;</span></span></code></pre></div>
 <p><strong>Installing a package</strong> is as simple as typing in a terminal / command-prompt.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="built-in-modules-and-functions.html#cb93-1" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name] <span class="co"># latest version of the package</span></span>
-<span id="cb93-2"><a href="built-in-modules-and-functions.html#cb93-2" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name]<span class="op">==</span>x.x.x <span class="co"># specific version of the package</span></span>
-<span id="cb93-3"><a href="built-in-modules-and-functions.html#cb93-3" aria-hidden="true" tabindex="-1"></a>$ pip install <span class="st">&#39;[package_name]&gt;=x.x.x&#39;</span> <span class="co"># minimum version of the package</span></span>
-<span id="cb93-4"><a href="built-in-modules-and-functions.html#cb93-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-5"><a href="built-in-modules-and-functions.html#cb93-5" aria-hidden="true" tabindex="-1"></a><span class="co"># where x.x.x is the version number of the package you want to install</span></span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="built-in-modules-and-functions.html#cb89-1" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name] <span class="co"># latest version of the package</span></span>
+<span id="cb89-2"><a href="built-in-modules-and-functions.html#cb89-2" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name]<span class="op">==</span>x.x.x <span class="co"># specific version of the package</span></span>
+<span id="cb89-3"><a href="built-in-modules-and-functions.html#cb89-3" aria-hidden="true" tabindex="-1"></a>$ pip install <span class="st">&#39;[package_name]&gt;=x.x.x&#39;</span> <span class="co"># minimum version of the package</span></span>
+<span id="cb89-4"><a href="built-in-modules-and-functions.html#cb89-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-5"><a href="built-in-modules-and-functions.html#cb89-5" aria-hidden="true" tabindex="-1"></a><span class="co"># where x.x.x is the version number of the package you want to install</span></span></code></pre></div>
 <p><strong>Upgrading installed packages</strong>
 To get an overview of which of your installed packages have become outdated, run</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="built-in-modules-and-functions.html#cb94-1" aria-hidden="true" tabindex="-1"></a>$ pip <span class="bu">list</span> <span class="op">--</span>outdated</span>
-<span id="cb94-2"><a href="built-in-modules-and-functions.html#cb94-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb94-3"><a href="built-in-modules-and-functions.html#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="co"># To upgrade a specific package use</span></span>
-<span id="cb94-4"><a href="built-in-modules-and-functions.html#cb94-4" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name] <span class="op">--</span>upgrade</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="built-in-modules-and-functions.html#cb90-1" aria-hidden="true" tabindex="-1"></a>$ pip <span class="bu">list</span> <span class="op">--</span>outdated</span>
+<span id="cb90-2"><a href="built-in-modules-and-functions.html#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-3"><a href="built-in-modules-and-functions.html#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co"># To upgrade a specific package use</span></span>
+<span id="cb90-4"><a href="built-in-modules-and-functions.html#cb90-4" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name] <span class="op">--</span>upgrade</span></code></pre></div>
 
 </div>
 </div>
@@ -302,7 +307,6 @@ To get an overview of which of your installed packages have become outdated, run
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -321,6 +325,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -341,6 +346,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 }
