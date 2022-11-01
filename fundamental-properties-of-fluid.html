@@ -229,6 +229,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="15.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>15.2</b> Coning in Horizontal wells</a></li>
 </ul></li>
+<li class="chapter" data-level="16" data-path="working-with-las-files.html"><a href="working-with-las-files.html"><i class="fa fa-check"></i><b>16</b> working with Las files</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#basic-example"><i class="fa fa-check"></i><b>16.1</b> Basic example</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -269,9 +273,9 @@ Sutton developed a correlation that estimates</p>
 <span id="cb101-5"><a href="fundamental-properties-of-fluid.html#cb101-5" aria-hidden="true" tabindex="-1"></a>Ppc <span class="op">=</span> [<span class="fl">756.8</span> <span class="op">-</span><span class="dv">131</span><span class="op">*</span>sg <span class="op">-</span> <span class="fl">3.6</span> <span class="op">*</span> sg<span class="op">*</span>sg <span class="cf">for</span> sg <span class="kw">in</span> Sg]</span>
 <span id="cb101-6"><a href="fundamental-properties-of-fluid.html#cb101-6" aria-hidden="true" tabindex="-1"></a>Tpc <span class="op">=</span> [<span class="fl">169.2</span> <span class="op">+</span> <span class="fl">349.5</span><span class="op">*</span>sg <span class="op">-</span> <span class="dv">74</span> <span class="op">*</span> sg<span class="op">*</span>sg <span class="cf">for</span> sg <span class="kw">in</span> Sg]</span>
 <span id="cb101-7"><a href="fundamental-properties-of-fluid.html#cb101-7" aria-hidden="true" tabindex="-1"></a>plt.plot(Sg, Ppc, <span class="st">&#39;r-&#39;</span>)</span>
-<span id="cb101-8"><a href="fundamental-properties-of-fluid.html#cb101-8" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002C518760</span><span class="op">&gt;</span>]</span>
+<span id="cb101-8"><a href="fundamental-properties-of-fluid.html#cb101-8" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002C4F8760</span><span class="op">&gt;</span>]</span>
 <span id="cb101-9"><a href="fundamental-properties-of-fluid.html#cb101-9" aria-hidden="true" tabindex="-1"></a>plt.plot(Sg, Tpc, <span class="st">&#39;b-&#39;</span>)</span>
-<span id="cb101-10"><a href="fundamental-properties-of-fluid.html#cb101-10" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002CBC8CA0</span><span class="op">&gt;</span>]</span>
+<span id="cb101-10"><a href="fundamental-properties-of-fluid.html#cb101-10" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002CBA8CA0</span><span class="op">&gt;</span>]</span>
 <span id="cb101-11"><a href="fundamental-properties-of-fluid.html#cb101-11" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
 <span id="cb101-12"><a href="fundamental-properties-of-fluid.html#cb101-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
 <span id="cb101-13"><a href="fundamental-properties-of-fluid.html#cb101-13" aria-hidden="true" tabindex="-1"></a>Text(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
@@ -303,13 +307,13 @@ Sutton developed a correlation that estimates</p>
 <span id="cb102-9"><a href="fundamental-properties-of-fluid.html#cb102-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb102-10"><a href="fundamental-properties-of-fluid.html#cb102-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
 <span id="cb102-11"><a href="fundamental-properties-of-fluid.html#cb102-11" aria-hidden="true" tabindex="-1"></a>ax.plot(Sg, Ppc, <span class="st">&#39;r-&#39;</span>)</span>
-<span id="cb102-12"><a href="fundamental-properties-of-fluid.html#cb102-12" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002D759D90</span><span class="op">&gt;</span>]</span>
+<span id="cb102-12"><a href="fundamental-properties-of-fluid.html#cb102-12" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002D73E7F0</span><span class="op">&gt;</span>]</span>
 <span id="cb102-13"><a href="fundamental-properties-of-fluid.html#cb102-13" aria-hidden="true" tabindex="-1"></a>ax.plot(Sg, Tpc, <span class="st">&#39;b-&#39;</span>)</span>
-<span id="cb102-14"><a href="fundamental-properties-of-fluid.html#cb102-14" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002D759E20</span><span class="op">&gt;</span>]</span>
+<span id="cb102-14"><a href="fundamental-properties-of-fluid.html#cb102-14" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002C4728B0</span><span class="op">&gt;</span>]</span>
 <span id="cb102-15"><a href="fundamental-properties-of-fluid.html#cb102-15" aria-hidden="true" tabindex="-1"></a>ax.plot(Sg, P_pc_corr, <span class="st">&#39;r--&#39;</span>)</span>
-<span id="cb102-16"><a href="fundamental-properties-of-fluid.html#cb102-16" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002D76A310</span><span class="op">&gt;</span>]</span>
+<span id="cb102-16"><a href="fundamental-properties-of-fluid.html#cb102-16" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002D73ED30</span><span class="op">&gt;</span>]</span>
 <span id="cb102-17"><a href="fundamental-properties-of-fluid.html#cb102-17" aria-hidden="true" tabindex="-1"></a>ax.plot(Sg, T_pc_corr, <span class="st">&#39;b--&#39;</span>)</span>
-<span id="cb102-18"><a href="fundamental-properties-of-fluid.html#cb102-18" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002D76A6D0</span><span class="op">&gt;</span>]</span>
+<span id="cb102-18"><a href="fundamental-properties-of-fluid.html#cb102-18" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000000002D73EA60</span><span class="op">&gt;</span>]</span>
 <span id="cb102-19"><a href="fundamental-properties-of-fluid.html#cb102-19" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
 <span id="cb102-20"><a href="fundamental-properties-of-fluid.html#cb102-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
 <span id="cb102-21"><a href="fundamental-properties-of-fluid.html#cb102-21" aria-hidden="true" tabindex="-1"></a>Text(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
