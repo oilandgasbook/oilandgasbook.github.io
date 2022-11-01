@@ -97,6 +97,8 @@ patterns-and-spacing
 pattern-recovery
 aa
 pressure-transient-analysis
+basic-well-model
+steady-state-radial-flow-of-an-incompressible-fluid
 volumetrics
 calculating-the-gas-inplace-by-volumetric-methods
 gas-and-water-coning
