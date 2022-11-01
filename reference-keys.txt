@@ -43,6 +43,11 @@ eq:VolEfficency
 tab:unnamed-chunk-108
 eq:DPC
 eq:KA
+fig:wellsFlow
+eq:SFV
+eq:DLF
+eq:Combine
+eq:Pres1
 license
 introduction
 getting-started-with-python

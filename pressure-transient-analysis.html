@@ -269,12 +269,32 @@ radius, rw , is centrally located.</p>
 <h2><span class="header-section-number">13.2</span> Steady-State Radial Flow of an Incompressible Fluid</h2>
 <p>In the steady-state, radial flow of an incompressible fluid the volumetric flow-rate
 passing through any cross-section is the same</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:wellsFlow"></span>
 <img src="images/Well_flow.png" alt="Well Flow profile" width="318" />
 <p class="caption">
-(#fig:wells_flow)Well Flow profile
+Figure 13.1: Well Flow profile
 </p>
 </div>
+<p>Hence the main feature of radial flow is that the superficial fluid velocity given
+<span class="math display" id="eq:SFV">\[\begin{equation}
+    \tag{13.1}
+    {U_r}= -\frac{q}{2\pi rh}
+\end{equation}\]</span></p>
+<p>For laminar flow D’Arcy’s law in radial coordinates are given as
+<span class="math display" id="eq:DLF">\[\begin{equation}
+    \tag{13.2}
+    {U_r}= -\frac{k}{\mu}\frac{dp}{dr}
+\end{equation}\]</span></p>
+<p>combining <a href="pressure-transient-analysis.html#eq:SFV">(13.1)</a> and <a href="pressure-transient-analysis.html#eq:DLF">(13.2)</a> separating the variables since q , k and μ are constant results in
+<span class="math display" id="eq:Combine">\[\begin{equation}
+    \tag{13.3}
+    \frac{q\mu}{2\pi kh} \frac{dr}{r}= dp
+\end{equation}\]</span></p>
+<p>this when integrated between the limits r from ‘rw’ to ‘re’ and pressure from ‘Pw’ to ‘Pe’ gives</p>
+<p><span class="math display" id="eq:Pres1">\[\begin{equation}
+    \tag{13.4}
+    {P_e} - {P_w} = \frac{q\mu}{2\pi kh}\ln \frac{r_e}{r_w}
+\end{equation}\]</span></p>
 
 </div>
 </div>
