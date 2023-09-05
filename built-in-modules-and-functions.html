@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Built in Modules and Functions | Basic Reservoir Engineering in Python</title>
-  <meta name="description" content="4 Built in Modules and Functions | Basic Reservoir Engineering in Python" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <title>5 Built in Modules and Functions | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="5 Built in Modules and Functions | Applications of Python in Reservoir Engineering" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Built in Modules and Functions | Basic Reservoir Engineering in Python" />
+  <meta property="og:title" content="5 Built in Modules and Functions | Applications of Python in Reservoir Engineering" />
   <meta property="og:type" content="book" />
-  
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Built in Modules and Functions | Basic Reservoir Engineering in Python" />
+  <meta name="twitter:title" content="5 Built in Modules and Functions | Applications of Python in Reservoir Engineering" />
   
   
   
@@ -31,8 +30,7 @@
   
   
 <link rel="prev" href="simple-mathematics.html"/>
-<link rel="next" href="functions.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<link rel="next" href="introduction-to-numpy.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -119,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 </head>
 
@@ -133,44 +136,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html"><i class="fa fa-check"></i><b>2</b> Chapter 1: Introduction to Python for Reservoir Engineering</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.1</b> Getting Started with Python</a>
+<li class="chapter" data-level="2.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#why-python"><i class="fa fa-check"></i><b>2.1</b> Why Python?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#versatility"><i class="fa fa-check"></i><b>2.2</b> Versatility</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#readability-and-learnability"><i class="fa fa-check"></i><b>2.3</b> Readability and Learnability</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#open-source-community"><i class="fa fa-check"></i><b>2.4</b> Open Source Community</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#extensive-libraries"><i class="fa fa-check"></i><b>2.5</b> Extensive Libraries</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#conclusion-pythons-role-in-reservoir-engineering"><i class="fa fa-check"></i><b>2.6</b> Conclusion: Python’s Role in Reservoir Engineering</a></li>
+<li class="chapter" data-level="2.7" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.7</b> Getting Started with Python</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#datatypes"><i class="fa fa-check"></i><b>2.1.1</b> Datatypes</a></li>
+<li class="chapter" data-level="2.7.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#introduction"><i class="fa fa-check"></i><b>2.7.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.7.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#installing-python"><i class="fa fa-check"></i><b>2.7.2</b> Installing Python</a></li>
+<li class="chapter" data-level="2.7.3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#choosing-a-python-distribution"><i class="fa fa-check"></i><b>2.7.3</b> Choosing a Python Distribution</a></li>
+<li class="chapter" data-level="2.7.4" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#downloading-anaconda"><i class="fa fa-check"></i><b>2.7.4</b> Downloading Anaconda</a></li>
+<li class="chapter" data-level="2.7.5" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#verifying-the-installation"><i class="fa fa-check"></i><b>2.7.5</b> Verifying the Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>2.2</b> Lists</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#list-comprehensions"><i class="fa fa-check"></i><b>2.3</b> List comprehensions</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#tuples"><i class="fa fa-check"></i><b>2.4</b> Tuples</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#dictionaries"><i class="fa fa-check"></i><b>2.5</b> Dictionaries</a></li>
-<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#set"><i class="fa fa-check"></i><b>2.6</b> Set</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>3</b> Simple Mathematics</a>
+<li class="chapter" data-level="2.8" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#setting-up-your-python-environment"><i class="fa fa-check"></i><b>2.8</b> Setting Up Your Python Environment</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>3.1</b> Comparisons</a></li>
-<li class="chapter" data-level="3.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>3.2</b> Conditionals</a></li>
-<li class="chapter" data-level="3.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>3.3</b> if, elif, and else</a></li>
-<li class="chapter" data-level="3.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>3.4</b> Boolean Operators</a></li>
-<li class="chapter" data-level="3.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>3.5</b> Loops</a></li>
-<li class="chapter" data-level="3.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>3.6</b> For loops</a></li>
-<li class="chapter" data-level="3.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>3.7</b> While Loop</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>3.7.1</b> <code>break</code> statement</a></li>
-<li class="chapter" data-level="3.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>3.7.2</b> <code>continue</code> statement</a></li>
+<li class="chapter" data-level="2.8.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#manual-virtual-environment"><i class="fa fa-check"></i><b>2.8.1</b> Manual Virtual Environment</a></li>
+<li class="chapter" data-level="2.8.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#creating-a-virtual-environment-with-anaconda"><i class="fa fa-check"></i><b>2.8.2</b> Creating a Virtual Environment with Anaconda</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>4</b> Built in Modules and Functions</a>
+<li class="chapter" data-level="3" data-path="python-basics.html"><a href="python-basics.html"><i class="fa fa-check"></i><b>3</b> Python Basics</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>4.1</b> Creating a module</a></li>
-<li class="chapter" data-level="4.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>4.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="3.0.1" data-path="python-basics.html"><a href="python-basics.html#datatypes"><i class="fa fa-check"></i><b>3.0.1</b> Datatypes</a></li>
+<li class="chapter" data-level="3.1" data-path="python-basics.html"><a href="python-basics.html#lists"><i class="fa fa-check"></i><b>3.1</b> Lists</a></li>
+<li class="chapter" data-level="3.2" data-path="python-basics.html"><a href="python-basics.html#list-comprehensions"><i class="fa fa-check"></i><b>3.2</b> List comprehensions</a></li>
+<li class="chapter" data-level="3.3" data-path="python-basics.html"><a href="python-basics.html#tuples"><i class="fa fa-check"></i><b>3.3</b> Tuples</a></li>
+<li class="chapter" data-level="3.4" data-path="python-basics.html"><a href="python-basics.html#dictionaries"><i class="fa fa-check"></i><b>3.4</b> Dictionaries</a></li>
+<li class="chapter" data-level="3.5" data-path="python-basics.html"><a href="python-basics.html#set"><i class="fa fa-check"></i><b>3.5</b> Set</a></li>
+<li class="chapter" data-level="3.6" data-path="python-basics.html"><a href="python-basics.html#control-flow-and-functions"><i class="fa fa-check"></i><b>3.6</b> Control Flow and Functions</a></li>
+<li class="chapter" data-level="3.7" data-path="python-basics.html"><a href="python-basics.html#python-libraries-for-reservoir-engineering"><i class="fa fa-check"></i><b>3.7</b> Python Libraries for Reservoir Engineering</a></li>
+<li class="chapter" data-level="3.8" data-path="python-basics.html"><a href="python-basics.html#hands-on-practice"><i class="fa fa-check"></i><b>3.8</b> Hands-On Practice</a></li>
+<li class="chapter" data-level="3.9" data-path="python-basics.html"><a href="python-basics.html#chapter-summary"><i class="fa fa-check"></i><b>3.9</b> Chapter Summary</a></li>
+<li class="chapter" data-level="3.10" data-path="python-basics.html"><a href="python-basics.html#further-reading"><i class="fa fa-check"></i><b>3.10</b> Further Reading</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>5</b> Functions</a>
+<li class="chapter" data-level="4" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>4</b> Simple Mathematics</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="functions.html"><a href="functions.html#lambda-function"><i class="fa fa-check"></i><b>5.1</b> Lambda function</a></li>
+<li class="chapter" data-level="4.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>4.1</b> Comparisons</a></li>
+<li class="chapter" data-level="4.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>4.2</b> Conditionals</a></li>
+<li class="chapter" data-level="4.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>4.3</b> if, elif, and else</a></li>
+<li class="chapter" data-level="4.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>4.4</b> Boolean Operators</a></li>
+<li class="chapter" data-level="4.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>4.5</b> Loops</a></li>
+<li class="chapter" data-level="4.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>4.6</b> For loops</a></li>
+<li class="chapter" data-level="4.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>4.7</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>4.7.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="4.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>4.7.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>5</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>5.1</b> Creating a module</a></li>
+<li class="chapter" data-level="5.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>5.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="5.3" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#functions"><i class="fa fa-check"></i><b>5.3</b> Functions</a></li>
+<li class="chapter" data-level="5.4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#lambda-function"><i class="fa fa-check"></i><b>5.4</b> Lambda function</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>6</b> Introduction to Numpy</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>6.1</b> Why is NumPy Fast?</a></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#n-dimensional-arrays"><i class="fa fa-check"></i><b>6.2</b> N-Dimensional Arrays</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#creating-ndarrays"><i class="fa fa-check"></i><b>6.2.1</b> Creating ndarrays</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#manipulating-and-operating-on-ndarrays"><i class="fa fa-check"></i><b>6.2.2</b> Manipulating and Operating on ndarrays</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#universal-functions-ufuncs"><i class="fa fa-check"></i><b>6.3</b> Universal Functions (ufuncs)</a></li>
+<li class="chapter" data-level="6.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#array-manipulation"><i class="fa fa-check"></i><b>6.4</b> Array Manipulation</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="basic-reservoir-engineering.html"><a href="basic-reservoir-engineering.html"><i class="fa fa-check"></i>Basic Reservoir Engineering</a></li>
 <li class="chapter" data-level="7" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html"><i class="fa fa-check"></i><b>7</b> Fundamental Properties of Fluid</a>
@@ -246,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Reservoir Engineering in Python</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applications of Python in Reservoir Engineering</a>
           </h1>
         </div>
 
@@ -254,54 +286,173 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="built-in-modules-and-functions" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Built in Modules and Functions</h1>
+<div id="built-in-modules-and-functions" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Built in Modules and Functions<a href="built-in-modules-and-functions.html#built-in-modules-and-functions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A module is a file containing Python definitions and statements. Function is a piece of code which execute some
 logic.</p>
 <p>To check the built in function in python we can use <em>dir()</em>.</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="built-in-modules-and-functions.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(__builtins__)   <span class="co"># returns list of all the builtin modules and function available in python</span></span>
-<span id="cb83-2"><a href="built-in-modules-and-functions.html#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-3"><a href="built-in-modules-and-functions.html#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb83-4"><a href="built-in-modules-and-functions.html#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(math)           <span class="co"># return all the function available in math package</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb82-1"><a href="built-in-modules-and-functions.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(__builtins__)   <span class="co"># returns list of all the builtin modules and function available in python</span></span>
+<span id="cb82-2"><a href="built-in-modules-and-functions.html#cb82-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-3"><a href="built-in-modules-and-functions.html#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb82-4"><a href="built-in-modules-and-functions.html#cb82-4" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(math)           <span class="co"># return all the function available in math package</span></span></code></pre></div>
 <p>To know the functionality of any function, we can use built in function <em>help()</em>.</p>
-<div id="creating-a-module" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Creating a module</h2>
+<div id="creating-a-module" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Creating a module<a href="built-in-modules-and-functions.html#creating-a-module" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A module is an importable file containing definitions and statements. A module can be created by creating a .py file.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="built-in-modules-and-functions.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  create a file and name it hello.py</span></span>
-<span id="cb84-2"><a href="built-in-modules-and-functions.html#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> say_hello():</span>
-<span id="cb84-3"><a href="built-in-modules-and-functions.html#cb84-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello!&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="built-in-modules-and-functions.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  create a file and name it hello.py</span></span>
+<span id="cb83-2"><a href="built-in-modules-and-functions.html#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> say_hello():</span>
+<span id="cb83-3"><a href="built-in-modules-and-functions.html#cb83-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello!&quot;</span>)</span></code></pre></div>
 <p>Functions in a module can be used by importing the module. For modules that you have made, they will need to be in the same directory as the file that you are importing them into. Modules can be imported by other modules.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="built-in-modules-and-functions.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># in another file greet.py</span></span>
-<span id="cb85-2"><a href="built-in-modules-and-functions.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hello</span>
-<span id="cb85-3"><a href="built-in-modules-and-functions.html#cb85-3" aria-hidden="true" tabindex="-1"></a>hello.say_hello()</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="built-in-modules-and-functions.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># in another file greet.py</span></span>
+<span id="cb84-2"><a href="built-in-modules-and-functions.html#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hello</span>
+<span id="cb84-3"><a href="built-in-modules-and-functions.html#cb84-3" aria-hidden="true" tabindex="-1"></a>hello.say_hello()</span></code></pre></div>
 <p>Specific functions of a module can be imported</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="built-in-modules-and-functions.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greet.py</span></span>
-<span id="cb86-2"><a href="built-in-modules-and-functions.html#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> hello <span class="im">import</span> say_hello</span>
-<span id="cb86-3"><a href="built-in-modules-and-functions.html#cb86-3" aria-hidden="true" tabindex="-1"></a>say_hello()</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="built-in-modules-and-functions.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greet.py</span></span>
+<span id="cb85-2"><a href="built-in-modules-and-functions.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> hello <span class="im">import</span> say_hello</span>
+<span id="cb85-3"><a href="built-in-modules-and-functions.html#cb85-3" aria-hidden="true" tabindex="-1"></a>say_hello()</span></code></pre></div>
 <p>Modules can be aliased. we can give an alias to the module if required. <em>as</em> keyword is used to alias a module.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="built-in-modules-and-functions.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greet.py</span></span>
-<span id="cb87-2"><a href="built-in-modules-and-functions.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hello <span class="im">as</span> ai</span>
-<span id="cb87-3"><a href="built-in-modules-and-functions.html#cb87-3" aria-hidden="true" tabindex="-1"></a>ai.say_hello()</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="built-in-modules-and-functions.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># greet.py</span></span>
+<span id="cb86-2"><a href="built-in-modules-and-functions.html#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hello <span class="im">as</span> ai</span>
+<span id="cb86-3"><a href="built-in-modules-and-functions.html#cb86-3" aria-hidden="true" tabindex="-1"></a>ai.say_hello()</span></code></pre></div>
 </div>
-<div id="installing-external-modules-using-pip" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Installing external modules using pip</h2>
+<div id="installing-external-modules-using-pip" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Installing external modules using pip<a href="built-in-modules-and-functions.html#installing-external-modules-using-pip" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><em>pip</em> is your friend when you need to install any package from the plethora of choices available at the python
 package index. <em>pip</em> is already installed if you’re using Python 2 &gt;= 2.7.9 or Python 3 &gt;= 3.4.</p>
 <p><strong>Finding a package</strong></p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="built-in-modules-and-functions.html#cb88-1" aria-hidden="true" tabindex="-1"></a>$ pip search <span class="op">&lt;</span>query<span class="op">&gt;</span></span>
-<span id="cb88-2"><a href="built-in-modules-and-functions.html#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Searches for packages whose name or summary contains &lt;query&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="built-in-modules-and-functions.html#cb87-1" aria-hidden="true" tabindex="-1"></a>$ pip search <span class="op">&lt;</span>query<span class="op">&gt;</span></span>
+<span id="cb87-2"><a href="built-in-modules-and-functions.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Searches for packages whose name or summary contains &lt;query&gt;</span></span></code></pre></div>
 <p><strong>Installing a package</strong> is as simple as typing in a terminal / command-prompt.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="built-in-modules-and-functions.html#cb89-1" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name] <span class="co"># latest version of the package</span></span>
-<span id="cb89-2"><a href="built-in-modules-and-functions.html#cb89-2" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name]<span class="op">==</span>x.x.x <span class="co"># specific version of the package</span></span>
-<span id="cb89-3"><a href="built-in-modules-and-functions.html#cb89-3" aria-hidden="true" tabindex="-1"></a>$ pip install <span class="st">&#39;[package_name]&gt;=x.x.x&#39;</span> <span class="co"># minimum version of the package</span></span>
-<span id="cb89-4"><a href="built-in-modules-and-functions.html#cb89-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb89-5"><a href="built-in-modules-and-functions.html#cb89-5" aria-hidden="true" tabindex="-1"></a><span class="co"># where x.x.x is the version number of the package you want to install</span></span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="built-in-modules-and-functions.html#cb88-1" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name] <span class="co"># latest version of the package</span></span>
+<span id="cb88-2"><a href="built-in-modules-and-functions.html#cb88-2" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name]<span class="op">==</span>x.x.x <span class="co"># specific version of the package</span></span>
+<span id="cb88-3"><a href="built-in-modules-and-functions.html#cb88-3" aria-hidden="true" tabindex="-1"></a>$ pip install <span class="st">&#39;[package_name]&gt;=x.x.x&#39;</span> <span class="co"># minimum version of the package</span></span>
+<span id="cb88-4"><a href="built-in-modules-and-functions.html#cb88-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-5"><a href="built-in-modules-and-functions.html#cb88-5" aria-hidden="true" tabindex="-1"></a><span class="co"># where x.x.x is the version number of the package you want to install</span></span></code></pre></div>
 <p><strong>Upgrading installed packages</strong>
 To get an overview of which of your installed packages have become outdated, run</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="built-in-modules-and-functions.html#cb90-1" aria-hidden="true" tabindex="-1"></a>$ pip <span class="bu">list</span> <span class="op">--</span>outdated</span>
-<span id="cb90-2"><a href="built-in-modules-and-functions.html#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb90-3"><a href="built-in-modules-and-functions.html#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co"># To upgrade a specific package use</span></span>
-<span id="cb90-4"><a href="built-in-modules-and-functions.html#cb90-4" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name] <span class="op">--</span>upgrade</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="built-in-modules-and-functions.html#cb89-1" aria-hidden="true" tabindex="-1"></a>$ pip <span class="bu">list</span> <span class="op">--</span>outdated</span>
+<span id="cb89-2"><a href="built-in-modules-and-functions.html#cb89-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-3"><a href="built-in-modules-and-functions.html#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="co"># To upgrade a specific package use</span></span>
+<span id="cb89-4"><a href="built-in-modules-and-functions.html#cb89-4" aria-hidden="true" tabindex="-1"></a>$ pip install [package_name] <span class="op">--</span>upgrade</span></code></pre></div>
+
+</div>
+<div id="functions" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Functions<a href="built-in-modules-and-functions.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Functions in Python provide organized, reusable and modular code to perform a set of specific actions. Functions simplify the coding process, prevent redundant logic, and make the code easier to follow. This section describes the declaration and utilization of functions in Python.</p>
+<p>Python has many built-in functions like <code>print()</code>, <code>input()</code>, <code>len()</code>. Besides built-ins you can also create your own functions to do more specific jobs—these are called user-defined functions.</p>
+<p><strong>Defining and calling simple functions</strong></p>
+<p>Using the <code>def</code> statement is the most common way to define a function in python.
+Here’s an example of a simple function definition which purpose is to print Hello each time it’s called:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="built-in-modules-and-functions.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
+<span id="cb90-2"><a href="built-in-modules-and-functions.html#cb90-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello&quot;</span>)</span>
+<span id="cb90-3"><a href="built-in-modules-and-functions.html#cb90-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-4"><a href="built-in-modules-and-functions.html#cb90-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Now let’s call the defined greet() function:</span></span>
+<span id="cb90-5"><a href="built-in-modules-and-functions.html#cb90-5" aria-hidden="true" tabindex="-1"></a>greet()</span>
+<span id="cb90-6"><a href="built-in-modules-and-functions.html#cb90-6" aria-hidden="true" tabindex="-1"></a>Hello</span></code></pre></div>
+<p>That’s another example of a function definition which takes one single argument and displays the passed in value each time the function is called:</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="built-in-modules-and-functions.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span>  greet_two(greeting):</span>
+<span id="cb91-2"><a href="built-in-modules-and-functions.html#cb91-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(greeting)</span>
+<span id="cb91-3"><a href="built-in-modules-and-functions.html#cb91-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-4"><a href="built-in-modules-and-functions.html#cb91-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Now let’s call the greet_two() function. Note that we have to give an argument to this function</span></span>
+<span id="cb91-5"><a href="built-in-modules-and-functions.html#cb91-5" aria-hidden="true" tabindex="-1"></a>greet_two(<span class="st">&quot;Howdy&quot;</span>)</span>
+<span id="cb91-6"><a href="built-in-modules-and-functions.html#cb91-6" aria-hidden="true" tabindex="-1"></a>Howdy</span></code></pre></div>
+<p>Also you can give a default value to that function argument:</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="built-in-modules-and-functions.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span>  greet_three(greeting<span class="op">=</span><span class="st">&quot;Howdy&quot;</span>):</span>
+<span id="cb92-2"><a href="built-in-modules-and-functions.html#cb92-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(greeting)</span>
+<span id="cb92-3"><a href="built-in-modules-and-functions.html#cb92-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-4"><a href="built-in-modules-and-functions.html#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Now you can also call this function without giving argument, in that case it will use default value.</span></span>
+<span id="cb92-5"><a href="built-in-modules-and-functions.html#cb92-5" aria-hidden="true" tabindex="-1"></a>greet_three()</span>
+<span id="cb92-6"><a href="built-in-modules-and-functions.html#cb92-6" aria-hidden="true" tabindex="-1"></a>Howdy</span>
+<span id="cb92-7"><a href="built-in-modules-and-functions.html#cb92-7" aria-hidden="true" tabindex="-1"></a>greet_three(<span class="st">&quot;Hello&quot;</span>)</span>
+<span id="cb92-8"><a href="built-in-modules-and-functions.html#cb92-8" aria-hidden="true" tabindex="-1"></a>Hello</span></code></pre></div>
+<p>You’ll notice that unlike many other languages, you do not need to explicitly declare a return type of the function. Python functions can return values of any type via the return keyword. One function can return any number of different types.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="built-in-modules-and-functions.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> many_types(x):</span>
+<span id="cb93-2"><a href="built-in-modules-and-functions.html#cb93-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb93-3"><a href="built-in-modules-and-functions.html#cb93-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">&quot;Hello!&quot;</span></span>
+<span id="cb93-4"><a href="built-in-modules-and-functions.html#cb93-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb93-5"><a href="built-in-modules-and-functions.html#cb93-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb93-6"><a href="built-in-modules-and-functions.html#cb93-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb93-7"><a href="built-in-modules-and-functions.html#cb93-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(many_types(<span class="dv">1</span>))</span>
+<span id="cb93-8"><a href="built-in-modules-and-functions.html#cb93-8" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span></span>
+<span id="cb93-9"><a href="built-in-modules-and-functions.html#cb93-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(many_types(<span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb93-10"><a href="built-in-modules-and-functions.html#cb93-10" aria-hidden="true" tabindex="-1"></a>Hello<span class="op">!</span></span></code></pre></div>
+<p>As long as this is handled correctly by the caller, this is perfectly valid Python code.</p>
+<p><strong>Arbitrary number of positional arguments</strong></p>
+<p>Defining a function capable of taking an arbitrary number of arguments can be done by prefixing one of the
+arguments with a <code>*</code></p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="built-in-modules-and-functions.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(<span class="op">*</span>args):</span>
+<span id="cb94-2"><a href="built-in-modules-and-functions.html#cb94-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># args will be a tuple containing all values that are passed in</span></span>
+<span id="cb94-3"><a href="built-in-modules-and-functions.html#cb94-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> args:</span>
+<span id="cb94-4"><a href="built-in-modules-and-functions.html#cb94-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i)</span>
+<span id="cb94-5"><a href="built-in-modules-and-functions.html#cb94-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb94-6"><a href="built-in-modules-and-functions.html#cb94-6" aria-hidden="true" tabindex="-1"></a>func(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="co"># Calling it with 3 arguments</span></span>
+<span id="cb94-7"><a href="built-in-modules-and-functions.html#cb94-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span></span>
+<span id="cb94-8"><a href="built-in-modules-and-functions.html#cb94-8" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span></span>
+<span id="cb94-9"><a href="built-in-modules-and-functions.html#cb94-9" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span></span></code></pre></div>
+<p>You can’t provide a default for args, for example <code>func(*args=[1, 2, 3])</code> will raise a syntax error</p>
+<p><strong>Arbitrary number of keyword arguments</strong></p>
+<p>You can take an arbitrary number of arguments with a name by defining an argument in the definition with two <code>*</code> in front of it:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="built-in-modules-and-functions.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func(<span class="op">**</span>kwargs):</span>
+<span id="cb95-2"><a href="built-in-modules-and-functions.html#cb95-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># kwargs will be a dictionary containing the names as keys and the values as values</span></span>
+<span id="cb95-3"><a href="built-in-modules-and-functions.html#cb95-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, value <span class="kw">in</span> kwargs.items():</span>
+<span id="cb95-4"><a href="built-in-modules-and-functions.html#cb95-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(name, value)</span>
+<span id="cb95-5"><a href="built-in-modules-and-functions.html#cb95-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-6"><a href="built-in-modules-and-functions.html#cb95-6" aria-hidden="true" tabindex="-1"></a>func(value1<span class="op">=</span><span class="dv">1</span>, value2<span class="op">=</span><span class="dv">2</span>, value3<span class="op">=</span><span class="dv">3</span>) <span class="co"># Calling it with 3 arguments</span></span>
+<span id="cb95-7"><a href="built-in-modules-and-functions.html#cb95-7" aria-hidden="true" tabindex="-1"></a>value1 <span class="dv">1</span></span>
+<span id="cb95-8"><a href="built-in-modules-and-functions.html#cb95-8" aria-hidden="true" tabindex="-1"></a>value2 <span class="dv">2</span></span>
+<span id="cb95-9"><a href="built-in-modules-and-functions.html#cb95-9" aria-hidden="true" tabindex="-1"></a>value3 <span class="dv">3</span></span>
+<span id="cb95-10"><a href="built-in-modules-and-functions.html#cb95-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-11"><a href="built-in-modules-and-functions.html#cb95-11" aria-hidden="true" tabindex="-1"></a>func() <span class="co"># Calling it without arguments. no output</span></span>
+<span id="cb95-12"><a href="built-in-modules-and-functions.html#cb95-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-13"><a href="built-in-modules-and-functions.html#cb95-13" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">&#39;foo&#39;</span>: <span class="dv">1</span>, <span class="st">&#39;bar&#39;</span>: <span class="dv">2</span>}</span>
+<span id="cb95-14"><a href="built-in-modules-and-functions.html#cb95-14" aria-hidden="true" tabindex="-1"></a>func(<span class="op">**</span>my_dict) <span class="co"># Calling it with a dictionary</span></span>
+<span id="cb95-15"><a href="built-in-modules-and-functions.html#cb95-15" aria-hidden="true" tabindex="-1"></a>foo <span class="dv">1</span></span>
+<span id="cb95-16"><a href="built-in-modules-and-functions.html#cb95-16" aria-hidden="true" tabindex="-1"></a>bar <span class="dv">2</span></span></code></pre></div>
+<p>You can’t provide these without names, for example <code>func(1, 2, 3)</code> will raise a <code>TypeError</code>. kwargs is a plain native python dictionary</p>
+<p><strong>Returning values from functions</strong></p>
+<p>A function with no <code>return</code> statement implicitly returns <code>None</code>. Similarly a function with a <code>return</code> statement, but no return value or variable returns <code>None</code>.</p>
+<p>if <code>return</code> is encountered in the function the function will be exited immediately and subsequent operations will not be evaluated:</p>
+<p><strong>Function unpacking</strong></p>
+<p>Functions allow you to specify these types of parameters: positional, named, variable positional, Keyword args
+(kwargs). Here is a clear and concise use of each type.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="built-in-modules-and-functions.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> unpacking(a, b, c<span class="op">=</span><span class="dv">45</span>, d<span class="op">=</span><span class="dv">60</span>, <span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
+<span id="cb96-2"><a href="built-in-modules-and-functions.html#cb96-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a, b, c, d, args, kwargs)</span>
+<span id="cb96-3"><a href="built-in-modules-and-functions.html#cb96-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb96-4"><a href="built-in-modules-and-functions.html#cb96-4" aria-hidden="true" tabindex="-1"></a>unpacking(<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb96-5"><a href="built-in-modules-and-functions.html#cb96-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2</span> <span class="dv">45</span> <span class="dv">60</span> () {}</span>
+<span id="cb96-6"><a href="built-in-modules-and-functions.html#cb96-6" aria-hidden="true" tabindex="-1"></a>unpacking(<span class="dv">1</span>,<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb96-7"><a href="built-in-modules-and-functions.html#cb96-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> () {}</span>
+<span id="cb96-8"><a href="built-in-modules-and-functions.html#cb96-8" aria-hidden="true" tabindex="-1"></a>unpacking(<span class="dv">1</span>,<span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>, d<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb96-9"><a href="built-in-modules-and-functions.html#cb96-9" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> () {}</span>
+<span id="cb96-10"><a href="built-in-modules-and-functions.html#cb96-10" aria-hidden="true" tabindex="-1"></a>unpacking(<span class="dv">1</span>,<span class="dv">2</span>,  d<span class="op">=</span><span class="dv">4</span>, c<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb96-11"><a href="built-in-modules-and-functions.html#cb96-11" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="dv">2</span> <span class="dv">3</span> <span class="dv">4</span> () {}</span></code></pre></div>
+</div>
+<div id="lambda-function" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Lambda function<a href="built-in-modules-and-functions.html#lambda-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In Python, lambda functions are a concise way to define small, anonymous functions without the need for a formal <code>def</code> statement. They are often used for simple operations where a full function definition may be unnecessary. Lambda functions are created using the <code>lambda</code> keyword, followed by one or more arguments and an expression. Here’s the basic syntax:</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="built-in-modules-and-functions.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="kw">lambda</span> arguments: expression</span></code></pre></div>
+<p>For example a lambda function can be written as follows:
+<code>greet_me = lambda: "Hello"</code></p>
+<p>Once assigned to a variable, it can be used just like a regular function:
+<code>print(greet_me())</code></p>
+<p>Lambda functions have several notable characteristics:</p>
+<ul>
+<li>They are anonymous: Lambda functions do not have a name like regular functions defined with def.</li>
+<li>They are single-expression functions: Lambda functions can only contain one expression, and the result of that expression is returned as the output.</li>
+<li>They are often used for short, throwaway functions: Lambda functions are particularly useful in cases where you need a small function for a specific task.</li>
+</ul>
+<p>Here’s a simple example of a lambda function that squares a number:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="built-in-modules-and-functions.html#cb98-1" aria-hidden="true" tabindex="-1"></a>square <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb98-2"><a href="built-in-modules-and-functions.html#cb98-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> square(<span class="dv">4</span>)  <span class="co"># This will result in &#39;16&#39;.</span></span></code></pre></div>
+<p>Lambda functions are commonly used in scenarios where you need to pass a function as an argument to another function, such as in sorting and filtering operations with functions like map(), filter(), and sorted(). They can help you write more concise and readable code in such cases.</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="built-in-modules-and-functions.html#cb99-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb99-2"><a href="built-in-modules-and-functions.html#cb99-2" aria-hidden="true" tabindex="-1"></a>squared_numbers <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>, numbers))  <span class="co"># Squares each number in the list.</span></span></code></pre></div>
+<p><code>lambdas</code> can take arguments, too: They can also take arbitrary number of arguments / keyword arguments, like normal functions.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="built-in-modules-and-functions.html#cb100-1" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="kw">lambda</span> x, <span class="op">*</span>args, <span class="op">**</span>kwargs: <span class="bu">print</span>(x, args, kwargs)</span>
+<span id="cb100-2"><a href="built-in-modules-and-functions.html#cb100-2" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">&#39;hello&#39;</span>, <span class="st">&#39;world&#39;</span>, world<span class="op">=</span><span class="st">&#39;world&#39;</span>)</span></code></pre></div>
+<p>Lambda functions are a valuable tool when you want to define a simple, one-time-use function without the need for a full function definition. However, for more complex functions or those that require documentation, it’s often better to use regular named functions defined with <code>def</code>.</p>
+<p>In reservoir engineering, lambda functions can be employed when you need to define quick and simple calculations within your code, providing a concise way to handle specific tasks or transformations of data.</p>
+<p>This section elaborates on <code>lambda</code> functions in Python, emphasizing their simplicity, single-expression nature, and common use cases in scenarios like data mapping and filtering. It also highlights their potential utility in reservoir engineering for quick and straightforward calculations within your code.</p>
 
 </div>
 </div>
@@ -311,7 +462,7 @@ To get an overview of which of your installed packages have become outdated, run
         </div>
       </div>
 <a href="simple-mathematics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-to-numpy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -371,7 +522,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

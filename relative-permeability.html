@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 Relative Permeability | Basic Reservoir Engineering in Python</title>
-  <meta name="description" content="10 Relative Permeability | Basic Reservoir Engineering in Python" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <title>10 Relative Permeability | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="10 Relative Permeability | Applications of Python in Reservoir Engineering" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 Relative Permeability | Basic Reservoir Engineering in Python" />
+  <meta property="og:title" content="10 Relative Permeability | Applications of Python in Reservoir Engineering" />
   <meta property="og:type" content="book" />
-  
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 Relative Permeability | Basic Reservoir Engineering in Python" />
+  <meta name="twitter:title" content="10 Relative Permeability | Applications of Python in Reservoir Engineering" />
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="rock-properties.html"/>
 <link rel="next" href="fundamentals-of-fluid-flow-in-reservoirs.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -119,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 </head>
 
@@ -133,44 +136,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html"><i class="fa fa-check"></i><b>2</b> Chapter 1: Introduction to Python for Reservoir Engineering</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.1</b> Getting Started with Python</a>
+<li class="chapter" data-level="2.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#why-python"><i class="fa fa-check"></i><b>2.1</b> Why Python?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#versatility"><i class="fa fa-check"></i><b>2.2</b> Versatility</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#readability-and-learnability"><i class="fa fa-check"></i><b>2.3</b> Readability and Learnability</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#open-source-community"><i class="fa fa-check"></i><b>2.4</b> Open Source Community</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#extensive-libraries"><i class="fa fa-check"></i><b>2.5</b> Extensive Libraries</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#conclusion-pythons-role-in-reservoir-engineering"><i class="fa fa-check"></i><b>2.6</b> Conclusion: Python’s Role in Reservoir Engineering</a></li>
+<li class="chapter" data-level="2.7" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.7</b> Getting Started with Python</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#datatypes"><i class="fa fa-check"></i><b>2.1.1</b> Datatypes</a></li>
+<li class="chapter" data-level="2.7.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#introduction"><i class="fa fa-check"></i><b>2.7.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.7.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#installing-python"><i class="fa fa-check"></i><b>2.7.2</b> Installing Python</a></li>
+<li class="chapter" data-level="2.7.3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#choosing-a-python-distribution"><i class="fa fa-check"></i><b>2.7.3</b> Choosing a Python Distribution</a></li>
+<li class="chapter" data-level="2.7.4" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#downloading-anaconda"><i class="fa fa-check"></i><b>2.7.4</b> Downloading Anaconda</a></li>
+<li class="chapter" data-level="2.7.5" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#verifying-the-installation"><i class="fa fa-check"></i><b>2.7.5</b> Verifying the Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>2.2</b> Lists</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#list-comprehensions"><i class="fa fa-check"></i><b>2.3</b> List comprehensions</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#tuples"><i class="fa fa-check"></i><b>2.4</b> Tuples</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#dictionaries"><i class="fa fa-check"></i><b>2.5</b> Dictionaries</a></li>
-<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#set"><i class="fa fa-check"></i><b>2.6</b> Set</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>3</b> Simple Mathematics</a>
+<li class="chapter" data-level="2.8" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#setting-up-your-python-environment"><i class="fa fa-check"></i><b>2.8</b> Setting Up Your Python Environment</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>3.1</b> Comparisons</a></li>
-<li class="chapter" data-level="3.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>3.2</b> Conditionals</a></li>
-<li class="chapter" data-level="3.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>3.3</b> if, elif, and else</a></li>
-<li class="chapter" data-level="3.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>3.4</b> Boolean Operators</a></li>
-<li class="chapter" data-level="3.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>3.5</b> Loops</a></li>
-<li class="chapter" data-level="3.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>3.6</b> For loops</a></li>
-<li class="chapter" data-level="3.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>3.7</b> While Loop</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>3.7.1</b> <code>break</code> statement</a></li>
-<li class="chapter" data-level="3.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>3.7.2</b> <code>continue</code> statement</a></li>
+<li class="chapter" data-level="2.8.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#manual-virtual-environment"><i class="fa fa-check"></i><b>2.8.1</b> Manual Virtual Environment</a></li>
+<li class="chapter" data-level="2.8.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#creating-a-virtual-environment-with-anaconda"><i class="fa fa-check"></i><b>2.8.2</b> Creating a Virtual Environment with Anaconda</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>4</b> Built in Modules and Functions</a>
+<li class="chapter" data-level="3" data-path="python-basics.html"><a href="python-basics.html"><i class="fa fa-check"></i><b>3</b> Python Basics</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>4.1</b> Creating a module</a></li>
-<li class="chapter" data-level="4.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>4.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="3.0.1" data-path="python-basics.html"><a href="python-basics.html#datatypes"><i class="fa fa-check"></i><b>3.0.1</b> Datatypes</a></li>
+<li class="chapter" data-level="3.1" data-path="python-basics.html"><a href="python-basics.html#lists"><i class="fa fa-check"></i><b>3.1</b> Lists</a></li>
+<li class="chapter" data-level="3.2" data-path="python-basics.html"><a href="python-basics.html#list-comprehensions"><i class="fa fa-check"></i><b>3.2</b> List comprehensions</a></li>
+<li class="chapter" data-level="3.3" data-path="python-basics.html"><a href="python-basics.html#tuples"><i class="fa fa-check"></i><b>3.3</b> Tuples</a></li>
+<li class="chapter" data-level="3.4" data-path="python-basics.html"><a href="python-basics.html#dictionaries"><i class="fa fa-check"></i><b>3.4</b> Dictionaries</a></li>
+<li class="chapter" data-level="3.5" data-path="python-basics.html"><a href="python-basics.html#set"><i class="fa fa-check"></i><b>3.5</b> Set</a></li>
+<li class="chapter" data-level="3.6" data-path="python-basics.html"><a href="python-basics.html#control-flow-and-functions"><i class="fa fa-check"></i><b>3.6</b> Control Flow and Functions</a></li>
+<li class="chapter" data-level="3.7" data-path="python-basics.html"><a href="python-basics.html#python-libraries-for-reservoir-engineering"><i class="fa fa-check"></i><b>3.7</b> Python Libraries for Reservoir Engineering</a></li>
+<li class="chapter" data-level="3.8" data-path="python-basics.html"><a href="python-basics.html#hands-on-practice"><i class="fa fa-check"></i><b>3.8</b> Hands-On Practice</a></li>
+<li class="chapter" data-level="3.9" data-path="python-basics.html"><a href="python-basics.html#chapter-summary"><i class="fa fa-check"></i><b>3.9</b> Chapter Summary</a></li>
+<li class="chapter" data-level="3.10" data-path="python-basics.html"><a href="python-basics.html#further-reading"><i class="fa fa-check"></i><b>3.10</b> Further Reading</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>5</b> Functions</a>
+<li class="chapter" data-level="4" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>4</b> Simple Mathematics</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="functions.html"><a href="functions.html#lambda-function"><i class="fa fa-check"></i><b>5.1</b> Lambda function</a></li>
+<li class="chapter" data-level="4.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>4.1</b> Comparisons</a></li>
+<li class="chapter" data-level="4.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>4.2</b> Conditionals</a></li>
+<li class="chapter" data-level="4.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>4.3</b> if, elif, and else</a></li>
+<li class="chapter" data-level="4.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>4.4</b> Boolean Operators</a></li>
+<li class="chapter" data-level="4.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>4.5</b> Loops</a></li>
+<li class="chapter" data-level="4.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>4.6</b> For loops</a></li>
+<li class="chapter" data-level="4.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>4.7</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>4.7.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="4.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>4.7.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>5</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>5.1</b> Creating a module</a></li>
+<li class="chapter" data-level="5.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>5.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="5.3" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#functions"><i class="fa fa-check"></i><b>5.3</b> Functions</a></li>
+<li class="chapter" data-level="5.4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#lambda-function"><i class="fa fa-check"></i><b>5.4</b> Lambda function</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>6</b> Introduction to Numpy</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>6.1</b> Why is NumPy Fast?</a></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#n-dimensional-arrays"><i class="fa fa-check"></i><b>6.2</b> N-Dimensional Arrays</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#creating-ndarrays"><i class="fa fa-check"></i><b>6.2.1</b> Creating ndarrays</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#manipulating-and-operating-on-ndarrays"><i class="fa fa-check"></i><b>6.2.2</b> Manipulating and Operating on ndarrays</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#universal-functions-ufuncs"><i class="fa fa-check"></i><b>6.3</b> Universal Functions (ufuncs)</a></li>
+<li class="chapter" data-level="6.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#array-manipulation"><i class="fa fa-check"></i><b>6.4</b> Array Manipulation</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="basic-reservoir-engineering.html"><a href="basic-reservoir-engineering.html"><i class="fa fa-check"></i>Basic Reservoir Engineering</a></li>
 <li class="chapter" data-level="7" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html"><i class="fa fa-check"></i><b>7</b> Fundamental Properties of Fluid</a>
@@ -246,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Reservoir Engineering in Python</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applications of Python in Reservoir Engineering</a>
           </h1>
         </div>
 
@@ -254,8 +286,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="relative-permeability" class="section level1" number="10">
-<h1><span class="header-section-number">10</span> Relative Permeability</h1>
+<div id="relative-permeability" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Relative Permeability<a href="relative-permeability.html#relative-permeability" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The effective permeability of any reservoir fluid is a function of the reservoir fluid saturation
 and the wetting characteristics of the formation</p>
 <p><strong>Relative Permeability from Analytical Equations</strong>
@@ -271,70 +303,69 @@ are commonly used in numerical simulators</p>
     K_{rw} = (K_{rw})_{sorw} \Big[\frac{S_w - S_{wc}}{1 - S_{wc} - S_{orw}} \Big]^{n_w}
 \end{equation}\]</span></p>
 <p><strong>Currey Function fitting on experimental data</strong></p>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-105" class="exercise"><strong>Exercise 10.1  </strong></span>Fit Relative permeability curve on Analytical Equations <a href="relative-permeability.html#eq:OilWaterKro">(10.1)</a> and <a href="relative-permeability.html#eq:OilWaterKrw">(10.2)</a> for the given end points and calculate the coefficients <code>no</code> and <code>nw</code> for oil and water.
+<p><span id="exr:unnamed-chunk-104" class="exercise"><strong>Exercise 10.1  </strong></span>Fit Relative permeability curve on Analytical Equations <a href="relative-permeability.html#eq:OilWaterKro">(10.1)</a> and <a href="relative-permeability.html#eq:OilWaterKrw">(10.2)</a> for the given end points and calculate the coefficients <code>no</code> and <code>nw</code> for oil and water.</p>
 </div>
-<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="relative-permeability.html#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> optimize</span>
-<span id="cb114-2"><a href="relative-permeability.html#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb114-3"><a href="relative-permeability.html#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb114-4"><a href="relative-permeability.html#cb114-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-5"><a href="relative-permeability.html#cb114-5" aria-hidden="true" tabindex="-1"></a>Swc <span class="op">=</span> <span class="fl">0.25</span></span>
-<span id="cb114-6"><a href="relative-permeability.html#cb114-6" aria-hidden="true" tabindex="-1"></a>Swor <span class="op">=</span> <span class="fl">0.35</span></span>
-<span id="cb114-7"><a href="relative-permeability.html#cb114-7" aria-hidden="true" tabindex="-1"></a>Kro <span class="op">=</span> <span class="fl">0.85</span> <span class="co"># kro  at Swc</span></span>
-<span id="cb114-8"><a href="relative-permeability.html#cb114-8" aria-hidden="true" tabindex="-1"></a>Krw<span class="op">=</span> <span class="fl">0.4</span> <span class="co"># Krw at Sorw</span></span>
-<span id="cb114-9"><a href="relative-permeability.html#cb114-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-10"><a href="relative-permeability.html#cb114-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_Ko(Sw, no):</span>
-<span id="cb114-11"><a href="relative-permeability.html#cb114-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Kro<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>Sw<span class="op">-</span>Swor)<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>Swc<span class="op">-</span>Swor))<span class="op">**</span>no</span>
-<span id="cb114-12"><a href="relative-permeability.html#cb114-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-13"><a href="relative-permeability.html#cb114-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_Kw(Sw, nw):</span>
-<span id="cb114-14"><a href="relative-permeability.html#cb114-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Krw<span class="op">*</span>((Sw<span class="op">-</span>Swc)<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>Swc<span class="op">-</span>Swor))<span class="op">**</span>nw</span>
-<span id="cb114-15"><a href="relative-permeability.html#cb114-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-16"><a href="relative-permeability.html#cb114-16" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/Rel-Perm.csv&#39;</span>)</span>
-<span id="cb114-17"><a href="relative-permeability.html#cb114-17" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Ratio_Ko_kw&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Ko&#39;</span>]<span class="op">/</span>df[<span class="st">&#39;Kw&#39;</span>] </span>
-<span id="cb114-18"><a href="relative-permeability.html#cb114-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-19"><a href="relative-permeability.html#cb114-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_func(Sw, no, nw):</span>
-<span id="cb114-20"><a href="relative-permeability.html#cb114-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Kro<span class="op">/</span>Krw<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>Swc<span class="op">-</span>Swor)<span class="op">**</span>(nw<span class="op">-</span>no)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>Sw<span class="op">-</span>Swor)<span class="op">**</span>no<span class="op">/</span>(Sw<span class="op">-</span>Swc)<span class="op">**</span>nw</span>
-<span id="cb114-21"><a href="relative-permeability.html#cb114-21" aria-hidden="true" tabindex="-1"></a>params, params_covariance <span class="op">=</span> optimize.curve_fit(test_func, df[<span class="st">&#39;Sw&#39;</span>], df[<span class="st">&#39;Ratio_Ko_kw&#39;</span>],p0<span class="op">=</span>[<span class="fl">1.5</span>, <span class="dv">4</span>])</span>
-<span id="cb114-22"><a href="relative-permeability.html#cb114-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-23"><a href="relative-permeability.html#cb114-23" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">10</span>))</span>
-<span id="cb114-24"><a href="relative-permeability.html#cb114-24" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">&#39;Sw&#39;</span>], df[<span class="st">&#39;Ko&#39;</span>], <span class="st">&#39;k^&#39;</span>, )</span>
-<span id="cb114-25"><a href="relative-permeability.html#cb114-25" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">&#39;Sw&#39;</span>], df[<span class="st">&#39;Kw&#39;</span>],<span class="st">&#39;k.&#39;</span>)</span>
-<span id="cb114-26"><a href="relative-permeability.html#cb114-26" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
-<span id="cb114-27"><a href="relative-permeability.html#cb114-27" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
-<span id="cb114-28"><a href="relative-permeability.html#cb114-28" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">&#39;Sw&#39;</span>], get_Ko(df[<span class="st">&#39;Sw&#39;</span>], params[<span class="dv">0</span>]), <span class="st">&#39;r--&#39;</span>)</span>
-<span id="cb114-29"><a href="relative-permeability.html#cb114-29" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">&#39;Sw&#39;</span>], get_Kw(df[<span class="st">&#39;Sw&#39;</span>], params[<span class="dv">1</span>]), <span class="st">&#39;b--&#39;</span>)</span>
-<span id="cb114-30"><a href="relative-permeability.html#cb114-30" aria-hidden="true" tabindex="-1"></a>plt.legend((<span class="st">&#39;Ko&#39;</span>, <span class="st">&#39;Kw&#39;</span>, <span class="st">&#39;Ko fitted no = &#39;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">round</span>(params[<span class="dv">0</span>], <span class="dv">2</span>)),<span class="st">&#39;Kw fitted nw = &#39;</span><span class="op">+</span> <span class="bu">str</span>(<span class="bu">round</span>(params[<span class="dv">1</span>], <span class="dv">2</span>)) ),loc<span class="op">=</span><span class="st">&#39;upper center&#39;</span>)</span>
-<span id="cb114-31"><a href="relative-permeability.html#cb114-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb127-1"><a href="relative-permeability.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> optimize</span>
+<span id="cb127-2"><a href="relative-permeability.html#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb127-3"><a href="relative-permeability.html#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb127-4"><a href="relative-permeability.html#cb127-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-5"><a href="relative-permeability.html#cb127-5" aria-hidden="true" tabindex="-1"></a>Swc <span class="op">=</span> <span class="fl">0.25</span></span>
+<span id="cb127-6"><a href="relative-permeability.html#cb127-6" aria-hidden="true" tabindex="-1"></a>Swor <span class="op">=</span> <span class="fl">0.35</span></span>
+<span id="cb127-7"><a href="relative-permeability.html#cb127-7" aria-hidden="true" tabindex="-1"></a>Kro <span class="op">=</span> <span class="fl">0.85</span> <span class="co"># kro  at Swc</span></span>
+<span id="cb127-8"><a href="relative-permeability.html#cb127-8" aria-hidden="true" tabindex="-1"></a>Krw<span class="op">=</span> <span class="fl">0.4</span> <span class="co"># Krw at Sorw</span></span>
+<span id="cb127-9"><a href="relative-permeability.html#cb127-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-10"><a href="relative-permeability.html#cb127-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_Ko(Sw, no):</span>
+<span id="cb127-11"><a href="relative-permeability.html#cb127-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Kro<span class="op">*</span>((<span class="dv">1</span><span class="op">-</span>Sw<span class="op">-</span>Swor)<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>Swc<span class="op">-</span>Swor))<span class="op">**</span>no</span>
+<span id="cb127-12"><a href="relative-permeability.html#cb127-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-13"><a href="relative-permeability.html#cb127-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_Kw(Sw, nw):</span>
+<span id="cb127-14"><a href="relative-permeability.html#cb127-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Krw<span class="op">*</span>((Sw<span class="op">-</span>Swc)<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>Swc<span class="op">-</span>Swor))<span class="op">**</span>nw</span>
+<span id="cb127-15"><a href="relative-permeability.html#cb127-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-16"><a href="relative-permeability.html#cb127-16" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/Rel-Perm.csv&#39;</span>)</span>
+<span id="cb127-17"><a href="relative-permeability.html#cb127-17" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;Ratio_Ko_kw&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Ko&#39;</span>]<span class="op">/</span>df[<span class="st">&#39;Kw&#39;</span>] </span>
+<span id="cb127-18"><a href="relative-permeability.html#cb127-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-19"><a href="relative-permeability.html#cb127-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_func(Sw, no, nw):</span>
+<span id="cb127-20"><a href="relative-permeability.html#cb127-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Kro<span class="op">/</span>Krw<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>Swc<span class="op">-</span>Swor)<span class="op">**</span>(nw<span class="op">-</span>no)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>Sw<span class="op">-</span>Swor)<span class="op">**</span>no<span class="op">/</span>(Sw<span class="op">-</span>Swc)<span class="op">**</span>nw</span>
+<span id="cb127-21"><a href="relative-permeability.html#cb127-21" aria-hidden="true" tabindex="-1"></a>params, params_covariance <span class="op">=</span> optimize.curve_fit(test_func, df[<span class="st">&#39;Sw&#39;</span>], df[<span class="st">&#39;Ratio_Ko_kw&#39;</span>],p0<span class="op">=</span>[<span class="fl">1.5</span>, <span class="dv">4</span>])</span>
+<span id="cb127-22"><a href="relative-permeability.html#cb127-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-23"><a href="relative-permeability.html#cb127-23" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">10</span>))</span>
+<span id="cb127-24"><a href="relative-permeability.html#cb127-24" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">&#39;Sw&#39;</span>], df[<span class="st">&#39;Ko&#39;</span>], <span class="st">&#39;k^&#39;</span>, )</span>
+<span id="cb127-25"><a href="relative-permeability.html#cb127-25" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">&#39;Sw&#39;</span>], df[<span class="st">&#39;Kw&#39;</span>],<span class="st">&#39;k.&#39;</span>)</span>
+<span id="cb127-26"><a href="relative-permeability.html#cb127-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-27"><a href="relative-permeability.html#cb127-27" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
+<span id="cb127-28"><a href="relative-permeability.html#cb127-28" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
+<span id="cb127-29"><a href="relative-permeability.html#cb127-29" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">&#39;Sw&#39;</span>], get_Ko(df[<span class="st">&#39;Sw&#39;</span>], params[<span class="dv">0</span>]), <span class="st">&#39;r--&#39;</span>)</span>
+<span id="cb127-30"><a href="relative-permeability.html#cb127-30" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">&#39;Sw&#39;</span>], get_Kw(df[<span class="st">&#39;Sw&#39;</span>], params[<span class="dv">1</span>]), <span class="st">&#39;b--&#39;</span>)</span>
+<span id="cb127-31"><a href="relative-permeability.html#cb127-31" aria-hidden="true" tabindex="-1"></a>plt.legend((<span class="st">&#39;Ko&#39;</span>, <span class="st">&#39;Kw&#39;</span>, <span class="st">&#39;Ko fitted no = &#39;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">round</span>(params[<span class="dv">0</span>], <span class="dv">2</span>)),<span class="st">&#39;Kw fitted nw = &#39;</span><span class="op">+</span> <span class="bu">str</span>(<span class="bu">round</span>(params[<span class="dv">1</span>], <span class="dv">2</span>)) ),loc<span class="op">=</span><span class="st">&#39;upper center&#39;</span>)</span>
+<span id="cb127-32"><a href="relative-permeability.html#cb127-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="images/relPerm%20-1.png" width="1920" /></p>
-
 <div class="exercise">
-<span id="exr:unnamed-chunk-106" class="exercise"><strong>Exercise 10.2  </strong></span>Fit Relative permeability curve on the core data and generate calculate Kro and Krw at Sw = 0.567
+<p><span id="exr:unnamed-chunk-105" class="exercise"><strong>Exercise 10.2  </strong></span>Fit Relative permeability curve on the core data and generate calculate Kro and Krw at Sw = 0.567</p>
 </div>
-<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="relative-permeability.html#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="co"># suppose we have experimental data of relative permeability and we want to curve fit on this data.</span></span>
-<span id="cb115-2"><a href="relative-permeability.html#cb115-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-3"><a href="relative-permeability.html#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> interpolate</span>
-<span id="cb115-4"><a href="relative-permeability.html#cb115-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-5"><a href="relative-permeability.html#cb115-5" aria-hidden="true" tabindex="-1"></a>Sw <span class="op">=</span> np.arange(<span class="fl">0.2</span>, <span class="fl">0.9</span>, <span class="fl">0.05</span>)</span>
-<span id="cb115-6"><a href="relative-permeability.html#cb115-6" aria-hidden="true" tabindex="-1"></a>krw <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="fl">.002</span>, <span class="fl">.02</span>, <span class="fl">.04</span>, <span class="fl">.07</span>, <span class="fl">.11</span>, <span class="fl">.15</span>, <span class="fl">.22</span>, <span class="fl">.3</span>, <span class="fl">.4</span>, <span class="fl">.5</span>, <span class="fl">.6</span>, <span class="fl">.7</span>, <span class="fl">.8</span>])</span>
-<span id="cb115-7"><a href="relative-permeability.html#cb115-7" aria-hidden="true" tabindex="-1"></a>kro <span class="op">=</span> np.array([<span class="fl">.6</span>, <span class="fl">.5</span>, <span class="fl">.4</span>, <span class="fl">.3</span>, <span class="fl">.23</span>, <span class="fl">.17</span>, <span class="fl">.12</span>, <span class="fl">.08</span>, <span class="fl">.05</span>, <span class="fl">.03</span>, <span class="fl">.02</span>, <span class="fl">.01</span>, <span class="fl">.005</span>, <span class="dv">0</span>])</span>
-<span id="cb115-8"><a href="relative-permeability.html#cb115-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-9"><a href="relative-permeability.html#cb115-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Spline interpolation of data</span></span>
-<span id="cb115-10"><a href="relative-permeability.html#cb115-10" aria-hidden="true" tabindex="-1"></a>krw_interp <span class="op">=</span> interpolate.splrep(Sw, krw, s<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb115-11"><a href="relative-permeability.html#cb115-11" aria-hidden="true" tabindex="-1"></a>kro_interp <span class="op">=</span> interpolate.splrep(Sw, kro, s<span class="op">=</span><span class="dv">0</span>) </span>
-<span id="cb115-12"><a href="relative-permeability.html#cb115-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-13"><a href="relative-permeability.html#cb115-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_Kro_Krw_at_sw(Sw_new):</span>
-<span id="cb115-14"><a href="relative-permeability.html#cb115-14" aria-hidden="true" tabindex="-1"></a>    krw_new <span class="op">=</span> interpolate.splev(Sw_new, krw_interp, der<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb115-15"><a href="relative-permeability.html#cb115-15" aria-hidden="true" tabindex="-1"></a>    kro_new <span class="op">=</span> interpolate.splev(Sw_new, kro_interp, der<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb115-16"><a href="relative-permeability.html#cb115-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> krw_new, kro_new</span>
-<span id="cb115-17"><a href="relative-permeability.html#cb115-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-18"><a href="relative-permeability.html#cb115-18" aria-hidden="true" tabindex="-1"></a>Sw_given <span class="op">=</span> <span class="fl">0.567</span>        <span class="co"># we want to find Kro and Krw at this saturation</span></span>
-<span id="cb115-19"><a href="relative-permeability.html#cb115-19" aria-hidden="true" tabindex="-1"></a>krw_cal, kro_cal <span class="op">=</span> get_Kro_Krw_at_sw( Sw_given)</span>
-<span id="cb115-20"><a href="relative-permeability.html#cb115-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb115-21"><a href="relative-permeability.html#cb115-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;at given Sw : </span><span class="sc">{</span>Sw_given<span class="sc">}</span><span class="ss"> Kro := </span><span class="sc">{</span>kro_cal<span class="sc">}</span><span class="ss"> &amp; Krw := </span><span class="sc">{</span>krw_cal<span class="sc">}</span><span class="ss">&#39;</span>)</span>
-<span id="cb115-22"><a href="relative-permeability.html#cb115-22" aria-hidden="true" tabindex="-1"></a>at given Sw : <span class="fl">0.567</span> Kro :<span class="op">=</span> <span class="fl">0.06870642488480108</span> <span class="op">&amp;</span> Krw :<span class="op">=</span> <span class="fl">0.2458867331261035</span></span></code></pre></div>
-<div id="three-phase-relative-permeability" class="section level2" number="10.1">
-<h2><span class="header-section-number">10.1</span> Three-phase relative permeability</h2>
+<div class="sourceCode" id="cb128"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="relative-permeability.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># suppose we have experimental data of relative permeability and we want to curve fit on this data.</span></span>
+<span id="cb128-2"><a href="relative-permeability.html#cb128-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-3"><a href="relative-permeability.html#cb128-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> interpolate</span>
+<span id="cb128-4"><a href="relative-permeability.html#cb128-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-5"><a href="relative-permeability.html#cb128-5" aria-hidden="true" tabindex="-1"></a>Sw <span class="op">=</span> np.arange(<span class="fl">0.2</span>, <span class="fl">0.9</span>, <span class="fl">0.05</span>)</span>
+<span id="cb128-6"><a href="relative-permeability.html#cb128-6" aria-hidden="true" tabindex="-1"></a>krw <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="fl">.002</span>, <span class="fl">.02</span>, <span class="fl">.04</span>, <span class="fl">.07</span>, <span class="fl">.11</span>, <span class="fl">.15</span>, <span class="fl">.22</span>, <span class="fl">.3</span>, <span class="fl">.4</span>, <span class="fl">.5</span>, <span class="fl">.6</span>, <span class="fl">.7</span>, <span class="fl">.8</span>])</span>
+<span id="cb128-7"><a href="relative-permeability.html#cb128-7" aria-hidden="true" tabindex="-1"></a>kro <span class="op">=</span> np.array([<span class="fl">.6</span>, <span class="fl">.5</span>, <span class="fl">.4</span>, <span class="fl">.3</span>, <span class="fl">.23</span>, <span class="fl">.17</span>, <span class="fl">.12</span>, <span class="fl">.08</span>, <span class="fl">.05</span>, <span class="fl">.03</span>, <span class="fl">.02</span>, <span class="fl">.01</span>, <span class="fl">.005</span>, <span class="dv">0</span>])</span>
+<span id="cb128-8"><a href="relative-permeability.html#cb128-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-9"><a href="relative-permeability.html#cb128-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Spline interpolation of data</span></span>
+<span id="cb128-10"><a href="relative-permeability.html#cb128-10" aria-hidden="true" tabindex="-1"></a>krw_interp <span class="op">=</span> interpolate.splrep(Sw, krw, s<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb128-11"><a href="relative-permeability.html#cb128-11" aria-hidden="true" tabindex="-1"></a>kro_interp <span class="op">=</span> interpolate.splrep(Sw, kro, s<span class="op">=</span><span class="dv">0</span>) </span>
+<span id="cb128-12"><a href="relative-permeability.html#cb128-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-13"><a href="relative-permeability.html#cb128-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_Kro_Krw_at_sw(Sw_new):</span>
+<span id="cb128-14"><a href="relative-permeability.html#cb128-14" aria-hidden="true" tabindex="-1"></a>    krw_new <span class="op">=</span> interpolate.splev(Sw_new, krw_interp, der<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb128-15"><a href="relative-permeability.html#cb128-15" aria-hidden="true" tabindex="-1"></a>    kro_new <span class="op">=</span> interpolate.splev(Sw_new, kro_interp, der<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb128-16"><a href="relative-permeability.html#cb128-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> krw_new, kro_new</span>
+<span id="cb128-17"><a href="relative-permeability.html#cb128-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-18"><a href="relative-permeability.html#cb128-18" aria-hidden="true" tabindex="-1"></a>Sw_given <span class="op">=</span> <span class="fl">0.567</span>        <span class="co"># we want to find Kro and Krw at this saturation</span></span>
+<span id="cb128-19"><a href="relative-permeability.html#cb128-19" aria-hidden="true" tabindex="-1"></a>krw_cal, kro_cal <span class="op">=</span> get_Kro_Krw_at_sw( Sw_given)</span>
+<span id="cb128-20"><a href="relative-permeability.html#cb128-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-21"><a href="relative-permeability.html#cb128-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;at given Sw : </span><span class="sc">{</span>Sw_given<span class="sc">}</span><span class="ss"> Kro := </span><span class="sc">{</span>kro_cal<span class="sc">}</span><span class="ss"> &amp; Krw := </span><span class="sc">{</span>krw_cal<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb128-22"><a href="relative-permeability.html#cb128-22" aria-hidden="true" tabindex="-1"></a>at given Sw : <span class="fl">0.567</span> Kro :<span class="op">=</span> <span class="fl">0.06870642488480108</span> <span class="op">&amp;</span> Krw :<span class="op">=</span> <span class="fl">0.2458867331261035</span></span></code></pre></div>
+<div id="three-phase-relative-permeability" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Three-phase relative permeability<a href="relative-permeability.html#three-phase-relative-permeability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In a three-phase system it is found that the relative permeability to water depends only upon the water saturation.</p>
 <p><strong>Wyllie’s Correlations</strong></p>
 <p>Wyllie (1961) proposed the following equations for three-phase relative permeabilities in a water-wet system:</p>
@@ -346,8 +377,8 @@ are commonly used in numerical simulators</p>
 \end{equation}\]</span></p>
 <p>Notice that the flow rates are expressed in terms of reservoir volumes. The fractional flow of oil <code>fw</code>, and the fractional flow of water are related by <code>fw= 1 - fw</code> for an oil-water system. Based on the definition of fractional flow, we see that fractional flow should be a value between 0 and 1.</p>
 </div>
-<div id="simplified-fractional-flow-equation" class="section level2" number="10.2">
-<h2><span class="header-section-number">10.2</span> Simplified Fractional Flow Equation</h2>
+<div id="simplified-fractional-flow-equation" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Simplified Fractional Flow Equation<a href="relative-permeability.html#simplified-fractional-flow-equation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A simplified fractional flow equation is obtained by replacing flow rates with Darcy’s Law in the definition of fractional flow. If we neglect capillary pressure and gravity for simplicity, we obtain
 <span class="math display" id="eq:qwEquation">\[\begin{equation}
         q_{w} = \frac{kk_{r_{w}}A}{\mu_{w}}\frac{\partial P_{w}}{\partial x}
@@ -368,26 +399,26 @@ where A is cross-sectional area and P is pressure of phase. Since capillary pres
     \tag{10.7}
     f_{w} = \frac{1}{1 + \frac{\lambda_{o}}{\lambda_{w}}}
 \end{equation}\]</span></p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="relative-permeability.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># taking the data from above</span></span>
-<span id="cb116-2"><a href="relative-permeability.html#cb116-2" aria-hidden="true" tabindex="-1"></a>Sw <span class="op">=</span> np.arange(<span class="fl">0.2</span>, <span class="fl">0.9</span>, <span class="fl">0.01</span>)</span>
-<span id="cb116-3"><a href="relative-permeability.html#cb116-3" aria-hidden="true" tabindex="-1"></a>muo <span class="op">=</span> <span class="fl">0.25</span> <span class="co"># cp</span></span>
-<span id="cb116-4"><a href="relative-permeability.html#cb116-4" aria-hidden="true" tabindex="-1"></a>muw <span class="op">=</span> <span class="dv">1</span> <span class="co"># cp</span></span>
-<span id="cb116-5"><a href="relative-permeability.html#cb116-5" aria-hidden="true" tabindex="-1"></a>Fw <span class="op">=</span> <span class="bu">list</span>()</span>
-<span id="cb116-6"><a href="relative-permeability.html#cb116-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="bu">len</span>(Sw)): </span>
-<span id="cb116-7"><a href="relative-permeability.html#cb116-7" aria-hidden="true" tabindex="-1"></a>    krw_cal, kro_cal <span class="op">=</span> get_Kro_Krw_at_sw( Sw[i])</span>
-<span id="cb116-8"><a href="relative-permeability.html#cb116-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> krw_cal <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb116-9"><a href="relative-permeability.html#cb116-9" aria-hidden="true" tabindex="-1"></a>        Fw.append(<span class="dv">0</span>)</span>
-<span id="cb116-10"><a href="relative-permeability.html#cb116-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb116-11"><a href="relative-permeability.html#cb116-11" aria-hidden="true" tabindex="-1"></a>        Fw.append(<span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> (kro_cal <span class="op">/</span> muo) <span class="op">*</span> (muw <span class="op">/</span> krw_cal)))</span>
-<span id="cb116-12"><a href="relative-permeability.html#cb116-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-13"><a href="relative-permeability.html#cb116-13" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">10</span>))</span>
-<span id="cb116-14"><a href="relative-permeability.html#cb116-14" aria-hidden="true" tabindex="-1"></a>plt.plot(Sw, Fw, <span class="st">&#39;b-&#39;</span>, )</span>
-<span id="cb116-15"><a href="relative-permeability.html#cb116-15" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
-<span id="cb116-16"><a href="relative-permeability.html#cb116-16" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
-<span id="cb116-17"><a href="relative-permeability.html#cb116-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;fraction flow&#39;</span>)</span>
-<span id="cb116-18"><a href="relative-permeability.html#cb116-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Sw&#39;</span>)</span>
-<span id="cb116-19"><a href="relative-permeability.html#cb116-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Fraction flow curve&#39;</span>)</span>
-<span id="cb116-20"><a href="relative-permeability.html#cb116-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb129-1"><a href="relative-permeability.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># taking the data from above</span></span>
+<span id="cb129-2"><a href="relative-permeability.html#cb129-2" aria-hidden="true" tabindex="-1"></a>Sw <span class="op">=</span> np.arange(<span class="fl">0.2</span>, <span class="fl">0.9</span>, <span class="fl">0.01</span>)</span>
+<span id="cb129-3"><a href="relative-permeability.html#cb129-3" aria-hidden="true" tabindex="-1"></a>muo <span class="op">=</span> <span class="fl">0.25</span> <span class="co"># cp</span></span>
+<span id="cb129-4"><a href="relative-permeability.html#cb129-4" aria-hidden="true" tabindex="-1"></a>muw <span class="op">=</span> <span class="dv">1</span> <span class="co"># cp</span></span>
+<span id="cb129-5"><a href="relative-permeability.html#cb129-5" aria-hidden="true" tabindex="-1"></a>Fw <span class="op">=</span> <span class="bu">list</span>()</span>
+<span id="cb129-6"><a href="relative-permeability.html#cb129-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (<span class="bu">len</span>(Sw)): </span>
+<span id="cb129-7"><a href="relative-permeability.html#cb129-7" aria-hidden="true" tabindex="-1"></a>    krw_cal, kro_cal <span class="op">=</span> get_Kro_Krw_at_sw( Sw[i])</span>
+<span id="cb129-8"><a href="relative-permeability.html#cb129-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> krw_cal <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb129-9"><a href="relative-permeability.html#cb129-9" aria-hidden="true" tabindex="-1"></a>        Fw.append(<span class="dv">0</span>)</span>
+<span id="cb129-10"><a href="relative-permeability.html#cb129-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb129-11"><a href="relative-permeability.html#cb129-11" aria-hidden="true" tabindex="-1"></a>        Fw.append(<span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> (kro_cal <span class="op">/</span> muo) <span class="op">*</span> (muw <span class="op">/</span> krw_cal)))</span>
+<span id="cb129-12"><a href="relative-permeability.html#cb129-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-13"><a href="relative-permeability.html#cb129-13" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">10</span>))</span>
+<span id="cb129-14"><a href="relative-permeability.html#cb129-14" aria-hidden="true" tabindex="-1"></a>plt.plot(Sw, Fw, <span class="st">&#39;b-&#39;</span>, )</span>
+<span id="cb129-15"><a href="relative-permeability.html#cb129-15" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
+<span id="cb129-16"><a href="relative-permeability.html#cb129-16" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>,<span class="dv">1</span>])</span>
+<span id="cb129-17"><a href="relative-permeability.html#cb129-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;fraction flow&#39;</span>)</span>
+<span id="cb129-18"><a href="relative-permeability.html#cb129-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Sw&#39;</span>)</span>
+<span id="cb129-19"><a href="relative-permeability.html#cb129-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Fraction flow curve&#39;</span>)</span>
+<span id="cb129-20"><a href="relative-permeability.html#cb129-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="images/fwCurvePlot-3.png" width="1920" /></p>
 <p><strong>Calculate Fw Equation with Gravity</strong></p>
 <p>Gravity can be included in the fractional flow equation as follows. First, let us consider the two-phase flow of oil and water in a tilted linear system. Darcy’s Law including capillary pressure and gravity effects for linear flow is</p>
@@ -421,8 +452,8 @@ water viscosity <code>cp</code>,
 <code>gamma</code> oil specific gravity (water =1),
 <code>gamma</code> water specific gravity (water = 1 ),</p>
 </div>
-<div id="buckley-leverett-theory" class="section level2" number="10.3">
-<h2><span class="header-section-number">10.3</span> Buckley-Leverett Theory</h2>
+<div id="buckley-leverett-theory" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Buckley-Leverett Theory<a href="relative-permeability.html#buckley-leverett-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>One of the simplest and most widely used methods of estimating the advance of a fluid displacement front in an immiscible displacement process is the Buckley-Leverett method. Buckley-Leverett Theory [1942] estimates the rate at which an injected water bank moves through a porous medium. The approach uses fractional flow theory and is based on the following assumptions:</p>
 <ul>
 <li>Flow is linear and horizontal</li>
@@ -438,102 +469,104 @@ water viscosity <code>cp</code>,
     \frac{\partial S_{w}}{\partial t} = \frac{-q}{A \phi} \frac{\partial f_{w}}{\partial S_{w}}\frac{\partial S_{w}}{\partial x}
 \end{equation}\]</span></p>
 <p>The python code to solve BL curve is given <a href="https://github.com/yohanesnuwara/pyreservoir">below</a></p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="relative-permeability.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buckley_leverett1d(nt, Sw0, L, nx, sigma, bc_value, muw, muo, q, A, poro, Sw_data, krw_data, kro_data):</span>
-<span id="cb117-2"><a href="relative-permeability.html#cb117-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot; </span></span>
-<span id="cb117-3"><a href="relative-permeability.html#cb117-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Solve Buckley-Leverett PDE using forward-time/backward-space scheme</span></span>
-<span id="cb117-4"><a href="relative-permeability.html#cb117-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb117-5"><a href="relative-permeability.html#cb117-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> interstitial_velocity(q, A, poro):</span>
-<span id="cb117-6"><a href="relative-permeability.html#cb117-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># interstitial velocity vt</span></span>
-<span id="cb117-7"><a href="relative-permeability.html#cb117-7" aria-hidden="true" tabindex="-1"></a>        vt <span class="op">=</span> q <span class="op">/</span> A <span class="op">*</span> poro</span>
-<span id="cb117-8"><a href="relative-permeability.html#cb117-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> vt</span>
-<span id="cb117-9"><a href="relative-permeability.html#cb117-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-10"><a href="relative-permeability.html#cb117-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> fractional_flow(krw, muw, kro, muo):</span>
-<span id="cb117-11"><a href="relative-permeability.html#cb117-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># fractional flow Fww</span></span>
-<span id="cb117-12"><a href="relative-permeability.html#cb117-12" aria-hidden="true" tabindex="-1"></a>        Fww <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> (kro <span class="op">/</span> muo) <span class="op">*</span> (muw <span class="op">/</span> krw))</span>
-<span id="cb117-13"><a href="relative-permeability.html#cb117-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Fww    </span>
-<span id="cb117-14"><a href="relative-permeability.html#cb117-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb117-15"><a href="relative-permeability.html#cb117-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># calculate interstitial velocity</span></span>
-<span id="cb117-16"><a href="relative-permeability.html#cb117-16" aria-hidden="true" tabindex="-1"></a>    vt <span class="op">=</span> interstitial_velocity(q, A, poro)</span>
-<span id="cb117-17"><a href="relative-permeability.html#cb117-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb117-18"><a href="relative-permeability.html#cb117-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># calculate dx</span></span>
-<span id="cb117-19"><a href="relative-permeability.html#cb117-19" aria-hidden="true" tabindex="-1"></a>    dx <span class="op">=</span> L <span class="op">/</span> (nx <span class="op">-</span> <span class="dv">1</span>)</span>
-<span id="cb117-20"><a href="relative-permeability.html#cb117-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb117-21"><a href="relative-permeability.html#cb117-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># calculate dt from CFwL</span></span>
-<span id="cb117-22"><a href="relative-permeability.html#cb117-22" aria-hidden="true" tabindex="-1"></a>    dt <span class="op">=</span> sigma <span class="op">*</span> dx <span class="op">/</span> vt  <span class="co"># time-step size </span></span>
-<span id="cb117-23"><a href="relative-permeability.html#cb117-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb117-24"><a href="relative-permeability.html#cb117-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Discretize the domain.</span></span>
-<span id="cb117-25"><a href="relative-permeability.html#cb117-25" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, L, num<span class="op">=</span>nx)   </span>
-<span id="cb117-26"><a href="relative-permeability.html#cb117-26" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb117-27"><a href="relative-permeability.html#cb117-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># integrate solution in time</span></span>
-<span id="cb117-28"><a href="relative-permeability.html#cb117-28" aria-hidden="true" tabindex="-1"></a>    Sw_hist <span class="op">=</span> [Sw0.copy()]</span>
-<span id="cb117-29"><a href="relative-permeability.html#cb117-29" aria-hidden="true" tabindex="-1"></a>    Sw <span class="op">=</span> Sw0.copy()</span>
-<span id="cb117-30"><a href="relative-permeability.html#cb117-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(nt):</span>
-<span id="cb117-31"><a href="relative-permeability.html#cb117-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Compute the fractional flow.</span></span>
-<span id="cb117-32"><a href="relative-permeability.html#cb117-32" aria-hidden="true" tabindex="-1"></a>        krw, kro <span class="op">=</span> get_Kro_Krw_at_sw(Sw)</span>
-<span id="cb117-33"><a href="relative-permeability.html#cb117-33" aria-hidden="true" tabindex="-1"></a>        Fw <span class="op">=</span> fractional_flow(krw, muw, kro, muo)</span>
-<span id="cb117-34"><a href="relative-permeability.html#cb117-34" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb117-35"><a href="relative-permeability.html#cb117-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Advance in time.</span></span>
-<span id="cb117-36"><a href="relative-permeability.html#cb117-36" aria-hidden="true" tabindex="-1"></a>        Sw[<span class="dv">1</span>:] <span class="op">=</span> Sw[<span class="dv">1</span>:] <span class="op">-</span> (vt <span class="op">*</span> dt <span class="op">/</span> dx) <span class="op">*</span> (Fw[<span class="dv">1</span>:] <span class="op">-</span> Fw[:<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb117-37"><a href="relative-permeability.html#cb117-37" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb117-38"><a href="relative-permeability.html#cb117-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Set the left boundary condition.</span></span>
-<span id="cb117-39"><a href="relative-permeability.html#cb117-39" aria-hidden="true" tabindex="-1"></a>        Sw[<span class="dv">0</span>] <span class="op">=</span> bc_value</span>
-<span id="cb117-40"><a href="relative-permeability.html#cb117-40" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb117-41"><a href="relative-permeability.html#cb117-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Record the time-step solution.</span></span>
-<span id="cb117-42"><a href="relative-permeability.html#cb117-42" aria-hidden="true" tabindex="-1"></a>        Sw_hist.append(Sw.copy()) </span>
-<span id="cb117-43"><a href="relative-permeability.html#cb117-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-44"><a href="relative-permeability.html#cb117-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot Sw over x</span></span>
-<span id="cb117-45"><a href="relative-permeability.html#cb117-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># fig = pyplot.figure(figsize=(6.0, 4.0))</span></span>
-<span id="cb117-46"><a href="relative-permeability.html#cb117-46" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r&#39;$x$&#39;</span>)</span>
-<span id="cb117-47"><a href="relative-permeability.html#cb117-47" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="vs">r&#39;Sw&#39;</span>)</span>
-<span id="cb117-48"><a href="relative-permeability.html#cb117-48" aria-hidden="true" tabindex="-1"></a>    plt.grid()</span>
-<span id="cb117-49"><a href="relative-permeability.html#cb117-49" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, Sw0, label<span class="op">=</span><span class="st">&#39;Initial&#39;</span>,</span>
-<span id="cb117-50"><a href="relative-permeability.html#cb117-50" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">&#39;C0&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb117-51"><a href="relative-permeability.html#cb117-51" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, Sw, label<span class="op">=</span><span class="st">&#39;nt = </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(nt),</span>
-<span id="cb117-52"><a href="relative-permeability.html#cb117-52" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">&#39;C1&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;-&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb117-53"><a href="relative-permeability.html#cb117-53" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="fl">0.0</span>, L)</span>
-<span id="cb117-54"><a href="relative-permeability.html#cb117-54" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)  </span>
-<span id="cb117-55"><a href="relative-permeability.html#cb117-55" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span>
-<span id="cb117-56"><a href="relative-permeability.html#cb117-56" aria-hidden="true" tabindex="-1"></a>    plt.grid()</span>
-<span id="cb117-57"><a href="relative-permeability.html#cb117-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-58"><a href="relative-permeability.html#cb117-58" aria-hidden="true" tabindex="-1"></a>Sw <span class="op">=</span> np.arange(<span class="fl">0.2</span>, <span class="fl">0.9</span>, <span class="fl">0.05</span>)</span>
-<span id="cb117-59"><a href="relative-permeability.html#cb117-59" aria-hidden="true" tabindex="-1"></a>krw <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="fl">.002</span>, <span class="fl">.02</span>, <span class="fl">.04</span>, <span class="fl">.07</span>, <span class="fl">.11</span>, <span class="fl">.15</span>, <span class="fl">.22</span>, <span class="fl">.3</span>, <span class="fl">.4</span>, <span class="fl">.5</span>, <span class="fl">.6</span>, <span class="fl">.7</span>, <span class="fl">.8</span>])</span>
-<span id="cb117-60"><a href="relative-permeability.html#cb117-60" aria-hidden="true" tabindex="-1"></a>kro <span class="op">=</span> np.array([<span class="fl">.6</span>, <span class="fl">.5</span>, <span class="fl">.4</span>, <span class="fl">.3</span>, <span class="fl">.23</span>, <span class="fl">.17</span>, <span class="fl">.12</span>, <span class="fl">.08</span>, <span class="fl">.05</span>, <span class="fl">.03</span>, <span class="fl">.02</span>, <span class="fl">.01</span>, <span class="fl">.005</span>, <span class="dv">0</span>])</span>
-<span id="cb117-61"><a href="relative-permeability.html#cb117-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-62"><a href="relative-permeability.html#cb117-62" aria-hidden="true" tabindex="-1"></a><span class="co"># set parameters for initial condition</span></span>
-<span id="cb117-63"><a href="relative-permeability.html#cb117-63" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="dv">40</span></span>
-<span id="cb117-64"><a href="relative-permeability.html#cb117-64" aria-hidden="true" tabindex="-1"></a>nx <span class="op">=</span> <span class="dv">401</span></span>
-<span id="cb117-65"><a href="relative-permeability.html#cb117-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-66"><a href="relative-permeability.html#cb117-66" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, L, nx) </span>
-<span id="cb117-67"><a href="relative-permeability.html#cb117-67" aria-hidden="true" tabindex="-1"></a>Sw0 <span class="op">=</span> np.full(nx, <span class="fl">0.2</span>)</span>
-<span id="cb117-68"><a href="relative-permeability.html#cb117-68" aria-hidden="true" tabindex="-1"></a>Sw0[:<span class="dv">15</span>] <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb117-69"><a href="relative-permeability.html#cb117-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-70"><a href="relative-permeability.html#cb117-70" aria-hidden="true" tabindex="-1"></a>plt.plot(x, Sw0)</span>
-<span id="cb117-71"><a href="relative-permeability.html#cb117-71" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="bu">min</span>(x), <span class="bu">max</span>(x))</span>
-<span id="cb117-72"><a href="relative-permeability.html#cb117-72" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;x&#39;</span>)<span class="op">;</span> plt.ylabel(<span class="st">&#39;Sw&#39;</span>)</span>
-<span id="cb117-73"><a href="relative-permeability.html#cb117-73" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Initial Condition&#39;</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb117-74"><a href="relative-permeability.html#cb117-74" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb117-75"><a href="relative-permeability.html#cb117-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb117-76"><a href="relative-permeability.html#cb117-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Set parameters for simulation</span></span></code></pre></div>
-<p><img src="images/BL-5.png" width="1920" /></p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb118-1"><a href="relative-permeability.html#cb118-1" aria-hidden="true" tabindex="-1"></a>nt <span class="op">=</span> <span class="dv">70</span></span>
-<span id="cb118-2"><a href="relative-permeability.html#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="co"># L = 4</span></span>
-<span id="cb118-3"><a href="relative-permeability.html#cb118-3" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb118-4"><a href="relative-permeability.html#cb118-4" aria-hidden="true" tabindex="-1"></a>bc_value <span class="op">=</span> Sw0[<span class="dv">0</span>]</span>
-<span id="cb118-5"><a href="relative-permeability.html#cb118-5" aria-hidden="true" tabindex="-1"></a>u_max <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb118-6"><a href="relative-permeability.html#cb118-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb118-7"><a href="relative-permeability.html#cb118-7" aria-hidden="true" tabindex="-1"></a>muw <span class="op">=</span> <span class="fl">0.5E-3</span></span>
-<span id="cb118-8"><a href="relative-permeability.html#cb118-8" aria-hidden="true" tabindex="-1"></a>muo <span class="op">=</span> <span class="fl">1E-3</span></span>
-<span id="cb118-9"><a href="relative-permeability.html#cb118-9" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="dv">200</span> <span class="co"># m3/hr</span></span>
-<span id="cb118-10"><a href="relative-permeability.html#cb118-10" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="dv">30</span> <span class="co"># m2</span></span>
-<span id="cb118-11"><a href="relative-permeability.html#cb118-11" aria-hidden="true" tabindex="-1"></a>poro <span class="op">=</span> <span class="fl">0.24</span></span>
-<span id="cb118-12"><a href="relative-permeability.html#cb118-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulation</span></span>
-<span id="cb118-13"><a href="relative-permeability.html#cb118-13" aria-hidden="true" tabindex="-1"></a>nt <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">500</span>, <span class="dv">700</span>, <span class="dv">900</span>, <span class="dv">1200</span>, <span class="dv">2000</span>]</span>
-<span id="cb118-14"><a href="relative-permeability.html#cb118-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb118-15"><a href="relative-permeability.html#cb118-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">16</span>,<span class="dv">9</span>))</span>
-<span id="cb118-16"><a href="relative-permeability.html#cb118-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(nt)):</span>
-<span id="cb118-17"><a href="relative-permeability.html#cb118-17" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,i<span class="op">+</span><span class="dv">1</span>)</span>
-<span id="cb118-18"><a href="relative-permeability.html#cb118-18" aria-hidden="true" tabindex="-1"></a>    buckley_leverett1d(nt[i], Sw0, L, nx, sigma, bc_value, muw, muo, q, A, poro, Sw, krw, kro)</span>
-<span id="cb118-19"><a href="relative-permeability.html#cb118-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb130-1"><a href="relative-permeability.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> buckley_leverett1d(nt, Sw0, L, nx, sigma, bc_value, muw, muo, q, A, poro, Sw_data, krw_data, kro_data):</span>
+<span id="cb130-2"><a href="relative-permeability.html#cb130-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot; </span></span>
+<span id="cb130-3"><a href="relative-permeability.html#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Solve Buckley-Leverett PDE using forward-time/backward-space scheme</span></span>
+<span id="cb130-4"><a href="relative-permeability.html#cb130-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb130-5"><a href="relative-permeability.html#cb130-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> interstitial_velocity(q, A, poro):</span>
+<span id="cb130-6"><a href="relative-permeability.html#cb130-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># interstitial velocity vt</span></span>
+<span id="cb130-7"><a href="relative-permeability.html#cb130-7" aria-hidden="true" tabindex="-1"></a>        vt <span class="op">=</span> q <span class="op">/</span> A <span class="op">*</span> poro</span>
+<span id="cb130-8"><a href="relative-permeability.html#cb130-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> vt</span>
+<span id="cb130-9"><a href="relative-permeability.html#cb130-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-10"><a href="relative-permeability.html#cb130-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> fractional_flow(krw, muw, kro, muo):</span>
+<span id="cb130-11"><a href="relative-permeability.html#cb130-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># fractional flow Fww</span></span>
+<span id="cb130-12"><a href="relative-permeability.html#cb130-12" aria-hidden="true" tabindex="-1"></a>        Fww <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> (kro <span class="op">/</span> muo) <span class="op">*</span> (muw <span class="op">/</span> krw))</span>
+<span id="cb130-13"><a href="relative-permeability.html#cb130-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Fww    </span>
+<span id="cb130-14"><a href="relative-permeability.html#cb130-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb130-15"><a href="relative-permeability.html#cb130-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># calculate interstitial velocity</span></span>
+<span id="cb130-16"><a href="relative-permeability.html#cb130-16" aria-hidden="true" tabindex="-1"></a>    vt <span class="op">=</span> interstitial_velocity(q, A, poro)</span>
+<span id="cb130-17"><a href="relative-permeability.html#cb130-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb130-18"><a href="relative-permeability.html#cb130-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># calculate dx</span></span>
+<span id="cb130-19"><a href="relative-permeability.html#cb130-19" aria-hidden="true" tabindex="-1"></a>    dx <span class="op">=</span> L <span class="op">/</span> (nx <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb130-20"><a href="relative-permeability.html#cb130-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb130-21"><a href="relative-permeability.html#cb130-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># calculate dt from CFwL</span></span>
+<span id="cb130-22"><a href="relative-permeability.html#cb130-22" aria-hidden="true" tabindex="-1"></a>    dt <span class="op">=</span> sigma <span class="op">*</span> dx <span class="op">/</span> vt  <span class="co"># time-step size </span></span>
+<span id="cb130-23"><a href="relative-permeability.html#cb130-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb130-24"><a href="relative-permeability.html#cb130-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Discretize the domain.</span></span>
+<span id="cb130-25"><a href="relative-permeability.html#cb130-25" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, L, num<span class="op">=</span>nx)   </span>
+<span id="cb130-26"><a href="relative-permeability.html#cb130-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb130-27"><a href="relative-permeability.html#cb130-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># integrate solution in time</span></span>
+<span id="cb130-28"><a href="relative-permeability.html#cb130-28" aria-hidden="true" tabindex="-1"></a>    Sw_hist <span class="op">=</span> [Sw0.copy()]</span>
+<span id="cb130-29"><a href="relative-permeability.html#cb130-29" aria-hidden="true" tabindex="-1"></a>    Sw <span class="op">=</span> Sw0.copy()</span>
+<span id="cb130-30"><a href="relative-permeability.html#cb130-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(nt):</span>
+<span id="cb130-31"><a href="relative-permeability.html#cb130-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Compute the fractional flow.</span></span>
+<span id="cb130-32"><a href="relative-permeability.html#cb130-32" aria-hidden="true" tabindex="-1"></a>        krw, kro <span class="op">=</span> get_Kro_Krw_at_sw(Sw)</span>
+<span id="cb130-33"><a href="relative-permeability.html#cb130-33" aria-hidden="true" tabindex="-1"></a>        Fw <span class="op">=</span> fractional_flow(krw, muw, kro, muo)</span>
+<span id="cb130-34"><a href="relative-permeability.html#cb130-34" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb130-35"><a href="relative-permeability.html#cb130-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Advance in time.</span></span>
+<span id="cb130-36"><a href="relative-permeability.html#cb130-36" aria-hidden="true" tabindex="-1"></a>        Sw[<span class="dv">1</span>:] <span class="op">=</span> Sw[<span class="dv">1</span>:] <span class="op">-</span> (vt <span class="op">*</span> dt <span class="op">/</span> dx) <span class="op">*</span> (Fw[<span class="dv">1</span>:] <span class="op">-</span> Fw[:<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb130-37"><a href="relative-permeability.html#cb130-37" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb130-38"><a href="relative-permeability.html#cb130-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Set the left boundary condition.</span></span>
+<span id="cb130-39"><a href="relative-permeability.html#cb130-39" aria-hidden="true" tabindex="-1"></a>        Sw[<span class="dv">0</span>] <span class="op">=</span> bc_value</span>
+<span id="cb130-40"><a href="relative-permeability.html#cb130-40" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb130-41"><a href="relative-permeability.html#cb130-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Record the time-step solution.</span></span>
+<span id="cb130-42"><a href="relative-permeability.html#cb130-42" aria-hidden="true" tabindex="-1"></a>        Sw_hist.append(Sw.copy()) </span>
+<span id="cb130-43"><a href="relative-permeability.html#cb130-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-44"><a href="relative-permeability.html#cb130-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot Sw over x</span></span>
+<span id="cb130-45"><a href="relative-permeability.html#cb130-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># fig = pyplot.figure(figsize=(6.0, 4.0))</span></span>
+<span id="cb130-46"><a href="relative-permeability.html#cb130-46" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="vs">r&#39;$x$&#39;</span>)</span>
+<span id="cb130-47"><a href="relative-permeability.html#cb130-47" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="vs">r&#39;Sw&#39;</span>)</span>
+<span id="cb130-48"><a href="relative-permeability.html#cb130-48" aria-hidden="true" tabindex="-1"></a>    plt.grid()</span>
+<span id="cb130-49"><a href="relative-permeability.html#cb130-49" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, Sw0, label<span class="op">=</span><span class="st">&#39;Initial&#39;</span>,</span>
+<span id="cb130-50"><a href="relative-permeability.html#cb130-50" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">&#39;C0&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb130-51"><a href="relative-permeability.html#cb130-51" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, Sw, label<span class="op">=</span><span class="st">&#39;nt = </span><span class="sc">{}</span><span class="st">&#39;</span>.<span class="bu">format</span>(nt),</span>
+<span id="cb130-52"><a href="relative-permeability.html#cb130-52" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span><span class="st">&#39;C1&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;-&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb130-53"><a href="relative-permeability.html#cb130-53" aria-hidden="true" tabindex="-1"></a>    plt.xlim(<span class="fl">0.0</span>, L)</span>
+<span id="cb130-54"><a href="relative-permeability.html#cb130-54" aria-hidden="true" tabindex="-1"></a>    plt.ylim(<span class="dv">0</span>, <span class="dv">1</span>)  </span>
+<span id="cb130-55"><a href="relative-permeability.html#cb130-55" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span>
+<span id="cb130-56"><a href="relative-permeability.html#cb130-56" aria-hidden="true" tabindex="-1"></a>    plt.grid()</span>
+<span id="cb130-57"><a href="relative-permeability.html#cb130-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-58"><a href="relative-permeability.html#cb130-58" aria-hidden="true" tabindex="-1"></a>Sw <span class="op">=</span> np.arange(<span class="fl">0.2</span>, <span class="fl">0.9</span>, <span class="fl">0.05</span>)</span>
+<span id="cb130-59"><a href="relative-permeability.html#cb130-59" aria-hidden="true" tabindex="-1"></a>krw <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="fl">.002</span>, <span class="fl">.02</span>, <span class="fl">.04</span>, <span class="fl">.07</span>, <span class="fl">.11</span>, <span class="fl">.15</span>, <span class="fl">.22</span>, <span class="fl">.3</span>, <span class="fl">.4</span>, <span class="fl">.5</span>, <span class="fl">.6</span>, <span class="fl">.7</span>, <span class="fl">.8</span>])</span>
+<span id="cb130-60"><a href="relative-permeability.html#cb130-60" aria-hidden="true" tabindex="-1"></a>kro <span class="op">=</span> np.array([<span class="fl">.6</span>, <span class="fl">.5</span>, <span class="fl">.4</span>, <span class="fl">.3</span>, <span class="fl">.23</span>, <span class="fl">.17</span>, <span class="fl">.12</span>, <span class="fl">.08</span>, <span class="fl">.05</span>, <span class="fl">.03</span>, <span class="fl">.02</span>, <span class="fl">.01</span>, <span class="fl">.005</span>, <span class="dv">0</span>])</span>
+<span id="cb130-61"><a href="relative-permeability.html#cb130-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-62"><a href="relative-permeability.html#cb130-62" aria-hidden="true" tabindex="-1"></a><span class="co"># set parameters for initial condition</span></span>
+<span id="cb130-63"><a href="relative-permeability.html#cb130-63" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="dv">40</span></span>
+<span id="cb130-64"><a href="relative-permeability.html#cb130-64" aria-hidden="true" tabindex="-1"></a>nx <span class="op">=</span> <span class="dv">401</span></span>
+<span id="cb130-65"><a href="relative-permeability.html#cb130-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-66"><a href="relative-permeability.html#cb130-66" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, L, nx) </span>
+<span id="cb130-67"><a href="relative-permeability.html#cb130-67" aria-hidden="true" tabindex="-1"></a>Sw0 <span class="op">=</span> np.full(nx, <span class="fl">0.2</span>)</span>
+<span id="cb130-68"><a href="relative-permeability.html#cb130-68" aria-hidden="true" tabindex="-1"></a>Sw0[:<span class="dv">15</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb130-69"><a href="relative-permeability.html#cb130-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-70"><a href="relative-permeability.html#cb130-70" aria-hidden="true" tabindex="-1"></a>plt.plot(x, Sw0)</span>
+<span id="cb130-71"><a href="relative-permeability.html#cb130-71" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="bu">min</span>(x), <span class="bu">max</span>(x))</span>
+<span id="cb130-72"><a href="relative-permeability.html#cb130-72" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;x&#39;</span>)<span class="op">;</span> plt.ylabel(<span class="st">&#39;Sw&#39;</span>)</span>
+<span id="cb130-73"><a href="relative-permeability.html#cb130-73" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Initial Condition&#39;</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb130-74"><a href="relative-permeability.html#cb130-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-75"><a href="relative-permeability.html#cb130-75" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="images/BL-5.png" width="672" /></p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb131-1"><a href="relative-permeability.html#cb131-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-2"><a href="relative-permeability.html#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Set parameters for simulation</span></span>
+<span id="cb131-3"><a href="relative-permeability.html#cb131-3" aria-hidden="true" tabindex="-1"></a>nt <span class="op">=</span> <span class="dv">70</span></span>
+<span id="cb131-4"><a href="relative-permeability.html#cb131-4" aria-hidden="true" tabindex="-1"></a><span class="co"># L = 4</span></span>
+<span id="cb131-5"><a href="relative-permeability.html#cb131-5" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb131-6"><a href="relative-permeability.html#cb131-6" aria-hidden="true" tabindex="-1"></a>bc_value <span class="op">=</span> Sw0[<span class="dv">0</span>]</span>
+<span id="cb131-7"><a href="relative-permeability.html#cb131-7" aria-hidden="true" tabindex="-1"></a>u_max <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb131-8"><a href="relative-permeability.html#cb131-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-9"><a href="relative-permeability.html#cb131-9" aria-hidden="true" tabindex="-1"></a>muw <span class="op">=</span> <span class="fl">0.5E-3</span></span>
+<span id="cb131-10"><a href="relative-permeability.html#cb131-10" aria-hidden="true" tabindex="-1"></a>muo <span class="op">=</span> <span class="fl">1E-3</span></span>
+<span id="cb131-11"><a href="relative-permeability.html#cb131-11" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> <span class="dv">200</span> <span class="co"># m3/hr</span></span>
+<span id="cb131-12"><a href="relative-permeability.html#cb131-12" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="dv">30</span> <span class="co"># m2</span></span>
+<span id="cb131-13"><a href="relative-permeability.html#cb131-13" aria-hidden="true" tabindex="-1"></a>poro <span class="op">=</span> <span class="fl">0.24</span></span>
+<span id="cb131-14"><a href="relative-permeability.html#cb131-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulation</span></span>
+<span id="cb131-15"><a href="relative-permeability.html#cb131-15" aria-hidden="true" tabindex="-1"></a>nt <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">500</span>, <span class="dv">700</span>, <span class="dv">900</span>, <span class="dv">1200</span>, <span class="dv">2000</span>]</span>
+<span id="cb131-16"><a href="relative-permeability.html#cb131-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-17"><a href="relative-permeability.html#cb131-17" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">16</span>,<span class="dv">9</span>))</span>
+<span id="cb131-18"><a href="relative-permeability.html#cb131-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(nt)):</span>
+<span id="cb131-19"><a href="relative-permeability.html#cb131-19" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,i<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb131-20"><a href="relative-permeability.html#cb131-20" aria-hidden="true" tabindex="-1"></a>    buckley_leverett1d(nt[i], Sw0, L, nx, sigma, bc_value, muw, muo, q, A, poro, Sw, krw, kro)</span>
+<span id="cb131-21"><a href="relative-permeability.html#cb131-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-22"><a href="relative-permeability.html#cb131-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p><img src="images/BL-6.png" width="1536" /></p>
 
 </div>
@@ -604,7 +637,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Properties of Oil | Basic Reservoir Engineering in Python</title>
-  <meta name="description" content="8 Properties of Oil | Basic Reservoir Engineering in Python" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <title>8 Properties of Oil | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="8 Properties of Oil | Applications of Python in Reservoir Engineering" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Properties of Oil | Basic Reservoir Engineering in Python" />
+  <meta property="og:title" content="8 Properties of Oil | Applications of Python in Reservoir Engineering" />
   <meta property="og:type" content="book" />
-  
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Properties of Oil | Basic Reservoir Engineering in Python" />
+  <meta name="twitter:title" content="8 Properties of Oil | Applications of Python in Reservoir Engineering" />
   
   
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="fundamental-properties-of-fluid.html"/>
 <link rel="next" href="rock-properties.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -119,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 </head>
 
@@ -133,44 +136,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html"><i class="fa fa-check"></i><b>2</b> Chapter 1: Introduction to Python for Reservoir Engineering</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.1</b> Getting Started with Python</a>
+<li class="chapter" data-level="2.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#why-python"><i class="fa fa-check"></i><b>2.1</b> Why Python?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#versatility"><i class="fa fa-check"></i><b>2.2</b> Versatility</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#readability-and-learnability"><i class="fa fa-check"></i><b>2.3</b> Readability and Learnability</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#open-source-community"><i class="fa fa-check"></i><b>2.4</b> Open Source Community</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#extensive-libraries"><i class="fa fa-check"></i><b>2.5</b> Extensive Libraries</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#conclusion-pythons-role-in-reservoir-engineering"><i class="fa fa-check"></i><b>2.6</b> Conclusion: Python’s Role in Reservoir Engineering</a></li>
+<li class="chapter" data-level="2.7" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.7</b> Getting Started with Python</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#datatypes"><i class="fa fa-check"></i><b>2.1.1</b> Datatypes</a></li>
+<li class="chapter" data-level="2.7.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#introduction"><i class="fa fa-check"></i><b>2.7.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.7.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#installing-python"><i class="fa fa-check"></i><b>2.7.2</b> Installing Python</a></li>
+<li class="chapter" data-level="2.7.3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#choosing-a-python-distribution"><i class="fa fa-check"></i><b>2.7.3</b> Choosing a Python Distribution</a></li>
+<li class="chapter" data-level="2.7.4" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#downloading-anaconda"><i class="fa fa-check"></i><b>2.7.4</b> Downloading Anaconda</a></li>
+<li class="chapter" data-level="2.7.5" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#verifying-the-installation"><i class="fa fa-check"></i><b>2.7.5</b> Verifying the Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>2.2</b> Lists</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#list-comprehensions"><i class="fa fa-check"></i><b>2.3</b> List comprehensions</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#tuples"><i class="fa fa-check"></i><b>2.4</b> Tuples</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#dictionaries"><i class="fa fa-check"></i><b>2.5</b> Dictionaries</a></li>
-<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#set"><i class="fa fa-check"></i><b>2.6</b> Set</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>3</b> Simple Mathematics</a>
+<li class="chapter" data-level="2.8" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#setting-up-your-python-environment"><i class="fa fa-check"></i><b>2.8</b> Setting Up Your Python Environment</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>3.1</b> Comparisons</a></li>
-<li class="chapter" data-level="3.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>3.2</b> Conditionals</a></li>
-<li class="chapter" data-level="3.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>3.3</b> if, elif, and else</a></li>
-<li class="chapter" data-level="3.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>3.4</b> Boolean Operators</a></li>
-<li class="chapter" data-level="3.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>3.5</b> Loops</a></li>
-<li class="chapter" data-level="3.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>3.6</b> For loops</a></li>
-<li class="chapter" data-level="3.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>3.7</b> While Loop</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>3.7.1</b> <code>break</code> statement</a></li>
-<li class="chapter" data-level="3.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>3.7.2</b> <code>continue</code> statement</a></li>
+<li class="chapter" data-level="2.8.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#manual-virtual-environment"><i class="fa fa-check"></i><b>2.8.1</b> Manual Virtual Environment</a></li>
+<li class="chapter" data-level="2.8.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#creating-a-virtual-environment-with-anaconda"><i class="fa fa-check"></i><b>2.8.2</b> Creating a Virtual Environment with Anaconda</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>4</b> Built in Modules and Functions</a>
+<li class="chapter" data-level="3" data-path="python-basics.html"><a href="python-basics.html"><i class="fa fa-check"></i><b>3</b> Python Basics</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>4.1</b> Creating a module</a></li>
-<li class="chapter" data-level="4.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>4.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="3.0.1" data-path="python-basics.html"><a href="python-basics.html#datatypes"><i class="fa fa-check"></i><b>3.0.1</b> Datatypes</a></li>
+<li class="chapter" data-level="3.1" data-path="python-basics.html"><a href="python-basics.html#lists"><i class="fa fa-check"></i><b>3.1</b> Lists</a></li>
+<li class="chapter" data-level="3.2" data-path="python-basics.html"><a href="python-basics.html#list-comprehensions"><i class="fa fa-check"></i><b>3.2</b> List comprehensions</a></li>
+<li class="chapter" data-level="3.3" data-path="python-basics.html"><a href="python-basics.html#tuples"><i class="fa fa-check"></i><b>3.3</b> Tuples</a></li>
+<li class="chapter" data-level="3.4" data-path="python-basics.html"><a href="python-basics.html#dictionaries"><i class="fa fa-check"></i><b>3.4</b> Dictionaries</a></li>
+<li class="chapter" data-level="3.5" data-path="python-basics.html"><a href="python-basics.html#set"><i class="fa fa-check"></i><b>3.5</b> Set</a></li>
+<li class="chapter" data-level="3.6" data-path="python-basics.html"><a href="python-basics.html#control-flow-and-functions"><i class="fa fa-check"></i><b>3.6</b> Control Flow and Functions</a></li>
+<li class="chapter" data-level="3.7" data-path="python-basics.html"><a href="python-basics.html#python-libraries-for-reservoir-engineering"><i class="fa fa-check"></i><b>3.7</b> Python Libraries for Reservoir Engineering</a></li>
+<li class="chapter" data-level="3.8" data-path="python-basics.html"><a href="python-basics.html#hands-on-practice"><i class="fa fa-check"></i><b>3.8</b> Hands-On Practice</a></li>
+<li class="chapter" data-level="3.9" data-path="python-basics.html"><a href="python-basics.html#chapter-summary"><i class="fa fa-check"></i><b>3.9</b> Chapter Summary</a></li>
+<li class="chapter" data-level="3.10" data-path="python-basics.html"><a href="python-basics.html#further-reading"><i class="fa fa-check"></i><b>3.10</b> Further Reading</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>5</b> Functions</a>
+<li class="chapter" data-level="4" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>4</b> Simple Mathematics</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="functions.html"><a href="functions.html#lambda-function"><i class="fa fa-check"></i><b>5.1</b> Lambda function</a></li>
+<li class="chapter" data-level="4.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>4.1</b> Comparisons</a></li>
+<li class="chapter" data-level="4.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>4.2</b> Conditionals</a></li>
+<li class="chapter" data-level="4.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>4.3</b> if, elif, and else</a></li>
+<li class="chapter" data-level="4.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>4.4</b> Boolean Operators</a></li>
+<li class="chapter" data-level="4.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>4.5</b> Loops</a></li>
+<li class="chapter" data-level="4.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>4.6</b> For loops</a></li>
+<li class="chapter" data-level="4.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>4.7</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>4.7.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="4.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>4.7.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>5</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>5.1</b> Creating a module</a></li>
+<li class="chapter" data-level="5.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>5.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="5.3" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#functions"><i class="fa fa-check"></i><b>5.3</b> Functions</a></li>
+<li class="chapter" data-level="5.4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#lambda-function"><i class="fa fa-check"></i><b>5.4</b> Lambda function</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>6</b> Introduction to Numpy</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>6.1</b> Why is NumPy Fast?</a></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#n-dimensional-arrays"><i class="fa fa-check"></i><b>6.2</b> N-Dimensional Arrays</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#creating-ndarrays"><i class="fa fa-check"></i><b>6.2.1</b> Creating ndarrays</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#manipulating-and-operating-on-ndarrays"><i class="fa fa-check"></i><b>6.2.2</b> Manipulating and Operating on ndarrays</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#universal-functions-ufuncs"><i class="fa fa-check"></i><b>6.3</b> Universal Functions (ufuncs)</a></li>
+<li class="chapter" data-level="6.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#array-manipulation"><i class="fa fa-check"></i><b>6.4</b> Array Manipulation</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="basic-reservoir-engineering.html"><a href="basic-reservoir-engineering.html"><i class="fa fa-check"></i>Basic Reservoir Engineering</a></li>
 <li class="chapter" data-level="7" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html"><i class="fa fa-check"></i><b>7</b> Fundamental Properties of Fluid</a>
@@ -246,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Reservoir Engineering in Python</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applications of Python in Reservoir Engineering</a>
           </h1>
         </div>
 
@@ -254,36 +286,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="properties-of-oil" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Properties of Oil</h1>
+<div id="properties-of-oil" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Properties of Oil<a href="properties-of-oil.html#properties-of-oil" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><strong>Basic oil properties from compositions</strong></p>
 <p>The properties of mixture of oil can be calculated from molar fraction of individual components.</p>
 <p>for example</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb107-1"><a href="properties-of-oil.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lets take four component</span></span>
-<span id="cb107-2"><a href="properties-of-oil.html#cb107-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&#39;C3&#39;</span>, <span class="st">&#39;nC4&#39;</span>, <span class="st">&#39;nC5&#39;</span>, <span class="st">&#39;nC6&#39;</span>]     <span class="co"># name of component</span></span>
-<span id="cb107-3"><a href="properties-of-oil.html#cb107-3" aria-hidden="true" tabindex="-1"></a>frac <span class="op">=</span> [<span class="fl">0.05</span>, <span class="fl">0.15</span>, <span class="fl">0.2</span>, <span class="fl">0.6</span>]           <span class="co"># volume fraction</span></span>
-<span id="cb107-4"><a href="properties-of-oil.html#cb107-4" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> [<span class="fl">507.2</span>, <span class="fl">583.9</span>, <span class="fl">629.5</span>, <span class="fl">659.8</span>]      <span class="co"># Mass density</span></span>
-<span id="cb107-5"><a href="properties-of-oil.html#cb107-5" aria-hidden="true" tabindex="-1"></a>MW <span class="op">=</span> [<span class="fl">44.09</span>, <span class="fl">58.12</span>, <span class="fl">72.15</span>, <span class="fl">86.17</span>]       <span class="co"># Molecular weight</span></span>
-<span id="cb107-6"><a href="properties-of-oil.html#cb107-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb107-7"><a href="properties-of-oil.html#cb107-7" aria-hidden="true" tabindex="-1"></a>ncomp <span class="op">=</span> <span class="bu">len</span>(names)</span>
-<span id="cb107-8"><a href="properties-of-oil.html#cb107-8" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> [rho[i]<span class="op">*</span>frac[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)] <span class="co"># Mass of each component</span></span>
-<span id="cb107-9"><a href="properties-of-oil.html#cb107-9" aria-hidden="true" tabindex="-1"></a>n  <span class="op">=</span> [m[i]<span class="op">/</span>MW[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (ncomp)]   <span class="co"># MOles of each component</span></span>
-<span id="cb107-10"><a href="properties-of-oil.html#cb107-10" aria-hidden="true" tabindex="-1"></a>Mass <span class="op">=</span> <span class="bu">sum</span>(m)</span>
-<span id="cb107-11"><a href="properties-of-oil.html#cb107-11" aria-hidden="true" tabindex="-1"></a>moles <span class="op">=</span> <span class="bu">sum</span>(n)</span>
-<span id="cb107-12"><a href="properties-of-oil.html#cb107-12" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> [m[i]<span class="op">/</span> Mass <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)]          <span class="co"># Weight Fraction</span></span>
-<span id="cb107-13"><a href="properties-of-oil.html#cb107-13" aria-hidden="true" tabindex="-1"></a>mol_frac <span class="op">=</span> [n[i]<span class="op">/</span> moles <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)]  <span class="co"># Mole fraction</span></span>
-<span id="cb107-14"><a href="properties-of-oil.html#cb107-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb107-15"><a href="properties-of-oil.html#cb107-15" aria-hidden="true" tabindex="-1"></a>Total_MW <span class="op">=</span> Mass <span class="op">/</span> moles     <span class="co"># Molecular weight of total composition</span></span>
-<span id="cb107-16"><a href="properties-of-oil.html#cb107-16" aria-hidden="true" tabindex="-1"></a>Sg <span class="op">=</span> Mass <span class="op">/</span> <span class="dv">1000</span>            <span class="co"># specific gravity</span></span>
-<span id="cb107-17"><a href="properties-of-oil.html#cb107-17" aria-hidden="true" tabindex="-1"></a>API <span class="op">=</span> <span class="fl">141.5</span> <span class="op">/</span> Sg <span class="op">-</span> <span class="fl">131.5</span>    <span class="co"># Oil API</span></span>
-<span id="cb107-18"><a href="properties-of-oil.html#cb107-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture MW:&#39;</span>, <span class="bu">round</span>(Total_MW,<span class="dv">3</span>), <span class="st">&#39;lbm/lbm mol&#39;</span>)</span>
-<span id="cb107-19"><a href="properties-of-oil.html#cb107-19" aria-hidden="true" tabindex="-1"></a>Mixture MW: <span class="fl">75.371</span> lbm<span class="op">/</span>lbm mol</span>
-<span id="cb107-20"><a href="properties-of-oil.html#cb107-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture Density:&#39;</span>, <span class="bu">round</span>(Mass, <span class="dv">3</span>), <span class="st">&#39;kg/m3&#39;</span>)</span>
-<span id="cb107-21"><a href="properties-of-oil.html#cb107-21" aria-hidden="true" tabindex="-1"></a>Mixture Density: <span class="fl">634.725</span> kg<span class="op">/</span>m3</span>
-<span id="cb107-22"><a href="properties-of-oil.html#cb107-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture SG::&#39;</span>, <span class="bu">round</span>(Sg ,<span class="dv">3</span>))</span>
-<span id="cb107-23"><a href="properties-of-oil.html#cb107-23" aria-hidden="true" tabindex="-1"></a>Mixture SG:: <span class="fl">0.635</span></span>
-<span id="cb107-24"><a href="properties-of-oil.html#cb107-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;degrees API:&#39;</span>, <span class="bu">round</span>(API,<span class="dv">3</span>), <span class="st">&#39;API&#39;</span>)</span>
-<span id="cb107-25"><a href="properties-of-oil.html#cb107-25" aria-hidden="true" tabindex="-1"></a>degrees API: <span class="fl">91.431</span> API</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb120-1"><a href="properties-of-oil.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lets take four component</span></span>
+<span id="cb120-2"><a href="properties-of-oil.html#cb120-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&#39;C3&#39;</span>, <span class="st">&#39;nC4&#39;</span>, <span class="st">&#39;nC5&#39;</span>, <span class="st">&#39;nC6&#39;</span>]     <span class="co"># name of component</span></span>
+<span id="cb120-3"><a href="properties-of-oil.html#cb120-3" aria-hidden="true" tabindex="-1"></a>frac <span class="op">=</span> [<span class="fl">0.05</span>, <span class="fl">0.15</span>, <span class="fl">0.2</span>, <span class="fl">0.6</span>]           <span class="co"># volume fraction</span></span>
+<span id="cb120-4"><a href="properties-of-oil.html#cb120-4" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> [<span class="fl">507.2</span>, <span class="fl">583.9</span>, <span class="fl">629.5</span>, <span class="fl">659.8</span>]      <span class="co"># Mass density</span></span>
+<span id="cb120-5"><a href="properties-of-oil.html#cb120-5" aria-hidden="true" tabindex="-1"></a>MW <span class="op">=</span> [<span class="fl">44.09</span>, <span class="fl">58.12</span>, <span class="fl">72.15</span>, <span class="fl">86.17</span>]       <span class="co"># Molecular weight</span></span>
+<span id="cb120-6"><a href="properties-of-oil.html#cb120-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-7"><a href="properties-of-oil.html#cb120-7" aria-hidden="true" tabindex="-1"></a>ncomp <span class="op">=</span> <span class="bu">len</span>(names)</span>
+<span id="cb120-8"><a href="properties-of-oil.html#cb120-8" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> [rho[i]<span class="op">*</span>frac[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)] <span class="co"># Mass of each component</span></span>
+<span id="cb120-9"><a href="properties-of-oil.html#cb120-9" aria-hidden="true" tabindex="-1"></a>n  <span class="op">=</span> [m[i]<span class="op">/</span>MW[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span> (ncomp)]   <span class="co"># MOles of each component</span></span>
+<span id="cb120-10"><a href="properties-of-oil.html#cb120-10" aria-hidden="true" tabindex="-1"></a>Mass <span class="op">=</span> <span class="bu">sum</span>(m)</span>
+<span id="cb120-11"><a href="properties-of-oil.html#cb120-11" aria-hidden="true" tabindex="-1"></a>moles <span class="op">=</span> <span class="bu">sum</span>(n)</span>
+<span id="cb120-12"><a href="properties-of-oil.html#cb120-12" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> [m[i]<span class="op">/</span> Mass <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)]          <span class="co"># Weight Fraction</span></span>
+<span id="cb120-13"><a href="properties-of-oil.html#cb120-13" aria-hidden="true" tabindex="-1"></a>mol_frac <span class="op">=</span> [n[i]<span class="op">/</span> moles <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ncomp)]  <span class="co"># Mole fraction</span></span>
+<span id="cb120-14"><a href="properties-of-oil.html#cb120-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-15"><a href="properties-of-oil.html#cb120-15" aria-hidden="true" tabindex="-1"></a>Total_MW <span class="op">=</span> Mass <span class="op">/</span> moles     <span class="co"># Molecular weight of total composition</span></span>
+<span id="cb120-16"><a href="properties-of-oil.html#cb120-16" aria-hidden="true" tabindex="-1"></a>Sg <span class="op">=</span> Mass <span class="op">/</span> <span class="dv">1000</span>            <span class="co"># specific gravity</span></span>
+<span id="cb120-17"><a href="properties-of-oil.html#cb120-17" aria-hidden="true" tabindex="-1"></a>API <span class="op">=</span> <span class="fl">141.5</span> <span class="op">/</span> Sg <span class="op">-</span> <span class="fl">131.5</span>    <span class="co"># Oil API</span></span>
+<span id="cb120-18"><a href="properties-of-oil.html#cb120-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture MW:&#39;</span>, <span class="bu">round</span>(Total_MW,<span class="dv">3</span>), <span class="st">&#39;lbm/lbm mol&#39;</span>)</span>
+<span id="cb120-19"><a href="properties-of-oil.html#cb120-19" aria-hidden="true" tabindex="-1"></a>Mixture MW: <span class="fl">75.371</span> lbm<span class="op">/</span>lbm mol</span>
+<span id="cb120-20"><a href="properties-of-oil.html#cb120-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture Density:&#39;</span>, <span class="bu">round</span>(Mass, <span class="dv">3</span>), <span class="st">&#39;kg/m3&#39;</span>)</span>
+<span id="cb120-21"><a href="properties-of-oil.html#cb120-21" aria-hidden="true" tabindex="-1"></a>Mixture Density: <span class="fl">634.725</span> kg<span class="op">/</span>m3</span>
+<span id="cb120-22"><a href="properties-of-oil.html#cb120-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Mixture SG::&#39;</span>, <span class="bu">round</span>(Sg ,<span class="dv">3</span>))</span>
+<span id="cb120-23"><a href="properties-of-oil.html#cb120-23" aria-hidden="true" tabindex="-1"></a>Mixture SG:: <span class="fl">0.635</span></span>
+<span id="cb120-24"><a href="properties-of-oil.html#cb120-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;degrees API:&#39;</span>, <span class="bu">round</span>(API,<span class="dv">3</span>), <span class="st">&#39;API&#39;</span>)</span>
+<span id="cb120-25"><a href="properties-of-oil.html#cb120-25" aria-hidden="true" tabindex="-1"></a>degrees API: <span class="fl">91.431</span> API</span></code></pre></div>
 
 </div>
             </section>
@@ -352,7 +384,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

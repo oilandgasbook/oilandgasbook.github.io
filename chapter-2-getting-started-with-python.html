@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Chapter 2: Getting Started with Python | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="4 Chapter 2: Getting Started with Python | Applications of Python in Reservoir Engineering" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Chapter 2: Getting Started with Python | Applications of Python in Reservoir Engineering" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Chapter 2: Getting Started with Python | Applications of Python in Reservoir Engineering" />
+  
+  
+  
+
+<meta name="author" content="Pramod Azad" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-1-introduction-to-python-for-reservoir-engineering.html"/>
+<link rel="next" href="simple-mathematics.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.1</b> Getting Started with Python</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#datatypes"><i class="fa fa-check"></i><b>2.1.1</b> Datatypes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>2.2</b> Lists</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#list-comprehensions"><i class="fa fa-check"></i><b>2.3</b> List comprehensions</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#tuples"><i class="fa fa-check"></i><b>2.4</b> Tuples</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#dictionaries"><i class="fa fa-check"></i><b>2.5</b> Dictionaries</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#set"><i class="fa fa-check"></i><b>2.6</b> Set</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html"><i class="fa fa-check"></i><b>3</b> Chapter 1: Introduction to Python for Reservoir Engineering</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#why-python"><i class="fa fa-check"></i><b>3.1</b> Why Python?</a></li>
+<li class="chapter" data-level="3.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#versatility"><i class="fa fa-check"></i><b>3.2</b> Versatility</a></li>
+<li class="chapter" data-level="3.3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#readability-and-learnability"><i class="fa fa-check"></i><b>3.3</b> Readability and Learnability</a></li>
+<li class="chapter" data-level="3.4" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#open-source-community"><i class="fa fa-check"></i><b>3.4</b> Open Source Community</a></li>
+<li class="chapter" data-level="3.5" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#extensive-libraries"><i class="fa fa-check"></i><b>3.5</b> Extensive Libraries</a></li>
+<li class="chapter" data-level="3.6" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#conclusion-pythons-role-in-reservoir-engineering"><i class="fa fa-check"></i><b>3.6</b> Conclusion: Python’s Role in Reservoir Engineering</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html"><i class="fa fa-check"></i><b>4</b> Chapter 2: Getting Started with Python</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> 2.1 Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#installing-python"><i class="fa fa-check"></i><b>4.2</b> 2.2 Installing Python</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#choosing-a-python-distribution"><i class="fa fa-check"></i><b>4.2.1</b> 2.2.1 Choosing a Python Distribution</a></li>
+<li class="chapter" data-level="4.2.2" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#downloading-anaconda"><i class="fa fa-check"></i><b>4.2.2</b> 2.2.2 Downloading Anaconda</a></li>
+<li class="chapter" data-level="4.2.3" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#verifying-the-installation"><i class="fa fa-check"></i><b>4.2.3</b> 2.2.3 Verifying the Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#setting-up-your-python-environment"><i class="fa fa-check"></i><b>4.3</b> 1.2 Setting Up Your Python Environment</a></li>
+<li class="chapter" data-level="4.4" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#python-basics"><i class="fa fa-check"></i><b>4.4</b> 1.3 Python Basics</a></li>
+<li class="chapter" data-level="4.5" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#control-flow-and-functions"><i class="fa fa-check"></i><b>4.5</b> 1.4 Control Flow and Functions</a></li>
+<li class="chapter" data-level="4.6" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#python-libraries-for-reservoir-engineering"><i class="fa fa-check"></i><b>4.6</b> 1.5 Python Libraries for Reservoir Engineering</a></li>
+<li class="chapter" data-level="4.7" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#hands-on-practice"><i class="fa fa-check"></i><b>4.7</b> 1.6 Hands-On Practice</a></li>
+<li class="chapter" data-level="4.8" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#chapter-summary"><i class="fa fa-check"></i><b>4.8</b> 1.7 Chapter Summary</a></li>
+<li class="chapter" data-level="4.9" data-path="chapter-2-getting-started-with-python.html"><a href="chapter-2-getting-started-with-python.html#further-reading"><i class="fa fa-check"></i><b>4.9</b> 1.8 Further Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>5</b> Simple Mathematics</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>5.1</b> Comparisons</a></li>
+<li class="chapter" data-level="5.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>5.2</b> Conditionals</a></li>
+<li class="chapter" data-level="5.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>5.3</b> if, elif, and else</a></li>
+<li class="chapter" data-level="5.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>5.4</b> Boolean Operators</a></li>
+<li class="chapter" data-level="5.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>5.5</b> Loops</a></li>
+<li class="chapter" data-level="5.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>5.6</b> For loops</a></li>
+<li class="chapter" data-level="5.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>5.7</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>5.7.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="5.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>5.7.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>6</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>6.1</b> Creating a module</a></li>
+<li class="chapter" data-level="6.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>6.2</b> Installing external modules using pip</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>7</b> Functions</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="functions.html"><a href="functions.html#lambda-function"><i class="fa fa-check"></i><b>7.1</b> Lambda function</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>8</b> Introduction to Numpy</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>8.1</b> Why is NumPy Fast?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="basic-reservoir-engineering.html"><a href="basic-reservoir-engineering.html"><i class="fa fa-check"></i>Basic Reservoir Engineering</a></li>
+<li class="chapter" data-level="9" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html"><i class="fa fa-check"></i><b>9</b> Fundamental Properties of Fluid</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#review-of-gas-properties"><i class="fa fa-check"></i><b>9.1</b> Review of Gas Properties</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#real-gas-law"><i class="fa fa-check"></i><b>9.1.1</b> Real Gas law</a></li>
+<li class="chapter" data-level="9.1.2" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-z-factor"><i class="fa fa-check"></i><b>9.1.2</b> Gas z Factor</a></li>
+<li class="chapter" data-level="9.1.3" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-density"><i class="fa fa-check"></i><b>9.1.3</b> Gas Density</a></li>
+<li class="chapter" data-level="9.1.4" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>9.1.4</b> Isothermal Gas Compressibility</a></li>
+<li class="chapter" data-level="9.1.5" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>9.1.5</b> Gas formation volume factor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>10</b> Properties of Oil</a></li>
+<li class="chapter" data-level="11" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>11</b> Rock Properties</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>11.1</b> Surface and Interfacial Tension</a></li>
+<li class="chapter" data-level="11.2" data-path="rock-properties.html"><a href="rock-properties.html#capillary-pressure"><i class="fa fa-check"></i><b>11.2</b> Capillary Pressure</a></li>
+<li class="chapter" data-level="11.3" data-path="rock-properties.html"><a href="rock-properties.html#leverett-j-function"><i class="fa fa-check"></i><b>11.3</b> Leverett J-Function</a></li>
+<li class="chapter" data-level="11.4" data-path="rock-properties.html"><a href="rock-properties.html#permeability"><i class="fa fa-check"></i><b>11.4</b> Permeability</a></li>
+<li class="chapter" data-level="11.5" data-path="rock-properties.html"><a href="rock-properties.html#reservoir-heterogeneity"><i class="fa fa-check"></i><b>11.5</b> Reservoir Heterogeneity</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="rock-properties.html"><a href="rock-properties.html#vertical-heterogeneity"><i class="fa fa-check"></i><b>11.5.1</b> Vertical Heterogeneity</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="relative-permeability.html"><a href="relative-permeability.html"><i class="fa fa-check"></i><b>12</b> Relative Permeability</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="relative-permeability.html"><a href="relative-permeability.html#three-phase-relative-permeability"><i class="fa fa-check"></i><b>12.1</b> Three-phase relative permeability</a></li>
+<li class="chapter" data-level="12.2" data-path="relative-permeability.html"><a href="relative-permeability.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>12.2</b> Simplified Fractional Flow Equation</a></li>
+<li class="chapter" data-level="12.3" data-path="relative-permeability.html"><a href="relative-permeability.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>12.3</b> Buckley-Leverett Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html"><i class="fa fa-check"></i><b>13</b> Fundamentals of fluid flow in Reservoirs</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#type-of-fluids-in-reservoir"><i class="fa fa-check"></i><b>13.1</b> Type of fluids in reservoir</a></li>
+<li class="chapter" data-level="13.2" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#fluid-flow-equation"><i class="fa fa-check"></i><b>13.2</b> Fluid flow equation</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>14</b> Pattern Floods</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>14.1</b> Recovery Efficiency</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>14.1.1</b> Patterns and Spacing</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>14.2</b> Pattern Recovery</a></li>
+<li class="chapter" data-level="14.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>14.3</b> aa</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html"><i class="fa fa-check"></i><b>15</b> Pressure Transient Analysis</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#basic-well-model"><i class="fa fa-check"></i><b>15.1</b> Basic Well Model</a></li>
+<li class="chapter" data-level="15.2" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#steady-state-radial-flow-of-an-incompressible-fluid"><i class="fa fa-check"></i><b>15.2</b> Steady-State Radial Flow of an Incompressible Fluid</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>16</b> Volumetrics</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>16.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>17</b> Gas and Water Coning</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>17.1</b> Coning in Vertical wells</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>17.1.1</b> Meyer-Garder Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>17.2</b> Coning in Horizontal wells</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="working-with-las-files.html"><a href="working-with-las-files.html"><i class="fa fa-check"></i><b>18</b> working with Las files</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#basic-example"><i class="fa fa-check"></i><b>18.1</b> Basic example</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applications of Python in Reservoir Engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-2-getting-started-with-python" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Chapter 2: Getting Started with Python<a href="chapter-2-getting-started-with-python.html#chapter-2-getting-started-with-python" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> 2.1 Introduction<a href="chapter-2-getting-started-with-python.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now that we’ve established why Python is an essential tool for reservoir engineers, let’s dive into the practical side of things. In this chapter, we’ll guide you through the process of setting up Python on your system and getting started with your first Python program. Whether you’re new to programming or a seasoned engineer, this section will ensure you have a solid foundation to harness Python’s capabilities effectively.</p>
+</div>
+<div id="installing-python" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> 2.2 Installing Python<a href="chapter-2-getting-started-with-python.html#installing-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before you can start coding in Python, you need to install it on your computer. Here’s a step-by-step guide to getting Python up and running:</p>
+<div id="choosing-a-python-distribution" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> 2.2.1 Choosing a Python Distribution<a href="chapter-2-getting-started-with-python.html#choosing-a-python-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Python comes in various distributions, but for our purposes, we recommend Anaconda. Anaconda is a popular distribution that includes not only Python but also a collection of essential libraries and tools commonly used in scientific and engineering applications.</p>
+</div>
+<div id="downloading-anaconda" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> 2.2.2 Downloading Anaconda<a href="chapter-2-getting-started-with-python.html#downloading-anaconda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Visit the Anaconda website (<a href="https://www.anaconda.com/products/individual" class="uri">https://www.anaconda.com/products/individual</a>) and download the installer for your operating system (Windows, macOS, or Linux).</li>
+<li>Follow the installation instructions for your specific operating system. Anaconda provides a user-friendly installer that guides you through the process.</li>
+</ol>
+</div>
+<div id="verifying-the-installation" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> 2.2.3 Verifying the Installation<a href="chapter-2-getting-started-with-python.html#verifying-the-installation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After installing Anaconda, you can verify that Python is installed correctly by opening a command prompt or terminal window and entering the following command:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="chapter-2-getting-started-with-python.html#cb49-1" aria-hidden="true" tabindex="-1"></a>$python <span class="op">--</span>version</span></code></pre></div>
+</div>
+</div>
+<div id="setting-up-your-python-environment" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> 1.2 Setting Up Your Python Environment<a href="chapter-2-getting-started-with-python.html#setting-up-your-python-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Installing Anaconda for a comprehensive Python environment.</li>
+<li>Introduction to Jupyter Notebooks for interactive coding.</li>
+<li>Configuring integrated development environments (IDEs) for reservoir engineering projects.</li>
+</ul>
+</div>
+<div id="python-basics" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> 1.3 Python Basics<a href="chapter-2-getting-started-with-python.html#python-basics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Installing Python and managing packages with pip.</li>
+<li>Your first Python program: “Hello, World!”</li>
+<li>Understanding Python’s dynamic typing and strong typing.</li>
+<li>Variables, data types (integers, floats, strings), and basic data structures (lists, dictionaries).</li>
+<li>Python’s syntax and indentation rules.</li>
+</ul>
+</div>
+<div id="control-flow-and-functions" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> 1.4 Control Flow and Functions<a href="chapter-2-getting-started-with-python.html#control-flow-and-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Conditional statements (if, else, elif) for decision-making in code.</li>
+<li>Looping structures (for, while) for iterative tasks.</li>
+<li>Writing and using functions in Python.</li>
+<li>Scope of variables and function parameters.</li>
+</ul>
+</div>
+<div id="python-libraries-for-reservoir-engineering" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> 1.5 Python Libraries for Reservoir Engineering<a href="chapter-2-getting-started-with-python.html#python-libraries-for-reservoir-engineering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Overview of key libraries: NumPy, Pandas, Matplotlib, and SciPy.</li>
+<li>How these libraries enhance Python’s capabilities for reservoir engineering tasks.</li>
+<li>Brief introduction to other relevant libraries (scikit-learn, TensorFlow, etc.).</li>
+</ul>
+</div>
+<div id="hands-on-practice" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> 1.6 Hands-On Practice<a href="chapter-2-getting-started-with-python.html#hands-on-practice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Interactive exercises to apply basic Python concepts.</li>
+<li>Writing Python code to perform simple reservoir engineering calculations.</li>
+<li>Getting comfortable with Python’s interactive nature and error handling.</li>
+</ul>
+</div>
+<div id="chapter-summary" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> 1.7 Chapter Summary<a href="chapter-2-getting-started-with-python.html#chapter-summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Recap of key points covered in the chapter.</li>
+<li>The importance of mastering Python fundamentals before diving into reservoir engineering applications.</li>
+</ul>
+</div>
+<div id="further-reading" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> 1.8 Further Reading<a href="chapter-2-getting-started-with-python.html#further-reading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Suggested resources and references for learning more about Python programming.</li>
+<li>Encouragement to explore and practice Python basics before proceeding to the next chapters.</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="simple-mathematics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

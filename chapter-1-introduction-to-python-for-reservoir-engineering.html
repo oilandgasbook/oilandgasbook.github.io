@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>14 Volumetrics | Applications of Python in Reservoir Engineering</title>
-  <meta name="description" content="14 Volumetrics | Applications of Python in Reservoir Engineering" />
+  <title>2 Chapter 1: Introduction to Python for Reservoir Engineering | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="2 Chapter 1: Introduction to Python for Reservoir Engineering | Applications of Python in Reservoir Engineering" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="14 Volumetrics | Applications of Python in Reservoir Engineering" />
+  <meta property="og:title" content="2 Chapter 1: Introduction to Python for Reservoir Engineering | Applications of Python in Reservoir Engineering" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="14 Volumetrics | Applications of Python in Reservoir Engineering" />
+  <meta name="twitter:title" content="2 Chapter 1: Introduction to Python for Reservoir Engineering | Applications of Python in Reservoir Engineering" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="pressure-transient-analysis.html"/>
-<link rel="next" href="gas-and-water-coning.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="python-basics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -286,64 +286,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="volumetrics" class="section level1 hasAnchor" number="14">
-<h1><span class="header-section-number">14</span> Volumetrics<a href="volumetrics.html#volumetrics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="calculating-the-gas-inplace-by-volumetric-methods" class="section level2 hasAnchor" number="14.1">
-<h2><span class="header-section-number">14.1</span> Calculating the Gas inplace by volumetric methods<a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The standard cubic feet gas inplace, G is given by:</p>
-<p><span class="math display">\[\begin{equation}
-G = \frac{43,560 V_{b} \phi (1-S_{w})}{B_{g}}    
-\end{equation}\]</span></p>
-<p><strong>Contour Methods using trangulation mmethods</strong></p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb133-1"><a href="volumetrics.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tricontour (triangulation) method&quot;</span></span>
-<span id="cb133-2"><a href="volumetrics.html#cb133-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-3"><a href="volumetrics.html#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.tri <span class="im">as</span> tri</span>
-<span id="cb133-4"><a href="volumetrics.html#cb133-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb133-5"><a href="volumetrics.html#cb133-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.cm <span class="im">as</span> cm</span>
-<span id="cb133-6"><a href="volumetrics.html#cb133-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb133-7"><a href="volumetrics.html#cb133-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb133-8"><a href="volumetrics.html#cb133-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb133-9"><a href="volumetrics.html#cb133-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.interpolate <span class="im">import</span> griddata</span>
-<span id="cb133-10"><a href="volumetrics.html#cb133-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-11"><a href="volumetrics.html#cb133-11" aria-hidden="true" tabindex="-1"></a><span class="co"># data</span></span>
-<span id="cb133-12"><a href="volumetrics.html#cb133-12" aria-hidden="true" tabindex="-1"></a>welldat <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/data_volumetrics.csv&#39;</span>)</span>
-<span id="cb133-13"><a href="volumetrics.html#cb133-13" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> welldat.x, welldat.y, welldat.z</span>
-<span id="cb133-14"><a href="volumetrics.html#cb133-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-15"><a href="volumetrics.html#cb133-15" aria-hidden="true" tabindex="-1"></a>triang <span class="op">=</span> tri.Triangulation(x, y)</span>
-<span id="cb133-16"><a href="volumetrics.html#cb133-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-17"><a href="volumetrics.html#cb133-17" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
-<span id="cb133-18"><a href="volumetrics.html#cb133-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Refine data</span></span>
-<span id="cb133-19"><a href="volumetrics.html#cb133-19" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
-<span id="cb133-20"><a href="volumetrics.html#cb133-20" aria-hidden="true" tabindex="-1"></a>refiner <span class="op">=</span> tri.UniformTriRefiner(triang)</span>
-<span id="cb133-21"><a href="volumetrics.html#cb133-21" aria-hidden="true" tabindex="-1"></a>tri_refi, z_test_refi <span class="op">=</span> refiner.refine_field(z, subdiv<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb133-22"><a href="volumetrics.html#cb133-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-23"><a href="volumetrics.html#cb133-23" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
-<span id="cb133-24"><a href="volumetrics.html#cb133-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the triangulation and the high-res iso-contours</span></span>
-<span id="cb133-25"><a href="volumetrics.html#cb133-25" aria-hidden="true" tabindex="-1"></a><span class="co">#-----------------------------------------------------------------------------</span></span>
-<span id="cb133-26"><a href="volumetrics.html#cb133-26" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">20</span>))</span>
-<span id="cb133-27"><a href="volumetrics.html#cb133-27" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Figure size <span class="dv">200</span><span class="bn">0x2000</span> <span class="cf">with</span> <span class="dv">0</span> Axes<span class="op">&gt;</span></span>
-<span id="cb133-28"><a href="volumetrics.html#cb133-28" aria-hidden="true" tabindex="-1"></a>plt.gca().set_aspect(<span class="st">&#39;equal&#39;</span>)</span>
-<span id="cb133-29"><a href="volumetrics.html#cb133-29" aria-hidden="true" tabindex="-1"></a>plt.triplot(triang, lw<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">&#39;white&#39;</span>)</span>
-<span id="cb133-30"><a href="volumetrics.html#cb133-30" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000001F5C8728D00</span><span class="op">&gt;</span>, <span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000001F5C7BC4FD0</span><span class="op">&gt;</span>]</span>
-<span id="cb133-31"><a href="volumetrics.html#cb133-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-32"><a href="volumetrics.html#cb133-32" aria-hidden="true" tabindex="-1"></a>levels <span class="op">=</span> np.linspace(<span class="bu">min</span>(z)<span class="op">+</span><span class="dv">10</span>, <span class="bu">max</span>(z)<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>)  <span class="co">##contour range, divided by 10 levels</span></span>
-<span id="cb133-33"><a href="volumetrics.html#cb133-33" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> cm.get_cmap(name<span class="op">=</span><span class="st">&#39;terrain&#39;</span>, lut<span class="op">=</span><span class="va">None</span>)</span>
-<span id="cb133-34"><a href="volumetrics.html#cb133-34" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>string<span class="op">&gt;</span>:<span class="dv">1</span>: MatplotlibDeprecationWarning: The get_cmap function was deprecated <span class="kw">in</span> Matplotlib <span class="fl">3.7</span> <span class="kw">and</span> will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` <span class="kw">or</span> ``matplotlib.colormaps.get_cmap(obj)`` instead.</span>
-<span id="cb133-35"><a href="volumetrics.html#cb133-35" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.tricontourf(tri_refi, z_test_refi, levels<span class="op">=</span>levels, cmap<span class="op">=</span>cmap)</span>
-<span id="cb133-36"><a href="volumetrics.html#cb133-36" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.tricontour(tri_refi, z_test_refi, levels<span class="op">=</span>levels,</span>
-<span id="cb133-37"><a href="volumetrics.html#cb133-37" aria-hidden="true" tabindex="-1"></a>               colors<span class="op">=</span>[<span class="st">&#39;0.25&#39;</span>, <span class="st">&#39;0.5&#39;</span>, <span class="st">&#39;0.5&#39;</span>, <span class="st">&#39;0.5&#39;</span>, <span class="st">&#39;0.5&#39;</span>],</span>
-<span id="cb133-38"><a href="volumetrics.html#cb133-38" aria-hidden="true" tabindex="-1"></a>               linewidths<span class="op">=</span>[<span class="fl">1.0</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>])</span>
-<span id="cb133-39"><a href="volumetrics.html#cb133-39" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, <span class="st">&#39;ko&#39;</span>, ms<span class="op">=</span><span class="dv">3</span>) <span class="co"># plot the well points</span></span>
-<span id="cb133-40"><a href="volumetrics.html#cb133-40" aria-hidden="true" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x000001F5C82BBC10</span><span class="op">&gt;</span>]</span>
-<span id="cb133-41"><a href="volumetrics.html#cb133-41" aria-hidden="true" tabindex="-1"></a>plt.clabel(fig, fig.levels[::<span class="dv">5</span>], inline<span class="op">=</span><span class="dv">1</span>, fontsize<span class="op">=</span><span class="dv">10</span>) <span class="co"># give labels for contours, fig.levels[::x] controls the frequency of labels</span></span>
-<span id="cb133-42"><a href="volumetrics.html#cb133-42" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>a <span class="bu">list</span> of <span class="dv">4</span> text.Text objects<span class="op">&gt;</span></span>
-<span id="cb133-43"><a href="volumetrics.html#cb133-43" aria-hidden="true" tabindex="-1"></a>                                                        <span class="co"># lesser ::x, more populated by labels</span></span>
-<span id="cb133-44"><a href="volumetrics.html#cb133-44" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Structure Map using Triangulation Method&quot;</span>, pad<span class="op">=</span><span class="dv">10</span>, size<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb133-45"><a href="volumetrics.html#cb133-45" aria-hidden="true" tabindex="-1"></a>Text(<span class="fl">0.5</span>, <span class="fl">1.0</span>, <span class="st">&#39;Structure Map using Triangulation Method&#39;</span>)</span>
-<span id="cb133-46"><a href="volumetrics.html#cb133-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb133-47"><a href="volumetrics.html#cb133-47" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="images/Tricontour-1.png" width="1920" /></p>
-
+<div id="chapter-1-introduction-to-python-for-reservoir-engineering" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Chapter 1: Introduction to Python for Reservoir Engineering<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#chapter-1-introduction-to-python-for-reservoir-engineering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="why-python" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Why Python?<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#why-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python has emerged as the go-to programming language for engineers, scientists, and data analysts, and it’s not without reason. Its versatility, ease of use, and a thriving ecosystem of libraries make it a powerful tool for reservoir engineering and beyond.</p>
+</div>
+<div id="versatility" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Versatility<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#versatility" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python’s versatility is a major draw for engineers in the oil and gas industry. Whether you’re working on data analysis, numerical simulations, data visualization, or machine learning, Python has libraries and frameworks to support your needs. This adaptability means you can seamlessly transition from one aspect of reservoir engineering to another within the same programming environment.</p>
+<p>Python’s versatility is a defining feature that makes it particularly well-suited for reservoir engineering and various other scientific disciplines. Its broad range of applications spans from data analysis and visualization to numerical simulations and machine learning. In reservoir engineering, this versatility is invaluable because it allows engineers to employ a single programming language throughout the entire workflow, promoting efficiency and consistency.</p>
+<p>One key aspect of Python’s versatility is its ability to seamlessly integrate with other technologies and tools commonly used in the oil and gas industry. Python’s ease of interfacing with databases, spreadsheets, and external software systems simplifies data extraction, transformation, and loading (ETL) processes. Engineers can readily connect Python scripts to industry-specific software, enhancing automation and data analysis capabilities.</p>
+<p>Moreover, Python’s cross-platform compatibility ensures that code developed on one operating system can run on others without major modifications. This feature streamlines collaboration among engineers and organizations, as it reduces compatibility issues and promotes code reusability.</p>
+<p>Python’s adaptability extends to the creation of custom applications and graphical user interfaces (GUIs). Engineers can develop tailored tools and dashboards for specific reservoir engineering tasks, providing a user-friendly interface for data analysis and decision-making.</p>
+<p>In summary, Python’s versatility empowers reservoir engineers to tackle a wide range of tasks within a unified programming environment. Its compatibility, integration capabilities, and extensibility make it an invaluable tool for addressing the multifaceted challenges of reservoir engineering.</p>
+</div>
+<div id="readability-and-learnability" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Readability and Learnability<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#readability-and-learnability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python’s elegance lies not only in its versatility but also in its unparalleled readability and learnability. These characteristics set it apart as a programming language suitable for engineers and scientists, even those without extensive coding backgrounds. Reservoir engineers can swiftly grasp Python’s syntax and structure, which minimizes the learning curve and allows them to focus on solving engineering challenges.</p>
+<p>The simplicity of Python’s code syntax, which emphasizes clean and meaningful indentation, is a pivotal factor. Code blocks are organized by indentation rather than cumbersome braces or keywords, making it remarkably easy to read and comprehend. This feature is invaluable for reservoir engineers who want to collaborate effectively, as it promotes code consistency and reduces the risk of errors.</p>
+<p>Additionally, Python’s human-friendly nature extends to its extensive and self-explanatory standard libraries. Engineers can often accomplish complex tasks using straightforward functions and modules, reducing the need for writing intricate, low-level code. This approach is especially advantageous in reservoir engineering, where time and accuracy are of the essence.</p>
+<p>Python’s learnability further accelerates the adoption of programming skills among engineers. Its supportive community, extensive documentation, and myriad of online resources facilitate the journey of mastering Python. Engineers can quickly find answers to questions, access tutorials, and leverage examples to apply Python effectively to reservoir engineering challenges.</p>
+<p>In essence, Python’s readability and learnability are instrumental in making it an accessible and efficient tool for reservoir engineers, enabling them to focus on the engineering aspects of their work while embracing the power of programming.</p>
+</div>
+<div id="open-source-community" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Open Source Community<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#open-source-community" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One of Python’s most remarkable strengths lies in its thriving open-source community. This community is a dynamic ecosystem of developers, researchers, engineers, and enthusiasts who contribute to the growth and improvement of the Python programming language and its associated libraries. For reservoir engineers and professionals in the oil and gas industry, this collaborative environment is a treasure trove of resources and support.</p>
+<p>The open-source nature of Python ensures that it remains accessible to everyone, without licensing restrictions or costly fees. Engineers can freely install and use Python on their machines, making it a cost-effective choice for both individuals and organizations. Moreover, the absence of vendor lock-in fosters an environment of innovation and continuous improvement.</p>
+<p>Within the Python community, a vast array of libraries and packages are readily available for reservoir engineering tasks. Whether it’s specialized libraries for data analysis, numerical simulations, or geospatial data processing, chances are there’s an open-source Python package that can expedite your work. The collaborative spirit of the community ensures that these packages are constantly updated and enhanced, providing engineers with state-of-the-art tools for their projects.</p>
+<p>Additionally, the Python community is known for its strong emphasis on knowledge sharing and support. Engineers can find answers to questions on forums, access comprehensive documentation, and participate in open-source projects. This collective wisdom and willingness to help fellow engineers make Python an inviting and empowering language for those in the reservoir engineering field.</p>
+<p>In summary, Python’s open-source community is a vital asset for reservoir engineers, offering a wealth of resources, cost-effective solutions, and a supportive network of experts. This collaborative ecosystem amplifies Python’s capabilities and enhances its suitability for tackling the challenges of the oil and gas industry.</p>
+</div>
+<div id="extensive-libraries" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Extensive Libraries<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#extensive-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python’s prowess in reservoir engineering is significantly bolstered by its extensive libraries, specifically tailored for scientific and engineering applications. These libraries provide reservoir engineers with a rich toolbox of pre-built functions, modules, and tools designed to simplify complex tasks and streamline workflows.</p>
+<p>Among these libraries, NumPy stands out as a fundamental building block. NumPy’s array-based computing capabilities facilitate efficient numerical operations, making it ideal for tasks like reservoir data analysis, linear algebra, and statistical computations. Its multi-dimensional array structure is particularly useful for handling large datasets common in reservoir engineering.</p>
+<p>Pandas is another indispensable library that excels in data manipulation and analysis. Reservoir engineers can leverage Pandas to effortlessly load, clean, and transform reservoir data, facilitating advanced analytics and visualization. Its intuitive DataFrame data structure allows for easy indexing, filtering, and grouping, empowering engineers to extract valuable insights from their data.</p>
+<p>When it comes to visualizing reservoir data, Matplotlib emerges as a reliable companion. This library offers a wide range of customizable plotting options, enabling engineers to create informative and publication-quality visualizations. From well logs to reservoir performance graphs, Matplotlib transforms data into insightful visuals that aid in decision-making.</p>
+<p>SciPy, as a scientific computing library, further expands Python’s capabilities for reservoir engineering. Engineers can harness SciPy’s functionalities for solving complex mathematical equations, numerical optimization, and interpolation. Its integration with NumPy and Matplotlib makes it a seamless addition to the Python ecosystem.</p>
+<p>In essence, Python’s extensive libraries for scientific and engineering applications provide reservoir engineers with the tools they need to address intricate challenges effectively. These libraries not only reduce development time but also ensure code reliability, enabling engineers to focus on the analysis and decision-making aspects of reservoir engineering.</p>
+</div>
+<div id="conclusion-pythons-role-in-reservoir-engineering" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Conclusion: Python’s Role in Reservoir Engineering<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#conclusion-pythons-role-in-reservoir-engineering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this section, we’ve explored the multifaceted reasons why Python has become an indispensable tool for reservoir engineers. Its versatility, readability, open-source community, and extensive libraries collectively empower professionals in the oil and gas industry to efficiently address complex engineering challenges. Python provides a unified programming environment that spans data analysis, numerical simulations, data visualization, and machine learning, making it a vital asset in the reservoir engineering toolkit. As we proceed, we’ll delve deeper into the practical applications of Python, leveraging its strengths to tackle real-world reservoir engineering problems. Let’s now venture into the heart of Python’s applications in reservoir engineering and see firsthand how it revolutionizes the field.</p>
+<p>In summary, Python’s versatility, readability, open-source nature, and extensive libraries make it an excellent choice for reservoir engineers looking to harness the power of programming for their work.</p>
+</div>
+<div id="getting-started-with-python" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Getting Started with Python<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#getting-started-with-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introduction" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Introduction<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that we’ve established why Python is an essential tool for reservoir engineers, let’s dive into the practical side of things. In this chapter, we’ll guide you through the process of setting up Python on your system and getting started with your first Python program. Whether you’re new to programming or a seasoned engineer, this section will ensure you have a solid foundation to harness Python’s capabilities effectively.</p>
+</div>
+<div id="installing-python" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Installing Python<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#installing-python" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before you can start coding in Python, you need to install it on your computer. Here’s a step-by-step guide to getting Python up and running:</p>
+</div>
+<div id="choosing-a-python-distribution" class="section level3 hasAnchor" number="2.7.3">
+<h3><span class="header-section-number">2.7.3</span> Choosing a Python Distribution<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#choosing-a-python-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Python comes in various distributions, but for our purposes, we recommend Anaconda. Anaconda is a popular distribution that includes not only Python but also a collection of essential libraries and tools commonly used in scientific and engineering applications.</p>
+</div>
+<div id="downloading-anaconda" class="section level3 hasAnchor" number="2.7.4">
+<h3><span class="header-section-number">2.7.4</span> Downloading Anaconda<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#downloading-anaconda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Visit the Anaconda website (<a href="https://www.anaconda.com/products/individual" class="uri">https://www.anaconda.com/products/individual</a>) and download the installer for your operating system (Windows, macOS, or Linux).</li>
+<li>Follow the installation instructions for your specific operating system. Anaconda provides a user-friendly installer that guides you through the process.</li>
+</ol>
+</div>
+<div id="verifying-the-installation" class="section level3 hasAnchor" number="2.7.5">
+<h3><span class="header-section-number">2.7.5</span> Verifying the Installation<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#verifying-the-installation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After installing Anaconda, you can verify that Python is installed correctly by opening a command prompt or terminal window and entering the following command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#cb3-1" aria-hidden="true" tabindex="-1"></a>$python <span class="op">--</span>version</span></code></pre></div>
+<p>If you have Python 3 installed, and it is your default version you should see something like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#cb4-1" aria-hidden="true" tabindex="-1"></a>$ python <span class="op">--</span>version</span>
+<span id="cb4-2"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#cb4-2" aria-hidden="true" tabindex="-1"></a>Python <span class="fl">3.6.0</span></span></code></pre></div>
+</div>
+</div>
+<div id="setting-up-your-python-environment" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Setting Up Your Python Environment<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#setting-up-your-python-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Virtual environments are essential for managing project-specific dependencies and isolating them from your system’s Python installation. We recommend using them for every reservoir engineering project. Here’s how to create a virtual environment:</p>
+<div id="manual-virtual-environment" class="section level3 hasAnchor" number="2.8.1">
+<h3><span class="header-section-number">2.8.1</span> Manual Virtual Environment<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#manual-virtual-environment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Open your terminal or command prompt.</li>
+<li>Navigate to your project’s directory using the <code>cd</code> command.</li>
+<li>Run the following command to create a virtual environment named ‘myenv’ (you can choose a different name):</li>
+<li><code>python -m venv myenv</code></li>
+<li>Activate the virtual environment:</li>
+</ol>
+<ul>
+<li>On Windows: <code>myenv\Scripts\activate</code></li>
+<li>On macOS and Linux: <code>source myenv/bin/activate</code></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>You’ll notice that your terminal prompt changes, indicating you are now within the virtual environment.</li>
+</ol>
+</div>
+<div id="creating-a-virtual-environment-with-anaconda" class="section level3 hasAnchor" number="2.8.2">
+<h3><span class="header-section-number">2.8.2</span> Creating a Virtual Environment with Anaconda<a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#creating-a-virtual-environment-with-anaconda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Anaconda provides a simple way to create and manage virtual environments using the <code>conda</code> command:</p>
+<ol style="list-style-type: decimal">
+<li>Open Anaconda Navigator.</li>
+<li>Navigate to the ‘Environments’ tab.</li>
+<li>Click ‘Create’ to create a new environment. Name it and choose Python 3.x as the version.</li>
+<li>Activate the environment by clicking ‘Play’ (▶) next to its name.</li>
+</ol>
+<p>Now that you have Python installed and a virtual environment set up, you’re ready to start using Python for reservoir engineering. In the next chapters, we’ll explore the core libraries and their applications in depth.</p>
+</div>
 </div>
 </div>
             </section>
@@ -351,8 +399,8 @@ G = \frac{43,560 V_{b} \phi (1-S_{w})}{B_{g}}
           </div>
         </div>
       </div>
-<a href="pressure-transient-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="gas-and-water-coning.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="python-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

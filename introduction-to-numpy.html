@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Introduction to Numpy | Basic Reservoir Engineering in Python</title>
-  <meta name="description" content="6 Introduction to Numpy | Basic Reservoir Engineering in Python" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <title>6 Introduction to Numpy | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="6 Introduction to Numpy | Applications of Python in Reservoir Engineering" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Introduction to Numpy | Basic Reservoir Engineering in Python" />
+  <meta property="og:title" content="6 Introduction to Numpy | Applications of Python in Reservoir Engineering" />
   <meta property="og:type" content="book" />
-  
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Introduction to Numpy | Basic Reservoir Engineering in Python" />
+  <meta name="twitter:title" content="6 Introduction to Numpy | Applications of Python in Reservoir Engineering" />
   
   
   
@@ -30,9 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="functions.html"/>
+<link rel="prev" href="built-in-modules-and-functions.html"/>
 <link rel="next" href="basic-reservoir-engineering.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -119,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 </head>
 
@@ -133,44 +136,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
-<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a>
+<li class="chapter" data-level="2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html"><i class="fa fa-check"></i><b>2</b> Chapter 1: Introduction to Python for Reservoir Engineering</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.1</b> Getting Started with Python</a>
+<li class="chapter" data-level="2.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#why-python"><i class="fa fa-check"></i><b>2.1</b> Why Python?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#versatility"><i class="fa fa-check"></i><b>2.2</b> Versatility</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#readability-and-learnability"><i class="fa fa-check"></i><b>2.3</b> Readability and Learnability</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#open-source-community"><i class="fa fa-check"></i><b>2.4</b> Open Source Community</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#extensive-libraries"><i class="fa fa-check"></i><b>2.5</b> Extensive Libraries</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#conclusion-pythons-role-in-reservoir-engineering"><i class="fa fa-check"></i><b>2.6</b> Conclusion: Python’s Role in Reservoir Engineering</a></li>
+<li class="chapter" data-level="2.7" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.7</b> Getting Started with Python</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#datatypes"><i class="fa fa-check"></i><b>2.1.1</b> Datatypes</a></li>
+<li class="chapter" data-level="2.7.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#introduction"><i class="fa fa-check"></i><b>2.7.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.7.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#installing-python"><i class="fa fa-check"></i><b>2.7.2</b> Installing Python</a></li>
+<li class="chapter" data-level="2.7.3" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#choosing-a-python-distribution"><i class="fa fa-check"></i><b>2.7.3</b> Choosing a Python Distribution</a></li>
+<li class="chapter" data-level="2.7.4" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#downloading-anaconda"><i class="fa fa-check"></i><b>2.7.4</b> Downloading Anaconda</a></li>
+<li class="chapter" data-level="2.7.5" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#verifying-the-installation"><i class="fa fa-check"></i><b>2.7.5</b> Verifying the Installation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#lists"><i class="fa fa-check"></i><b>2.2</b> Lists</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#list-comprehensions"><i class="fa fa-check"></i><b>2.3</b> List comprehensions</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#tuples"><i class="fa fa-check"></i><b>2.4</b> Tuples</a></li>
-<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#dictionaries"><i class="fa fa-check"></i><b>2.5</b> Dictionaries</a></li>
-<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#set"><i class="fa fa-check"></i><b>2.6</b> Set</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>3</b> Simple Mathematics</a>
+<li class="chapter" data-level="2.8" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#setting-up-your-python-environment"><i class="fa fa-check"></i><b>2.8</b> Setting Up Your Python Environment</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>3.1</b> Comparisons</a></li>
-<li class="chapter" data-level="3.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>3.2</b> Conditionals</a></li>
-<li class="chapter" data-level="3.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>3.3</b> if, elif, and else</a></li>
-<li class="chapter" data-level="3.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>3.4</b> Boolean Operators</a></li>
-<li class="chapter" data-level="3.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>3.5</b> Loops</a></li>
-<li class="chapter" data-level="3.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>3.6</b> For loops</a></li>
-<li class="chapter" data-level="3.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>3.7</b> While Loop</a>
-<ul>
-<li class="chapter" data-level="3.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>3.7.1</b> <code>break</code> statement</a></li>
-<li class="chapter" data-level="3.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>3.7.2</b> <code>continue</code> statement</a></li>
+<li class="chapter" data-level="2.8.1" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#manual-virtual-environment"><i class="fa fa-check"></i><b>2.8.1</b> Manual Virtual Environment</a></li>
+<li class="chapter" data-level="2.8.2" data-path="chapter-1-introduction-to-python-for-reservoir-engineering.html"><a href="chapter-1-introduction-to-python-for-reservoir-engineering.html#creating-a-virtual-environment-with-anaconda"><i class="fa fa-check"></i><b>2.8.2</b> Creating a Virtual Environment with Anaconda</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>4</b> Built in Modules and Functions</a>
+<li class="chapter" data-level="3" data-path="python-basics.html"><a href="python-basics.html"><i class="fa fa-check"></i><b>3</b> Python Basics</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>4.1</b> Creating a module</a></li>
-<li class="chapter" data-level="4.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>4.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="3.0.1" data-path="python-basics.html"><a href="python-basics.html#datatypes"><i class="fa fa-check"></i><b>3.0.1</b> Datatypes</a></li>
+<li class="chapter" data-level="3.1" data-path="python-basics.html"><a href="python-basics.html#lists"><i class="fa fa-check"></i><b>3.1</b> Lists</a></li>
+<li class="chapter" data-level="3.2" data-path="python-basics.html"><a href="python-basics.html#list-comprehensions"><i class="fa fa-check"></i><b>3.2</b> List comprehensions</a></li>
+<li class="chapter" data-level="3.3" data-path="python-basics.html"><a href="python-basics.html#tuples"><i class="fa fa-check"></i><b>3.3</b> Tuples</a></li>
+<li class="chapter" data-level="3.4" data-path="python-basics.html"><a href="python-basics.html#dictionaries"><i class="fa fa-check"></i><b>3.4</b> Dictionaries</a></li>
+<li class="chapter" data-level="3.5" data-path="python-basics.html"><a href="python-basics.html#set"><i class="fa fa-check"></i><b>3.5</b> Set</a></li>
+<li class="chapter" data-level="3.6" data-path="python-basics.html"><a href="python-basics.html#control-flow-and-functions"><i class="fa fa-check"></i><b>3.6</b> Control Flow and Functions</a></li>
+<li class="chapter" data-level="3.7" data-path="python-basics.html"><a href="python-basics.html#python-libraries-for-reservoir-engineering"><i class="fa fa-check"></i><b>3.7</b> Python Libraries for Reservoir Engineering</a></li>
+<li class="chapter" data-level="3.8" data-path="python-basics.html"><a href="python-basics.html#hands-on-practice"><i class="fa fa-check"></i><b>3.8</b> Hands-On Practice</a></li>
+<li class="chapter" data-level="3.9" data-path="python-basics.html"><a href="python-basics.html#chapter-summary"><i class="fa fa-check"></i><b>3.9</b> Chapter Summary</a></li>
+<li class="chapter" data-level="3.10" data-path="python-basics.html"><a href="python-basics.html#further-reading"><i class="fa fa-check"></i><b>3.10</b> Further Reading</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>5</b> Functions</a>
+<li class="chapter" data-level="4" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>4</b> Simple Mathematics</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="functions.html"><a href="functions.html#lambda-function"><i class="fa fa-check"></i><b>5.1</b> Lambda function</a></li>
+<li class="chapter" data-level="4.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>4.1</b> Comparisons</a></li>
+<li class="chapter" data-level="4.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>4.2</b> Conditionals</a></li>
+<li class="chapter" data-level="4.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>4.3</b> if, elif, and else</a></li>
+<li class="chapter" data-level="4.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>4.4</b> Boolean Operators</a></li>
+<li class="chapter" data-level="4.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>4.5</b> Loops</a></li>
+<li class="chapter" data-level="4.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>4.6</b> For loops</a></li>
+<li class="chapter" data-level="4.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>4.7</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>4.7.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="4.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>4.7.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>5</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>5.1</b> Creating a module</a></li>
+<li class="chapter" data-level="5.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>5.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="5.3" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#functions"><i class="fa fa-check"></i><b>5.3</b> Functions</a></li>
+<li class="chapter" data-level="5.4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#lambda-function"><i class="fa fa-check"></i><b>5.4</b> Lambda function</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>6</b> Introduction to Numpy</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>6.1</b> Why is NumPy Fast?</a></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#n-dimensional-arrays"><i class="fa fa-check"></i><b>6.2</b> N-Dimensional Arrays</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#creating-ndarrays"><i class="fa fa-check"></i><b>6.2.1</b> Creating ndarrays</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#manipulating-and-operating-on-ndarrays"><i class="fa fa-check"></i><b>6.2.2</b> Manipulating and Operating on ndarrays</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#universal-functions-ufuncs"><i class="fa fa-check"></i><b>6.3</b> Universal Functions (ufuncs)</a></li>
+<li class="chapter" data-level="6.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#array-manipulation"><i class="fa fa-check"></i><b>6.4</b> Array Manipulation</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="basic-reservoir-engineering.html"><a href="basic-reservoir-engineering.html"><i class="fa fa-check"></i>Basic Reservoir Engineering</a></li>
 <li class="chapter" data-level="7" data-path="fundamental-properties-of-fluid.html"><a href="fundamental-properties-of-fluid.html"><i class="fa fa-check"></i><b>7</b> Fundamental Properties of Fluid</a>
@@ -246,7 +278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Basic Reservoir Engineering in Python</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applications of Python in Reservoir Engineering</a>
           </h1>
         </div>
 
@@ -254,12 +286,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction-to-numpy" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Introduction to Numpy</h1>
+<div id="introduction-to-numpy" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Introduction to Numpy<a href="introduction-to-numpy.html#introduction-to-numpy" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><strong>What is NumPy?</strong></p>
-<p>This introduction is taken from official site <a href="https://numpy.org/doc/stable/user/whatisnumpy.html">here</a>.</p>
-<p>NumPy is the fundamental package for scientific computing in Python. It is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.</p>
-<p>At the core of the NumPy package, is the ndarray object. This encapsulates n-dimensional arrays of homogeneous data types, with many operations being performed in compiled code for performance. There are several important differences between NumPy arrays and the standard Python sequences.</p>
+<p>NumPy, short for “Numerical Python,” is a fundamental library in the Python ecosystem for numerical computing. It provides powerful tools for working with arrays and matrices, making it an indispensable tool in reservoir engineering and scientific computing. In this chapter, we’ll dive deep into NumPy, exploring its core features, array manipulation, and the crucial role it plays in handling reservoir data efficiently.</p>
+<p>NumPy is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.</p>
+<p>NumPy offers several key features that set it apart as the go-to library for numerical computations. At the core of the NumPy package, is the ndarray object. This encapsulates n-dimensional arrays of homogeneous data types, with many operations being performed in compiled code for performance. There are several important differences between NumPy arrays and the standard Python sequences.</p>
 <ul>
 <li><p>NumPy arrays have a fixed size at creation, unlike Python lists (which can grow dynamically). Changing the size of an ndarray will create a new array and delete the original.</p></li>
 <li><p>The elements in a NumPy array are all required to be of the same data type, and thus will be the same size in memory. The exception: one can have arrays of (Python, including NumPy) objects, thereby allowing for arrays of different sized elements.</p></li>
@@ -268,9 +300,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>The points about sequence size and speed are particularly important in scientific computing. As a simple example, consider the case of multiplying each element in a 1-D sequence with the corresponding element in another sequence of the same length.</p>
 <p>For example if the data are stored in two Python lists, a and b, and we want to multiply element of both list we can do it in python like:</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="introduction-to-numpy.html#cb99-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> []</span>
-<span id="cb99-2"><a href="introduction-to-numpy.html#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
-<span id="cb99-3"><a href="introduction-to-numpy.html#cb99-3" aria-hidden="true" tabindex="-1"></a>    c.append(a[i]<span class="op">*</span>b[i])</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="introduction-to-numpy.html#cb101-1" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> []</span>
+<span id="cb101-2"><a href="introduction-to-numpy.html#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb101-3"><a href="introduction-to-numpy.html#cb101-3" aria-hidden="true" tabindex="-1"></a>    c.append(a[i]<span class="op">*</span>b[i])</span></code></pre></div>
 <p>This produces the correct answer, but if a and b each contain millions of numbers, we will pay the price for the inefficiencies of looping in Python. We could accomplish the same task much more quickly in C by writing</p>
 <pre><code>for (i = 0; i &lt; rows; i++): {
     [i] = a[i]*b[i];
@@ -279,8 +311,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>NumPy gives us the best of both worlds: element-by-element operations are the “default mode” when an ndarray is involved, but the element-by-element operation is speedily executed by pre-compiled C code. In NumPy the above multiplication can be achieved by</p>
 <p><code>c = a*b</code></p>
 <p>The examples above is executed, at near-C speeds, but with the code simplicity we expect from something based on Python. Indeed, the NumPy idiom is even simpler! This last example illustrates two of NumPy’s features which are the basis of much of its power: vectorization and broadcasting.</p>
-<div id="why-is-numpy-fast" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Why is NumPy Fast?</h2>
+<div id="why-is-numpy-fast" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Why is NumPy Fast?<a href="introduction-to-numpy.html#why-is-numpy-fast" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vectorization describes the absence of any explicit looping, indexing, etc., in the code - these things are taking place, of course, just “behind the scenes” in optimized, pre-compiled C code. Vectorized code has many advantages, among which are:</p>
 <ul>
 <li><p>vectorized code is more concise and easier to read</p></li>
@@ -288,7 +320,194 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>the code more closely resembles standard mathematical notation (making it easier, typically, to correctly code mathematical constructs)</p></li>
 <li><p>vectorization results in more “Pythonic” code. Without vectorization, our code would be littered with inefficient and difficult to read for loops.</p></li>
 </ul>
-<p>the code is edited today</p>
+</div>
+<div id="n-dimensional-arrays" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> N-Dimensional Arrays<a href="introduction-to-numpy.html#n-dimensional-arrays" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At the heart of NumPy are its N-dimensional arrays, or <code>ndarrays</code>. These are homogeneous data structures that allow you to store and manipulate large datasets efficiently. We’ll cover:</p>
+<ul>
+<li>Creating ndarrays.</li>
+<li>Accessing and manipulating elements.</li>
+<li>Understanding the shape and dimensions of arrays.</li>
+</ul>
+<div id="creating-ndarrays" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Creating ndarrays<a href="introduction-to-numpy.html#creating-ndarrays" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>NumPy’s ndarrays are the cornerstone of numerical computing. They allow you to efficiently store and manipulate data in arrays of various dimensions. Let’s explore how to create ndarrays with examples:</p>
+<p><strong>Creating ndarrays from Lists</strong></p>
+<p>You can create ndarrays from Python lists using the <code>np.array()</code> function:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="introduction-to-numpy.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb103-2"><a href="introduction-to-numpy.html#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-3"><a href="introduction-to-numpy.html#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a 1D array from a list</span></span>
+<span id="cb103-4"><a href="introduction-to-numpy.html#cb103-4" aria-hidden="true" tabindex="-1"></a>arr_1d <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb103-5"><a href="introduction-to-numpy.html#cb103-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-6"><a href="introduction-to-numpy.html#cb103-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a 2D array from a list of lists</span></span>
+<span id="cb103-7"><a href="introduction-to-numpy.html#cb103-7" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span></code></pre></div>
+<p><strong>Creating ndarrays with Built-in Functions</strong></p>
+<p>NumPy provides several functions to create ndarrays with specific properties. Here are a few commonly used functions:</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="introduction-to-numpy.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb104-2"><a href="introduction-to-numpy.html#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="introduction-to-numpy.html#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a 1D array of zeros</span></span>
+<span id="cb104-4"><a href="introduction-to-numpy.html#cb104-4" aria-hidden="true" tabindex="-1"></a>zeros <span class="op">=</span> np.zeros(<span class="dv">5</span>)  <span class="co"># Creates [0. 0. 0. 0. 0.]</span></span>
+<span id="cb104-5"><a href="introduction-to-numpy.html#cb104-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-6"><a href="introduction-to-numpy.html#cb104-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a 2D array of ones</span></span>
+<span id="cb104-7"><a href="introduction-to-numpy.html#cb104-7" aria-hidden="true" tabindex="-1"></a>ones <span class="op">=</span> np.ones((<span class="dv">2</span>, <span class="dv">3</span>))  <span class="co"># Creates a 2x3 array of ones</span></span>
+<span id="cb104-8"><a href="introduction-to-numpy.html#cb104-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-9"><a href="introduction-to-numpy.html#cb104-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a range of values</span></span>
+<span id="cb104-10"><a href="introduction-to-numpy.html#cb104-10" aria-hidden="true" tabindex="-1"></a>range_arr <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">2</span>)  <span class="co"># Creates [1 3 5 7 9]</span></span>
+<span id="cb104-11"><a href="introduction-to-numpy.html#cb104-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-12"><a href="introduction-to-numpy.html#cb104-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a linearly spaced array</span></span>
+<span id="cb104-13"><a href="introduction-to-numpy.html#cb104-13" aria-hidden="true" tabindex="-1"></a>linspace_arr <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">5</span>)  <span class="co"># Creates [0.   0.25 0.5  0.75 1.  ]</span></span></code></pre></div>
+<p><strong>Creating ndarrays with Random Data</strong></p>
+<p>NumPy allows you to generate ndarrays with random data for various applications. Here’s an example using random integers:</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb105-1"><a href="introduction-to-numpy.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb105-2"><a href="introduction-to-numpy.html#cb105-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-3"><a href="introduction-to-numpy.html#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a 1D array of random integers</span></span>
+<span id="cb105-4"><a href="introduction-to-numpy.html#cb105-4" aria-hidden="true" tabindex="-1"></a>random_integers <span class="op">=</span> np.random.randint(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">5</span>)  <span class="co"># Creates an array of 5 random integers between 1 and 100</span></span>
+<span id="cb105-5"><a href="introduction-to-numpy.html#cb105-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb105-6"><a href="introduction-to-numpy.html#cb105-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a 2D array of random floats</span></span>
+<span id="cb105-7"><a href="introduction-to-numpy.html#cb105-7" aria-hidden="true" tabindex="-1"></a>random_floats <span class="op">=</span> np.random.rand(<span class="dv">3</span>, <span class="dv">4</span>)  <span class="co"># Creates a 3x4 array of random floats between 0 and 1</span></span></code></pre></div>
+<p><strong>Creating Special ndarrays</strong>
+NumPy offers functions to create special ndarrays, such as identity matrices and empty arrays:</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb106-1"><a href="introduction-to-numpy.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb106-2"><a href="introduction-to-numpy.html#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-3"><a href="introduction-to-numpy.html#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a 3x3 identity matrix</span></span>
+<span id="cb106-4"><a href="introduction-to-numpy.html#cb106-4" aria-hidden="true" tabindex="-1"></a>identity_matrix <span class="op">=</span> np.eye(<span class="dv">3</span>)</span>
+<span id="cb106-5"><a href="introduction-to-numpy.html#cb106-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-6"><a href="introduction-to-numpy.html#cb106-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an empty 2x2 array (values are uninitialized)</span></span>
+<span id="cb106-7"><a href="introduction-to-numpy.html#cb106-7" aria-hidden="true" tabindex="-1"></a>empty_array <span class="op">=</span> np.empty((<span class="dv">2</span>, <span class="dv">2</span>))</span></code></pre></div>
+<p>Creating ndarrays is the first step in leveraging NumPy’s capabilities for numerical computing. These examples demonstrate various ways to create ndarrays, from basic ones to those with specific properties, providing you with flexibility in handling data in your reservoir engineering projects.</p>
+<p>In the next sections, we’ll explore how to manipulate and operate on these ndarrays to perform meaningful data analysis and calculations.</p>
+</div>
+<div id="manipulating-and-operating-on-ndarrays" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Manipulating and Operating on ndarrays<a href="introduction-to-numpy.html#manipulating-and-operating-on-ndarrays" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that you’ve learned how to create ndarrays, Accessing and manipulating elements within ndarrays is a fundamental skill in NumPy. Let’s explore various techniques for working with ndarray elements. NumPy provides a wide array of functions and techniques for efficient data manipulation and computation.</p>
+<div id="accessing-individual-elements" class="section level4 hasAnchor" number="6.2.2.1">
+<h4><span class="header-section-number">6.2.2.1</span> Accessing Individual Elements<a href="introduction-to-numpy.html#accessing-individual-elements" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>You can access individual elements within an ndarray using indexing. Remember that indexing in NumPy is zero-based, so the first element is at index 0:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb107-1"><a href="introduction-to-numpy.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb107-2"><a href="introduction-to-numpy.html#cb107-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-3"><a href="introduction-to-numpy.html#cb107-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an ndarray</span></span>
+<span id="cb107-4"><a href="introduction-to-numpy.html#cb107-4" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb107-5"><a href="introduction-to-numpy.html#cb107-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-6"><a href="introduction-to-numpy.html#cb107-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the first element (index 0)</span></span>
+<span id="cb107-7"><a href="introduction-to-numpy.html#cb107-7" aria-hidden="true" tabindex="-1"></a>first_element <span class="op">=</span> arr[<span class="dv">0</span>]  <span class="co"># Result: 1</span></span>
+<span id="cb107-8"><a href="introduction-to-numpy.html#cb107-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb107-9"><a href="introduction-to-numpy.html#cb107-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing the fourth element (index 3)</span></span>
+<span id="cb107-10"><a href="introduction-to-numpy.html#cb107-10" aria-hidden="true" tabindex="-1"></a>fourth_element <span class="op">=</span> arr[<span class="dv">3</span>]  <span class="co"># Result: 4</span></span></code></pre></div>
+</div>
+<div id="modifying-elements" class="section level4 hasAnchor" number="6.2.2.2">
+<h4><span class="header-section-number">6.2.2.2</span> Modifying Elements<a href="introduction-to-numpy.html#modifying-elements" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>You can modify individual elements in an ndarray using indexing and assignment:</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="introduction-to-numpy.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb108-2"><a href="introduction-to-numpy.html#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-3"><a href="introduction-to-numpy.html#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an ndarray</span></span>
+<span id="cb108-4"><a href="introduction-to-numpy.html#cb108-4" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb108-5"><a href="introduction-to-numpy.html#cb108-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-6"><a href="introduction-to-numpy.html#cb108-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Modifying the third element (index 2)</span></span>
+<span id="cb108-7"><a href="introduction-to-numpy.html#cb108-7" aria-hidden="true" tabindex="-1"></a>arr[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb108-8"><a href="introduction-to-numpy.html#cb108-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-9"><a href="introduction-to-numpy.html#cb108-9" aria-hidden="true" tabindex="-1"></a><span class="co"># The array is now: [1, 2, 10, 4, 5]</span></span></code></pre></div>
+</div>
+<div id="slicing-for-subsets" class="section level4 hasAnchor" number="6.2.2.3">
+<h4><span class="header-section-number">6.2.2.3</span> Slicing for Subsets<a href="introduction-to-numpy.html#slicing-for-subsets" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Slicing allows you to extract subsets of elements from an ndarray using the <code>start:stop:step</code> notation. It’s particularly useful when working with large datasets:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb109-1"><a href="introduction-to-numpy.html#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb109-2"><a href="introduction-to-numpy.html#cb109-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-3"><a href="introduction-to-numpy.html#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an ndarray</span></span>
+<span id="cb109-4"><a href="introduction-to-numpy.html#cb109-4" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb109-5"><a href="introduction-to-numpy.html#cb109-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-6"><a href="introduction-to-numpy.html#cb109-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing to get the first three elements</span></span>
+<span id="cb109-7"><a href="introduction-to-numpy.html#cb109-7" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> arr[:<span class="dv">3</span>]  <span class="co"># Result: [1, 2, 3]</span></span>
+<span id="cb109-8"><a href="introduction-to-numpy.html#cb109-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-9"><a href="introduction-to-numpy.html#cb109-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing to get even-indexed elements</span></span>
+<span id="cb109-10"><a href="introduction-to-numpy.html#cb109-10" aria-hidden="true" tabindex="-1"></a>even_elements <span class="op">=</span> arr[::<span class="dv">2</span>]  <span class="co"># Result: [1, 3, 5]</span></span></code></pre></div>
+</div>
+<div id="element-wise-operations" class="section level4 hasAnchor" number="6.2.2.4">
+<h4><span class="header-section-number">6.2.2.4</span> Element-Wise Operations<a href="introduction-to-numpy.html#element-wise-operations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>One of the strengths of NumPy is its ability to perform element-wise operations on ndarrays. These operations apply to each element in the array individually, making it efficient for mathematical computations:</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="introduction-to-numpy.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb110-2"><a href="introduction-to-numpy.html#cb110-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-3"><a href="introduction-to-numpy.html#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating two arrays</span></span>
+<span id="cb110-4"><a href="introduction-to-numpy.html#cb110-4" aria-hidden="true" tabindex="-1"></a>arr1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb110-5"><a href="introduction-to-numpy.html#cb110-5" aria-hidden="true" tabindex="-1"></a>arr2 <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
+<span id="cb110-6"><a href="introduction-to-numpy.html#cb110-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-7"><a href="introduction-to-numpy.html#cb110-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Addition</span></span>
+<span id="cb110-8"><a href="introduction-to-numpy.html#cb110-8" aria-hidden="true" tabindex="-1"></a>result_add <span class="op">=</span> arr1 <span class="op">+</span> arr2  <span class="co"># [5 7 9]</span></span>
+<span id="cb110-9"><a href="introduction-to-numpy.html#cb110-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-10"><a href="introduction-to-numpy.html#cb110-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Subtraction</span></span>
+<span id="cb110-11"><a href="introduction-to-numpy.html#cb110-11" aria-hidden="true" tabindex="-1"></a>result_sub <span class="op">=</span> arr1 <span class="op">-</span> arr2  <span class="co"># [-3 -3 -3]</span></span>
+<span id="cb110-12"><a href="introduction-to-numpy.html#cb110-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-13"><a href="introduction-to-numpy.html#cb110-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiplication</span></span>
+<span id="cb110-14"><a href="introduction-to-numpy.html#cb110-14" aria-hidden="true" tabindex="-1"></a>result_mul <span class="op">=</span> arr1 <span class="op">*</span> arr2  <span class="co"># [4 10 18]</span></span>
+<span id="cb110-15"><a href="introduction-to-numpy.html#cb110-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-16"><a href="introduction-to-numpy.html#cb110-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Division</span></span>
+<span id="cb110-17"><a href="introduction-to-numpy.html#cb110-17" aria-hidden="true" tabindex="-1"></a>result_div <span class="op">=</span> arr2 <span class="op">/</span> arr1  <span class="co"># [4.  2.5 2.]</span></span></code></pre></div>
+</div>
+<div id="broadcasting" class="section level4 hasAnchor" number="6.2.2.5">
+<h4><span class="header-section-number">6.2.2.5</span> Broadcasting<a href="introduction-to-numpy.html#broadcasting" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>NumPy’s broadcasting allows you to perform operations on arrays with different shapes, making your code more flexible:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="introduction-to-numpy.html#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb111-2"><a href="introduction-to-numpy.html#cb111-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-3"><a href="introduction-to-numpy.html#cb111-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a 2D array</span></span>
+<span id="cb111-4"><a href="introduction-to-numpy.html#cb111-4" aria-hidden="true" tabindex="-1"></a>arr_2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
+<span id="cb111-5"><a href="introduction-to-numpy.html#cb111-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-6"><a href="introduction-to-numpy.html#cb111-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Adding a scalar to the entire array</span></span>
+<span id="cb111-7"><a href="introduction-to-numpy.html#cb111-7" aria-hidden="true" tabindex="-1"></a>result_broadcast <span class="op">=</span> arr_2d <span class="op">+</span> <span class="dv">10</span>  <span class="co"># [[11 12 13] [14 15 16]]</span></span></code></pre></div>
+</div>
+<div id="aggregation-functions" class="section level4 hasAnchor" number="6.2.2.6">
+<h4><span class="header-section-number">6.2.2.6</span> Aggregation Functions<a href="introduction-to-numpy.html#aggregation-functions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>NumPy provides aggregation functions that allow you to compute summary statistics on arrays:</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="introduction-to-numpy.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb112-2"><a href="introduction-to-numpy.html#cb112-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-3"><a href="introduction-to-numpy.html#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an array</span></span>
+<span id="cb112-4"><a href="introduction-to-numpy.html#cb112-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb112-5"><a href="introduction-to-numpy.html#cb112-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-6"><a href="introduction-to-numpy.html#cb112-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Mean</span></span>
+<span id="cb112-7"><a href="introduction-to-numpy.html#cb112-7" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> np.mean(data)  <span class="co"># Calculates the mean: 3.0</span></span>
+<span id="cb112-8"><a href="introduction-to-numpy.html#cb112-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-9"><a href="introduction-to-numpy.html#cb112-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sum</span></span>
+<span id="cb112-10"><a href="introduction-to-numpy.html#cb112-10" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> np.<span class="bu">sum</span>(data)   <span class="co"># Calculates the sum: 15</span></span>
+<span id="cb112-11"><a href="introduction-to-numpy.html#cb112-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-12"><a href="introduction-to-numpy.html#cb112-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Maximum</span></span>
+<span id="cb112-13"><a href="introduction-to-numpy.html#cb112-13" aria-hidden="true" tabindex="-1"></a>max_value <span class="op">=</span> np.<span class="bu">max</span>(data)  <span class="co"># Finds the maximum value: 5</span></span>
+<span id="cb112-14"><a href="introduction-to-numpy.html#cb112-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb112-15"><a href="introduction-to-numpy.html#cb112-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimum</span></span>
+<span id="cb112-16"><a href="introduction-to-numpy.html#cb112-16" aria-hidden="true" tabindex="-1"></a>min_value <span class="op">=</span> np.<span class="bu">min</span>(data)  <span class="co"># Finds the minimum value: 1</span></span></code></pre></div>
+</div>
+<div id="indexing-and-slicing" class="section level4 hasAnchor" number="6.2.2.7">
+<h4><span class="header-section-number">6.2.2.7</span> Indexing and Slicing<a href="introduction-to-numpy.html#indexing-and-slicing" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>You can access specific elements or subsets of ndarrays using indexing and slicing:</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="introduction-to-numpy.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb113-2"><a href="introduction-to-numpy.html#cb113-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-3"><a href="introduction-to-numpy.html#cb113-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an array</span></span>
+<span id="cb113-4"><a href="introduction-to-numpy.html#cb113-4" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb113-5"><a href="introduction-to-numpy.html#cb113-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-6"><a href="introduction-to-numpy.html#cb113-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexing to access a specific element</span></span>
+<span id="cb113-7"><a href="introduction-to-numpy.html#cb113-7" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> arr[<span class="dv">2</span>]  <span class="co"># Retrieves the third element: 3</span></span>
+<span id="cb113-8"><a href="introduction-to-numpy.html#cb113-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-9"><a href="introduction-to-numpy.html#cb113-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing to get a subset of elements</span></span>
+<span id="cb113-10"><a href="introduction-to-numpy.html#cb113-10" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> arr[<span class="dv">1</span>:<span class="dv">4</span>]  <span class="co"># Retrieves elements from index 1 to 3: [2 3 4]</span></span></code></pre></div>
+<p>NumPy’s powerful array operations and manipulation techniques allow you to efficiently analyze, transform, and compute data, making it an invaluable tool for reservoir engineers. In the upcoming chapters, we’ll explore real-world applications of these techniques in the context of reservoir engineering.</p>
+</div>
+</div>
+</div>
+<div id="universal-functions-ufuncs" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Universal Functions (ufuncs)<a href="introduction-to-numpy.html#universal-functions-ufuncs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>NumPy provides a wide range of mathematical and logical functions that can be applied element-wise to arrays. These universal functions, or <code>ufuncs</code>, streamline complex operations. We’ll explore:</p>
+<ul>
+<li>Basic arithmetic operations with ufuncs.</li>
+<li>Applying functions to entire arrays.</li>
+<li>Broadcasting for operations on arrays of different shapes.</li>
+</ul>
+</div>
+<div id="array-manipulation" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Array Manipulation<a href="introduction-to-numpy.html#array-manipulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Manipulating arrays is a core skill in NumPy. We’ll delve into techniques for:</p>
+<ul>
+<li>Reshaping and resizing arrays.</li>
+<li>Concatenating and splitting arrays.</li>
+<li>Indexing and slicing arrays for data extraction.</li>
+</ul>
+<p>This section offers a comprehensive introduction to NumPy, covering its key features, array manipulation, and its essential role in reservoir engineering. It sets the stage for the practical applications of NumPy in the following chapters, providing readers with a strong foundation in the library’s capabilities.</p>
 
 </div>
 </div>
@@ -297,7 +516,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="built-in-modules-and-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="basic-reservoir-engineering.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -358,7 +577,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
