@@ -119,7 +119,7 @@ reshaping-arrays
 concatenating-arrays
 splitting-arrays
 indexing-and-slicing-1
-basic-reservoir-engineering
+reservoir-engineering
 introduction-1
 reservoir-characteristics
 reservoir-rock
@@ -134,7 +134,10 @@ gas-reservoirs
 oil-and-gas-reservoirs
 reservoir-evaluation
 chapter-summary-1
-fundamental-properties-of-fluid
+fundamental-properties-of-gas
+gas-behavior
+ideal-gas-law
+real-gas-behavior
 review-of-gas-properties
 real-gas-law
 gas-z-factor
@@ -172,3 +175,9 @@ meyer-garder-correlation
 coning-in-horizontal-wells
 working-with-las-files
 basic-example
+real-gas-behavior-1
+phase-behavior
+phase-diagrams
+critical-point-and-phase-transitions
+gas-composition-analysis
+chapter-summary-2
