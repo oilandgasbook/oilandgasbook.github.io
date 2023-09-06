@@ -100,6 +100,8 @@ manipulating-and-operating-on-ndarrays
 accessing-individual-elements
 modifying-elements
 slicing-for-subsets
+conditional-indexing
+indexing-in-multidimensional-arrays
 element-wise-operations
 broadcasting
 aggregation-functions

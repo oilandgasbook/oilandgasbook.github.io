@@ -446,17 +446,17 @@ permeability distribution as</p>
 perfectly homogeneous reservoir, <code>VDP = 0</code> because <code>KA = KH</code>. An increase in
 reservoir heterogeneity increases VDP. Typical values of the Dykstra-Parsons
 coefficient are in the range 0.4 &lt; VDP &lt; 0.9.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb132-1"><a href="pattern-floods.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math <span class="im">as</span> M</span>
-<span id="cb132-2"><a href="pattern-floods.html#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="co"># let&#39;s take the layer-wise permeability data of an arbitrary reservoir</span></span>
-<span id="cb132-3"><a href="pattern-floods.html#cb132-3" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> [<span class="fl">365.0</span>, <span class="fl">275.0</span>, <span class="fl">165.0</span>, <span class="fl">121.0</span>, <span class="fl">73.0</span>, <span class="fl">37.0</span>, <span class="fl">19.0</span>, <span class="fl">9.3</span>, <span class="fl">3.5</span>, <span class="fl">1.9</span>]  <span class="co"># md</span></span>
-<span id="cb132-4"><a href="pattern-floods.html#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate KA</span></span>
-<span id="cb132-5"><a href="pattern-floods.html#cb132-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-6"><a href="pattern-floods.html#cb132-6" aria-hidden="true" tabindex="-1"></a>KA <span class="op">=</span> <span class="bu">sum</span>(K) <span class="op">/</span> <span class="bu">len</span>(K)</span>
-<span id="cb132-7"><a href="pattern-floods.html#cb132-7" aria-hidden="true" tabindex="-1"></a>KH <span class="op">=</span> <span class="bu">sum</span>([<span class="dv">1</span><span class="op">/</span>k <span class="cf">for</span> k <span class="kw">in</span> K])<span class="op">/</span><span class="bu">len</span>(K)</span>
-<span id="cb132-8"><a href="pattern-floods.html#cb132-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-9"><a href="pattern-floods.html#cb132-9" aria-hidden="true" tabindex="-1"></a>VDP <span class="op">=</span> <span class="dv">1</span><span class="op">-</span> M.exp(<span class="op">-</span>M.sqrt(M.log(KA<span class="op">/</span>KH)))</span>
-<span id="cb132-10"><a href="pattern-floods.html#cb132-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VDP)</span>
-<span id="cb132-11"><a href="pattern-floods.html#cb132-11" aria-hidden="true" tabindex="-1"></a><span class="fl">0.9282653209184065</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb134-1"><a href="pattern-floods.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math <span class="im">as</span> M</span>
+<span id="cb134-2"><a href="pattern-floods.html#cb134-2" aria-hidden="true" tabindex="-1"></a><span class="co"># let&#39;s take the layer-wise permeability data of an arbitrary reservoir</span></span>
+<span id="cb134-3"><a href="pattern-floods.html#cb134-3" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> [<span class="fl">365.0</span>, <span class="fl">275.0</span>, <span class="fl">165.0</span>, <span class="fl">121.0</span>, <span class="fl">73.0</span>, <span class="fl">37.0</span>, <span class="fl">19.0</span>, <span class="fl">9.3</span>, <span class="fl">3.5</span>, <span class="fl">1.9</span>]  <span class="co"># md</span></span>
+<span id="cb134-4"><a href="pattern-floods.html#cb134-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate KA</span></span>
+<span id="cb134-5"><a href="pattern-floods.html#cb134-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-6"><a href="pattern-floods.html#cb134-6" aria-hidden="true" tabindex="-1"></a>KA <span class="op">=</span> <span class="bu">sum</span>(K) <span class="op">/</span> <span class="bu">len</span>(K)</span>
+<span id="cb134-7"><a href="pattern-floods.html#cb134-7" aria-hidden="true" tabindex="-1"></a>KH <span class="op">=</span> <span class="bu">sum</span>([<span class="dv">1</span><span class="op">/</span>k <span class="cf">for</span> k <span class="kw">in</span> K])<span class="op">/</span><span class="bu">len</span>(K)</span>
+<span id="cb134-8"><a href="pattern-floods.html#cb134-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-9"><a href="pattern-floods.html#cb134-9" aria-hidden="true" tabindex="-1"></a>VDP <span class="op">=</span> <span class="dv">1</span><span class="op">-</span> M.exp(<span class="op">-</span>M.sqrt(M.log(KA<span class="op">/</span>KH)))</span>
+<span id="cb134-10"><a href="pattern-floods.html#cb134-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(VDP)</span>
+<span id="cb134-11"><a href="pattern-floods.html#cb134-11" aria-hidden="true" tabindex="-1"></a><span class="fl">0.9282653209184065</span></span></code></pre></div>
 </div>
 <div id="aa" class="section level2 hasAnchor" number="12.3">
 <h2><span class="header-section-number">12.3</span> aa<a href="pattern-floods.html#aa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
