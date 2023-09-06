@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>16 Gas and Water Coning | Applications of Python in Reservoir Engineering</title>
-  <meta name="description" content="16 Gas and Water Coning | Applications of Python in Reservoir Engineering" />
+  <title>Reservoir Engineering | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="Reservoir Engineering | Applications of Python in Reservoir Engineering" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="16 Gas and Water Coning | Applications of Python in Reservoir Engineering" />
+  <meta property="og:title" content="Reservoir Engineering | Applications of Python in Reservoir Engineering" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="16 Gas and Water Coning | Applications of Python in Reservoir Engineering" />
+  <meta name="twitter:title" content="Reservoir Engineering | Applications of Python in Reservoir Engineering" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="volumetrics.html"/>
-<link rel="next" href="working-with-las-files.html"/>
+<link rel="prev" href="introduction-to-numpy.html"/>
+<link rel="next" href="basic-reservoir-engineering.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -322,62 +322,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="gas-and-water-coning" class="section level1 hasAnchor" number="16">
-<h1><span class="header-section-number">16</span> Gas and Water Coning<a href="gas-and-water-coning.html#gas-and-water-coning" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Coning is a term used to describe the mechanism of upward movement of Water or downward movement of Gas into the producing well.</p>
-<div id="coning-in-vertical-wells" class="section level2 hasAnchor" number="16.1">
-<h2><span class="header-section-number">16.1</span> Coning in Vertical wells<a href="gas-and-water-coning.html#coning-in-vertical-wells" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="meyer-garder-correlation" class="section level3 hasAnchor" number="16.1.1">
-<h3><span class="header-section-number">16.1.1</span> Meyer-Garder Correlation<a href="gas-and-water-coning.html#meyer-garder-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In 1954 Meyer and Garder suggested following relation in Gas Oil Coning System</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb147-1"><a href="gas-and-water-coning.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb147-2"><a href="gas-and-water-coning.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Sample Data</span></span>
-<span id="cb147-3"><a href="gas-and-water-coning.html#cb147-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb147-4"><a href="gas-and-water-coning.html#cb147-4" aria-hidden="true" tabindex="-1"></a>Kh <span class="op">=</span> <span class="dv">110</span>    <span class="co">#md</span></span>
-<span id="cb147-5"><a href="gas-and-water-coning.html#cb147-5" aria-hidden="true" tabindex="-1"></a>Kro <span class="op">=</span> <span class="fl">0.85</span>  <span class="co"># oil relative permeability</span></span>
-<span id="cb147-6"><a href="gas-and-water-coning.html#cb147-6" aria-hidden="true" tabindex="-1"></a>po <span class="op">=</span> <span class="fl">47.5</span>   <span class="co"># lb/ft3 (oil Density)</span></span>
-<span id="cb147-7"><a href="gas-and-water-coning.html#cb147-7" aria-hidden="true" tabindex="-1"></a>pg <span class="op">=</span> <span class="fl">5.1</span>    <span class="co"># lb/ft3 (gas Density)</span></span>
-<span id="cb147-8"><a href="gas-and-water-coning.html#cb147-8" aria-hidden="true" tabindex="-1"></a>mu<span class="op">=</span> <span class="fl">0.73</span>    <span class="co"># cp (Oil viscosity)</span></span>
-<span id="cb147-9"><a href="gas-and-water-coning.html#cb147-9" aria-hidden="true" tabindex="-1"></a>fvf <span class="op">=</span> <span class="fl">1.1</span>   <span class="co"># bbl/STB</span></span>
-<span id="cb147-10"><a href="gas-and-water-coning.html#cb147-10" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">40</span>      <span class="co">#ft (oil column thickness)</span></span>
-<span id="cb147-11"><a href="gas-and-water-coning.html#cb147-11" aria-hidden="true" tabindex="-1"></a>hp <span class="op">=</span> <span class="dv">15</span>     <span class="co">#ft (perforation interval)</span></span>
-<span id="cb147-12"><a href="gas-and-water-coning.html#cb147-12" aria-hidden="true" tabindex="-1"></a>Dt <span class="op">=</span> <span class="dv">25</span>     <span class="co"># ft (depth of GOC from top of perforation)</span></span>
-<span id="cb147-13"><a href="gas-and-water-coning.html#cb147-13" aria-hidden="true" tabindex="-1"></a>rw <span class="op">=</span> <span class="fl">0.25</span>   <span class="co">#ft (wellbore radius)</span></span>
-<span id="cb147-14"><a href="gas-and-water-coning.html#cb147-14" aria-hidden="true" tabindex="-1"></a>re <span class="op">=</span> <span class="dv">660</span>    <span class="co"># ft (drainage radius)</span></span>
-<span id="cb147-15"><a href="gas-and-water-coning.html#cb147-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb147-16"><a href="gas-and-water-coning.html#cb147-16" aria-hidden="true" tabindex="-1"></a>Qc <span class="op">=</span> <span class="fl">0.0000246</span><span class="op">*</span>(po<span class="op">-</span>pg)<span class="op">*</span>(Kh<span class="op">*</span>Kro<span class="op">/</span>(mu<span class="op">*</span>fvf))<span class="op">*</span>(h<span class="op">**</span><span class="dv">2</span><span class="op">-</span>(h<span class="op">-</span>Dt)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>math.log(re<span class="op">/</span>rw)</span>
-<span id="cb147-17"><a href="gas-and-water-coning.html#cb147-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Critical Oil rate = </span><span class="sc">{Qc}</span><span class="ss"> STB/day&#39;</span>)</span>
-<span id="cb147-18"><a href="gas-and-water-coning.html#cb147-18" aria-hidden="true" tabindex="-1"></a>Critical Oil rate <span class="op">=</span> <span class="fl">21.19601914346511</span> STB<span class="op">/</span>day</span></code></pre></div>
-<p>for Oil water system:</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb148-1"><a href="gas-and-water-coning.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="co">#same data as above example</span></span>
-<span id="cb148-2"><a href="gas-and-water-coning.html#cb148-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb148-3"><a href="gas-and-water-coning.html#cb148-3" aria-hidden="true" tabindex="-1"></a>pw <span class="op">=</span> <span class="fl">63.76</span>  <span class="co"># lb/ft3 (water Density)</span></span>
-<span id="cb148-4"><a href="gas-and-water-coning.html#cb148-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb148-5"><a href="gas-and-water-coning.html#cb148-5" aria-hidden="true" tabindex="-1"></a>Qc <span class="op">=</span> <span class="fl">0.0000246</span><span class="op">*</span>(pw<span class="op">-</span>po)<span class="op">*</span>(Kh<span class="op">*</span>Kro<span class="op">/</span>(mu<span class="op">*</span>fvf))<span class="op">*</span>(h<span class="op">**</span><span class="dv">2</span><span class="op">-</span>hp<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>math.log(re<span class="op">/</span>rw)</span>
-<span id="cb148-6"><a href="gas-and-water-coning.html#cb148-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Critical Oil rate = </span><span class="sc">{Qc}</span><span class="ss"> STB/day&#39;</span>)</span>
-<span id="cb148-7"><a href="gas-and-water-coning.html#cb148-7" aria-hidden="true" tabindex="-1"></a>Critical Oil rate <span class="op">=</span> <span class="fl">8.12847337907412</span> STB<span class="op">/</span>day</span></code></pre></div>
-<p>for gas Oil water system:</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb149-1"><a href="gas-and-water-coning.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co">#same data as above example</span></span>
-<span id="cb149-2"><a href="gas-and-water-coning.html#cb149-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb149-3"><a href="gas-and-water-coning.html#cb149-3" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">65</span>      <span class="co">#ft (oil column thickness)</span></span>
-<span id="cb149-4"><a href="gas-and-water-coning.html#cb149-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb149-5"><a href="gas-and-water-coning.html#cb149-5" aria-hidden="true" tabindex="-1"></a>Qc <span class="op">=</span> <span class="fl">0.0000246</span><span class="op">*</span>(Kh<span class="op">*</span>Kro<span class="op">/</span>(mu<span class="op">*</span>fvf))<span class="op">*</span>((h<span class="op">**</span><span class="dv">2</span><span class="op">-</span>hp<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>math.log(re<span class="op">/</span>rw))<span class="op">*</span>((pw<span class="op">-</span>po)<span class="op">*</span>((po<span class="op">-</span>pg)<span class="op">/</span>(pw<span class="op">-</span>pg))<span class="op">**</span><span class="dv">2</span><span class="op">+</span>((po<span class="op">-</span>pg)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>(po<span class="op">-</span>pg)<span class="op">/</span>(pw<span class="op">-</span>pg))<span class="op">**</span><span class="dv">2</span>))</span>
-<span id="cb149-6"><a href="gas-and-water-coning.html#cb149-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Critical Oil rate = </span><span class="sc">{Qc}</span><span class="ss"> STB/day&#39;</span>)</span>
-<span id="cb149-7"><a href="gas-and-water-coning.html#cb149-7" aria-hidden="true" tabindex="-1"></a>Critical Oil rate <span class="op">=</span> <span class="fl">17.091889596019843</span> STB<span class="op">/</span>day</span></code></pre></div>
-</div>
-</div>
-<div id="coning-in-horizontal-wells" class="section level2 hasAnchor" number="16.2">
-<h2><span class="header-section-number">16.2</span> Coning in Horizontal wells<a href="gas-and-water-coning.html#coning-in-horizontal-wells" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-
-</div>
+<div id="reservoir-engineering" class="section level1 unnumbered hasAnchor">
+<h1>Reservoir Engineering<a href="reservoir-engineering.html#reservoir-engineering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="volumetrics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="working-with-las-files.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-to-numpy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basic-reservoir-engineering.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
