@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>17 working with Las files | Applications of Python in Reservoir Engineering</title>
-  <meta name="description" content="17 working with Las files | Applications of Python in Reservoir Engineering" />
+  <title>19 working with Las files | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="19 working with Las files | Applications of Python in Reservoir Engineering" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="17 working with Las files | Applications of Python in Reservoir Engineering" />
+  <meta property="og:title" content="19 working with Las files | Applications of Python in Reservoir Engineering" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="17 working with Las files | Applications of Python in Reservoir Engineering" />
+  <meta name="twitter:title" content="19 working with Las files | Applications of Python in Reservoir Engineering" />
   
   
   
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="gas-and-water-coning.html"/>
-
+<link rel="next" href="rough.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -91,7 +91,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -104,7 +104,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -247,78 +247,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#ideal-gas-law"><i class="fa fa-check"></i><b>8.1.1</b> Ideal Gas Law</a></li>
 <li class="chapter" data-level="8.1.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#real-gas-behavior"><i class="fa fa-check"></i><b>8.1.2</b> Real Gas Behavior</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#review-of-gas-properties"><i class="fa fa-check"></i><b>8.2</b> Review of Gas Properties</a>
+<li class="chapter" data-level="8.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-composition"><i class="fa fa-check"></i><b>8.2</b> Gas Composition</a></li>
+<li class="chapter" data-level="8.3" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#phase-behavior"><i class="fa fa-check"></i><b>8.3</b> Phase Behavior</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#real-gas-law"><i class="fa fa-check"></i><b>8.2.1</b> Real Gas law</a></li>
-<li class="chapter" data-level="8.2.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-z-factor"><i class="fa fa-check"></i><b>8.2.2</b> Gas z Factor</a></li>
-<li class="chapter" data-level="8.2.3" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-density"><i class="fa fa-check"></i><b>8.2.3</b> Gas Density</a></li>
-<li class="chapter" data-level="8.2.4" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>8.2.4</b> Isothermal Gas Compressibility</a></li>
-<li class="chapter" data-level="8.2.5" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>8.2.5</b> Gas formation volume factor</a></li>
+<li class="chapter" data-level="8.3.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#phase-diagrams"><i class="fa fa-check"></i><b>8.3.1</b> Phase Diagrams</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>9</b> Properties of Oil</a></li>
-<li class="chapter" data-level="10" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>10</b> Rock Properties</a>
+<li class="chapter" data-level="8.4" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#review-of-gas-properties"><i class="fa fa-check"></i><b>8.4</b> Review of Gas Properties</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>10.1</b> Surface and Interfacial Tension</a></li>
-<li class="chapter" data-level="10.2" data-path="rock-properties.html"><a href="rock-properties.html#capillary-pressure"><i class="fa fa-check"></i><b>10.2</b> Capillary Pressure</a></li>
-<li class="chapter" data-level="10.3" data-path="rock-properties.html"><a href="rock-properties.html#leverett-j-function"><i class="fa fa-check"></i><b>10.3</b> Leverett J-Function</a></li>
-<li class="chapter" data-level="10.4" data-path="rock-properties.html"><a href="rock-properties.html#permeability"><i class="fa fa-check"></i><b>10.4</b> Permeability</a></li>
-<li class="chapter" data-level="10.5" data-path="rock-properties.html"><a href="rock-properties.html#reservoir-heterogeneity"><i class="fa fa-check"></i><b>10.5</b> Reservoir Heterogeneity</a>
+<li class="chapter" data-level="8.4.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#real-gas-law"><i class="fa fa-check"></i><b>8.4.1</b> Real Gas law</a></li>
+<li class="chapter" data-level="8.4.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-z-factor"><i class="fa fa-check"></i><b>8.4.2</b> Gas z Factor</a></li>
+<li class="chapter" data-level="8.4.3" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-density"><i class="fa fa-check"></i><b>8.4.3</b> Gas Density</a></li>
+<li class="chapter" data-level="8.4.4" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>8.4.4</b> Isothermal Gas Compressibility</a></li>
+<li class="chapter" data-level="8.4.5" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>8.4.5</b> Gas formation volume factor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html"><i class="fa fa-check"></i><b>9</b> Single Phase Gas Flow</a>
 <ul>
-<li class="chapter" data-level="10.5.1" data-path="rock-properties.html"><a href="rock-properties.html#vertical-heterogeneity"><i class="fa fa-check"></i><b>10.5.1</b> Vertical Heterogeneity</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="relative-permeability.html"><a href="relative-permeability.html"><i class="fa fa-check"></i><b>11</b> Relative Permeability</a>
+<li class="chapter" data-level="9.1" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#steady-state-darcy-flow"><i class="fa fa-check"></i><b>9.1</b> Steady-State Darcy Flow</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="relative-permeability.html"><a href="relative-permeability.html#three-phase-relative-permeability"><i class="fa fa-check"></i><b>11.1</b> Three-phase relative permeability</a></li>
-<li class="chapter" data-level="11.2" data-path="relative-permeability.html"><a href="relative-permeability.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>11.2</b> Simplified Fractional Flow Equation</a></li>
-<li class="chapter" data-level="11.3" data-path="relative-permeability.html"><a href="relative-permeability.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>11.3</b> Buckley-Leverett Theory</a></li>
+<li class="chapter" data-level="9.1.1" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#gas-flow-equations"><i class="fa fa-check"></i><b>9.1.1</b> Gas Flow Equations:</a></li>
+<li class="chapter" data-level="9.1.2" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#reservoir-properties"><i class="fa fa-check"></i><b>9.1.2</b> Reservoir Properties:</a></li>
+<li class="chapter" data-level="9.1.3" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#well-performance"><i class="fa fa-check"></i><b>9.1.3</b> Well Performance:</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html"><i class="fa fa-check"></i><b>12</b> Fundamentals of fluid flow in Reservoirs</a>
+</ul></li>
+<li class="chapter" data-level="10" data-path="gas-well-testing.html"><a href="gas-well-testing.html"><i class="fa fa-check"></i><b>10</b> Gas Well Testing</a></li>
+<li class="chapter" data-level="11" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>11</b> Properties of Oil</a></li>
+<li class="chapter" data-level="12" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>12</b> Rock Properties</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#type-of-fluids-in-reservoir"><i class="fa fa-check"></i><b>12.1</b> Type of fluids in reservoir</a></li>
-<li class="chapter" data-level="12.2" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#fluid-flow-equation"><i class="fa fa-check"></i><b>12.2</b> Fluid flow equation</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>13</b> Pattern Floods</a>
+<li class="chapter" data-level="12.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>12.1</b> Surface and Interfacial Tension</a></li>
+<li class="chapter" data-level="12.2" data-path="rock-properties.html"><a href="rock-properties.html#capillary-pressure"><i class="fa fa-check"></i><b>12.2</b> Capillary Pressure</a></li>
+<li class="chapter" data-level="12.3" data-path="rock-properties.html"><a href="rock-properties.html#leverett-j-function"><i class="fa fa-check"></i><b>12.3</b> Leverett J-Function</a></li>
+<li class="chapter" data-level="12.4" data-path="rock-properties.html"><a href="rock-properties.html#permeability"><i class="fa fa-check"></i><b>12.4</b> Permeability</a></li>
+<li class="chapter" data-level="12.5" data-path="rock-properties.html"><a href="rock-properties.html#reservoir-heterogeneity"><i class="fa fa-check"></i><b>12.5</b> Reservoir Heterogeneity</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>13.1</b> Recovery Efficiency</a>
+<li class="chapter" data-level="12.5.1" data-path="rock-properties.html"><a href="rock-properties.html#vertical-heterogeneity"><i class="fa fa-check"></i><b>12.5.1</b> Vertical Heterogeneity</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="relative-permeability.html"><a href="relative-permeability.html"><i class="fa fa-check"></i><b>13</b> Relative Permeability</a>
 <ul>
-<li class="chapter" data-level="13.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>13.1.1</b> Patterns and Spacing</a></li>
+<li class="chapter" data-level="13.1" data-path="relative-permeability.html"><a href="relative-permeability.html#three-phase-relative-permeability"><i class="fa fa-check"></i><b>13.1</b> Three-phase relative permeability</a></li>
+<li class="chapter" data-level="13.2" data-path="relative-permeability.html"><a href="relative-permeability.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>13.2</b> Simplified Fractional Flow Equation</a></li>
+<li class="chapter" data-level="13.3" data-path="relative-permeability.html"><a href="relative-permeability.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>13.3</b> Buckley-Leverett Theory</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>13.2</b> Pattern Recovery</a></li>
-<li class="chapter" data-level="13.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>13.3</b> aa</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html"><i class="fa fa-check"></i><b>14</b> Pressure Transient Analysis</a>
+<li class="chapter" data-level="14" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html"><i class="fa fa-check"></i><b>14</b> Fundamentals of fluid flow in Reservoirs</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#basic-well-model"><i class="fa fa-check"></i><b>14.1</b> Basic Well Model</a></li>
-<li class="chapter" data-level="14.2" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#steady-state-radial-flow-of-an-incompressible-fluid"><i class="fa fa-check"></i><b>14.2</b> Steady-State Radial Flow of an Incompressible Fluid</a></li>
+<li class="chapter" data-level="14.1" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#type-of-fluids-in-reservoir"><i class="fa fa-check"></i><b>14.1</b> Type of fluids in reservoir</a></li>
+<li class="chapter" data-level="14.2" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#fluid-flow-equation"><i class="fa fa-check"></i><b>14.2</b> Fluid flow equation</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>15</b> Volumetrics</a>
+<li class="chapter" data-level="15" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>15</b> Pattern Floods</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>15.1</b> Calculating the Gas inplace by volumetric methods</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>16</b> Gas and Water Coning</a>
+<li class="chapter" data-level="15.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>15.1</b> Recovery Efficiency</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>16.1</b> Coning in Vertical wells</a>
+<li class="chapter" data-level="15.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>15.1.1</b> Patterns and Spacing</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>15.2</b> Pattern Recovery</a></li>
+<li class="chapter" data-level="15.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>15.3</b> aa</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html"><i class="fa fa-check"></i><b>16</b> Pressure Transient Analysis</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>16.1.1</b> Meyer-Garder Correlation</a></li>
+<li class="chapter" data-level="16.1" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#basic-well-model"><i class="fa fa-check"></i><b>16.1</b> Basic Well Model</a></li>
+<li class="chapter" data-level="16.2" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#steady-state-radial-flow-of-an-incompressible-fluid"><i class="fa fa-check"></i><b>16.2</b> Steady-State Radial Flow of an Incompressible Fluid</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>16.2</b> Coning in Horizontal wells</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="working-with-las-files.html"><a href="working-with-las-files.html"><i class="fa fa-check"></i><b>17</b> working with Las files</a>
+<li class="chapter" data-level="17" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>17</b> Volumetrics</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#basic-example"><i class="fa fa-check"></i><b>17.1</b> Basic example</a>
+<li class="chapter" data-level="17.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>17.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>18</b> Gas and Water Coning</a>
 <ul>
-<li class="chapter" data-level="17.1.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#real-gas-behavior-1"><i class="fa fa-check"></i><b>17.1.1</b> 5.2.2 Real Gas Behavior</a></li>
-</ul></li>
-<li class="chapter" data-level="17.2" data-path="working-with-las-files.html"><a href="working-with-las-files.html#phase-behavior"><i class="fa fa-check"></i><b>17.2</b> 5.3 Phase Behavior</a>
+<li class="chapter" data-level="18.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>18.1</b> Coning in Vertical wells</a>
 <ul>
-<li class="chapter" data-level="17.2.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#phase-diagrams"><i class="fa fa-check"></i><b>17.2.1</b> 5.3.1 Phase Diagrams</a></li>
-<li class="chapter" data-level="17.2.2" data-path="working-with-las-files.html"><a href="working-with-las-files.html#critical-point-and-phase-transitions"><i class="fa fa-check"></i><b>17.2.2</b> 5.3.2 Critical Point and Phase Transitions</a></li>
+<li class="chapter" data-level="18.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>18.1.1</b> Meyer-Garder Correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="17.3" data-path="working-with-las-files.html"><a href="working-with-las-files.html#gas-composition-analysis"><i class="fa fa-check"></i><b>17.3</b> 5.4 Gas Composition Analysis</a></li>
-<li class="chapter" data-level="17.4" data-path="working-with-las-files.html"><a href="working-with-las-files.html#chapter-summary-2"><i class="fa fa-check"></i><b>17.4</b> 5.5 Chapter Summary</a></li>
+<li class="chapter" data-level="18.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>18.2</b> Coning in Horizontal wells</a></li>
 </ul></li>
+<li class="chapter" data-level="19" data-path="working-with-las-files.html"><a href="working-with-las-files.html"><i class="fa fa-check"></i><b>19</b> working with Las files</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#basic-example"><i class="fa fa-check"></i><b>19.1</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="rough.html"><a href="rough.html"><i class="fa fa-check"></i><b>20</b> rough</a></li>
 </ul>
 
       </nav>
@@ -336,41 +342,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="working-with-las-files" class="section level1 hasAnchor" number="17">
-<h1><span class="header-section-number">17</span> working with Las files<a href="working-with-las-files.html#working-with-las-files" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="working-with-las-files" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">19</span> working with Las files<a href="working-with-las-files.html#working-with-las-files" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Log ASCII Standard (LAS) files are used for borehole data such as geophysical, geological, or petrophysical logs.
 lasio is a Python 3 package to read and write Las files.
 The best way to install lasio is using pip.</p>
 <p><code>pip install lasio</code></p>
-<div id="basic-example" class="section level2 hasAnchor" number="17.1">
-<h2><span class="header-section-number">17.1</span> Basic example<a href="working-with-las-files.html#basic-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="basic-example" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> Basic example<a href="working-with-las-files.html#basic-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <pre>import lasio<br>
 las = lasio.read("Well-1.las")</pre>
-
-<div id="real-gas-behavior-1" class="section level3 hasAnchor" number="17.1.1">
-<h3><span class="header-section-number">17.1.1</span> 5.2.2 Real Gas Behavior<a href="working-with-las-files.html#real-gas-behavior-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>While the ideal gas law provides a simplified model, real gases deviate from ideal behavior at high pressures and low temperatures. We’ll discuss factors that cause these deviations and how they impact gas reservoir simulations.</p>
-</div>
-</div>
-<div id="phase-behavior" class="section level2 hasAnchor" number="17.2">
-<h2><span class="header-section-number">17.2</span> 5.3 Phase Behavior<a href="working-with-las-files.html#phase-behavior" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Gas reservoirs often contain multiple components, leading to complex phase behavior. We’ll cover:</p>
-<div id="phase-diagrams" class="section level3 hasAnchor" number="17.2.1">
-<h3><span class="header-section-number">17.2.1</span> 5.3.1 Phase Diagrams<a href="working-with-las-files.html#phase-diagrams" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Phase diagrams help visualize how gas components behave under different pressure and temperature conditions. We’ll examine phase diagrams and their significance in reservoir engineering.</p>
-</div>
-<div id="critical-point-and-phase-transitions" class="section level3 hasAnchor" number="17.2.2">
-<h3><span class="header-section-number">17.2.2</span> 5.3.2 Critical Point and Phase Transitions<a href="working-with-las-files.html#critical-point-and-phase-transitions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Understanding the critical point and phase transitions is vital for predicting gas behavior as reservoir conditions change. We’ll explore these critical concepts and their practical applications.</p>
-</div>
-</div>
-<div id="gas-composition-analysis" class="section level2 hasAnchor" number="17.3">
-<h2><span class="header-section-number">17.3</span> 5.4 Gas Composition Analysis<a href="working-with-las-files.html#gas-composition-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Knowing the composition of gases in a reservoir is crucial for reservoir engineering decisions. We’ll discuss techniques for gas composition analysis, including chromatography and spectroscopy.</p>
-</div>
-<div id="chapter-summary-2" class="section level2 hasAnchor" number="17.4">
-<h2><span class="header-section-number">17.4</span> 5.5 Chapter Summary<a href="working-with-las-files.html#chapter-summary-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>By the end of this chapter, you will have a solid grasp of gas properties, their behavior under varying conditions, and their significance in gas reservoir analysis. This knowledge is indispensable for reservoir engineers tasked with optimizing gas production and reservoir management.</p>
 
 </div>
 </div>
@@ -379,8 +360,8 @@ las = lasio.read("Well-1.las")</pre>
           </div>
         </div>
       </div>
-<a href="gas-and-water-coning.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="gas-and-water-coning.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rough.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
