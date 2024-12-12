@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>14 Fundamentals of fluid flow in Reservoirs | Applications of Python in Reservoir Engineering</title>
-  <meta name="description" content="14 Fundamentals of fluid flow in Reservoirs | Applications of Python in Reservoir Engineering" />
+  <title>2 Introduction to Python for Reservoir Engineering | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="2 Introduction to Python for Reservoir Engineering | Applications of Python in Reservoir Engineering" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="14 Fundamentals of fluid flow in Reservoirs | Applications of Python in Reservoir Engineering" />
+  <meta property="og:title" content="2 Introduction to Python for Reservoir Engineering | Applications of Python in Reservoir Engineering" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="14 Fundamentals of fluid flow in Reservoirs | Applications of Python in Reservoir Engineering" />
+  <meta name="twitter:title" content="2 Introduction to Python for Reservoir Engineering | Applications of Python in Reservoir Engineering" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="relative-permeability.html"/>
-<link rel="next" href="pattern-floods.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="python-basics.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -344,47 +344,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="fundamentals-of-fluid-flow-in-reservoirs" class="section level1 hasAnchor" number="14">
-<h1><span class="header-section-number">14</span> Fundamentals of fluid flow in Reservoirs<a href="fundamentals-of-fluid-flow-in-reservoirs.html#fundamentals-of-fluid-flow-in-reservoirs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Flow in porous media is a very complex phenomenon and as such cannot be described as explicitly as flow through pipes or conduits. It is
-rather easy to measure the length and diameter of a pipe and compute its
-flow capacity as a function of pressure; in porous media, however, flow
-is different in that there are no clear-cut flow paths.</p>
-<p>The main objective of this chapter is to present the mathematical relationships (along with python codes) that are designed to describe the flow behavior of the reservoir
-fluids. The mathematical forms of these relationships will vary depending upon the characteristics of the reservoir. The main characteristic on which fluid flow depends are:</p>
-<ul>
-<li>Types of fluids in the reservoir</li>
-<li>Flow regime</li>
-<li>Reservoir geometry</li>
-<li>Number of flowing fluid in the reservoir</li>
-</ul>
-<div id="type-of-fluids-in-reservoir" class="section level2 hasAnchor" number="14.1">
-<h2><span class="header-section-number">14.1</span> Type of fluids in reservoir<a href="fundamentals-of-fluid-flow-in-reservoirs.html#type-of-fluids-in-reservoir" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The isothermal compressibility coefficient is essentially the controlling factor in identifying the type of the reservoir fluid. In general, reservoir fluids are classified into three groups:</p>
-<ul>
-<li>Incompressible fluids</li>
-<li>Slightly compressible fluids</li>
-<li>Compressible fluids</li>
-</ul>
-<p>the isothermal compressibility coefficient <code>c</code> is described mathematically by the following two equivalent expressions:</p>
-<p>In volume term
-<span class="math display" id="eq:compressibility">\[\begin{equation}
-     \tag{14.1}
-     c = \frac{-1}{V} \frac{\partial V}{\partial p}
-\end{equation}\]</span></p>
-<p>In terms of fluid density
-<span class="math display" id="eq:compressibilityDensity">\[\begin{equation}
-     \tag{14.2}
-     c = \frac{-1}{\rho} \frac{\partial \rho}{\partial p}
-\end{equation}\]</span></p>
+<div id="introduction-to-python-for-reservoir-engineering" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Introduction to Python for Reservoir Engineering<a href="introduction-to-python-for-reservoir-engineering.html#introduction-to-python-for-reservoir-engineering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="why-python" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Why Python?<a href="introduction-to-python-for-reservoir-engineering.html#why-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python has emerged as the go-to programming language for engineers, scientists, and data analysts, and it’s not without reason. Its versatility, ease of use, and a thriving ecosystem of libraries make it a powerful tool for reservoir engineering and beyond.</p>
 </div>
-<div id="fluid-flow-equation" class="section level2 hasAnchor" number="14.2">
-<h2><span class="header-section-number">14.2</span> Fluid flow equation<a href="fundamentals-of-fluid-flow-in-reservoirs.html#fluid-flow-equation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The fluid flow equations that are used to describe the flow behavior in a reservoir can take many forms depending upon the combination of variables.
-By combining the conservation of mass equation with the transport equation (Darcy’s equation) <a href="rock-properties.html#eq:darcyQ">(12.8)</a> and various equations-of-state, the necessary flow equations can be developed.
-The negative sign in Equation <a href="rock-properties.html#eq:darcyQ">(12.8)</a> is added because the pressure gradient is negative in the direction of flow as shown in Figure 6-9.
-For a horizontal-radial system, the pressure gradient is positive</p>
-
+<div id="versatility" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Versatility<a href="introduction-to-python-for-reservoir-engineering.html#versatility" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python’s versatility is a major draw for engineers in the oil and gas industry. Whether you’re working on data analysis, numerical simulations, data visualization, or machine learning, Python has libraries and frameworks to support your needs. This adaptability means you can seamlessly transition from one aspect of reservoir engineering to another within the same programming environment.</p>
+<p>Python’s versatility is a defining feature that makes it particularly well-suited for reservoir engineering and various other scientific disciplines. Its broad range of applications spans from data analysis and visualization to numerical simulations and machine learning. In reservoir engineering, this versatility is invaluable because it allows engineers to employ a single programming language throughout the entire workflow, promoting efficiency and consistency.</p>
+<p>One key aspect of Python’s versatility is its ability to seamlessly integrate with other technologies and tools commonly used in the oil and gas industry. Python’s ease of interfacing with databases, spreadsheets, and external software systems simplifies data extraction, transformation, and loading (ETL) processes. Engineers can readily connect Python scripts to industry-specific software, enhancing automation and data analysis capabilities.</p>
+<p>Moreover, Python’s cross-platform compatibility ensures that code developed on one operating system can run on others without major modifications. This feature streamlines collaboration among engineers and organizations, as it reduces compatibility issues and promotes code reusability.</p>
+<p>Python’s adaptability extends to the creation of custom applications and graphical user interfaces (GUIs). Engineers can develop tailored tools and dashboards for specific reservoir engineering tasks, providing a user-friendly interface for data analysis and decision-making.</p>
+<p>In summary, Python’s versatility empowers reservoir engineers to tackle a wide range of tasks within a unified programming environment. Its compatibility, integration capabilities, and extensibility make it an invaluable tool for addressing the multifaceted challenges of reservoir engineering.</p>
+</div>
+<div id="readability-and-learnability" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Readability and Learnability<a href="introduction-to-python-for-reservoir-engineering.html#readability-and-learnability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python’s elegance lies not only in its versatility but also in its unparalleled readability and learnability. These characteristics set it apart as a programming language suitable for engineers and scientists, even those without extensive coding backgrounds. Reservoir engineers can swiftly grasp Python’s syntax and structure, which minimizes the learning curve and allows them to focus on solving engineering challenges.</p>
+<p>The simplicity of Python’s code syntax, which emphasizes clean and meaningful indentation, is a pivotal factor. Code blocks are organized by indentation rather than cumbersome braces or keywords, making it remarkably easy to read and comprehend. This feature is invaluable for reservoir engineers who want to collaborate effectively, as it promotes code consistency and reduces the risk of errors.</p>
+<p>Additionally, Python’s human-friendly nature extends to its extensive and self-explanatory standard libraries. Engineers can often accomplish complex tasks using straightforward functions and modules, reducing the need for writing intricate, low-level code. This approach is especially advantageous in reservoir engineering, where time and accuracy are of the essence.</p>
+<p>Python’s learnability further accelerates the adoption of programming skills among engineers. Its supportive community, extensive documentation, and myriad of online resources facilitate the journey of mastering Python. Engineers can quickly find answers to questions, access tutorials, and leverage examples to apply Python effectively to reservoir engineering challenges.</p>
+<p>In essence, Python’s readability and learnability are instrumental in making it an accessible and efficient tool for reservoir engineers, enabling them to focus on the engineering aspects of their work while embracing the power of programming.</p>
+</div>
+<div id="open-source-community" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Open Source Community<a href="introduction-to-python-for-reservoir-engineering.html#open-source-community" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One of Python’s most remarkable strengths lies in its thriving open-source community. This community is a dynamic ecosystem of developers, researchers, engineers, and enthusiasts who contribute to the growth and improvement of the Python programming language and its associated libraries. For reservoir engineers and professionals in the oil and gas industry, this collaborative environment is a treasure trove of resources and support.</p>
+<p>The open-source nature of Python ensures that it remains accessible to everyone, without licensing restrictions or costly fees. Engineers can freely install and use Python on their machines, making it a cost-effective choice for both individuals and organizations. Moreover, the absence of vendor lock-in fosters an environment of innovation and continuous improvement.</p>
+<p>Within the Python community, a vast array of libraries and packages are readily available for reservoir engineering tasks. Whether it’s specialized libraries for data analysis, numerical simulations, or geospatial data processing, chances are there’s an open-source Python package that can expedite your work. The collaborative spirit of the community ensures that these packages are constantly updated and enhanced, providing engineers with state-of-the-art tools for their projects.</p>
+<p>Additionally, the Python community is known for its strong emphasis on knowledge sharing and support. Engineers can find answers to questions on forums, access comprehensive documentation, and participate in open-source projects. This collective wisdom and willingness to help fellow engineers make Python an inviting and empowering language for those in the reservoir engineering field.</p>
+<p>In summary, Python’s open-source community is a vital asset for reservoir engineers, offering a wealth of resources, cost-effective solutions, and a supportive network of experts. This collaborative ecosystem amplifies Python’s capabilities and enhances its suitability for tackling the challenges of the oil and gas industry.</p>
+</div>
+<div id="extensive-libraries" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Extensive Libraries<a href="introduction-to-python-for-reservoir-engineering.html#extensive-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python’s prowess in reservoir engineering is significantly bolstered by its extensive libraries, specifically tailored for scientific and engineering applications. These libraries provide reservoir engineers with a rich toolbox of pre-built functions, modules, and tools designed to simplify complex tasks and streamline workflows.</p>
+<p>Among these libraries, NumPy stands out as a fundamental building block. NumPy’s array-based computing capabilities facilitate efficient numerical operations, making it ideal for tasks like reservoir data analysis, linear algebra, and statistical computations. Its multi-dimensional array structure is particularly useful for handling large datasets common in reservoir engineering.</p>
+<p>Pandas is another indispensable library that excels in data manipulation and analysis. Reservoir engineers can leverage Pandas to effortlessly load, clean, and transform reservoir data, facilitating advanced analytics and visualization. Its intuitive DataFrame data structure allows for easy indexing, filtering, and grouping, empowering engineers to extract valuable insights from their data.</p>
+<p>When it comes to visualizing reservoir data, Matplotlib emerges as a reliable companion. This library offers a wide range of customizable plotting options, enabling engineers to create informative and publication-quality visualizations. From well logs to reservoir performance graphs, Matplotlib transforms data into insightful visuals that aid in decision-making.</p>
+<p>SciPy, as a scientific computing library, further expands Python’s capabilities for reservoir engineering. Engineers can harness SciPy’s functionalities for solving complex mathematical equations, numerical optimization, and interpolation. Its integration with NumPy and Matplotlib makes it a seamless addition to the Python ecosystem.</p>
+<p>In essence, Python’s extensive libraries for scientific and engineering applications provide reservoir engineers with the tools they need to address intricate challenges effectively. These libraries not only reduce development time but also ensure code reliability, enabling engineers to focus on the analysis and decision-making aspects of reservoir engineering.</p>
+</div>
+<div id="conclusion-pythons-role-in-reservoir-engineering" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Conclusion: Python’s Role in Reservoir Engineering<a href="introduction-to-python-for-reservoir-engineering.html#conclusion-pythons-role-in-reservoir-engineering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this section, we’ve explored the multifaceted reasons why Python has become an indispensable tool for reservoir engineers. Its versatility, readability, open-source community, and extensive libraries collectively empower professionals in the oil and gas industry to efficiently address complex engineering challenges. Python provides a unified programming environment that spans data analysis, numerical simulations, data visualization, and machine learning, making it a vital asset in the reservoir engineering toolkit. As we proceed, we’ll delve deeper into the practical applications of Python, leveraging its strengths to tackle real-world reservoir engineering problems. Let’s now venture into the heart of Python’s applications in reservoir engineering and see firsthand how it revolutionizes the field.</p>
+<p>In summary, Python’s versatility, readability, open-source nature, and extensive libraries make it an excellent choice for reservoir engineers looking to harness the power of programming for their work.</p>
+</div>
+<div id="getting-started-with-python" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Getting Started with Python<a href="introduction-to-python-for-reservoir-engineering.html#getting-started-with-python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introduction" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Introduction<a href="introduction-to-python-for-reservoir-engineering.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now that we’ve established why Python is an essential tool for reservoir engineers, let’s dive into the practical side of things. In this chapter, we’ll guide you through the process of setting up Python on your system and getting started with your first Python program. Whether you’re new to programming or a seasoned engineer, this section will ensure you have a solid foundation to harness Python’s capabilities effectively.</p>
+</div>
+<div id="installing-python" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Installing Python<a href="introduction-to-python-for-reservoir-engineering.html#installing-python" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Before you can start coding in Python, you need to install it on your computer. Here’s a step-by-step guide to getting Python up and running:</p>
+</div>
+<div id="choosing-a-python-distribution" class="section level3 hasAnchor" number="2.7.3">
+<h3><span class="header-section-number">2.7.3</span> Choosing a Python Distribution<a href="introduction-to-python-for-reservoir-engineering.html#choosing-a-python-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Python comes in various distributions, but for our purposes, we recommend Anaconda. Anaconda is a popular distribution that includes not only Python but also a collection of essential libraries and tools commonly used in scientific and engineering applications.</p>
+</div>
+<div id="downloading-anaconda" class="section level3 hasAnchor" number="2.7.4">
+<h3><span class="header-section-number">2.7.4</span> Downloading Anaconda<a href="introduction-to-python-for-reservoir-engineering.html#downloading-anaconda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Visit the Anaconda website (<a href="https://www.anaconda.com/products/individual" class="uri">https://www.anaconda.com/products/individual</a>) and download the installer for your operating system (Windows, macOS, or Linux).</li>
+<li>Follow the installation instructions for your specific operating system. Anaconda provides a user-friendly installer that guides you through the process.</li>
+</ol>
+</div>
+<div id="verifying-the-installation" class="section level3 hasAnchor" number="2.7.5">
+<h3><span class="header-section-number">2.7.5</span> Verifying the Installation<a href="introduction-to-python-for-reservoir-engineering.html#verifying-the-installation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After installing Anaconda, you can verify that Python is installed correctly by opening a command prompt or terminal window and entering the following command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="introduction-to-python-for-reservoir-engineering.html#cb3-1" tabindex="-1"></a>$python <span class="op">--</span>version</span></code></pre></div>
+<p>If you have Python 3 installed, and it is your default version you should see something like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="introduction-to-python-for-reservoir-engineering.html#cb4-1" tabindex="-1"></a>$ python <span class="op">--</span>version</span>
+<span id="cb4-2"><a href="introduction-to-python-for-reservoir-engineering.html#cb4-2" tabindex="-1"></a>Python <span class="fl">3.6.0</span></span></code></pre></div>
+</div>
+</div>
+<div id="setting-up-your-python-environment" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Setting Up Your Python Environment<a href="introduction-to-python-for-reservoir-engineering.html#setting-up-your-python-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Virtual environments are essential for managing project-specific dependencies and isolating them from your system’s Python installation. We recommend using them for every reservoir engineering project. Here’s how to create a virtual environment:</p>
+<div id="manual-virtual-environment" class="section level3 hasAnchor" number="2.8.1">
+<h3><span class="header-section-number">2.8.1</span> Manual Virtual Environment<a href="introduction-to-python-for-reservoir-engineering.html#manual-virtual-environment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Open your terminal or command prompt.</li>
+<li>Navigate to your project’s directory using the <code>cd</code> command.</li>
+<li>Run the following command to create a virtual environment named ‘myenv’ (you can choose a different name):</li>
+<li><code>python -m venv myenv</code></li>
+<li>Activate the virtual environment:</li>
+</ol>
+<ul>
+<li>On Windows: <code>myenv\Scripts\activate</code></li>
+<li>On macOS and Linux: <code>source myenv/bin/activate</code></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
+<li>You’ll notice that your terminal prompt changes, indicating you are now within the virtual environment.</li>
+</ol>
+</div>
+<div id="creating-a-virtual-environment-with-anaconda" class="section level3 hasAnchor" number="2.8.2">
+<h3><span class="header-section-number">2.8.2</span> Creating a Virtual Environment with Anaconda<a href="introduction-to-python-for-reservoir-engineering.html#creating-a-virtual-environment-with-anaconda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Anaconda provides a simple way to create and manage virtual environments using the <code>conda</code> command:</p>
+<ol style="list-style-type: decimal">
+<li>Open Anaconda Navigator.</li>
+<li>Navigate to the ‘Environments’ tab.</li>
+<li>Click ‘Create’ to create a new environment. Name it and choose Python 3.x as the version.</li>
+<li>Activate the environment by clicking ‘Play’ (▶) next to its name.</li>
+</ol>
+<p>Now that you have Python installed and a virtual environment set up, you’re ready to start using Python for reservoir engineering. In the next chapters, we’ll explore the core libraries and their applications in depth.</p>
+</div>
 </div>
 </div>
             </section>
@@ -392,8 +457,8 @@ For a horizontal-radial system, the pressure gradient is positive</p>
           </div>
         </div>
       </div>
-<a href="relative-permeability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="pattern-floods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="python-basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
