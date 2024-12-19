@@ -1,1 +1,1 @@
-# pramodazad.github.io
+This book is about basic reservoir engineering that focused on application of python language to understand the basic concept of reservoir engineering. the codes are collection of some of my own work. however, I have generously used code that i found useful for this book. the idea was to collect all at one place so that user doesn't have to waste time on searching.
