@@ -1,3 +1,4 @@
+eq:ere
 eq:azad
 eq:mod
 eq:Dranchuk
@@ -124,6 +125,7 @@ introduction-1
 reservoir-characteristics
 reservoir-rock
 fluid-properties
+type-of-fluid
 reservoir-drive-mechanisms
 natural-gas-drive
 water-drive
