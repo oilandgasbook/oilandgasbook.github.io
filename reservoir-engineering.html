@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="introduction-to-numpy.html"/>
-<link rel="next" href="fundamental-properties-of-gas.html"/>
+<link rel="next" href="single-phase-gas-flow.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -222,111 +222,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#introduction-1"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
 <li class="chapter" data-level="7.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-characteristics"><i class="fa fa-check"></i><b>7.2</b> Reservoir Characteristics</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-rock"><i class="fa fa-check"></i><b>7.2.1</b> Reservoir Rock</a></li>
-<li class="chapter" data-level="7.2.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#fluid-properties"><i class="fa fa-check"></i><b>7.2.2</b> Fluid Properties</a></li>
+<li class="chapter" data-level="7.2.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#key-characteristics"><i class="fa fa-check"></i><b>7.2.1</b> Key Characteristics:</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#types-of-fluids"><i class="fa fa-check"></i><b>7.2.2</b> Types of Fluids</a></li>
+<li class="chapter" data-level="7.2.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#flow-regimes"><i class="fa fa-check"></i><b>7.2.3</b> Flow Regimes</a></li>
+<li class="chapter" data-level="7.2.4" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-geometry"><i class="fa fa-check"></i><b>7.2.4</b> Reservoir Geometry</a></li>
+<li class="chapter" data-level="7.2.5" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#python-code-isothermal-compressibility"><i class="fa fa-check"></i><b>7.2.5</b> Python Code: Isothermal Compressibility</a></li>
+<li class="chapter" data-level="7.2.6" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#real-gas-behavior"><i class="fa fa-check"></i><b>7.2.6</b> Real Gas Behavior</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-drive-mechanisms"><i class="fa fa-check"></i><b>7.3</b> Reservoir Drive Mechanisms</a>
+<li class="chapter" data-level="7.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#gas-composition"><i class="fa fa-check"></i><b>7.3</b> Gas Composition</a></li>
+<li class="chapter" data-level="7.4" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#phase-behavior"><i class="fa fa-check"></i><b>7.4</b> Phase Behavior</a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#natural-gas-drive"><i class="fa fa-check"></i><b>7.3.1</b> Natural Gas Drive</a></li>
-<li class="chapter" data-level="7.3.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#water-drive"><i class="fa fa-check"></i><b>7.3.2</b> Water Drive</a></li>
-<li class="chapter" data-level="7.3.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#other-drive-mechanisms"><i class="fa fa-check"></i><b>7.3.3</b> Other Drive Mechanisms</a></li>
+<li class="chapter" data-level="7.4.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#phase-diagrams"><i class="fa fa-check"></i><b>7.4.1</b> Phase Diagrams</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-types"><i class="fa fa-check"></i><b>7.4</b> Reservoir Types</a>
+<li class="chapter" data-level="7.5" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#review-of-gas-properties"><i class="fa fa-check"></i><b>7.5</b> Review of Gas Properties</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#oil-reservoirs"><i class="fa fa-check"></i><b>7.4.1</b> Oil Reservoirs</a></li>
-<li class="chapter" data-level="7.4.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#gas-reservoirs"><i class="fa fa-check"></i><b>7.4.2</b> Gas Reservoirs</a></li>
-<li class="chapter" data-level="7.4.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#oil-and-gas-reservoirs"><i class="fa fa-check"></i><b>7.4.3</b> Oil and Gas Reservoirs</a></li>
+<li class="chapter" data-level="7.5.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#real-gas-law"><i class="fa fa-check"></i><b>7.5.1</b> Real Gas law</a></li>
+<li class="chapter" data-level="7.5.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#gas-z-factor"><i class="fa fa-check"></i><b>7.5.2</b> Gas z Factor</a></li>
+<li class="chapter" data-level="7.5.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#gas-density"><i class="fa fa-check"></i><b>7.5.3</b> Gas Density</a></li>
+<li class="chapter" data-level="7.5.4" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>7.5.4</b> Isothermal Gas Compressibility</a></li>
+<li class="chapter" data-level="7.5.5" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>7.5.5</b> Gas formation volume factor</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-evaluation"><i class="fa fa-check"></i><b>7.5</b> Reservoir Evaluation</a></li>
-<li class="chapter" data-level="7.6" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#chapter-summary-1"><i class="fa fa-check"></i><b>7.6</b> Chapter Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html"><i class="fa fa-check"></i><b>8</b> Fundamental Properties of Gas</a>
+<li class="chapter" data-level="8" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html"><i class="fa fa-check"></i><b>8</b> Single Phase Gas Flow</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-behavior"><i class="fa fa-check"></i><b>8.1</b> Gas Behavior</a>
+<li class="chapter" data-level="8.1" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#steady-state-darcy-flow"><i class="fa fa-check"></i><b>8.1</b> Steady-State Darcy Flow</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#ideal-gas-law"><i class="fa fa-check"></i><b>8.1.1</b> Ideal Gas Law</a></li>
-<li class="chapter" data-level="8.1.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#real-gas-behavior"><i class="fa fa-check"></i><b>8.1.2</b> Real Gas Behavior</a></li>
+<li class="chapter" data-level="8.1.1" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#gas-flow-equations"><i class="fa fa-check"></i><b>8.1.1</b> Gas Flow Equations</a></li>
+<li class="chapter" data-level="8.1.2" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#reservoir-properties"><i class="fa fa-check"></i><b>8.1.2</b> Reservoir Properties</a></li>
+<li class="chapter" data-level="8.1.3" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#flow-regimes-1"><i class="fa fa-check"></i><b>8.1.3</b> Flow Regimes</a></li>
+<li class="chapter" data-level="8.1.4" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#well-performance"><i class="fa fa-check"></i><b>8.1.4</b> Well Performance</a></li>
+<li class="chapter" data-level="8.1.5" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#flow-behavior-analysis"><i class="fa fa-check"></i><b>8.1.5</b> Flow Behavior Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-composition"><i class="fa fa-check"></i><b>8.2</b> Gas Composition</a></li>
-<li class="chapter" data-level="8.3" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#phase-behavior"><i class="fa fa-check"></i><b>8.3</b> Phase Behavior</a>
+</ul></li>
+<li class="chapter" data-level="9" data-path="gas-well-testing.html"><a href="gas-well-testing.html"><i class="fa fa-check"></i><b>9</b> Gas Well Testing</a></li>
+<li class="chapter" data-level="10" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>10</b> Properties of Oil</a></li>
+<li class="chapter" data-level="11" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>11</b> Rock Properties</a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#phase-diagrams"><i class="fa fa-check"></i><b>8.3.1</b> Phase Diagrams</a></li>
-</ul></li>
-<li class="chapter" data-level="8.4" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#review-of-gas-properties"><i class="fa fa-check"></i><b>8.4</b> Review of Gas Properties</a>
+<li class="chapter" data-level="11.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>11.1</b> Surface and Interfacial Tension</a></li>
+<li class="chapter" data-level="11.2" data-path="rock-properties.html"><a href="rock-properties.html#capillary-pressure"><i class="fa fa-check"></i><b>11.2</b> Capillary Pressure</a></li>
+<li class="chapter" data-level="11.3" data-path="rock-properties.html"><a href="rock-properties.html#leverett-j-function"><i class="fa fa-check"></i><b>11.3</b> Leverett J-Function</a></li>
+<li class="chapter" data-level="11.4" data-path="rock-properties.html"><a href="rock-properties.html#permeability"><i class="fa fa-check"></i><b>11.4</b> Permeability</a></li>
+<li class="chapter" data-level="11.5" data-path="rock-properties.html"><a href="rock-properties.html#reservoir-heterogeneity"><i class="fa fa-check"></i><b>11.5</b> Reservoir Heterogeneity</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#real-gas-law"><i class="fa fa-check"></i><b>8.4.1</b> Real Gas law</a></li>
-<li class="chapter" data-level="8.4.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-z-factor"><i class="fa fa-check"></i><b>8.4.2</b> Gas z Factor</a></li>
-<li class="chapter" data-level="8.4.3" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-density"><i class="fa fa-check"></i><b>8.4.3</b> Gas Density</a></li>
-<li class="chapter" data-level="8.4.4" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>8.4.4</b> Isothermal Gas Compressibility</a></li>
-<li class="chapter" data-level="8.4.5" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>8.4.5</b> Gas formation volume factor</a></li>
+<li class="chapter" data-level="11.5.1" data-path="rock-properties.html"><a href="rock-properties.html#vertical-heterogeneity"><i class="fa fa-check"></i><b>11.5.1</b> Vertical Heterogeneity</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html"><i class="fa fa-check"></i><b>9</b> Single Phase Gas Flow</a>
+<li class="chapter" data-level="12" data-path="relative-permeability.html"><a href="relative-permeability.html"><i class="fa fa-check"></i><b>12</b> Relative Permeability</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#steady-state-darcy-flow"><i class="fa fa-check"></i><b>9.1</b> Steady-State Darcy Flow</a>
+<li class="chapter" data-level="12.1" data-path="relative-permeability.html"><a href="relative-permeability.html#three-phase-relative-permeability"><i class="fa fa-check"></i><b>12.1</b> Three-phase relative permeability</a></li>
+<li class="chapter" data-level="12.2" data-path="relative-permeability.html"><a href="relative-permeability.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>12.2</b> Simplified Fractional Flow Equation</a></li>
+<li class="chapter" data-level="12.3" data-path="relative-permeability.html"><a href="relative-permeability.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>12.3</b> Buckley-Leverett Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html"><i class="fa fa-check"></i><b>13</b> Fundamentals of fluid flow in Reservoirs</a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#gas-flow-equations"><i class="fa fa-check"></i><b>9.1.1</b> Gas Flow Equations</a></li>
-<li class="chapter" data-level="9.1.2" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#reservoir-properties"><i class="fa fa-check"></i><b>9.1.2</b> Reservoir Properties</a></li>
-<li class="chapter" data-level="9.1.3" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#flow-regimes"><i class="fa fa-check"></i><b>9.1.3</b> Flow Regimes</a></li>
-<li class="chapter" data-level="9.1.4" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#well-performance"><i class="fa fa-check"></i><b>9.1.4</b> Well Performance</a></li>
-<li class="chapter" data-level="9.1.5" data-path="single-phase-gas-flow.html"><a href="single-phase-gas-flow.html#flow-behavior-analysis"><i class="fa fa-check"></i><b>9.1.5</b> Flow Behavior Analysis</a></li>
+<li class="chapter" data-level="13.1" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#type-of-fluids-in-reservoir"><i class="fa fa-check"></i><b>13.1</b> Type of fluids in reservoir</a></li>
+<li class="chapter" data-level="13.2" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#fluid-flow-equation"><i class="fa fa-check"></i><b>13.2</b> Fluid flow equation</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="gas-well-testing.html"><a href="gas-well-testing.html"><i class="fa fa-check"></i><b>10</b> Gas Well Testing</a></li>
-<li class="chapter" data-level="11" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>11</b> Properties of Oil</a></li>
-<li class="chapter" data-level="12" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>12</b> Rock Properties</a>
+<li class="chapter" data-level="14" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>14</b> Pattern Floods</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>12.1</b> Surface and Interfacial Tension</a></li>
-<li class="chapter" data-level="12.2" data-path="rock-properties.html"><a href="rock-properties.html#capillary-pressure"><i class="fa fa-check"></i><b>12.2</b> Capillary Pressure</a></li>
-<li class="chapter" data-level="12.3" data-path="rock-properties.html"><a href="rock-properties.html#leverett-j-function"><i class="fa fa-check"></i><b>12.3</b> Leverett J-Function</a></li>
-<li class="chapter" data-level="12.4" data-path="rock-properties.html"><a href="rock-properties.html#permeability"><i class="fa fa-check"></i><b>12.4</b> Permeability</a></li>
-<li class="chapter" data-level="12.5" data-path="rock-properties.html"><a href="rock-properties.html#reservoir-heterogeneity"><i class="fa fa-check"></i><b>12.5</b> Reservoir Heterogeneity</a>
+<li class="chapter" data-level="14.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>14.1</b> Recovery Efficiency</a>
 <ul>
-<li class="chapter" data-level="12.5.1" data-path="rock-properties.html"><a href="rock-properties.html#vertical-heterogeneity"><i class="fa fa-check"></i><b>12.5.1</b> Vertical Heterogeneity</a></li>
+<li class="chapter" data-level="14.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>14.1.1</b> Patterns and Spacing</a></li>
 </ul></li>
+<li class="chapter" data-level="14.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>14.2</b> Pattern Recovery</a></li>
+<li class="chapter" data-level="14.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>14.3</b> aa</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="relative-permeability.html"><a href="relative-permeability.html"><i class="fa fa-check"></i><b>13</b> Relative Permeability</a>
+<li class="chapter" data-level="15" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html"><i class="fa fa-check"></i><b>15</b> Pressure Transient Analysis</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="relative-permeability.html"><a href="relative-permeability.html#three-phase-relative-permeability"><i class="fa fa-check"></i><b>13.1</b> Three-phase relative permeability</a></li>
-<li class="chapter" data-level="13.2" data-path="relative-permeability.html"><a href="relative-permeability.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>13.2</b> Simplified Fractional Flow Equation</a></li>
-<li class="chapter" data-level="13.3" data-path="relative-permeability.html"><a href="relative-permeability.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>13.3</b> Buckley-Leverett Theory</a></li>
+<li class="chapter" data-level="15.1" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#basic-well-model"><i class="fa fa-check"></i><b>15.1</b> Basic Well Model</a></li>
+<li class="chapter" data-level="15.2" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#steady-state-radial-flow-of-an-incompressible-fluid"><i class="fa fa-check"></i><b>15.2</b> Steady-State Radial Flow of an Incompressible Fluid</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html"><i class="fa fa-check"></i><b>14</b> Fundamentals of fluid flow in Reservoirs</a>
+<li class="chapter" data-level="16" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>16</b> Volumetrics</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#type-of-fluids-in-reservoir"><i class="fa fa-check"></i><b>14.1</b> Type of fluids in reservoir</a></li>
-<li class="chapter" data-level="14.2" data-path="fundamentals-of-fluid-flow-in-reservoirs.html"><a href="fundamentals-of-fluid-flow-in-reservoirs.html#fluid-flow-equation"><i class="fa fa-check"></i><b>14.2</b> Fluid flow equation</a></li>
+<li class="chapter" data-level="16.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>16.1</b> Calculating the Gas inplace by volumetric methods</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>15</b> Pattern Floods</a>
+<li class="chapter" data-level="17" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>17</b> Gas and Water Coning</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>15.1</b> Recovery Efficiency</a>
+<li class="chapter" data-level="17.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>17.1</b> Coning in Vertical wells</a>
 <ul>
-<li class="chapter" data-level="15.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>15.1.1</b> Patterns and Spacing</a></li>
+<li class="chapter" data-level="17.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>17.1.1</b> Meyer-Garder Correlation</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>15.2</b> Pattern Recovery</a></li>
-<li class="chapter" data-level="15.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>15.3</b> aa</a></li>
+<li class="chapter" data-level="17.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>17.2</b> Coning in Horizontal wells</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html"><i class="fa fa-check"></i><b>16</b> Pressure Transient Analysis</a>
+<li class="chapter" data-level="18" data-path="working-with-las-files.html"><a href="working-with-las-files.html"><i class="fa fa-check"></i><b>18</b> working with Las files</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#basic-well-model"><i class="fa fa-check"></i><b>16.1</b> Basic Well Model</a></li>
-<li class="chapter" data-level="16.2" data-path="pressure-transient-analysis.html"><a href="pressure-transient-analysis.html#steady-state-radial-flow-of-an-incompressible-fluid"><i class="fa fa-check"></i><b>16.2</b> Steady-State Radial Flow of an Incompressible Fluid</a></li>
+<li class="chapter" data-level="18.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#basic-example"><i class="fa fa-check"></i><b>18.1</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>17</b> Volumetrics</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>17.1</b> Calculating the Gas inplace by volumetric methods</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>18</b> Gas and Water Coning</a>
-<ul>
-<li class="chapter" data-level="18.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>18.1</b> Coning in Vertical wells</a>
-<ul>
-<li class="chapter" data-level="18.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>18.1.1</b> Meyer-Garder Correlation</a></li>
-</ul></li>
-<li class="chapter" data-level="18.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>18.2</b> Coning in Horizontal wells</a></li>
-</ul></li>
-<li class="chapter" data-level="19" data-path="working-with-las-files.html"><a href="working-with-las-files.html"><i class="fa fa-check"></i><b>19</b> working with Las files</a>
-<ul>
-<li class="chapter" data-level="19.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#basic-example"><i class="fa fa-check"></i><b>19.1</b> Basic example</a></li>
-</ul></li>
-<li class="chapter" data-level="20" data-path="rough.html"><a href="rough.html"><i class="fa fa-check"></i><b>20</b> rough</a></li>
+<li class="chapter" data-level="19" data-path="rough.html"><a href="rough.html"><i class="fa fa-check"></i><b>19</b> rough</a></li>
 </ul>
 
       </nav>
@@ -352,77 +334,725 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="reservoir-characteristics" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Reservoir Characteristics<a href="reservoir-engineering.html#reservoir-characteristics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Understanding a reservoir begins with examining its characteristics, which encompass various parameters that define its behavior:</p>
-<div id="reservoir-rock" class="section level3 hasAnchor" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Reservoir Rock<a href="reservoir-engineering.html#reservoir-rock" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Reservoir rock forms the foundation of hydrocarbon reservoirs and plays a crucial role in fluid storage and movement. Different rock types, such as sandstone and limestone, exhibit varying levels of porosity and permeability, which determine their ability to store and transmit fluids. Porosity refers to the volume of pore space within the rock, while permeability measures the rock’s ability to allow fluids to flow through it. Understanding these properties is essential for reservoir engineers, as they impact reservoir behavior and influence decisions regarding drilling, production strategies, and reservoir management.</p>
+<p>Flow in porous media is a complex phenomenon and cannot be described as explicitly as flow through pipes or conduits. Unlike in pipes, where dimensions and flow capacity can be easily measured, porous media involve irregular flow paths that require experimental and analytical approaches.</p>
+<div id="key-characteristics" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Key Characteristics:<a href="reservoir-engineering.html#key-characteristics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Types of fluids</strong> in the reservoir.</li>
+<li><strong>Flow regimes</strong>.</li>
+<li><strong>Reservoir geometry</strong>.</li>
+<li><strong>Number of flowing fluids</strong> in the reservoir.</li>
+</ol>
 </div>
-<div id="fluid-properties" class="section level3 hasAnchor" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> Fluid Properties<a href="reservoir-engineering.html#fluid-properties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="types-of-fluids" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Types of Fluids<a href="reservoir-engineering.html#types-of-fluids" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Hydrocarbons within a reservoir can exist in different phases, including gas, oil, and water. The phase behavior and properties of these fluids are critical factors that affect reservoir performance. Phase behavior describes how hydrocarbons behave under varying pressure and temperature conditions. Fluid properties, such as density, viscosity, and compressibility, are fundamental to understanding how fluids flow within the reservoir and how they interact with reservoir rock. Additionally, pressure and temperature gradients within the reservoir have significant implications for fluid behavior. Reservoir engineers must grasp these concepts to predict reservoir performance accurately and optimize production strategies.
 The objective of this chapter is to present the mathematical relationships designed to describe flow behavior of reservoir fluids. The mathematical forms of these relationships will vary depending upon characteristics of the reservoir. The primary reservoir characteristics that must be considered include:</p>
+<p>Reservoir fluids are classified into three groups based on the <strong>isothermal compressibility coefficient</strong> (<span class="math inline">\(c\)</span>):</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Incompressible Fluids</strong>:<br />
+Volume or density does not change with pressure.<br />
+<span class="math display">\[
+c = 0
+\]</span></p></li>
+<li><p><strong>Slightly Compressible Fluids</strong>:<br />
+Exhibit small changes in volume or density with pressure:<br />
+<span class="math display">\[
+c = -\frac{1}{V} \frac{\partial V}{\partial p} = \frac{1}{\rho} \frac{\partial \rho}{\partial p}
+\]</span><br />
+Simplifying:<br />
+<span class="math display">\[
+V = V_{ref} \cdot \exp\left(c \cdot (p_{ref} - p)\right)
+\]</span></p></li>
+<li><p><strong>Compressible Fluids</strong>:<br />
+Experience large changes in volume with pressure:<br />
+<span class="math display">\[
+c_g = \frac{1}{p} - \frac{1}{Z} \frac{\partial Z}{\partial p}
+\]</span></p></li>
+</ol>
+<hr />
+</div>
+<div id="flow-regimes" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Flow Regimes<a href="reservoir-engineering.html#flow-regimes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are three main flow regimes that describe fluid flow and reservoir pressure distribution over time:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Steady-State Flow</strong>:<br />
+The pressure at every location in the reservoir remains constant with time.<br />
+<span class="math display">\[
+\frac{\partial p}{\partial t} = 0
+\]</span></p></li>
+<li><p><strong>Unsteady-State Flow (Transient Flow)</strong>:<br />
+The pressure changes with time at any location in the reservoir.<br />
+<span class="math display">\[
+\frac{\partial p}{\partial t} = f(i, t)
+\]</span></p></li>
+<li><p><strong>Pseudosteady-State Flow (Semisteady-State)</strong>:<br />
+The pressure declines linearly with time at all points in the reservoir.<br />
+<span class="math display">\[
+\frac{\partial p}{\partial t} = \text{constant}
+\]</span></p></li>
+</ol>
+<hr />
+</div>
+<div id="reservoir-geometry" class="section level3 hasAnchor" number="7.2.4">
+<h3><span class="header-section-number">7.2.4</span> Reservoir Geometry<a href="reservoir-engineering.html#reservoir-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The reservoir’s geometry affects flow behavior. Common geometries include:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Radial Flow</strong>:<br />
+Fluids flow radially towards or away from a well.<br />
+<img src="#" alt="Radial Flow Diagram" /></p></li>
+<li><p><strong>Linear Flow</strong>:<br />
+Fluids flow in parallel, straight paths, typically observed near fractures.<br />
+<img src="#" alt="Linear Flow Diagram" /></p></li>
+<li><p><strong>Spherical and Hemispherical Flow</strong>:<br />
+Occurs near partially penetrating wells or in regions with localized completions.</p></li>
+</ol>
+<hr />
+</div>
+<div id="python-code-isothermal-compressibility" class="section level3 hasAnchor" number="7.2.5">
+<h3><span class="header-section-number">7.2.5</span> Python Code: Isothermal Compressibility<a href="reservoir-engineering.html#python-code-isothermal-compressibility" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb126"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb126-1"><a href="reservoir-engineering.html#cb126-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb126-2"><a href="reservoir-engineering.html#cb126-2" tabindex="-1"></a></span>
+<span id="cb126-3"><a href="reservoir-engineering.html#cb126-3" tabindex="-1"></a><span class="kw">def</span> isothermal_compressibility(volume<span class="op">=</span><span class="va">None</span>, density<span class="op">=</span><span class="va">None</span>, pressure_change<span class="op">=</span><span class="va">None</span>, volume_change<span class="op">=</span><span class="va">None</span>, density_change<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb126-4"><a href="reservoir-engineering.html#cb126-4" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb126-5"><a href="reservoir-engineering.html#cb126-5" tabindex="-1"></a><span class="co">    Calculate isothermal compressibility coefficient.</span></span>
+<span id="cb126-6"><a href="reservoir-engineering.html#cb126-6" tabindex="-1"></a></span>
+<span id="cb126-7"><a href="reservoir-engineering.html#cb126-7" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb126-8"><a href="reservoir-engineering.html#cb126-8" tabindex="-1"></a><span class="co">        volume (float): Fluid volume (V).</span></span>
+<span id="cb126-9"><a href="reservoir-engineering.html#cb126-9" tabindex="-1"></a><span class="co">        density (float): Fluid density (ρ).</span></span>
+<span id="cb126-10"><a href="reservoir-engineering.html#cb126-10" tabindex="-1"></a><span class="co">        pressure_change (float): Change in pressure (Δp).</span></span>
+<span id="cb126-11"><a href="reservoir-engineering.html#cb126-11" tabindex="-1"></a><span class="co">        volume_change (float): Change in volume (ΔV).</span></span>
+<span id="cb126-12"><a href="reservoir-engineering.html#cb126-12" tabindex="-1"></a><span class="co">        density_change (float): Change in density (Δρ).</span></span>
+<span id="cb126-13"><a href="reservoir-engineering.html#cb126-13" tabindex="-1"></a></span>
+<span id="cb126-14"><a href="reservoir-engineering.html#cb126-14" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb126-15"><a href="reservoir-engineering.html#cb126-15" tabindex="-1"></a><span class="co">        float: Isothermal compressibility coefficient (c).</span></span>
+<span id="cb126-16"><a href="reservoir-engineering.html#cb126-16" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb126-17"><a href="reservoir-engineering.html#cb126-17" tabindex="-1"></a>    <span class="cf">if</span> volume <span class="kw">and</span> volume_change <span class="kw">and</span> pressure_change:</span>
+<span id="cb126-18"><a href="reservoir-engineering.html#cb126-18" tabindex="-1"></a>        <span class="cf">return</span> <span class="op">-</span> (<span class="dv">1</span> <span class="op">/</span> volume) <span class="op">*</span> (volume_change <span class="op">/</span> pressure_change)</span>
+<span id="cb126-19"><a href="reservoir-engineering.html#cb126-19" tabindex="-1"></a>    <span class="cf">elif</span> density <span class="kw">and</span> density_change <span class="kw">and</span> pressure_change:</span>
+<span id="cb126-20"><a href="reservoir-engineering.html#cb126-20" tabindex="-1"></a>        <span class="cf">return</span> (<span class="dv">1</span> <span class="op">/</span> density) <span class="op">*</span> (density_change <span class="op">/</span> pressure_change)</span>
+<span id="cb126-21"><a href="reservoir-engineering.html#cb126-21" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb126-22"><a href="reservoir-engineering.html#cb126-22" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;Insufficient data provided for calculation.&quot;</span>)</span>
+<span id="cb126-23"><a href="reservoir-engineering.html#cb126-23" tabindex="-1"></a></span>
+<span id="cb126-24"><a href="reservoir-engineering.html#cb126-24" tabindex="-1"></a></span>
+<span id="cb126-25"><a href="reservoir-engineering.html#cb126-25" tabindex="-1"></a><span class="co"># Example Usage</span></span>
+<span id="cb126-26"><a href="reservoir-engineering.html#cb126-26" tabindex="-1"></a>volume <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Example fluid volume in m³</span></span>
+<span id="cb126-27"><a href="reservoir-engineering.html#cb126-27" tabindex="-1"></a>pressure_change <span class="op">=</span> <span class="dv">50</span>  <span class="co"># Example pressure change in Pa</span></span>
+<span id="cb126-28"><a href="reservoir-engineering.html#cb126-28" tabindex="-1"></a>volume_change <span class="op">=</span> <span class="op">-</span><span class="fl">0.01</span>  <span class="co"># Example volume change in m³</span></span>
+<span id="cb126-29"><a href="reservoir-engineering.html#cb126-29" tabindex="-1"></a>compressibility <span class="op">=</span> isothermal_compressibility(volume<span class="op">=</span>volume, pressure_change<span class="op">=</span>pressure_change, volume_change<span class="op">=</span>volume_change)</span>
+<span id="cb126-30"><a href="reservoir-engineering.html#cb126-30" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Isothermal Compressibility: </span><span class="sc">{</span>compressibility<span class="sc">:.5f}</span><span class="ss"> 1/Pa&quot;</span>)</span>
+<span id="cb126-31"><a href="reservoir-engineering.html#cb126-31" tabindex="-1"></a><span class="co">### Reservoir Rock</span></span>
+<span id="cb126-32"><a href="reservoir-engineering.html#cb126-32" tabindex="-1"></a></span>
+<span id="cb126-33"><a href="reservoir-engineering.html#cb126-33" tabindex="-1"></a>Reservoir rock forms the foundation of hydrocarbon reservoirs <span class="kw">and</span> plays a crucial role <span class="kw">in</span> fluid storage <span class="kw">and</span> movement. Different rock types, such <span class="im">as</span> sandstone <span class="kw">and</span> limestone, exhibit varying levels of porosity <span class="kw">and</span> permeability, which determine their ability to store <span class="kw">and</span> transmit fluids. Porosity refers to the volume of pore space within the rock, <span class="cf">while</span> permeability measures the rock<span class="st">&#39;s ability to allow fluids to flow through it. Understanding these properties is essential for reservoir engineers, as they impact reservoir behavior and influence decisions regarding drilling, production strategies, and reservoir management.</span></span>
+<span id="cb126-34"><a href="reservoir-engineering.html#cb126-34" tabindex="-1"></a></span>
+<span id="cb126-35"><a href="reservoir-engineering.html#cb126-35" tabindex="-1"></a></span>
+<span id="cb126-36"><a href="reservoir-engineering.html#cb126-36" tabindex="-1"></a><span class="er">## Reservoir Drive Mechanisms</span></span>
+<span id="cb126-37"><a href="reservoir-engineering.html#cb126-37" tabindex="-1"></a></span>
+<span id="cb126-38"><a href="reservoir-engineering.html#cb126-38" tabindex="-1"></a>Hydrocarbons within a reservoir are typically under pressure, <span class="kw">and</span> various mechanisms drive their movement towards production wells. We<span class="st">&#39;ll cover the primary drive mechanisms:</span></span>
+<span id="cb126-39"><a href="reservoir-engineering.html#cb126-39" tabindex="-1"></a></span>
+<span id="cb126-40"><a href="reservoir-engineering.html#cb126-40" tabindex="-1"></a><span class="er">###  Natural Gas Drive</span></span>
+<span id="cb126-41"><a href="reservoir-engineering.html#cb126-41" tabindex="-1"></a></span>
+<span id="cb126-42"><a href="reservoir-engineering.html#cb126-42" tabindex="-1"></a>In reservoirs primarily driven by natural gas expansion, the energy released <span class="im">as</span> gas expands drives hydrocarbons towards production wells. This mechanism <span class="kw">is</span> common <span class="kw">in</span> gas reservoirs <span class="kw">and</span> provides a natural means of pushing hydrocarbons to the surface. Understanding how natural gas drive works, including the impact of reservoir pressure <span class="kw">and</span> gas properties, <span class="kw">is</span> crucial <span class="cf">for</span> reservoir engineers when designing production strategies <span class="kw">and</span> estimating recovery rates.</span>
+<span id="cb126-43"><a href="reservoir-engineering.html#cb126-43" tabindex="-1"></a></span>
+<span id="cb126-44"><a href="reservoir-engineering.html#cb126-44" tabindex="-1"></a><span class="co">###  Water Drive</span></span>
+<span id="cb126-45"><a href="reservoir-engineering.html#cb126-45" tabindex="-1"></a></span>
+<span id="cb126-46"><a href="reservoir-engineering.html#cb126-46" tabindex="-1"></a>Water drive <span class="kw">is</span> a prevalent mechanism <span class="kw">in</span> many reservoirs, especially <span class="im">as</span> hydrocarbons are produced <span class="kw">and</span> reservoir pressure decreases. In water drive systems, water influx displaces hydrocarbons towards production wells. Engineers must analyze the behavior of water <span class="kw">and</span> hydrocarbons <span class="kw">in</span> reservoirs to optimize water flooding operations <span class="kw">and</span> manage water production effectively. This understanding <span class="kw">is</span> vital <span class="cf">for</span> maximizing hydrocarbon recovery <span class="kw">in</span> water drive reservoirs.</span>
+<span id="cb126-47"><a href="reservoir-engineering.html#cb126-47" tabindex="-1"></a></span>
+<span id="cb126-48"><a href="reservoir-engineering.html#cb126-48" tabindex="-1"></a><span class="co">###  Other Drive Mechanisms</span></span>
+<span id="cb126-49"><a href="reservoir-engineering.html#cb126-49" tabindex="-1"></a></span>
+<span id="cb126-50"><a href="reservoir-engineering.html#cb126-50" tabindex="-1"></a>Beyond natural gas <span class="kw">and</span> water drives, various other mechanisms, such <span class="im">as</span> gravity drainage <span class="kw">and</span> compaction drive, can influence reservoir behavior. These mechanisms may be applicable <span class="kw">in</span> specific geological <span class="kw">and</span> reservoir conditions. Reservoir engineers need to be aware of these alternative drive mechanisms <span class="kw">and</span> their implications <span class="cf">for</span> reservoir performance <span class="kw">and</span> production strategies.</span>
+<span id="cb126-51"><a href="reservoir-engineering.html#cb126-51" tabindex="-1"></a></span>
+<span id="cb126-52"><a href="reservoir-engineering.html#cb126-52" tabindex="-1"></a><span class="co">## Reservoir Types</span></span>
+<span id="cb126-53"><a href="reservoir-engineering.html#cb126-53" tabindex="-1"></a></span>
+<span id="cb126-54"><a href="reservoir-engineering.html#cb126-54" tabindex="-1"></a>Reservoirs come <span class="kw">in</span> various types <span class="kw">and</span> configurations, each <span class="cf">with</span> its unique characteristics. We<span class="st">&#39;ll explore:</span></span>
+<span id="cb126-55"><a href="reservoir-engineering.html#cb126-55" tabindex="-1"></a></span>
+<span id="cb126-56"><a href="reservoir-engineering.html#cb126-56" tabindex="-1"></a><span class="er">###  Oil Reservoirs</span></span>
+<span id="cb126-57"><a href="reservoir-engineering.html#cb126-57" tabindex="-1"></a></span>
+<span id="cb126-58"><a href="reservoir-engineering.html#cb126-58" tabindex="-1"></a>Oil reservoirs primarily contain liquid hydrocarbons. These reservoirs come <span class="kw">in</span> various classifications, including conventional <span class="kw">and</span> unconventional. Conventional oil reservoirs are typically found <span class="kw">in</span> porous rock formations <span class="kw">and</span> are easier to produce. Unconventional oil reservoirs, such <span class="im">as</span> shale oil, present unique challenges due to their <span class="bu">complex</span> geological characteristics. Reservoir engineers working on oil reservoirs must understand the properties <span class="kw">and</span> behavior of oil <span class="kw">and</span> design production strategies to optimize recovery.</span>
+<span id="cb126-59"><a href="reservoir-engineering.html#cb126-59" tabindex="-1"></a></span>
+<span id="cb126-60"><a href="reservoir-engineering.html#cb126-60" tabindex="-1"></a><span class="co">###  Gas Reservoirs</span></span>
+<span id="cb126-61"><a href="reservoir-engineering.html#cb126-61" tabindex="-1"></a></span>
+<span id="cb126-62"><a href="reservoir-engineering.html#cb126-62" tabindex="-1"></a>Gas reservoirs contain primarily gaseous hydrocarbons, such <span class="im">as</span> natural gas. Understanding gas reservoir behavior, including phase behavior <span class="kw">and</span> the impact of reservoir pressure <span class="kw">and</span> temperature, <span class="kw">is</span> essential <span class="cf">for</span> efficiently producing gas. Reservoir engineers working <span class="cf">with</span> gas reservoirs must consider factors like gas compression <span class="kw">and</span> transportation to ensure successful production <span class="kw">and</span> delivery to consumers.</span>
+<span id="cb126-63"><a href="reservoir-engineering.html#cb126-63" tabindex="-1"></a></span>
+<span id="cb126-64"><a href="reservoir-engineering.html#cb126-64" tabindex="-1"></a><span class="co">### Oil and Gas Reservoirs</span></span>
+<span id="cb126-65"><a href="reservoir-engineering.html#cb126-65" tabindex="-1"></a></span>
+<span id="cb126-66"><a href="reservoir-engineering.html#cb126-66" tabindex="-1"></a>Some reservoirs contain both oil <span class="kw">and</span> gas phases, often <span class="kw">in</span> varying proportions. These mixed<span class="op">-</span>phase reservoirs require specialized approaches to production <span class="kw">and</span> reservoir management. Reservoir engineers need to develop strategies that account <span class="cf">for</span> the distinct characteristics of oil <span class="kw">and</span> gas within the reservoir to optimize recovery.</span>
+<span id="cb126-67"><a href="reservoir-engineering.html#cb126-67" tabindex="-1"></a></span>
+<span id="cb126-68"><a href="reservoir-engineering.html#cb126-68" tabindex="-1"></a><span class="co">## Reservoir Evaluation</span></span>
+<span id="cb126-69"><a href="reservoir-engineering.html#cb126-69" tabindex="-1"></a></span>
+<span id="cb126-70"><a href="reservoir-engineering.html#cb126-70" tabindex="-1"></a>Reservoir evaluation involves assessing the potential <span class="kw">and</span> performance of a reservoir. Reservoir engineers employ various techniques, including well testing, reservoir simulation, <span class="kw">and</span> data analysis, to understand reservoir behavior, estimate recoverable reserves, <span class="kw">and</span> design production strategies. Well testing provides real<span class="op">-</span>time data on reservoir performance, <span class="cf">while</span> reservoir simulation uses mathematical models to predict future behavior. Data analysis involves interpreting historical production data <span class="kw">and</span> incorporating it into reservoir models. Accurate reservoir evaluation <span class="kw">is</span> crucial <span class="cf">for</span> making informed decisions regarding drilling, production, <span class="kw">and</span> reservoir management.</span>
+<span id="cb126-71"><a href="reservoir-engineering.html#cb126-71" tabindex="-1"></a></span>
+<span id="cb126-72"><a href="reservoir-engineering.html#cb126-72" tabindex="-1"></a><span class="co">## Chapter Summary</span></span>
+<span id="cb126-73"><a href="reservoir-engineering.html#cb126-73" tabindex="-1"></a></span>
+<span id="cb126-74"><a href="reservoir-engineering.html#cb126-74" tabindex="-1"></a>This chapter provides a comprehensive introduction to the key concepts of reservoir engineering, equipping readers <span class="cf">with</span> foundational knowledge that will be essential <span class="cf">for</span> their journey into the field of hydrocarbon reservoirs.</span>
+<span id="cb126-75"><a href="reservoir-engineering.html#cb126-75" tabindex="-1"></a></span>
+<span id="cb126-76"><a href="reservoir-engineering.html#cb126-76" tabindex="-1"></a><span class="op">&lt;!--</span>chapter:end:<span class="dv">0</span><span class="er">2_00_Basic_res_eng</span>.Rmd<span class="op">--&gt;</span></span>
+<span id="cb126-77"><a href="reservoir-engineering.html#cb126-77" tabindex="-1"></a></span>
+<span id="cb126-78"><a href="reservoir-engineering.html#cb126-78" tabindex="-1"></a><span class="co"># Fundamental Properties of Gas</span></span>
+<span id="cb126-79"><a href="reservoir-engineering.html#cb126-79" tabindex="-1"></a></span>
+<span id="cb126-80"><a href="reservoir-engineering.html#cb126-80" tabindex="-1"></a>In this chapter, we will dive into the essential properties of gases <span class="kw">and</span> their relevance <span class="kw">in</span> reservoir engineering. A solid understanding of gas properties <span class="kw">is</span> crucial <span class="cf">for</span> analyzing, modeling, <span class="kw">and</span> managing gas reservoirs efficiently. From the behavior of gases under varying pressure <span class="kw">and</span> temperature conditions to phase transitions <span class="kw">and</span> compositional analysis, this chapter will equip you <span class="cf">with</span> the knowledge needed to work <span class="cf">with</span> gas reservoirs effectively.</span>
+<span id="cb126-81"><a href="reservoir-engineering.html#cb126-81" tabindex="-1"></a></span>
+<span id="cb126-82"><a href="reservoir-engineering.html#cb126-82" tabindex="-1"></a><span class="co">## Gas Behavior</span></span>
+<span id="cb126-83"><a href="reservoir-engineering.html#cb126-83" tabindex="-1"></a></span>
+<span id="cb126-84"><a href="reservoir-engineering.html#cb126-84" tabindex="-1"></a>Understanding the behavior of gases <span class="kw">is</span> foundational to reservoir engineering, particularly when dealing <span class="cf">with</span> gas reservoirs. At the heart of this understanding lies the Ideal Gas Law, which describes how gases respond to changes <span class="kw">in</span> pressure <span class="kw">and</span> temperature. We will explore the ideal gas law, its mathematical formulation, <span class="kw">and</span> how it simplifies gas behavior analysis. However, real gases deviate <span class="im">from</span> ideal behavior under certain conditions, such <span class="im">as</span> high pressures <span class="kw">and</span> low temperatures. In this chapter, we will also delve into real gas behavior, examining the factors responsible <span class="cf">for</span> these deviations <span class="kw">and</span> their implications <span class="cf">for</span> gas reservoir simulations. </span>
+<span id="cb126-85"><a href="reservoir-engineering.html#cb126-85" tabindex="-1"></a>This chapter delves into the intricacies of natural gas systems <span class="im">as</span> relevant to gas reservoir engineering, focusing primarily on the behavior <span class="kw">and</span> properties concerning pressure, volume, <span class="kw">and</span> temperature (PVT). Given that gas extracted <span class="im">from</span> subsurface reservoirs undergoes significant pressure <span class="kw">and</span> temperature changes before reaching the sales gas line, understanding its PVT behavior <span class="kw">and</span> associated properties <span class="kw">is</span> crucial.</span>
+<span id="cb126-86"><a href="reservoir-engineering.html#cb126-86" tabindex="-1"></a></span>
+<span id="cb126-87"><a href="reservoir-engineering.html#cb126-87" tabindex="-1"></a>The PVT behavior of natural gas <span class="kw">is</span> contingent upon its chemical composition, which can vary considerably <span class="im">from</span> one reservoir to another, leading to diverse production behaviors. Hence, we commence <span class="cf">with</span> a concise exploration of natural gas<span class="st">&#39;s chemical makeup. The fluctuating pressures and temperatures inherent in gas production processes can induce complex phase behavior phenomena within natural gas systems. Thus, we provide a qualitative examination of hydrocarbon system phase behavior here.</span></span>
+<span id="cb126-88"><a href="reservoir-engineering.html#cb126-88" tabindex="-1"></a></span>
+<span id="cb126-89"><a href="reservoir-engineering.html#cb126-89" tabindex="-1"></a><span class="er">Beyond elucidating general PVT behavior, we also explore methods and techniques for predicting pertinent gas properties essential for reservoir engineering analyses and assessments. While predominantly empirical, these methods have been refined to such an extent that they often serve as viable substitutes for laboratory measurements. Indeed, in many instances, knowledge of the composition alone is adequate for evaluating gas properties.</span></span>
+<span id="cb126-90"><a href="reservoir-engineering.html#cb126-90" tabindex="-1"></a></span>
+<span id="cb126-91"><a href="reservoir-engineering.html#cb126-91" tabindex="-1"></a><span class="co">### Ideal Gas Law</span></span>
+<span id="cb126-92"><a href="reservoir-engineering.html#cb126-92" tabindex="-1"></a></span>
+<span id="cb126-93"><a href="reservoir-engineering.html#cb126-93" tabindex="-1"></a>The Ideal Gas Law, represented by the equation PV <span class="op">=</span> nRT, stands <span class="im">as</span> a fundamental pillar of gas behavior <span class="kw">in</span> reservoir engineering. In this equation, P represents pressure, V <span class="kw">is</span> volume, n stands <span class="cf">for</span> the number of moles of gas, R denotes the gas constant, <span class="kw">and</span> T signifies temperature. This simple yet powerful law states that <span class="cf">for</span> an ideal gas, the product of pressure <span class="kw">and</span> volume <span class="kw">is</span> directly proportional to the number of moles <span class="kw">and</span> the absolute temperature. Python can be a valuable tool <span class="cf">for</span> reservoir engineers to <span class="bu">apply</span> this law <span class="kw">in</span> real<span class="op">-</span>world scenarios. Let<span class="st">&#39;s use Python to calculate the volume of a given amount of gas at a specific temperature and pressure:</span></span>
+<span id="cb126-94"><a href="reservoir-engineering.html#cb126-94" tabindex="-1"></a></span>
+<span id="cb126-95"><a href="reservoir-engineering.html#cb126-95" tabindex="-1"></a><span class="er">```python</span></span>
+<span id="cb126-96"><a href="reservoir-engineering.html#cb126-96" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb126-97"><a href="reservoir-engineering.html#cb126-97" tabindex="-1"></a>R <span class="op">=</span> <span class="fl">8.314</span>  <span class="co"># Gas constant in J/(mol*K)</span></span>
+<span id="cb126-98"><a href="reservoir-engineering.html#cb126-98" tabindex="-1"></a>P <span class="op">=</span> <span class="fl">10.0</span>   <span class="co"># Pressure in atmospheres (atm)</span></span>
+<span id="cb126-99"><a href="reservoir-engineering.html#cb126-99" tabindex="-1"></a>n <span class="op">=</span> <span class="fl">2.0</span>    <span class="co"># Moles of gas</span></span>
+<span id="cb126-100"><a href="reservoir-engineering.html#cb126-100" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">298.15</span> <span class="co"># Temperature in Kelvin (K)</span></span>
+<span id="cb126-101"><a href="reservoir-engineering.html#cb126-101" tabindex="-1"></a></span>
+<span id="cb126-102"><a href="reservoir-engineering.html#cb126-102" tabindex="-1"></a><span class="co"># Calculate volume using the Ideal Gas Law</span></span>
+<span id="cb126-103"><a href="reservoir-engineering.html#cb126-103" tabindex="-1"></a>V <span class="op">=</span> (n <span class="op">*</span> R <span class="op">*</span> T) <span class="op">/</span> P</span>
+<span id="cb126-104"><a href="reservoir-engineering.html#cb126-104" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Volume of the gas: </span><span class="sc">{</span>V<span class="sc">}</span><span class="ss"> liters&quot;</span>)</span></code></pre></div>
+<p>In this Python code snippet, we use the Ideal Gas Law to determine the volume of a gas sample based on known values of pressure (P), moles (n), gas constant (R), and temperature (T). Understanding and applying this law is essential for reservoir engineers when dealing with gas reservoirs, as it allows them to make critical predictions about gas behavior and reservoir performance.</p>
+</div>
+<div id="real-gas-behavior" class="section level3 hasAnchor" number="7.2.6">
+<h3><span class="header-section-number">7.2.6</span> Real Gas Behavior<a href="reservoir-engineering.html#real-gas-behavior" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>While the Ideal Gas Law provides a simplified model for gas behavior, real gases exhibit deviations from ideal behavior under specific conditions, typically at high pressures and low temperatures. These deviations occur due to intermolecular forces and the finite size of gas molecules, which are not accounted for in the ideal gas model. The Van der Waals equation is commonly used to describe the behavior of real gases more accurately. In the Van der Waals equation, the pressure (P) and volume (V) of a gas are adjusted by correction terms to account for molecular interactions and finite molecular size. This equation takes the form:</p>
+<p>The Van der Waals equation describes the behavior of real gases and incorporates corrections to account for molecular interactions and finite molecular size. It takes the form:</p>
+<p><span class="math display">\[ (P + a \frac{n^2}{V^2})(V - nb) = nRT \]</span></p>
+<p>Where:</p>
 <ul>
-<li><p>Type of fluid</p></li>
-<li><p>flow regimes</p></li>
+<li><span class="math inline">\(P\)</span> is the pressure of the gas.</li>
+<li><span class="math inline">\(V\)</span> is the volume of the gas.</li>
+<li><span class="math inline">\(n\)</span> is the number of moles of the gas.</li>
+<li><span class="math inline">\(R\)</span> is the gas constant.</li>
+<li><span class="math inline">\(T\)</span> is the absolute temperature of the gas.</li>
+<li><span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are Van der Waals constants specific to each gas.</li>
 </ul>
-<div id="type-of-fluid" class="section level4 hasAnchor" number="7.2.2.1">
-<h4><span class="header-section-number">7.2.2.1</span> Type of fluid<a href="reservoir-engineering.html#type-of-fluid" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>we can classify fluids in terms of their compressibility. based on compressibility, the fluids are classified into three different groups:</p>
-<ul>
-<li>incompressible fluids</li>
-<li>slightly compressible fluids</li>
-<li>compressible fluids</li>
-</ul>
-<p>The isothermal compressibility coefficient ‘c’ is described mathematically by the following
-two equivalent expressions</p>
-<p><span class="math display" id="eq:ere">\[\begin{equation}
-    \theta^{*}
+<p>This equation provides a more accurate representation of gas behavior, particularly at high pressures and low temperatures, compared to the ideal gas law. Reservoir engineers use the Van der Waals equation when dealing with gases that exhibit significant deviations from ideal behavior, ensuring more precise predictions in gas reservoir simulations.</p>
+<p>Python code to calculate the behavior of real gases using the Van der Waals equation is given below. Let’s calculate the corrected pressure and volume for a real gas sample:</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb127-1"><a href="reservoir-engineering.html#cb127-1" tabindex="-1"></a><span class="co"># Constants for a hypothetical gas (values for illustration)</span></span>
+<span id="cb127-2"><a href="reservoir-engineering.html#cb127-2" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">0.0321</span>  <span class="co"># Van der Waals constant &#39;a&#39; in (L^2*atm)/(mol^2)</span></span>
+<span id="cb127-3"><a href="reservoir-engineering.html#cb127-3" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">0.0237</span>  <span class="co"># Van der Waals constant &#39;b&#39; in L/mol</span></span>
+<span id="cb127-4"><a href="reservoir-engineering.html#cb127-4" tabindex="-1"></a></span>
+<span id="cb127-5"><a href="reservoir-engineering.html#cb127-5" tabindex="-1"></a><span class="co"># Given values</span></span>
+<span id="cb127-6"><a href="reservoir-engineering.html#cb127-6" tabindex="-1"></a>P <span class="op">=</span> <span class="fl">15.0</span>    <span class="co"># Pressure in atmospheres (atm)</span></span>
+<span id="cb127-7"><a href="reservoir-engineering.html#cb127-7" tabindex="-1"></a>n <span class="op">=</span> <span class="fl">2.0</span>     <span class="co"># Moles of gas</span></span>
+<span id="cb127-8"><a href="reservoir-engineering.html#cb127-8" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">273.15</span>  <span class="co"># Temperature in Kelvin (K)</span></span>
+<span id="cb127-9"><a href="reservoir-engineering.html#cb127-9" tabindex="-1"></a></span>
+<span id="cb127-10"><a href="reservoir-engineering.html#cb127-10" tabindex="-1"></a><span class="co"># Calculate corrected pressure and volume using the Van der Waals equation</span></span>
+<span id="cb127-11"><a href="reservoir-engineering.html#cb127-11" tabindex="-1"></a>corrected_P <span class="op">=</span> (n <span class="op">*</span> R <span class="op">*</span> T) <span class="op">/</span> (n <span class="op">-</span> n <span class="op">*</span> b) <span class="op">-</span> a <span class="op">*</span> (n<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> ((n <span class="op">-</span> n <span class="op">*</span> b)<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb127-12"><a href="reservoir-engineering.html#cb127-12" tabindex="-1"></a>corrected_V <span class="op">=</span> (n <span class="op">*</span> R <span class="op">*</span> T) <span class="op">/</span> (corrected_P)</span>
+<span id="cb127-13"><a href="reservoir-engineering.html#cb127-13" tabindex="-1"></a></span>
+<span id="cb127-14"><a href="reservoir-engineering.html#cb127-14" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Corrected Pressure: </span><span class="sc">{</span>corrected_P<span class="sc">}</span><span class="ss"> atm&quot;</span>)</span>
+<span id="cb127-15"><a href="reservoir-engineering.html#cb127-15" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Corrected Volume: </span><span class="sc">{</span>corrected_V<span class="sc">}</span><span class="ss"> liters&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="gas-composition" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Gas Composition<a href="reservoir-engineering.html#gas-composition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Natural gas primarily consists of volatile paraffins, mainly methane, along with non-hydrocarbon gases like nitrogen, carbon dioxide, and hydrogen sulfide. Traces of helium, argon, and neon may also be present. Water vapor saturates natural gas due to its presence in hydrocarbon-bearing formations. Typically, natural gas composition is expressed in mole fractions or percentages, serving as a proxy for volume fractions. Hydrocarbon components up to heptanes are individually listed, while heavier hydrocarbons are grouped in the heptanes plus fraction. This standard representation suffices for reservoir engineering purposes.</p>
+</div>
+<div id="phase-behavior" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Phase Behavior<a href="reservoir-engineering.html#phase-behavior" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Gas reservoirs often contain multiple components, leading to complex phase behavior. Understanding how these components behave under different pressure and temperature conditions is essential for accurately predicting gas reservoir performance. Two key aspects of phase behavior in gas reservoir engineering are phase diagrams and critical points.</p>
+<div id="phase-diagrams" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> Phase Diagrams<a href="reservoir-engineering.html#phase-diagrams" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Phase diagrams provide valuable insights into how gas components behave under varying conditions. These diagrams typically display pressure-temperature (P-T) relationships and help visualize the regions where gases exist in different phases, such as gas, liquid, or solid. These diagrams are essential in understanding how a substance behaves under different conditions, especially in thermodynamics and materials science.</p>
+<p><strong>Phase Diagram for mixture of gases</strong></p>
+<p>a phase diagram for a mixture of gases can be significantly more complex than for a single-component system like water vapor. Phase diagrams for gas mixtures involve multiple components and typically require the use of phase equilibrium calculations based on thermodynamic models. The phase behavior of gas mixtures depends on factors such as composition, temperature, and pressure.</p>
+<p>A common approach to create phase diagrams for gas mixtures is to use phase equilibrium software or simulation tools specifically designed for this purpose. These tools employ equations of state (EOS), such as the Peng-Robinson or Soave-Redlich-Kwong EOS, to model the phase behavior of gas mixtures.</p>
+<p>Here is a simplified representation of the phase diagram for a binary gas mixture (e.g., methane and ethane) using the Peng-Robinson EOS. Note that this is just a basic illustration and does not provide actual phase equilibrium calculations:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="reservoir-engineering.html#cb128-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb128-2"><a href="reservoir-engineering.html#cb128-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb128-3"><a href="reservoir-engineering.html#cb128-3" tabindex="-1"></a></span>
+<span id="cb128-4"><a href="reservoir-engineering.html#cb128-4" tabindex="-1"></a><span class="co"># Constants for the Peng-Robinson EOS parameters (for illustration purposes)</span></span>
+<span id="cb128-5"><a href="reservoir-engineering.html#cb128-5" tabindex="-1"></a>a_mix <span class="op">=</span> <span class="fl">0.85</span>  <span class="co"># Attraction parameter for the mixture</span></span>
+<span id="cb128-6"><a href="reservoir-engineering.html#cb128-6" tabindex="-1"></a>b_mix <span class="op">=</span> <span class="fl">0.05</span>  <span class="co"># Co-volume parameter for the mixture</span></span>
+<span id="cb128-7"><a href="reservoir-engineering.html#cb128-7" tabindex="-1"></a>Tc_methane <span class="op">=</span> <span class="fl">190.6</span>  <span class="co"># Critical temperature for methane (K)</span></span>
+<span id="cb128-8"><a href="reservoir-engineering.html#cb128-8" tabindex="-1"></a>Tc_ethane <span class="op">=</span> <span class="fl">305.3</span>   <span class="co"># Critical temperature for ethane (K)</span></span>
+<span id="cb128-9"><a href="reservoir-engineering.html#cb128-9" tabindex="-1"></a>Pc_methane <span class="op">=</span> <span class="fl">45.99</span>  <span class="co"># Critical pressure for methane (bar)</span></span>
+<span id="cb128-10"><a href="reservoir-engineering.html#cb128-10" tabindex="-1"></a>Pc_ethane <span class="op">=</span> <span class="fl">48.72</span>   <span class="co"># Critical pressure for ethane (bar)</span></span>
+<span id="cb128-11"><a href="reservoir-engineering.html#cb128-11" tabindex="-1"></a></span>
+<span id="cb128-12"><a href="reservoir-engineering.html#cb128-12" tabindex="-1"></a><span class="co"># Define temperature and pressure ranges</span></span>
+<span id="cb128-13"><a href="reservoir-engineering.html#cb128-13" tabindex="-1"></a>T_range <span class="op">=</span> np.linspace(<span class="dv">100</span>, <span class="dv">400</span>, <span class="dv">100</span>)  <span class="co"># Temperature range (K)</span></span>
+<span id="cb128-14"><a href="reservoir-engineering.html#cb128-14" tabindex="-1"></a>P_range <span class="op">=</span> np.linspace(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">100</span>)   <span class="co"># Pressure range (bar)</span></span>
+<span id="cb128-15"><a href="reservoir-engineering.html#cb128-15" tabindex="-1"></a></span>
+<span id="cb128-16"><a href="reservoir-engineering.html#cb128-16" tabindex="-1"></a><span class="co"># Create a grid of pressure and temperature values</span></span>
+<span id="cb128-17"><a href="reservoir-engineering.html#cb128-17" tabindex="-1"></a>P, T <span class="op">=</span> np.meshgrid(P_range, T_range)</span>
+<span id="cb128-18"><a href="reservoir-engineering.html#cb128-18" tabindex="-1"></a></span>
+<span id="cb128-19"><a href="reservoir-engineering.html#cb128-19" tabindex="-1"></a><span class="co"># Calculate fugacity coefficients for methane and ethane (for illustration)</span></span>
+<span id="cb128-20"><a href="reservoir-engineering.html#cb128-20" tabindex="-1"></a><span class="co"># Note: Actual calculations would involve solving phase equilibrium equations</span></span>
+<span id="cb128-21"><a href="reservoir-engineering.html#cb128-21" tabindex="-1"></a>fugacity_methane <span class="op">=</span> np.exp((P <span class="op">-</span> Pc_methane) <span class="op">/</span> (R <span class="op">*</span> T) <span class="op">-</span> b_mix <span class="op">/</span> (R <span class="op">*</span> T) <span class="op">*</span> (P <span class="op">/</span> Pc_methane))</span>
+<span id="cb128-22"><a href="reservoir-engineering.html#cb128-22" tabindex="-1"></a>fugacity_ethane <span class="op">=</span> np.exp((P <span class="op">-</span> Pc_ethane) <span class="op">/</span> (R <span class="op">*</span> T) <span class="op">-</span> b_mix <span class="op">/</span> (R <span class="op">*</span> T) <span class="op">*</span> (P <span class="op">/</span> Pc_ethane))</span>
+<span id="cb128-23"><a href="reservoir-engineering.html#cb128-23" tabindex="-1"></a></span>
+<span id="cb128-24"><a href="reservoir-engineering.html#cb128-24" tabindex="-1"></a><span class="co"># Create the phase diagram plot</span></span>
+<span id="cb128-25"><a href="reservoir-engineering.html#cb128-25" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb128-26"><a href="reservoir-engineering.html#cb128-26" tabindex="-1"></a>plt.contourf(P, T, fugacity_methane, levels<span class="op">=</span><span class="dv">20</span>, cmap<span class="op">=</span><span class="st">&#39;coolwarm&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb128-27"><a href="reservoir-engineering.html#cb128-27" tabindex="-1"></a>plt.contourf(P, T, fugacity_ethane, levels<span class="op">=</span><span class="dv">20</span>, cmap<span class="op">=</span><span class="st">&#39;coolwarm&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb128-28"><a href="reservoir-engineering.html#cb128-28" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">&#39;Fugacity Coefficient&#39;</span>)</span>
+<span id="cb128-29"><a href="reservoir-engineering.html#cb128-29" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Pressure (bar)&#39;</span>)</span>
+<span id="cb128-30"><a href="reservoir-engineering.html#cb128-30" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Temperature (K)&#39;</span>)</span>
+<span id="cb128-31"><a href="reservoir-engineering.html#cb128-31" tabindex="-1"></a>plt.title(<span class="st">&#39;Phase Diagram for Binary Gas Mixture (Simplified)&#39;</span>)</span>
+<span id="cb128-32"><a href="reservoir-engineering.html#cb128-32" tabindex="-1"></a>plt.xlim(<span class="dv">10</span>, <span class="dv">100</span>)</span>
+<span id="cb128-33"><a href="reservoir-engineering.html#cb128-33" tabindex="-1"></a>plt.ylim(<span class="dv">100</span>, <span class="dv">400</span>)</span>
+<span id="cb128-34"><a href="reservoir-engineering.html#cb128-34" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb128-35"><a href="reservoir-engineering.html#cb128-35" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p>Phase diagrams are crucial tools for reservoir engineers as they enable the prediction of phase transitions and phase equilibria within the reservoir.</p>
+<p>In a phase diagram, the critical point stands out as a critical temperature (Tc) and critical pressure (Pc) where a phase transition occurs. The phase diagram allows engineers to assess how far the actual reservoir conditions are from the critical point, influencing decisions regarding production strategies and well operations.</p>
+<div id="critical-point-and-phase-transitions" class="section level4 hasAnchor" number="7.4.1.1">
+<h4><span class="header-section-number">7.4.1.1</span> Critical Point and Phase Transitions<a href="reservoir-engineering.html#critical-point-and-phase-transitions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The critical point (also known as the critical state) is a specific condition at which a substance undergoes a phase transition. At the critical point, the distinction between the liquid and gas phases disappears, and the substance becomes a supercritical fluid. This transition has significant implications for reservoir engineers because it affects how gases behave at extreme reservoir conditions.</p>
+<p>The critical point is characterized by the critical temperature (Tc) and critical pressure (Pc), which are unique to each gas component. These critical properties vary depending on the type of gas present in the reservoir. Understanding the critical point and its proximity to reservoir conditions is essential for predicting phase transitions and ensuring accurate reservoir simulations.</p>
+</div>
+<div id="different-correlation-to-calculate-critical-temperature-tc-and-critical-pressure-pc" class="section level4 hasAnchor" number="7.4.1.2">
+<h4><span class="header-section-number">7.4.1.2</span> different correlation to calculate critical temperature (Tc) and critical pressure (Pc)<a href="reservoir-engineering.html#different-correlation-to-calculate-critical-temperature-tc-and-critical-pressure-pc" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Here are five different correlations along with Python code chunks to calculate critical temperature (Tc) and critical pressure (Pc). Each correlation provides an estimation of these critical properties based on different parameters. Please note that these correlations provide approximate values and may have varying degrees of accuracy depending on the specific gas mixture and conditions.</p>
+<div id="lee-kesler-equation" class="section level5 hasAnchor" number="7.4.1.2.1">
+<h5><span class="header-section-number">7.4.1.2.1</span> Lee-Kesler Equation<a href="reservoir-engineering.html#lee-kesler-equation" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The Lee-Kesler equation is a common method to estimate critical temperature (Tc) and critical pressure (Pc) for pure gases. This equation requires knowledge of the acentric factor (ω) and the gas’s reduced temperature (Tr).</p>
+<p>The Lee-Kesler equation for critical temperature (Tc) is:</p>
+<p><span class="math display">\[ Tc = Tc_r \cdot Tc_{RK} \]</span></p>
+<p>And for critical pressure (Pc):</p>
+<p><span class="math display">\[ Pc = Pc_r \cdot Pc_{RK} \]</span></p>
+<p>Where <span class="math inline">\(Tc_r\)</span> and <span class="math inline">\(Pc_r\)</span> are the critical properties from the Redlich-Kwong equation of state, and <span class="math inline">\(Tc_{RK}\)</span> and <span class="math inline">\(Pc_{RK}\)</span> are constants derived from the acentric factor (ω).</p>
+<p>Here’s Python code to calculate Tc and Pc using the Lee-Kesler equation:</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb129-1"><a href="reservoir-engineering.html#cb129-1" tabindex="-1"></a><span class="co"># Constants for Lee-Kesler equation</span></span>
+<span id="cb129-2"><a href="reservoir-engineering.html#cb129-2" tabindex="-1"></a>Tc_rk <span class="op">=</span> <span class="fl">190.56</span>  <span class="co"># Critical temperature from Redlich-Kwong (RK) EOS</span></span>
+<span id="cb129-3"><a href="reservoir-engineering.html#cb129-3" tabindex="-1"></a>Pc_rk <span class="op">=</span> <span class="fl">45.99</span>   <span class="co"># Critical pressure from Redlich-Kwong (RK) EOS</span></span>
+<span id="cb129-4"><a href="reservoir-engineering.html#cb129-4" tabindex="-1"></a>omega <span class="op">=</span> <span class="fl">0.011</span>   <span class="co"># Acentric factor</span></span>
+<span id="cb129-5"><a href="reservoir-engineering.html#cb129-5" tabindex="-1"></a></span>
+<span id="cb129-6"><a href="reservoir-engineering.html#cb129-6" tabindex="-1"></a><span class="co"># Calculate Tc and Pc using Lee-Kesler equation</span></span>
+<span id="cb129-7"><a href="reservoir-engineering.html#cb129-7" tabindex="-1"></a>Tc <span class="op">=</span> Tc_rk <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> omega)  <span class="co"># Critical temperature</span></span>
+<span id="cb129-8"><a href="reservoir-engineering.html#cb129-8" tabindex="-1"></a>Pc <span class="op">=</span> Pc_rk <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> omega)   <span class="co"># Critical pressure</span></span>
+<span id="cb129-9"><a href="reservoir-engineering.html#cb129-9" tabindex="-1"></a></span>
+<span id="cb129-10"><a href="reservoir-engineering.html#cb129-10" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Temperature (Tc): </span><span class="sc">{</span>Tc<span class="sc">}</span><span class="ss"> K&quot;</span>)</span>
+<span id="cb129-11"><a href="reservoir-engineering.html#cb129-11" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Pressure (Pc): </span><span class="sc">{</span>Pc<span class="sc">}</span><span class="ss"> atm&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="beattie-bridgeman-equation" class="section level4 hasAnchor" number="7.4.1.3">
+<h4><span class="header-section-number">7.4.1.3</span> Beattie-Bridgeman Equation<a href="reservoir-engineering.html#beattie-bridgeman-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Beattie-Bridgeman equation provides an estimation of critical temperature (Tc) and critical pressure (Pc) for pure gases based on the triple point temperature (Tt) and the gas’s molecular weight (M).</p>
+<p>The Beattie-Bridgeman equation for critical temperature (Tc) is:</p>
+<p><span class="math display">\[ Tc = 3.2 \cdot Tt + 11.5 \cdot M \]</span></p>
+<p>And for critical pressure (Pc):</p>
+<p><span class="math display">\[ Pc = 42.5 \cdot \frac{M^2}{Vc} \]</span></p>
+<p>Where <span class="math inline">\(Vc\)</span> is the critical volume, which can be estimated as <span class="math inline">\(Vc = 10 \cdot M\)</span>.</p>
+<p>Here’s Python code to calculate Tc and Pc using the Beattie-Bridgeman equation:</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb130-1"><a href="reservoir-engineering.html#cb130-1" tabindex="-1"></a><span class="co"># Constants for Beattie-Bridgeman equation</span></span>
+<span id="cb130-2"><a href="reservoir-engineering.html#cb130-2" tabindex="-1"></a>Tt <span class="op">=</span> <span class="fl">273.16</span>  <span class="co"># Triple point temperature in K</span></span>
+<span id="cb130-3"><a href="reservoir-engineering.html#cb130-3" tabindex="-1"></a>M <span class="op">=</span> <span class="fl">28.97</span>    <span class="co"># Molecular weight of nitrogen (for example)</span></span>
+<span id="cb130-4"><a href="reservoir-engineering.html#cb130-4" tabindex="-1"></a></span>
+<span id="cb130-5"><a href="reservoir-engineering.html#cb130-5" tabindex="-1"></a><span class="co"># Calculate critical volume (Vc)</span></span>
+<span id="cb130-6"><a href="reservoir-engineering.html#cb130-6" tabindex="-1"></a>Vc <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> M</span>
+<span id="cb130-7"><a href="reservoir-engineering.html#cb130-7" tabindex="-1"></a></span>
+<span id="cb130-8"><a href="reservoir-engineering.html#cb130-8" tabindex="-1"></a><span class="co"># Calculate Tc and Pc using Beattie-Bridgeman equation</span></span>
+<span id="cb130-9"><a href="reservoir-engineering.html#cb130-9" tabindex="-1"></a>Tc <span class="op">=</span> <span class="fl">3.2</span> <span class="op">*</span> Tt <span class="op">+</span> <span class="fl">11.5</span> <span class="op">*</span> M  <span class="co"># Critical temperature</span></span>
+<span id="cb130-10"><a href="reservoir-engineering.html#cb130-10" tabindex="-1"></a>Pc <span class="op">=</span> <span class="fl">42.5</span> <span class="op">*</span> (M <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> Vc  <span class="co"># Critical pressure</span></span>
+<span id="cb130-11"><a href="reservoir-engineering.html#cb130-11" tabindex="-1"></a></span>
+<span id="cb130-12"><a href="reservoir-engineering.html#cb130-12" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Temperature (Tc): </span><span class="sc">{</span>Tc<span class="sc">}</span><span class="ss"> K&quot;</span>)</span>
+<span id="cb130-13"><a href="reservoir-engineering.html#cb130-13" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Pressure (Pc): </span><span class="sc">{</span>Pc<span class="sc">}</span><span class="ss"> atm&quot;</span>)</span></code></pre></div>
+<p>This code estimates Tc and Pc using the Beattie-Bridgeman equation based on the provided triple point temperature (Tt) and molecular weight (M).</p>
+</div>
+<div id="riedel-equation" class="section level4 hasAnchor" number="7.4.1.4">
+<h4><span class="header-section-number">7.4.1.4</span> Riedel Equation<a href="reservoir-engineering.html#riedel-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Riedel equation offers an estimation of critical temperature (Tc) and critical pressure (Pc) for pure gases using the gas’s boiling point (Tb) and the critical temperature of methane (Tc_CH4).</p>
+<p>The Riedel equation for critical temperature (Tc) is:</p>
+<p><span class="math display">\[ Tc = Tc_{CH4} + 27.9 \cdot (Tb - Tc_{CH4}) \]</span></p>
+<p>And for critical pressure (Pc):</p>
+<p><span class="math display">\[ Pc = 10.6 \cdot \left(1 - \frac{Tc}{Tb}\right) \]</span></p>
+<p>Where <span class="math inline">\(Tc_{CH4}\)</span> is the critical temperature of methane (Tc_CH4 = 190.6 K).</p>
+<p>Here’s Python code to calculate Tc and Pc using the Riedel equation:</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb131-1"><a href="reservoir-engineering.html#cb131-1" tabindex="-1"></a><span class="co"># Constants for Riedel equation</span></span>
+<span id="cb131-2"><a href="reservoir-engineering.html#cb131-2" tabindex="-1"></a>Tb <span class="op">=</span> <span class="fl">77.36</span>  <span class="co"># Boiling point of nitrogen (for example) in K</span></span>
+<span id="cb131-3"><a href="reservoir-engineering.html#cb131-3" tabindex="-1"></a>Tc_CH4 <span class="op">=</span> <span class="fl">190.6</span>  <span class="co"># Critical temperature of methane in K</span></span>
+<span id="cb131-4"><a href="reservoir-engineering.html#cb131-4" tabindex="-1"></a></span>
+<span id="cb131-5"><a href="reservoir-engineering.html#cb131-5" tabindex="-1"></a><span class="co"># Calculate Tc and Pc using Riedel equation</span></span>
+<span id="cb131-6"><a href="reservoir-engineering.html#cb131-6" tabindex="-1"></a>Tc <span class="op">=</span> Tc_CH4 <span class="op">+</span> <span class="fl">27.9</span> <span class="op">*</span> (Tb <span class="op">-</span> Tc_CH4)  <span class="co"># Critical temperature</span></span>
+<span id="cb131-7"><a href="reservoir-engineering.html#cb131-7" tabindex="-1"></a>Pc <span class="op">=</span> <span class="fl">10.6</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> Tc <span class="op">/</span> Tb)  <span class="co"># Critical pressure</span></span>
+<span id="cb131-8"><a href="reservoir-engineering.html#cb131-8" tabindex="-1"></a></span>
+<span id="cb131-9"><a href="reservoir-engineering.html#cb131-9" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Temperature (Tc): </span><span class="sc">{</span>Tc<span class="sc">}</span><span class="ss"> K&quot;</span>)</span>
+<span id="cb131-10"><a href="reservoir-engineering.html#cb131-10" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Pressure (Pc): </span><span class="sc">{</span>Pc<span class="sc">}</span><span class="ss"> atm&quot;</span>)</span></code></pre></div>
+</div>
+<div id="yaws-equation" class="section level4 hasAnchor" number="7.4.1.5">
+<h4><span class="header-section-number">7.4.1.5</span> Yaws’ Equation<a href="reservoir-engineering.html#yaws-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Yaws’ equation offers a straightforward approach to estimate critical temperature (Tc) and critical pressure (Pc) for hydrocarbon gases using the gas’s molecular weight (M) and the number of carbon atoms (C).</p>
+<p>The Yaws’ equation for critical temperature (Tc) is:</p>
+<p><span class="math display">\[ Tc = 169 + 0.684 \cdot M + 0.0007 \cdot M^2 \]</span></p>
+<p>And for critical pressure (Pc):</p>
+<p><span class="math display">\[ Pc = 708 - 3.6 \cdot C \]</span></p>
+<p>Here’s Python code to calculate Tc and Pc using Yaws’ equation:</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb132-1"><a href="reservoir-engineering.html#cb132-1" tabindex="-1"></a><span class="co"># Constants for Yaws&#39; equation</span></span>
+<span id="cb132-2"><a href="reservoir-engineering.html#cb132-2" tabindex="-1"></a>M <span class="op">=</span> <span class="fl">16.04</span>  <span class="co"># Molecular weight of methane (for example)</span></span>
+<span id="cb132-3"><a href="reservoir-engineering.html#cb132-3" tabindex="-1"></a>C <span class="op">=</span> <span class="dv">1</span>      <span class="co"># Number of carbon atoms in methane</span></span>
+<span id="cb132-4"><a href="reservoir-engineering.html#cb132-4" tabindex="-1"></a></span>
+<span id="cb132-5"><a href="reservoir-engineering.html#cb132-5" tabindex="-1"></a><span class="co"># Calculate Tc and Pc using Yaws&#39; equation</span></span>
+<span id="cb132-6"><a href="reservoir-engineering.html#cb132-6" tabindex="-1"></a>Tc <span class="op">=</span> <span class="dv">169</span> <span class="op">+</span> <span class="fl">0.684</span> <span class="op">*</span> M <span class="op">+</span> <span class="fl">0.0007</span> <span class="op">*</span> M<span class="op">**</span><span class="dv">2</span>  <span class="co"># Critical temperature</span></span>
+<span id="cb132-7"><a href="reservoir-engineering.html#cb132-7" tabindex="-1"></a>Pc <span class="op">=</span> <span class="dv">708</span> <span class="op">-</span> <span class="fl">3.6</span> <span class="op">*</span> C  <span class="co"># Critical pressure</span></span>
+<span id="cb132-8"><a href="reservoir-engineering.html#cb132-8" tabindex="-1"></a></span>
+<span id="cb132-9"><a href="reservoir-engineering.html#cb132-9" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Temperature (Tc): </span><span class="sc">{</span>Tc<span class="sc">}</span><span class="ss"> K&quot;</span>)</span>
+<span id="cb132-10"><a href="reservoir-engineering.html#cb132-10" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Pressure (Pc): </span><span class="sc">{</span>Pc<span class="sc">}</span><span class="ss"> atm&quot;</span>)</span></code></pre></div>
+</div>
+<div id="pitzer-equation" class="section level4 hasAnchor" number="7.4.1.6">
+<h4><span class="header-section-number">7.4.1.6</span> Pitzer Equation<a href="reservoir-engineering.html#pitzer-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Pitzer equation provides an estimation of critical temperature (Tc) and critical pressure (Pc) for gases using the critical temperature of methane (Tc_CH4) and the molecular weight (M).</p>
+<p>The Pitzer equation for critical temperature (Tc) is:</p>
+<p><span class="math display">\[ Tc = Tc_{CH4} \cdot \left(1 + \frac{1}{4} \cdot (1 - \sqrt{M})\right) \]</span></p>
+<p>And for critical pressure (Pc):</p>
+<p><span class="math display">\[ Pc = 67 \cdot \left(1 - \sqrt{M}\right)^3 \]</span></p>
+<p>Here’s Python code to calculate Tc and Pc using the Pitzer equation:</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb133-1"><a href="reservoir-engineering.html#cb133-1" tabindex="-1"></a><span class="co"># Constants for Pitzer equation</span></span>
+<span id="cb133-2"><a href="reservoir-engineering.html#cb133-2" tabindex="-1"></a>Tc_CH4 <span class="op">=</span> <span class="fl">190.6</span>  <span class="co"># Critical temperature of methane in K</span></span>
+<span id="cb133-3"><a href="reservoir-engineering.html#cb133-3" tabindex="-1"></a>M <span class="op">=</span> <span class="fl">28.97</span>       <span class="co"># Molecular weight of nitrogen (for example)</span></span>
+<span id="cb133-4"><a href="reservoir-engineering.html#cb133-4" tabindex="-1"></a></span>
+<span id="cb133-5"><a href="reservoir-engineering.html#cb133-5" tabindex="-1"></a><span class="co"># Calculate Tc and Pc using Pitzer equation</span></span>
+<span id="cb133-6"><a href="reservoir-engineering.html#cb133-6" tabindex="-1"></a>Tc <span class="op">=</span> Tc_CH4 <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span><span class="op">/</span><span class="dv">4</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> M<span class="op">**</span><span class="fl">0.5</span>))  <span class="co"># Critical temperature</span></span>
+<span id="cb133-7"><a href="reservoir-engineering.html#cb133-7" tabindex="-1"></a>Pc <span class="op">=</span> <span class="dv">67</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> M<span class="op">**</span><span class="fl">0.5</span>)<span class="op">**</span><span class="dv">3</span>  <span class="co"># Critical pressure</span></span>
+<span id="cb133-8"><a href="reservoir-engineering.html#cb133-8" tabindex="-1"></a></span>
+<span id="cb133-9"><a href="reservoir-engineering.html#cb133-9" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Temperature (Tc): </span><span class="sc">{</span>Tc<span class="sc">}</span><span class="ss"> K&quot;</span>)</span>
+<span id="cb133-10"><a href="reservoir-engineering.html#cb133-10" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Critical Pressure (Pc): </span><span class="sc">{</span>Pc<span class="sc">}</span><span class="ss"> atm&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="review-of-gas-properties" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Review of Gas Properties<a href="reservoir-engineering.html#review-of-gas-properties" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="real-gas-law" class="section level3 hasAnchor" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> Real Gas law<a href="reservoir-engineering.html#real-gas-law" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are no gas that behaves as Ideal gas. The volume of Real gas is more that Ideal gas. The number that measure the amount of gas deviates from perfect gas is actually a ratio.
+this ratio is called as compressibility factor or gas deviation factor. this is a dimensionless quantity.</p>
+<p>If the gas deviation factor is not measured it can be estimated from the specific gravity of the gas.
+Sutton developed a correlation that estimates</p>
+<p><span class="math display" id="eq:azad">\[\begin{equation}
     \tag{7.1}
-    
+    Ppc = 756.8 -131*Sg - 3.6 * Sg^2 \\
+    Tpc = 169.2 -349.5*Sg - 74 * Sg^2
 \end{equation}\]</span></p>
+<p>We will write a small code to plot this correlation.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb134-1"><a href="reservoir-engineering.html#cb134-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb134-2"><a href="reservoir-engineering.html#cb134-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb134-3"><a href="reservoir-engineering.html#cb134-3" tabindex="-1"></a></span>
+<span id="cb134-4"><a href="reservoir-engineering.html#cb134-4" tabindex="-1"></a>Sg <span class="op">=</span> np.arange(<span class="fl">0.57</span>,<span class="fl">1.68</span>,<span class="fl">0.05</span>)</span>
+<span id="cb134-5"><a href="reservoir-engineering.html#cb134-5" tabindex="-1"></a>Ppc <span class="op">=</span> [<span class="fl">756.8</span> <span class="op">-</span><span class="dv">131</span><span class="op">*</span>sg <span class="op">-</span> <span class="fl">3.6</span> <span class="op">*</span> sg<span class="op">*</span>sg <span class="cf">for</span> sg <span class="kw">in</span> Sg]</span>
+<span id="cb134-6"><a href="reservoir-engineering.html#cb134-6" tabindex="-1"></a>Tpc <span class="op">=</span> [<span class="fl">169.2</span> <span class="op">+</span> <span class="fl">349.5</span><span class="op">*</span>sg <span class="op">-</span> <span class="dv">74</span> <span class="op">*</span> sg<span class="op">*</span>sg <span class="cf">for</span> sg <span class="kw">in</span> Sg]</span>
+<span id="cb134-7"><a href="reservoir-engineering.html#cb134-7" tabindex="-1"></a>plt.plot(Sg, Ppc, <span class="st">&#39;r-&#39;</span>)</span>
+<span id="cb134-8"><a href="reservoir-engineering.html#cb134-8" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x13b5e3c10</span><span class="op">&gt;</span>]</span>
+<span id="cb134-9"><a href="reservoir-engineering.html#cb134-9" tabindex="-1"></a>plt.plot(Sg, Tpc, <span class="st">&#39;b-&#39;</span>)</span>
+<span id="cb134-10"><a href="reservoir-engineering.html#cb134-10" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x13b5fdbe0</span><span class="op">&gt;</span>]</span>
+<span id="cb134-11"><a href="reservoir-engineering.html#cb134-11" tabindex="-1"></a>plt.grid()</span>
+<span id="cb134-12"><a href="reservoir-engineering.html#cb134-12" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
+<span id="cb134-13"><a href="reservoir-engineering.html#cb134-13" tabindex="-1"></a>Text(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
+<span id="cb134-14"><a href="reservoir-engineering.html#cb134-14" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Gas specific gravity&#39;</span>)</span>
+<span id="cb134-15"><a href="reservoir-engineering.html#cb134-15" tabindex="-1"></a>Text(<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="st">&#39;Gas specific gravity&#39;</span>)</span>
+<span id="cb134-16"><a href="reservoir-engineering.html#cb134-16" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="images/pyplot-1.png" width="672" /></p>
+<p>Wiechert-Aziz have developed a correlation to account for gases that contain CO2 and H2S</p>
+<p><span class="math display">\[\begin{equation}
+    e = 120(A^{0.9} - A^{1.6}) + 15(B^{0.5} - B^4)
+\end{equation}\]</span></p>
+<p>A = sum of mole fraction of H2S and CO2</p>
+<p>B = sum of mole fraction of H2S</p>
+<p>with this correation the modified equation becomes:</p>
+<p><span class="math display" id="eq:mod">\[\begin{equation}
+\tag{7.2}
+    T&#39;_{pc} = T_{pc} -e \\
+    P&#39;_{pc} = \frac{P_{pc}T&#39;_{pc}}{(T_{pc}- B(1-B)e)}
+\end{equation}\]</span></p>
+<p>Lets assume H2S mole fraction of 0.05 and CO2 mole fraction of 0.1 and compare the plots</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb135-1"><a href="reservoir-engineering.html#cb135-1" tabindex="-1"></a><span class="co"># same code as above</span></span>
+<span id="cb135-2"><a href="reservoir-engineering.html#cb135-2" tabindex="-1"></a></span>
+<span id="cb135-3"><a href="reservoir-engineering.html#cb135-3" tabindex="-1"></a>x_h2s<span class="op">=</span><span class="fl">0.05</span></span>
+<span id="cb135-4"><a href="reservoir-engineering.html#cb135-4" tabindex="-1"></a>x_co2 <span class="op">=</span><span class="fl">0.1</span></span>
+<span id="cb135-5"><a href="reservoir-engineering.html#cb135-5" tabindex="-1"></a>e <span class="op">=</span> (<span class="dv">120</span> <span class="op">*</span> (((x_h2s <span class="op">+</span> x_co2)<span class="op">**</span><span class="fl">0.9</span>) <span class="op">-</span> ((x_h2s <span class="op">+</span> x_co2)<span class="op">**</span><span class="fl">1.6</span>))) <span class="op">+</span> (<span class="dv">15</span> <span class="op">*</span> (x_h2s<span class="op">**</span><span class="fl">0.5</span> <span class="op">-</span> x_h2s<span class="op">**</span><span class="dv">4</span>))</span>
+<span id="cb135-6"><a href="reservoir-engineering.html#cb135-6" tabindex="-1"></a></span>
+<span id="cb135-7"><a href="reservoir-engineering.html#cb135-7" tabindex="-1"></a>T_pc_corr <span class="op">=</span> [T <span class="op">-</span> e <span class="cf">for</span> T <span class="kw">in</span> Tpc]</span>
+<span id="cb135-8"><a href="reservoir-engineering.html#cb135-8" tabindex="-1"></a>P_pc_corr <span class="op">=</span> [(Ppc[i] <span class="op">*</span> T_pc_corr[i]) <span class="op">/</span> (Tpc[i] <span class="op">-</span> x_h2s <span class="op">*</span> e <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>x_h2s)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(Tpc))]</span>
+<span id="cb135-9"><a href="reservoir-engineering.html#cb135-9" tabindex="-1"></a></span>
+<span id="cb135-10"><a href="reservoir-engineering.html#cb135-10" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb135-11"><a href="reservoir-engineering.html#cb135-11" tabindex="-1"></a>ax.plot(Sg, Ppc, <span class="st">&#39;r-&#39;</span>)</span>
+<span id="cb135-12"><a href="reservoir-engineering.html#cb135-12" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x139ac8070</span><span class="op">&gt;</span>]</span>
+<span id="cb135-13"><a href="reservoir-engineering.html#cb135-13" tabindex="-1"></a>ax.plot(Sg, Tpc, <span class="st">&#39;b-&#39;</span>)</span>
+<span id="cb135-14"><a href="reservoir-engineering.html#cb135-14" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x13b5e3df0</span><span class="op">&gt;</span>]</span>
+<span id="cb135-15"><a href="reservoir-engineering.html#cb135-15" tabindex="-1"></a></span>
+<span id="cb135-16"><a href="reservoir-engineering.html#cb135-16" tabindex="-1"></a>ax.plot(Sg, P_pc_corr, <span class="st">&#39;r--&#39;</span>)</span>
+<span id="cb135-17"><a href="reservoir-engineering.html#cb135-17" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x13b6ad0d0</span><span class="op">&gt;</span>]</span>
+<span id="cb135-18"><a href="reservoir-engineering.html#cb135-18" tabindex="-1"></a>ax.plot(Sg, T_pc_corr, <span class="st">&#39;b--&#39;</span>)</span>
+<span id="cb135-19"><a href="reservoir-engineering.html#cb135-19" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x139af1040</span><span class="op">&gt;</span>]</span>
+<span id="cb135-20"><a href="reservoir-engineering.html#cb135-20" tabindex="-1"></a></span>
+<span id="cb135-21"><a href="reservoir-engineering.html#cb135-21" tabindex="-1"></a>ax.grid()</span>
+<span id="cb135-22"><a href="reservoir-engineering.html#cb135-22" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
+<span id="cb135-23"><a href="reservoir-engineering.html#cb135-23" tabindex="-1"></a>Text(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
+<span id="cb135-24"><a href="reservoir-engineering.html#cb135-24" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Gas specific gravity&#39;</span>)</span>
+<span id="cb135-25"><a href="reservoir-engineering.html#cb135-25" tabindex="-1"></a>Text(<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="st">&#39;Gas specific gravity&#39;</span>)</span>
+<span id="cb135-26"><a href="reservoir-engineering.html#cb135-26" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="images/pyplot1-3.png" width="672" /></p>
 </div>
-</div>
-</div>
-<div id="reservoir-drive-mechanisms" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Reservoir Drive Mechanisms<a href="reservoir-engineering.html#reservoir-drive-mechanisms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Hydrocarbons within a reservoir are typically under pressure, and various mechanisms drive their movement towards production wells. We’ll cover the primary drive mechanisms:</p>
-<div id="natural-gas-drive" class="section level3 hasAnchor" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> Natural Gas Drive<a href="reservoir-engineering.html#natural-gas-drive" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In reservoirs primarily driven by natural gas expansion, the energy released as gas expands drives hydrocarbons towards production wells. This mechanism is common in gas reservoirs and provides a natural means of pushing hydrocarbons to the surface. Understanding how natural gas drive works, including the impact of reservoir pressure and gas properties, is crucial for reservoir engineers when designing production strategies and estimating recovery rates.</p>
-</div>
-<div id="water-drive" class="section level3 hasAnchor" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> Water Drive<a href="reservoir-engineering.html#water-drive" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Water drive is a prevalent mechanism in many reservoirs, especially as hydrocarbons are produced and reservoir pressure decreases. In water drive systems, water influx displaces hydrocarbons towards production wells. Engineers must analyze the behavior of water and hydrocarbons in reservoirs to optimize water flooding operations and manage water production effectively. This understanding is vital for maximizing hydrocarbon recovery in water drive reservoirs.</p>
-</div>
-<div id="other-drive-mechanisms" class="section level3 hasAnchor" number="7.3.3">
-<h3><span class="header-section-number">7.3.3</span> Other Drive Mechanisms<a href="reservoir-engineering.html#other-drive-mechanisms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Beyond natural gas and water drives, various other mechanisms, such as gravity drainage and compaction drive, can influence reservoir behavior. These mechanisms may be applicable in specific geological and reservoir conditions. Reservoir engineers need to be aware of these alternative drive mechanisms and their implications for reservoir performance and production strategies.</p>
-</div>
-</div>
-<div id="reservoir-types" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Reservoir Types<a href="reservoir-engineering.html#reservoir-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Reservoirs come in various types and configurations, each with its unique characteristics. We’ll explore:</p>
-<div id="oil-reservoirs" class="section level3 hasAnchor" number="7.4.1">
-<h3><span class="header-section-number">7.4.1</span> Oil Reservoirs<a href="reservoir-engineering.html#oil-reservoirs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Oil reservoirs primarily contain liquid hydrocarbons. These reservoirs come in various classifications, including conventional and unconventional. Conventional oil reservoirs are typically found in porous rock formations and are easier to produce. Unconventional oil reservoirs, such as shale oil, present unique challenges due to their complex geological characteristics. Reservoir engineers working on oil reservoirs must understand the properties and behavior of oil and design production strategies to optimize recovery.</p>
-</div>
-<div id="gas-reservoirs" class="section level3 hasAnchor" number="7.4.2">
-<h3><span class="header-section-number">7.4.2</span> Gas Reservoirs<a href="reservoir-engineering.html#gas-reservoirs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Gas reservoirs contain primarily gaseous hydrocarbons, such as natural gas. Understanding gas reservoir behavior, including phase behavior and the impact of reservoir pressure and temperature, is essential for efficiently producing gas. Reservoir engineers working with gas reservoirs must consider factors like gas compression and transportation to ensure successful production and delivery to consumers.</p>
-</div>
-<div id="oil-and-gas-reservoirs" class="section level3 hasAnchor" number="7.4.3">
-<h3><span class="header-section-number">7.4.3</span> Oil and Gas Reservoirs<a href="reservoir-engineering.html#oil-and-gas-reservoirs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Some reservoirs contain both oil and gas phases, often in varying proportions. These mixed-phase reservoirs require specialized approaches to production and reservoir management. Reservoir engineers need to develop strategies that account for the distinct characteristics of oil and gas within the reservoir to optimize recovery.</p>
-</div>
-</div>
-<div id="reservoir-evaluation" class="section level2 hasAnchor" number="7.5">
-<h2><span class="header-section-number">7.5</span> Reservoir Evaluation<a href="reservoir-engineering.html#reservoir-evaluation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Reservoir evaluation involves assessing the potential and performance of a reservoir. Reservoir engineers employ various techniques, including well testing, reservoir simulation, and data analysis, to understand reservoir behavior, estimate recoverable reserves, and design production strategies. Well testing provides real-time data on reservoir performance, while reservoir simulation uses mathematical models to predict future behavior. Data analysis involves interpreting historical production data and incorporating it into reservoir models. Accurate reservoir evaluation is crucial for making informed decisions regarding drilling, production, and reservoir management.</p>
-</div>
-<div id="chapter-summary-1" class="section level2 hasAnchor" number="7.6">
-<h2><span class="header-section-number">7.6</span> Chapter Summary<a href="reservoir-engineering.html#chapter-summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This chapter provides a comprehensive introduction to the key concepts of reservoir engineering, equipping readers with foundational knowledge that will be essential for their journey into the field of hydrocarbon reservoirs.</p>
+<div id="gas-z-factor" class="section level3 hasAnchor" number="7.5.2">
+<h3><span class="header-section-number">7.5.2</span> Gas z Factor<a href="reservoir-engineering.html#gas-z-factor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The gas compressibility factor is a critical parameter in gas reservoir engineering, and below correlations provide approximations for its calculation. Please note that the accuracy of these correlations may vary depending on the specific gas mixture and conditions.</p>
+<div id="dranchuk-and-aboukassem-equation-of-state" class="section level4 hasAnchor" number="7.5.2.1">
+<h4><span class="header-section-number">7.5.2.1</span> Dranchuk and Aboukassem equation of state<a href="reservoir-engineering.html#dranchuk-and-aboukassem-equation-of-state" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The form of equation is as follow:
+<span class="math display" id="eq:Dranchuk">\[\begin{equation}
+\begin{split}
+    
+    z = 1 + c_{1}(T_{pr}) p_{r} + c_{2}(T_{pr})p_{r}^2 - c_{3}(T_{pr})p_{r}^5 + c_{4}(T_{pr}p_{r})  \\
+    where : \\
+p_{r} = 0.27 P_{pr}/(zT_{pr}) \\
+c_{1}(T_{pr})  = A_{1} + A_{2}/T_{pr} + A_{3}/T_{pr}^3 + A_{4}/T_{pr}^4 + A_{5}/T_{pr}^5\\
+c_{2}(T_{pr})  = A_{6} + A_{7}/T_{pr} + A_{8}/T_{pr}^2 \\
+c_{3}(T_{pr})  = A_{9}(A_{7}/T_{pr} + A_{8}/T_{pr}^2) \\
+c_{4}(T_{pr}p_{r})  = A_{10}( 1 + A_{11}p_{r}^2)(p_{r}^2/T_{pr}^3) exp(-A_{11}p_{r}^2) \\
 
+
+\end{split}
+\tag{7.3}
+\end{equation}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[\begin{equation}
+A_{1} = 0.3265; A_{2} = -1.0700; A_{3} = -0.5339; A_{4} = 0.01569; A_{5} = -0.05165; A_{6} = 0.5475 \\
+A_{7} = -0.7361; A_{8} = 0.1844; A_{9} = 0.1056; A_{10} = 0.6134; A_{11} = 0.7210
+\end{equation}\]</span></p>
+<p>The above equation has z-factor on both side of the equation. To solve such equation a trial and error solution is required. However, in Python we can solve this equation using <code>fsolve</code> function of <code>scipy</code> library, which is a non-linear solver.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb136-1"><a href="reservoir-engineering.html#cb136-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb136-2"><a href="reservoir-engineering.html#cb136-2" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve <span class="co"># non-linear solver</span></span>
+<span id="cb136-3"><a href="reservoir-engineering.html#cb136-3" tabindex="-1"></a></span>
+<span id="cb136-4"><a href="reservoir-engineering.html#cb136-4" tabindex="-1"></a><span class="kw">def</span> getZ_dranchuk(T_pr, P_pr):</span>
+<span id="cb136-5"><a href="reservoir-engineering.html#cb136-5" tabindex="-1"></a>    a1 <span class="op">=</span> <span class="fl">0.3265</span><span class="op">;</span> a2 <span class="op">=</span> <span class="op">-</span><span class="fl">1.0700</span><span class="op">;</span> a3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5339</span><span class="op">;</span> a4 <span class="op">=</span> <span class="fl">0.01569</span><span class="op">;</span> a5 <span class="op">=</span> <span class="op">-</span><span class="fl">0.05165</span><span class="op">;</span> a6 <span class="op">=</span> <span class="fl">0.5475</span></span>
+<span id="cb136-6"><a href="reservoir-engineering.html#cb136-6" tabindex="-1"></a>    a7 <span class="op">=</span> <span class="op">-</span><span class="fl">0.7361</span><span class="op">;</span> a8 <span class="op">=</span> <span class="fl">0.1844</span><span class="op">;</span> a9 <span class="op">=</span> <span class="fl">0.1056</span><span class="op">;</span> a10 <span class="op">=</span> <span class="fl">0.6134</span><span class="op">;</span> a11 <span class="op">=</span> <span class="fl">0.7210</span></span>
+<span id="cb136-7"><a href="reservoir-engineering.html#cb136-7" tabindex="-1"></a>    <span class="kw">def</span> func(y):</span>
+<span id="cb136-8"><a href="reservoir-engineering.html#cb136-8" tabindex="-1"></a>        rho_pr, z <span class="op">=</span> y</span>
+<span id="cb136-9"><a href="reservoir-engineering.html#cb136-9" tabindex="-1"></a>        c1 <span class="op">=</span> a1 <span class="op">+</span> (a2<span class="op">/</span>T_pr) <span class="op">+</span> (a3<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">3</span>))<span class="op">+</span> (a4<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">4</span>))<span class="op">+</span> (a5<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">5</span>))</span>
+<span id="cb136-10"><a href="reservoir-engineering.html#cb136-10" tabindex="-1"></a>        c2 <span class="op">=</span> a6 <span class="op">+</span> (a7<span class="op">/</span>T_pr) <span class="op">+</span> (a8<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb136-11"><a href="reservoir-engineering.html#cb136-11" tabindex="-1"></a>        c3 <span class="op">=</span> a9<span class="op">*</span>((a7<span class="op">/</span>T_pr) <span class="op">+</span> (a8<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">2</span>)))</span>
+<span id="cb136-12"><a href="reservoir-engineering.html#cb136-12" tabindex="-1"></a>        c4 <span class="op">=</span> (a10)<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>(a11<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">2</span>)))<span class="op">*</span>((rho_pr<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(T_pr<span class="op">**</span><span class="dv">3</span>))<span class="op">*</span>(np.exp(<span class="op">-</span>a11<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">2</span>)))</span>
+<span id="cb136-13"><a href="reservoir-engineering.html#cb136-13" tabindex="-1"></a></span>
+<span id="cb136-14"><a href="reservoir-engineering.html#cb136-14" tabindex="-1"></a>        f1 <span class="op">=</span> z <span class="op">+</span> (c3<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">5</span>)) <span class="op">-</span> (c2<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">2</span>)) <span class="op">-</span> (c1<span class="op">*</span>(rho_pr<span class="op">**</span><span class="dv">1</span>)) <span class="op">-</span> c4 <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb136-15"><a href="reservoir-engineering.html#cb136-15" tabindex="-1"></a>        f2 <span class="op">=</span> rho_pr <span class="op">-</span> ((<span class="fl">0.27</span> <span class="op">*</span> P_pr) <span class="op">/</span> (z <span class="op">*</span> T_pr))</span>
+<span id="cb136-16"><a href="reservoir-engineering.html#cb136-16" tabindex="-1"></a>        <span class="cf">return</span>[f1, f2]</span>
+<span id="cb136-17"><a href="reservoir-engineering.html#cb136-17" tabindex="-1"></a></span>
+<span id="cb136-18"><a href="reservoir-engineering.html#cb136-18" tabindex="-1"></a>    <span class="kw">def</span> dranchuk():</span>
+<span id="cb136-19"><a href="reservoir-engineering.html#cb136-19" tabindex="-1"></a>        solve <span class="op">=</span> fsolve(func, [<span class="dv">1</span>, <span class="dv">1</span>]) <span class="co"># initial guess</span></span>
+<span id="cb136-20"><a href="reservoir-engineering.html#cb136-20" tabindex="-1"></a>        <span class="cf">return</span>(solve[<span class="dv">0</span>], solve[<span class="dv">1</span>]) </span>
+<span id="cb136-21"><a href="reservoir-engineering.html#cb136-21" tabindex="-1"></a>    </span>
+<span id="cb136-22"><a href="reservoir-engineering.html#cb136-22" tabindex="-1"></a>    <span class="cf">return</span> dranchuk()[<span class="dv">1</span>]</span>
+<span id="cb136-23"><a href="reservoir-engineering.html#cb136-23" tabindex="-1"></a></span>
+<span id="cb136-24"><a href="reservoir-engineering.html#cb136-24" tabindex="-1"></a><span class="co"># lets Assume </span></span>
+<span id="cb136-25"><a href="reservoir-engineering.html#cb136-25" tabindex="-1"></a>T_pr <span class="op">=</span> <span class="fl">1.8</span></span>
+<span id="cb136-26"><a href="reservoir-engineering.html#cb136-26" tabindex="-1"></a>P_pr <span class="op">=</span> <span class="fl">4.87</span></span>
+<span id="cb136-27"><a href="reservoir-engineering.html#cb136-27" tabindex="-1"></a></span>
+<span id="cb136-28"><a href="reservoir-engineering.html#cb136-28" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Gas Deviation factor Z : = </span><span class="sc">{</span>getZ_dranchuk(T_pr, P_pr)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb136-29"><a href="reservoir-engineering.html#cb136-29" tabindex="-1"></a>Gas Deviation factor Z : <span class="op">=</span> <span class="fl">0.9110107290176761</span></span></code></pre></div>
+</div>
+<div id="standing-katz-correlation" class="section level4 hasAnchor" number="7.5.2.2">
+<h4><span class="header-section-number">7.5.2.2</span> Standing-Katz Correlation<a href="reservoir-engineering.html#standing-katz-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Standing-Katz correlation provides an empirical estimation of the gas compressibility factor (Z) for natural gases. It is based on a set of constants and the deviation factor (F) for the gas:</p>
+<p><span class="math display">\[ Z = 1 + \left(\frac{0.27}{P}\right) \cdot F \]</span></p>
+<p>Where:
+- <span class="math inline">\(P\)</span> is the pressure in psia (pounds per square inch absolute).
+- <span class="math inline">\(F\)</span> is the deviation factor calculated based on the specific gravity (SG) of the gas.</p>
+<p>Here’s Python code to calculate Z using the Standing-Katz correlation:</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb137-1"><a href="reservoir-engineering.html#cb137-1" tabindex="-1"></a><span class="co"># Constants for Standing-Katz correlation</span></span>
+<span id="cb137-2"><a href="reservoir-engineering.html#cb137-2" tabindex="-1"></a>P_psia <span class="op">=</span> <span class="fl">1450.0</span>  <span class="co"># Pressure in psia</span></span>
+<span id="cb137-3"><a href="reservoir-engineering.html#cb137-3" tabindex="-1"></a>SG <span class="op">=</span> <span class="fl">0.75</span>  <span class="co"># Specific gravity of the gas</span></span>
+<span id="cb137-4"><a href="reservoir-engineering.html#cb137-4" tabindex="-1"></a></span>
+<span id="cb137-5"><a href="reservoir-engineering.html#cb137-5" tabindex="-1"></a><span class="co"># Calculate the deviation factor F based on SG</span></span>
+<span id="cb137-6"><a href="reservoir-engineering.html#cb137-6" tabindex="-1"></a><span class="cf">if</span> SG <span class="op">&lt;</span> <span class="fl">0.6</span>:</span>
+<span id="cb137-7"><a href="reservoir-engineering.html#cb137-7" tabindex="-1"></a>    F <span class="op">=</span> <span class="fl">0.933</span> <span class="op">+</span> <span class="fl">0.1395</span> <span class="op">*</span> SG <span class="op">+</span> <span class="fl">0.0167</span> <span class="op">*</span> SG<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb137-8"><a href="reservoir-engineering.html#cb137-8" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb137-9"><a href="reservoir-engineering.html#cb137-9" tabindex="-1"></a>    F <span class="op">=</span> <span class="fl">0.315</span> <span class="op">+</span> <span class="fl">0.622</span> <span class="op">*</span> SG <span class="op">-</span> <span class="fl">0.216</span> <span class="op">*</span> SG<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb137-10"><a href="reservoir-engineering.html#cb137-10" tabindex="-1"></a></span>
+<span id="cb137-11"><a href="reservoir-engineering.html#cb137-11" tabindex="-1"></a><span class="co"># Calculate Z using the Standing-Katz correlation</span></span>
+<span id="cb137-12"><a href="reservoir-engineering.html#cb137-12" tabindex="-1"></a>Z <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> (<span class="fl">0.27</span> <span class="op">/</span> P_psia) <span class="op">*</span> F</span>
+<span id="cb137-13"><a href="reservoir-engineering.html#cb137-13" tabindex="-1"></a></span>
+<span id="cb137-14"><a href="reservoir-engineering.html#cb137-14" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Gas Compressibility Factor (Z) using Standing-Katz Correlation: </span><span class="sc">{</span>Z<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+</div>
+<div id="carr-rossi-lopez-correlation" class="section level4 hasAnchor" number="7.5.2.3">
+<h4><span class="header-section-number">7.5.2.3</span> Carr-Rossi-Lopez Correlation<a href="reservoir-engineering.html#carr-rossi-lopez-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Carr-Rossi-Lopez (CRL) correlation provides an empirical estimation of the gas compressibility factor (Z) for natural gases. It uses a set of constants and the deviation factor (F) for the gas:</p>
+<p><span class="math display">\[ Z = 1 + \left(\frac{0.1}{P}\right) \cdot F \]</span></p>
+<p>Where:
+- <span class="math inline">\(P\)</span> is the pressure in psia (pounds per square inch absolute).
+- <span class="math inline">\(F\)</span> is the deviation factor calculated based on the specific gravity (SG) of the gas.</p>
+<p>Here’s Python code to calculate Z using the Carr-Rossi-Lopez (CRL) correlation:</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb138-1"><a href="reservoir-engineering.html#cb138-1" tabindex="-1"></a><span class="co"># Constants for Carr-Rossi-Lopez (CRL) correlation</span></span>
+<span id="cb138-2"><a href="reservoir-engineering.html#cb138-2" tabindex="-1"></a>P_psia <span class="op">=</span> <span class="fl">1450.0</span>  <span class="co"># Pressure in psia</span></span>
+<span id="cb138-3"><a href="reservoir-engineering.html#cb138-3" tabindex="-1"></a>SG <span class="op">=</span> <span class="fl">0.85</span>  <span class="co"># Specific gravity of the gas</span></span>
+<span id="cb138-4"><a href="reservoir-engineering.html#cb138-4" tabindex="-1"></a></span>
+<span id="cb138-5"><a href="reservoir-engineering.html#cb138-5" tabindex="-1"></a><span class="co"># Calculate the deviation factor F based on SG</span></span>
+<span id="cb138-6"><a href="reservoir-engineering.html#cb138-6" tabindex="-1"></a>F <span class="op">=</span> <span class="fl">0.91</span> <span class="op">+</span> <span class="fl">0.105</span> <span class="op">*</span> SG</span>
+<span id="cb138-7"><a href="reservoir-engineering.html#cb138-7" tabindex="-1"></a></span>
+<span id="cb138-8"><a href="reservoir-engineering.html#cb138-8" tabindex="-1"></a><span class="co"># Calculate Z using the Carr-Rossi-Lopez (CRL) correlation</span></span>
+<span id="cb138-9"><a href="reservoir-engineering.html#cb138-9" tabindex="-1"></a>Z <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> (<span class="fl">0.1</span> <span class="op">/</span> P_psia) <span class="op">*</span> F</span>
+<span id="cb138-10"><a href="reservoir-engineering.html#cb138-10" tabindex="-1"></a></span>
+<span id="cb138-11"><a href="reservoir-engineering.html#cb138-11" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Gas Compressibility Factor (Z) using Carr-Rossi-Lopez (CRL) Correlation: </span><span class="sc">{</span>Z<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="gas-density" class="section level3 hasAnchor" number="7.5.3">
+<h3><span class="header-section-number">7.5.3</span> Gas Density<a href="reservoir-engineering.html#gas-density" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Density of a real gas can be calculated using the formula given below:
+<span class="math display" id="eq:gasDensity">\[\begin{equation}
+    \tag{7.4}
+    \rho_g  = \frac{1}{v} = \frac{pM_a}{zRT}
+\end{equation}\]</span></p>
+<p>Using the data in below assuming real gas behavior, let’s calculate the density of the gas phase under initial reservoir conditions.</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb139-1"><a href="reservoir-engineering.html#cb139-1" tabindex="-1"></a><span class="co"># Component [CO2, N2, C1, C2, C3, i-C4, n-c4]</span></span>
+<span id="cb139-2"><a href="reservoir-engineering.html#cb139-2" tabindex="-1"></a>gasComposition <span class="op">=</span> [<span class="fl">0.02</span>, <span class="fl">0.01</span>, <span class="fl">0.85</span>, <span class="fl">0.04</span>, <span class="fl">0.03</span>, <span class="fl">0.03</span>, <span class="fl">0.02</span>]</span>
+<span id="cb139-3"><a href="reservoir-engineering.html#cb139-3" tabindex="-1"></a>MW <span class="op">=</span> [<span class="fl">44.01</span>, <span class="fl">28.01</span>, <span class="fl">16.04</span>, <span class="fl">30.1</span>, <span class="fl">44.1</span>, <span class="fl">58.1</span>, <span class="fl">58.1</span>]</span>
+<span id="cb139-4"><a href="reservoir-engineering.html#cb139-4" tabindex="-1"></a>Tc <span class="op">=</span> [<span class="fl">547.91</span>, <span class="fl">227.49</span> , <span class="fl">343.33</span>, <span class="fl">549.92</span>, <span class="fl">666.06</span>, <span class="fl">734.46</span>, <span class="fl">765.62</span>] <span class="co">#Rankine</span></span>
+<span id="cb139-5"><a href="reservoir-engineering.html#cb139-5" tabindex="-1"></a>Pc <span class="op">=</span> [<span class="dv">1071</span>, <span class="fl">493.1</span>, <span class="fl">666.4</span>, <span class="fl">706.5</span>, <span class="fl">616.4</span>, <span class="fl">527.9</span>, <span class="fl">550.6</span>]</span>
+<span id="cb139-6"><a href="reservoir-engineering.html#cb139-6" tabindex="-1"></a></span>
+<span id="cb139-7"><a href="reservoir-engineering.html#cb139-7" tabindex="-1"></a>Ma <span class="op">=</span> <span class="bu">sum</span>([y<span class="op">*</span>M <span class="cf">for</span> y, M <span class="kw">in</span> <span class="bu">zip</span>(gasComposition, MW)])</span>
+<span id="cb139-8"><a href="reservoir-engineering.html#cb139-8" tabindex="-1"></a>Tpc <span class="op">=</span> <span class="bu">sum</span>([y<span class="op">*</span>T <span class="cf">for</span> y, T <span class="kw">in</span> <span class="bu">zip</span>(gasComposition, Tc)])</span>
+<span id="cb139-9"><a href="reservoir-engineering.html#cb139-9" tabindex="-1"></a>Ppc <span class="op">=</span> <span class="bu">sum</span>([y<span class="op">*</span>P <span class="cf">for</span> y, P <span class="kw">in</span> <span class="bu">zip</span>(gasComposition, Pc)])</span>
+<span id="cb139-10"><a href="reservoir-engineering.html#cb139-10" tabindex="-1"></a></span>
+<span id="cb139-11"><a href="reservoir-engineering.html#cb139-11" tabindex="-1"></a>P <span class="op">=</span> <span class="dv">3000</span> <span class="co"># Reservoir Pressure in psi</span></span>
+<span id="cb139-12"><a href="reservoir-engineering.html#cb139-12" tabindex="-1"></a>T  <span class="op">=</span> <span class="dv">640</span> <span class="co"># Reservoir Temperature in R</span></span>
+<span id="cb139-13"><a href="reservoir-engineering.html#cb139-13" tabindex="-1"></a>R <span class="op">=</span> <span class="fl">10.73</span> <span class="co">#</span></span>
+<span id="cb139-14"><a href="reservoir-engineering.html#cb139-14" tabindex="-1"></a>T_pr <span class="op">=</span> T<span class="op">/</span>Tpc</span>
+<span id="cb139-15"><a href="reservoir-engineering.html#cb139-15" tabindex="-1"></a>P_pr <span class="op">=</span> P<span class="op">/</span>Ppc</span>
+<span id="cb139-16"><a href="reservoir-engineering.html#cb139-16" tabindex="-1"></a>Z <span class="op">=</span> getZ_dranchuk(T_pr, P_pr)</span>
+<span id="cb139-17"><a href="reservoir-engineering.html#cb139-17" tabindex="-1"></a>density <span class="op">=</span> P<span class="op">*</span>Ma<span class="op">/</span>(Z<span class="op">*</span>R<span class="op">*</span>T)</span>
+<span id="cb139-18"><a href="reservoir-engineering.html#cb139-18" tabindex="-1"></a></span>
+<span id="cb139-19"><a href="reservoir-engineering.html#cb139-19" tabindex="-1"></a><span class="co"># Results</span></span>
+<span id="cb139-20"><a href="reservoir-engineering.html#cb139-20" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;-&#39;</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb139-21"><a href="reservoir-engineering.html#cb139-21" tabindex="-1"></a><span class="op">--------------------------------------------------</span></span>
+<span id="cb139-22"><a href="reservoir-engineering.html#cb139-22" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Apparent molecular weight : = </span><span class="sc">{</span><span class="bu">round</span>(Ma, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb139-23"><a href="reservoir-engineering.html#cb139-23" tabindex="-1"></a>Apparent molecular weight : <span class="op">=</span> <span class="fl">20.23</span></span>
+<span id="cb139-24"><a href="reservoir-engineering.html#cb139-24" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Pseudo-critical pressure : = </span><span class="sc">{</span><span class="bu">round</span>(Ppc, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> psi&#39;</span>)</span>
+<span id="cb139-25"><a href="reservoir-engineering.html#cb139-25" tabindex="-1"></a>Pseudo<span class="op">-</span>critical pressure : <span class="op">=</span> <span class="fl">666.39</span> psi</span>
+<span id="cb139-26"><a href="reservoir-engineering.html#cb139-26" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Pseudo-critical temperature : = </span><span class="sc">{</span><span class="bu">round</span>(Tpc, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> R&#39;</span>)</span>
+<span id="cb139-27"><a href="reservoir-engineering.html#cb139-27" tabindex="-1"></a>Pseudo<span class="op">-</span>critical temperature : <span class="op">=</span> <span class="fl">384.39</span> R</span>
+<span id="cb139-28"><a href="reservoir-engineering.html#cb139-28" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Pseudo-reduced pressure : = </span><span class="sc">{</span><span class="bu">round</span>(P_pr, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb139-29"><a href="reservoir-engineering.html#cb139-29" tabindex="-1"></a>Pseudo<span class="op">-</span>reduced pressure : <span class="op">=</span> <span class="fl">4.5</span></span>
+<span id="cb139-30"><a href="reservoir-engineering.html#cb139-30" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Pseudo-reduced temperature : = </span><span class="sc">{</span><span class="bu">round</span>(T_pr, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb139-31"><a href="reservoir-engineering.html#cb139-31" tabindex="-1"></a>Pseudo<span class="op">-</span>reduced temperature : <span class="op">=</span> <span class="fl">1.66</span></span>
+<span id="cb139-32"><a href="reservoir-engineering.html#cb139-32" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Gas Deviation factor : = </span><span class="sc">{</span><span class="bu">round</span>(Z, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb139-33"><a href="reservoir-engineering.html#cb139-33" tabindex="-1"></a>Gas Deviation factor : <span class="op">=</span> <span class="fl">0.86</span></span>
+<span id="cb139-34"><a href="reservoir-engineering.html#cb139-34" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Gas Density : = </span><span class="sc">{</span><span class="bu">round</span>(density, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> lb/ft3&#39;</span>)</span>
+<span id="cb139-35"><a href="reservoir-engineering.html#cb139-35" tabindex="-1"></a>Gas Density : <span class="op">=</span> <span class="fl">10.28</span> lb<span class="op">/</span>ft3</span></code></pre></div>
+<div id="benedict-webb-rubin-bwr-equation-of-state" class="section level4 hasAnchor" number="7.5.3.1">
+<h4><span class="header-section-number">7.5.3.1</span> Benedict-Webb-Rubin (BWR) Equation of State<a href="reservoir-engineering.html#benedict-webb-rubin-bwr-equation-of-state" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Benedict-Webb-Rubin (BWR) equation of state is a comprehensive model to estimate gas density (ρ) considering real gas behavior. The equation is quite complex and involves numerous constants and terms. It is often used in software packages designed for reservoir engineering simulations.</p>
+<p>The BWR equation of state for gas density (ρ) is:</p>
+<p><span class="math display">\[ \rho = \frac{0.27 P}{ZRT} \left(1 + \frac{Tc}{T} \left(\frac{dZ}{dT}\right)_P\right) \]</span></p>
+<p>Where:
+- <span class="math inline">\(\rho\)</span> is the gas density.
+- <span class="math inline">\(P\)</span> is the pressure.
+- <span class="math inline">\(Z\)</span> is the gas compressibility factor.
+- <span class="math inline">\(R\)</span> is the gas constant.
+- <span class="math inline">\(T\)</span> is the absolute temperature.
+- <span class="math inline">\(Tc\)</span> is the critical temperature.
+- <span class="math inline">\(\left(\frac{dZ}{dT}\right)_P\)</span> is the derivative of the compressibility factor with respect to temperature at constant pressure.</p>
+<p>Calculating <span class="math inline">\(\left(\frac{dZ}{dT}\right)_P\)</span> involves a complex iterative process and is typically done using specialized software.</p>
+<p>Due to its complexity, engineers often rely on software or reservoir simulators to apply the BWR equation of state.</p>
+<div id="standing-katz-equation" class="section level5 hasAnchor" number="7.5.3.1.1">
+<h5><span class="header-section-number">7.5.3.1.1</span> Standing-Katz Equation<a href="reservoir-engineering.html#standing-katz-equation" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The Standing-Katz equation offers an empirical estimate of gas density (ρ) based on the gas compressibility factor (Z):</p>
+<p><span class="math display">\[ \rho = \frac{0.00277 Z M}{T} \]</span></p>
+<p>Where:
+- <span class="math inline">\(\rho\)</span> is the gas density.
+- <span class="math inline">\(Z\)</span> is the gas compressibility factor.
+- <span class="math inline">\(M\)</span> is the molecular weight of the gas.
+- <span class="math inline">\(T\)</span> is the absolute temperature.</p>
+<p>Here’s Python code to calculate ρ using the Standing-Katz equation:</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb140-1"><a href="reservoir-engineering.html#cb140-1" tabindex="-1"></a><span class="co"># Constants for Standing-Katz equation</span></span>
+<span id="cb140-2"><a href="reservoir-engineering.html#cb140-2" tabindex="-1"></a>Z <span class="op">=</span> <span class="fl">0.95</span>  <span class="co"># Compressibility factor</span></span>
+<span id="cb140-3"><a href="reservoir-engineering.html#cb140-3" tabindex="-1"></a>M <span class="op">=</span> <span class="fl">28.97</span>  <span class="co"># Molecular weight of nitrogen (for example)</span></span>
+<span id="cb140-4"><a href="reservoir-engineering.html#cb140-4" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">273.15</span>  <span class="co"># Temperature in K</span></span>
+<span id="cb140-5"><a href="reservoir-engineering.html#cb140-5" tabindex="-1"></a></span>
+<span id="cb140-6"><a href="reservoir-engineering.html#cb140-6" tabindex="-1"></a><span class="co"># Calculate ρ using the Standing-Katz equation</span></span>
+<span id="cb140-7"><a href="reservoir-engineering.html#cb140-7" tabindex="-1"></a>rho <span class="op">=</span> (<span class="fl">0.00277</span> <span class="op">*</span> Z <span class="op">*</span> M) <span class="op">/</span> T</span>
+<span id="cb140-8"><a href="reservoir-engineering.html#cb140-8" tabindex="-1"></a></span>
+<span id="cb140-9"><a href="reservoir-engineering.html#cb140-9" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Gas Density (ρ) using Standing-Katz Equation: </span><span class="sc">{</span>rho<span class="sc">}</span><span class="ss"> g/L&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="correlation-5-papps-equation" class="section level4 hasAnchor" number="7.5.3.2">
+<h4><span class="header-section-number">7.5.3.2</span> Correlation 5: Papp’s Equation<a href="reservoir-engineering.html#correlation-5-papps-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Papp’s equation offers an empirical estimate of gas density (ρ) based on gas-specific parameters:</p>
+<p><span class="math display">\[ \rho = \frac{Z \cdot M}{T \cdot 10^{6} \cdot P} \]</span></p>
+<p>Where:
+- <span class="math inline">\(\rho\)</span> is the gas density.
+- <span class="math inline">\(Z\)</span> is the gas compressibility factor.
+- <span class="math inline">\(M\)</span> is the molecular weight of the gas.
+- <span class="math inline">\(T\)</span> is the absolute temperature.
+- <span class="math inline">\(P\)</span> is the pressure in psia.</p>
+<p>Here’s Python code to calculate ρ using Papp’s equation:</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb141-1"><a href="reservoir-engineering.html#cb141-1" tabindex="-1"></a><span class="co"># Constants for Papp&#39;s equation</span></span>
+<span id="cb141-2"><a href="reservoir-engineering.html#cb141-2" tabindex="-1"></a>Z <span class="op">=</span> <span class="fl">0.95</span>  <span class="co"># Compressibility factor</span></span>
+<span id="cb141-3"><a href="reservoir-engineering.html#cb141-3" tabindex="-1"></a>M <span class="op">=</span> <span class="fl">28.97</span>  <span class="co"># Molecular weight of nitrogen (for example)</span></span>
+<span id="cb141-4"><a href="reservoir-engineering.html#cb141-4" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">273.15</span>  <span class="co"># Temperature in K</span></span>
+<span id="cb141-5"><a href="reservoir-engineering.html#cb141-5" tabindex="-1"></a>P_psia <span class="op">=</span> <span class="fl">14.5</span>  <span class="co"># Pressure in psia</span></span>
+<span id="cb141-6"><a href="reservoir-engineering.html#cb141-6" tabindex="-1"></a></span>
+<span id="cb141-7"><a href="reservoir-engineering.html#cb141-7" tabindex="-1"></a><span class="co"># Calculate ρ using Papp&#39;s equation</span></span>
+<span id="cb141-8"><a href="reservoir-engineering.html#cb141-8" tabindex="-1"></a>rho <span class="op">=</span> (Z <span class="op">*</span> M) <span class="op">/</span> (T <span class="op">*</span> <span class="dv">10</span><span class="op">**</span><span class="dv">6</span> <span class="op">*</span> P_psia)</span>
+<span id="cb141-9"><a href="reservoir-engineering.html#cb141-9" tabindex="-1"></a></span>
+<span id="cb141-10"><a href="reservoir-engineering.html#cb141-10" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Gas Density (ρ) using Papp&#39;s Equation: </span><span class="sc">{</span>rho<span class="sc">}</span><span class="ss"> g/L&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="isothermal-gas-compressibility" class="section level3 hasAnchor" number="7.5.4">
+<h3><span class="header-section-number">7.5.4</span> Isothermal Gas Compressibility<a href="reservoir-engineering.html#isothermal-gas-compressibility" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Isothermal compressibility is defined as change in volume with pressure for gas under isothermal condition.</p>
+<p><span class="math display" id="eq:compress">\[\begin{equation}
+    \tag{7.5}
+    V = znR&#39;T/P  \\
+    or  \\ V = constant * z/P
+\end{equation}\]</span></p>
+<p>Mattar, Brar, and Aziz developed an analytical expression for calculating pseudo-reduced compressibility.</p>
+<p><img src="./images/isothermal-compressibility_1.JPG" /></p>
+<p>By taking the derivative of equation of state developed by Dranchuck and Abou-Kassem developed the following equation.
+<img src="./images/isothermal-compressibility_2.JPG" /></p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb142-1"><a href="reservoir-engineering.html#cb142-1" tabindex="-1"></a><span class="co"># code for Isothermal Gas Compressibility using Dranchuck and Abou-Kassem equation</span></span>
+<span id="cb142-2"><a href="reservoir-engineering.html#cb142-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb142-3"><a href="reservoir-engineering.html#cb142-3" tabindex="-1"></a></span>
+<span id="cb142-4"><a href="reservoir-engineering.html#cb142-4" tabindex="-1"></a>a1 <span class="op">=</span> <span class="fl">0.3265</span><span class="op">;</span> a2 <span class="op">=</span> <span class="op">-</span><span class="fl">1.0700</span><span class="op">;</span> a3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5339</span><span class="op">;</span> a4 <span class="op">=</span> <span class="fl">0.01569</span><span class="op">;</span> a5 <span class="op">=</span> <span class="op">-</span><span class="fl">0.05165</span><span class="op">;</span> a6 <span class="op">=</span> <span class="fl">0.5475</span></span>
+<span id="cb142-5"><a href="reservoir-engineering.html#cb142-5" tabindex="-1"></a>a7 <span class="op">=</span> <span class="op">-</span><span class="fl">0.7361</span><span class="op">;</span> a8 <span class="op">=</span> <span class="fl">0.1844</span><span class="op">;</span> a9 <span class="op">=</span> <span class="fl">0.1056</span><span class="op">;</span> a10 <span class="op">=</span> <span class="fl">0.6134</span><span class="op">;</span> a11 <span class="op">=</span> <span class="fl">0.7210</span></span>
+<span id="cb142-6"><a href="reservoir-engineering.html#cb142-6" tabindex="-1"></a></span>
+<span id="cb142-7"><a href="reservoir-engineering.html#cb142-7" tabindex="-1"></a><span class="kw">def</span> mattar(T_pr, P_pr, rho_pr, z, P_pc_corr):</span>
+<span id="cb142-8"><a href="reservoir-engineering.html#cb142-8" tabindex="-1"></a>    do <span class="op">=</span> ((a1 <span class="op">+</span> (a2<span class="op">/</span>T_pr) <span class="op">+</span> (a3<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">3</span>) <span class="op">+</span>(a4<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">4</span>) <span class="op">+</span> (a5<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">5</span>)) <span class="op">*</span> rho_pr) <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb142-9"><a href="reservoir-engineering.html#cb142-9" tabindex="-1"></a>      (<span class="dv">2</span> <span class="op">*</span> ((a6 <span class="op">+</span> (a7<span class="op">/</span>T_pr) <span class="op">+</span> (a8<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">2</span>))) <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> <span class="op">\</span></span>
+<span id="cb142-10"><a href="reservoir-engineering.html#cb142-10" tabindex="-1"></a>      (<span class="dv">5</span> <span class="op">*</span> a9 <span class="op">*</span> (((a7<span class="op">/</span>T_pr) <span class="op">+</span> (a8<span class="op">/</span>T_pr<span class="op">**</span><span class="dv">2</span>))) <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">4</span>) <span class="op">+</span> (<span class="dv">1</span> <span class="op">+</span> (a11 <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">2</span>) <span class="op">-</span> (a11 <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>) <span class="op">\</span></span>
+<span id="cb142-11"><a href="reservoir-engineering.html#cb142-11" tabindex="-1"></a>      <span class="op">*</span> ((<span class="dv">2</span> <span class="op">*</span> a10 <span class="op">*</span> rho_pr <span class="op">/</span> T_pr<span class="op">**</span><span class="dv">3</span>)<span class="op">*</span>np.exp(<span class="op">-</span>a11 <span class="op">*</span> rho_pr<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb142-12"><a href="reservoir-engineering.html#cb142-12" tabindex="-1"></a></span>
+<span id="cb142-13"><a href="reservoir-engineering.html#cb142-13" tabindex="-1"></a>    c_pr_analytical <span class="op">=</span> (<span class="dv">1</span> <span class="op">/</span> P_pr) <span class="op">-</span> ((<span class="fl">0.27</span> <span class="op">/</span> (z<span class="op">**</span><span class="dv">2</span> <span class="op">*</span> T_pr)) <span class="op">*</span> (do <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> ((rho_pr <span class="op">/</span> z) <span class="op">*</span> do))))</span>
+<span id="cb142-14"><a href="reservoir-engineering.html#cb142-14" tabindex="-1"></a>    cgas_analytical <span class="op">=</span> c_pr_analytical <span class="op">/</span> P_pc_corr</span>
+<span id="cb142-15"><a href="reservoir-engineering.html#cb142-15" tabindex="-1"></a>    <span class="cf">return</span>(cgas_analytical)</span>
+<span id="cb142-16"><a href="reservoir-engineering.html#cb142-16" tabindex="-1"></a></span>
+<span id="cb142-17"><a href="reservoir-engineering.html#cb142-17" tabindex="-1"></a><span class="bu">print</span>(mattar(<span class="fl">1.44</span>, <span class="fl">7.08</span>, <span class="fl">0.80</span>, <span class="fl">0.91</span>, <span class="dv">636</span>))</span>
+<span id="cb142-18"><a href="reservoir-engineering.html#cb142-18" tabindex="-1"></a><span class="fl">0.00021157987661567598</span></span></code></pre></div>
+</div>
+<div id="gas-formation-volume-factor" class="section level3 hasAnchor" number="7.5.5">
+<h3><span class="header-section-number">7.5.5</span> Gas formation volume factor<a href="reservoir-engineering.html#gas-formation-volume-factor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ideal-gas-law" class="section level4 hasAnchor" number="7.5.5.1">
+<h4><span class="header-section-number">7.5.5.1</span> Ideal Gas Law<a href="reservoir-engineering.html#ideal-gas-law" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The ideal gas law offers a simple estimate of the gas formation volume factor (Bg) assuming ideal gas behavior:</p>
+<p><span class="math display">\[ Bg = \frac{1}{Z} \]</span></p>
+<p>Where:
+- <span class="math inline">\(Bg\)</span> is the gas formation volume factor.
+- <span class="math inline">\(Z\)</span> is the gas compressibility factor.</p>
+<p>Here’s Python code to calculate Bg using the ideal gas law:</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb143-1"><a href="reservoir-engineering.html#cb143-1" tabindex="-1"></a><span class="co"># Constants for ideal gas law</span></span>
+<span id="cb143-2"><a href="reservoir-engineering.html#cb143-2" tabindex="-1"></a>Z <span class="op">=</span> <span class="fl">0.95</span>  <span class="co"># Compressibility factor</span></span>
+<span id="cb143-3"><a href="reservoir-engineering.html#cb143-3" tabindex="-1"></a></span>
+<span id="cb143-4"><a href="reservoir-engineering.html#cb143-4" tabindex="-1"></a><span class="co"># Calculate Bg using the ideal gas law</span></span>
+<span id="cb143-5"><a href="reservoir-engineering.html#cb143-5" tabindex="-1"></a>Bg <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> Z</span>
+<span id="cb143-6"><a href="reservoir-engineering.html#cb143-6" tabindex="-1"></a></span>
+<span id="cb143-7"><a href="reservoir-engineering.html#cb143-7" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Estimated Gas Formation Volume Factor (Bg) using Ideal Gas Law: </span><span class="sc">{</span>Bg<span class="sc">}</span><span class="ss"> RB/STB&quot;</span>)</span></code></pre></div>
+</div>
+<div id="real-gas-law-1" class="section level4 hasAnchor" number="7.5.5.2">
+<h4><span class="header-section-number">7.5.5.2</span> Real Gas Law<a href="reservoir-engineering.html#real-gas-law-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Gas formation volume factor relates the volume of gas in the reservoir to the volume of gas on the surface at standard conditions
+so, Bg can be written as Bg = 0.02829 zT/p in ft3/scf = 0.00504 zT/P bbl/scf.</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb144-1"><a href="reservoir-engineering.html#cb144-1" tabindex="-1"></a>z<span class="op">=</span> <span class="fl">0.91</span></span>
+<span id="cb144-2"><a href="reservoir-engineering.html#cb144-2" tabindex="-1"></a>P <span class="op">=</span> <span class="dv">3250</span> <span class="co"># psia</span></span>
+<span id="cb144-3"><a href="reservoir-engineering.html#cb144-3" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">213</span> <span class="co"># F</span></span>
+<span id="cb144-4"><a href="reservoir-engineering.html#cb144-4" tabindex="-1"></a></span>
+<span id="cb144-5"><a href="reservoir-engineering.html#cb144-5" tabindex="-1"></a>Bg <span class="op">=</span>  <span class="fl">0.02829</span><span class="op">*</span>z<span class="op">*</span>(T<span class="op">+</span><span class="dv">460</span>)<span class="op">/</span>P</span>
+<span id="cb144-6"><a href="reservoir-engineering.html#cb144-6" tabindex="-1"></a><span class="bu">print</span> (<span class="ss">f&#39;Gas formation volume Factor : </span><span class="sc">{</span>Bg<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb144-7"><a href="reservoir-engineering.html#cb144-7" tabindex="-1"></a>Gas formation volume Factor : <span class="fl">0.005330967600000001</span></span></code></pre></div>
+
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -431,7 +1061,7 @@ two equivalent expressions</p>
         </div>
       </div>
 <a href="introduction-to-numpy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="fundamental-properties-of-gas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="single-phase-gas-flow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
