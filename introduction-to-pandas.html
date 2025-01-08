@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Reservoir Engineering | Applications of Python in Reservoir Engineering</title>
-  <meta name="description" content="6 Reservoir Engineering | Applications of Python in Reservoir Engineering" />
+  <title>5 Introduction to Pandas | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="5 Introduction to Pandas | Applications of Python in Reservoir Engineering" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Reservoir Engineering | Applications of Python in Reservoir Engineering" />
+  <meta property="og:title" content="5 Introduction to Pandas | Applications of Python in Reservoir Engineering" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Reservoir Engineering | Applications of Python in Reservoir Engineering" />
+  <meta name="twitter:title" content="5 Introduction to Pandas | Applications of Python in Reservoir Engineering" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction-to-pandas.html"/>
-<link rel="next" href="properties-of-gas.html"/>
+<link rel="prev" href="introduction-to-numpy.html"/>
+<link rel="next" href="reservoir-engineering.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -370,149 +370,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="reservoir-engineering" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Reservoir Engineering<a href="reservoir-engineering.html#reservoir-engineering" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction-1" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Introduction<a href="reservoir-engineering.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this chapter, we’ll delve into the foundational principles of reservoir engineering, providing you with essential knowledge to understand reservoir behavior, properties, and key terminology. Whether you’re new to reservoir engineering or need a refresher, this chapter will lay the groundwork for your journey into the world of hydrocarbon reservoirs.</p>
-</div>
-<div id="reservoir-characteristics" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Reservoir Characteristics<a href="reservoir-engineering.html#reservoir-characteristics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Flow in porous media is a complex phenomenon and cannot be described as explicitly as flow through pipes or conduits. Unlike in pipes, where dimensions and flow capacity can be easily measured, porous media involve irregular flow paths that require experimental and analytical approaches.</p>
-<div id="key-characteristics" class="section level3 hasAnchor" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Key Characteristics:<a href="reservoir-engineering.html#key-characteristics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol style="list-style-type: decimal">
-<li><strong>Types of fluids</strong> in the reservoir.</li>
-<li><strong>Flow regimes</strong>.</li>
-<li><strong>Reservoir geometry</strong>.</li>
-<li><strong>Number of flowing fluids</strong> in the reservoir.</li>
-</ol>
-</div>
-<div id="types-of-fluids" class="section level3 hasAnchor" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> Types of Fluids<a href="reservoir-engineering.html#types-of-fluids" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Hydrocarbons within a reservoir can exist in different phases, including gas, oil, and water. The phase behavior and properties of these fluids are critical factors that affect reservoir performance. Phase behavior describes how hydrocarbons behave under varying pressure and temperature conditions. Fluid properties, such as density, viscosity, and compressibility, are fundamental to understanding how fluids flow within the reservoir and how they interact with reservoir rock. Additionally, pressure and temperature gradients within the reservoir have significant implications for fluid behavior. Reservoir engineers must grasp these concepts to predict reservoir performance accurately and optimize production strategies.
-The objective of this chapter is to present the mathematical relationships designed to describe flow behavior of reservoir fluids. The mathematical forms of these relationships will vary depending upon characteristics of the reservoir. The primary reservoir characteristics that must be considered include:</p>
-<p>Reservoir fluids are classified into three groups based on the <strong>isothermal compressibility coefficient</strong> (<span class="math inline">\(c\)</span>):</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Incompressible Fluids</strong>:<br />
-Volume or density does not change with pressure.<br />
-<span class="math display">\[
-c = 0
-\]</span></p></li>
-<li><p><strong>Slightly Compressible Fluids</strong>:<br />
-Exhibit small changes in volume or density with pressure:<br />
-<span class="math display">\[
-c = -\frac{1}{V} \frac{\partial V}{\partial p} = \frac{1}{\rho} \frac{\partial \rho}{\partial p}
-\]</span><br />
-Simplifying:<br />
-<span class="math display">\[
-V = V_{ref} \cdot \exp\left(c \cdot (p_{ref} - p)\right)
-\]</span></p></li>
-<li><p><strong>Compressible Fluids</strong>:<br />
-Experience large changes in volume with pressure:<br />
-<span class="math display">\[
-c_g = \frac{1}{p} - \frac{1}{Z} \frac{\partial Z}{\partial p}
-\]</span></p></li>
-</ol>
-<hr />
-</div>
-<div id="flow-regimes" class="section level3 hasAnchor" number="6.2.3">
-<h3><span class="header-section-number">6.2.3</span> Flow Regimes<a href="reservoir-engineering.html#flow-regimes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>There are three main flow regimes that describe fluid flow and reservoir pressure distribution over time:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Steady-State Flow</strong>:<br />
-The pressure at every location in the reservoir remains constant with time.<br />
-<span class="math display">\[
-\frac{\partial p}{\partial t} = 0
-\]</span></p></li>
-<li><p><strong>Unsteady-State Flow (Transient Flow)</strong>:<br />
-The pressure changes with time at any location in the reservoir.<br />
-<span class="math display">\[
-\frac{\partial p}{\partial t} = f(i, t)
-\]</span></p></li>
-<li><p><strong>Pseudosteady-State Flow (Semisteady-State)</strong>:<br />
-The pressure declines linearly with time at all points in the reservoir.<br />
-<span class="math display">\[
-\frac{\partial p}{\partial t} = \text{constant}
-\]</span></p></li>
-</ol>
-<hr />
-</div>
-<div id="reservoir-geometry" class="section level3 hasAnchor" number="6.2.4">
-<h3><span class="header-section-number">6.2.4</span> Reservoir Geometry<a href="reservoir-engineering.html#reservoir-geometry" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The reservoir’s geometry affects flow behavior. Common geometries include:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Radial Flow</strong>:<br />
-Fluids flow radially towards or away from a well.
-<img src="images/radial_flow.png" width="477" /></p></li>
-<li><p><strong>Linear Flow</strong>:<br />
-Fluids flow in parallel, straight paths, typically observed near fractures.<br />
-<img src="#" alt="Linear Flow Diagram" /></p></li>
-<li><p><strong>Spherical and Hemispherical Flow</strong>:<br />
-Occurs near partially penetrating wells or in regions with localized completions.</p></li>
-</ol>
-</div>
-<div id="number-of-flowing-fluids" class="section level3 hasAnchor" number="6.2.5">
-<h3><span class="header-section-number">6.2.5</span> Number of Flowing Fluids<a href="reservoir-engineering.html#number-of-flowing-fluids" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>pressure behavior of a reservoir depends upon the number of mobile fluids in the reservoir. There are generally three cases of flowing system:
-1. single-phase flow (oil, water, or gas);
-2. two-phase flow (oil water, oil gas, or gas water);
-3. three-phase flow (oil, water, and gas).</p>
-</div>
-</div>
-<div id="reservoir-rock" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Reservoir Rock<a href="reservoir-engineering.html#reservoir-rock" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Reservoir rock forms the foundation of hydrocarbon reservoirs and plays a crucial role in fluid storage and movement. Different rock types, such as sandstone and limestone, exhibit varying levels of porosity and permeability, which determine their ability to store and transmit fluids. Porosity refers to the volume of pore space within the rock, while permeability measures the rock’s ability to allow fluids to flow through it. Understanding these properties is essential for reservoir engineers, as they impact reservoir behavior and influence decisions regarding drilling, production strategies, and reservoir management.</p>
-</div>
-<div id="reservoir-drive-mechanisms" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Reservoir Drive Mechanisms<a href="reservoir-engineering.html#reservoir-drive-mechanisms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Hydrocarbons within a reservoir are typically under pressure, and various mechanisms drive their movement towards production wells. We’ll cover the primary drive mechanisms:</p>
-<div id="natural-gas-drive" class="section level3 hasAnchor" number="6.4.1">
-<h3><span class="header-section-number">6.4.1</span> Natural Gas Drive<a href="reservoir-engineering.html#natural-gas-drive" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In reservoirs primarily driven by natural gas expansion, the energy released as gas expands drives hydrocarbons towards production wells. This mechanism is common in gas reservoirs and provides a natural means of pushing hydrocarbons to the surface. Understanding how natural gas drive works, including the impact of reservoir pressure and gas properties, is crucial for reservoir engineers when designing production strategies and estimating recovery rates.</p>
-</div>
-<div id="water-drive" class="section level3 hasAnchor" number="6.4.2">
-<h3><span class="header-section-number">6.4.2</span> Water Drive<a href="reservoir-engineering.html#water-drive" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Water drive is a prevalent mechanism in many reservoirs, especially as hydrocarbons are produced and reservoir pressure decreases. In water drive systems, water influx displaces hydrocarbons towards production wells. Engineers must analyze the behavior of water and hydrocarbons in reservoirs to optimize water flooding operations and manage water production effectively. This understanding is vital for maximizing hydrocarbon recovery in water drive reservoirs.</p>
-</div>
-<div id="other-drive-mechanisms" class="section level3 hasAnchor" number="6.4.3">
-<h3><span class="header-section-number">6.4.3</span> Other Drive Mechanisms<a href="reservoir-engineering.html#other-drive-mechanisms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Beyond natural gas and water drives, various other mechanisms, such as gravity drainage and compaction drive, can influence reservoir behavior. These mechanisms may be applicable in specific geological and reservoir conditions. Reservoir engineers need to be aware of these alternative drive mechanisms and their implications for reservoir performance and production strategies.</p>
-</div>
-</div>
-<div id="reservoir-types" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Reservoir Types<a href="reservoir-engineering.html#reservoir-types" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Reservoirs come in various types and configurations, each with its unique characteristics. We’ll explore:</p>
-<div id="oil-reservoirs" class="section level3 hasAnchor" number="6.5.1">
-<h3><span class="header-section-number">6.5.1</span> Oil Reservoirs<a href="reservoir-engineering.html#oil-reservoirs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Oil reservoirs primarily contain liquid hydrocarbons. These reservoirs come in various classifications, including conventional and unconventional. Conventional oil reservoirs are typically found in porous rock formations and are easier to produce. Unconventional oil reservoirs, such as shale oil, present unique challenges due to their complex geological characteristics. Reservoir engineers working on oil reservoirs must understand the properties and behavior of oil and design production strategies to optimize recovery.</p>
-</div>
-<div id="gas-reservoirs" class="section level3 hasAnchor" number="6.5.2">
-<h3><span class="header-section-number">6.5.2</span> Gas Reservoirs<a href="reservoir-engineering.html#gas-reservoirs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Gas reservoirs contain primarily gaseous hydrocarbons, such as natural gas. Understanding gas reservoir behavior, including phase behavior and the impact of reservoir pressure and temperature, is essential for efficiently producing gas. Reservoir engineers working with gas reservoirs must consider factors like gas compression and transportation to ensure successful production and delivery to consumers.</p>
-</div>
-<div id="oil-and-gas-reservoirs" class="section level3 hasAnchor" number="6.5.3">
-<h3><span class="header-section-number">6.5.3</span> Oil and Gas Reservoirs<a href="reservoir-engineering.html#oil-and-gas-reservoirs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Some reservoirs contain both oil and gas phases, often in varying proportions. These mixed-phase reservoirs require specialized approaches to production and reservoir management. Reservoir engineers need to develop strategies that account for the distinct characteristics of oil and gas within the reservoir to optimize recovery.</p>
-</div>
-</div>
-<div id="reservoir-evaluation" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> Reservoir Evaluation<a href="reservoir-engineering.html#reservoir-evaluation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Reservoir evaluation involves assessing the potential and performance of a reservoir. Reservoir engineers employ various techniques, including well testing, reservoir simulation, and data analysis, to understand reservoir behavior, estimate recoverable reserves, and design production strategies. Well testing provides real-time data on reservoir performance, while reservoir simulation uses mathematical models to predict future behavior. Data analysis involves interpreting historical production data and incorporating it into reservoir models. Accurate reservoir evaluation is crucial for making informed decisions regarding drilling, production, and reservoir management.</p>
-</div>
-<div id="chapter-summary-1" class="section level2 hasAnchor" number="6.7">
-<h2><span class="header-section-number">6.7</span> Chapter Summary<a href="reservoir-engineering.html#chapter-summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This chapter provides a comprehensive introduction to the key concepts of reservoir engineering, equipping readers with foundational knowledge that will be essential for their journey into the field of hydrocarbon reservoirs.</p>
+<div id="introduction-to-pandas" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Introduction to Pandas<a href="introduction-to-pandas.html#introduction-to-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction-to-pandas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="properties-of-gas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-to-numpy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reservoir-engineering.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
