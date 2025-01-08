@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>13 Well Testing | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="13 Well Testing | Applications of Python in Reservoir Engineering" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="13 Well Testing | Applications of Python in Reservoir Engineering" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="13 Well Testing | Applications of Python in Reservoir Engineering" />
+  
+  
+  
+
+<meta name="author" content="Pramod Azad" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="volumetrics.html"/>
+<link rel="next" href="water-influx.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html"><i class="fa fa-check"></i><b>2</b> Introduction to Python for Reservoir Engineering</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#why-python"><i class="fa fa-check"></i><b>2.1</b> Why Python?</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#versatility"><i class="fa fa-check"></i><b>2.2</b> Versatility</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#readability-and-learnability"><i class="fa fa-check"></i><b>2.3</b> Readability and Learnability</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#open-source-community"><i class="fa fa-check"></i><b>2.4</b> Open Source Community</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#extensive-libraries"><i class="fa fa-check"></i><b>2.5</b> Extensive Libraries</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#conclusion-pythons-role-in-reservoir-engineering"><i class="fa fa-check"></i><b>2.6</b> Conclusion: Python’s Role in Reservoir Engineering</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.7</b> Getting Started with Python</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#introduction"><i class="fa fa-check"></i><b>2.7.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.7.2" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#installing-python"><i class="fa fa-check"></i><b>2.7.2</b> Installing Python</a></li>
+<li class="chapter" data-level="2.7.3" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#choosing-a-python-distribution"><i class="fa fa-check"></i><b>2.7.3</b> Choosing a Python Distribution</a></li>
+<li class="chapter" data-level="2.7.4" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#downloading-anaconda"><i class="fa fa-check"></i><b>2.7.4</b> Downloading Anaconda</a></li>
+<li class="chapter" data-level="2.7.5" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#verifying-the-installation"><i class="fa fa-check"></i><b>2.7.5</b> Verifying the Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#setting-up-your-python-environment"><i class="fa fa-check"></i><b>2.8</b> Setting Up Your Python Environment</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#manual-virtual-environment"><i class="fa fa-check"></i><b>2.8.1</b> Manual Virtual Environment</a></li>
+<li class="chapter" data-level="2.8.2" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#creating-a-virtual-environment-with-anaconda"><i class="fa fa-check"></i><b>2.8.2</b> Creating a Virtual Environment with Anaconda</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="python-basics.html"><a href="python-basics.html"><i class="fa fa-check"></i><b>3</b> Python Basics</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="python-basics.html"><a href="python-basics.html#datatypes"><i class="fa fa-check"></i><b>3.0.1</b> Datatypes</a></li>
+<li class="chapter" data-level="3.1" data-path="python-basics.html"><a href="python-basics.html#lists"><i class="fa fa-check"></i><b>3.1</b> Lists</a></li>
+<li class="chapter" data-level="3.2" data-path="python-basics.html"><a href="python-basics.html#list-comprehensions"><i class="fa fa-check"></i><b>3.2</b> List comprehensions</a></li>
+<li class="chapter" data-level="3.3" data-path="python-basics.html"><a href="python-basics.html#tuples"><i class="fa fa-check"></i><b>3.3</b> Tuples</a></li>
+<li class="chapter" data-level="3.4" data-path="python-basics.html"><a href="python-basics.html#dictionaries"><i class="fa fa-check"></i><b>3.4</b> Dictionaries</a></li>
+<li class="chapter" data-level="3.5" data-path="python-basics.html"><a href="python-basics.html#set"><i class="fa fa-check"></i><b>3.5</b> Set</a></li>
+<li class="chapter" data-level="3.6" data-path="python-basics.html"><a href="python-basics.html#control-flow-and-functions"><i class="fa fa-check"></i><b>3.6</b> Control Flow and Functions</a></li>
+<li class="chapter" data-level="3.7" data-path="python-basics.html"><a href="python-basics.html#python-libraries-for-reservoir-engineering"><i class="fa fa-check"></i><b>3.7</b> Python Libraries for Reservoir Engineering</a></li>
+<li class="chapter" data-level="3.8" data-path="python-basics.html"><a href="python-basics.html#hands-on-practice"><i class="fa fa-check"></i><b>3.8</b> Hands-On Practice</a></li>
+<li class="chapter" data-level="3.9" data-path="python-basics.html"><a href="python-basics.html#chapter-summary"><i class="fa fa-check"></i><b>3.9</b> Chapter Summary</a></li>
+<li class="chapter" data-level="3.10" data-path="python-basics.html"><a href="python-basics.html#further-reading"><i class="fa fa-check"></i><b>3.10</b> Further Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>4</b> Simple Mathematics</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>4.1</b> Comparisons</a></li>
+<li class="chapter" data-level="4.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>4.2</b> Conditionals</a></li>
+<li class="chapter" data-level="4.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>4.3</b> if, elif, and else</a></li>
+<li class="chapter" data-level="4.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>4.4</b> Boolean Operators</a></li>
+<li class="chapter" data-level="4.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>4.5</b> Loops</a></li>
+<li class="chapter" data-level="4.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>4.6</b> For loops</a></li>
+<li class="chapter" data-level="4.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>4.7</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>4.7.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="4.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>4.7.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>5</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>5.1</b> Creating a module</a></li>
+<li class="chapter" data-level="5.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>5.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="5.3" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#functions"><i class="fa fa-check"></i><b>5.3</b> Functions</a></li>
+<li class="chapter" data-level="5.4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#lambda-function"><i class="fa fa-check"></i><b>5.4</b> Lambda function</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>6</b> Introduction to Numpy</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>6.1</b> Why is NumPy Fast?</a></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#n-dimensional-arrays"><i class="fa fa-check"></i><b>6.2</b> N-Dimensional Arrays</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#creating-ndarrays"><i class="fa fa-check"></i><b>6.2.1</b> Creating ndarrays</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#understanding-the-shape-and-dimensions-of-arrays"><i class="fa fa-check"></i><b>6.2.2</b> Understanding the Shape and Dimensions of Arrays</a></li>
+<li class="chapter" data-level="6.2.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#manipulating-and-operating-on-ndarrays"><i class="fa fa-check"></i><b>6.2.3</b> Manipulating and Operating on ndarrays</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#universal-functions-ufuncs"><i class="fa fa-check"></i><b>6.3</b> Universal Functions (ufuncs)</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#basic-arithmetic-operations"><i class="fa fa-check"></i><b>6.3.1</b> Basic Arithmetic Operations</a></li>
+<li class="chapter" data-level="6.3.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#mathematical-functions"><i class="fa fa-check"></i><b>6.3.2</b> Mathematical Functions</a></li>
+<li class="chapter" data-level="6.3.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#aggregation-functions-1"><i class="fa fa-check"></i><b>6.3.3</b> Aggregation Functions</a></li>
+<li class="chapter" data-level="6.3.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#broadcasting-for-operations-on-arrays-of-different-shapes"><i class="fa fa-check"></i><b>6.3.4</b> Broadcasting for Operations on Arrays of Different Shapes</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#array-manipulation"><i class="fa fa-check"></i><b>6.4</b> Array Manipulation</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#reshaping-arrays"><i class="fa fa-check"></i><b>6.4.1</b> Reshaping Arrays</a></li>
+<li class="chapter" data-level="6.4.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#concatenating-arrays"><i class="fa fa-check"></i><b>6.4.2</b> Concatenating Arrays</a></li>
+<li class="chapter" data-level="6.4.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#splitting-arrays"><i class="fa fa-check"></i><b>6.4.3</b> Splitting Arrays</a></li>
+<li class="chapter" data-level="6.4.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#indexing-and-slicing-1"><i class="fa fa-check"></i><b>6.4.4</b> Indexing and Slicing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html"><i class="fa fa-check"></i><b>7</b> Reservoir Engineering</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#introduction-1"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-characteristics"><i class="fa fa-check"></i><b>7.2</b> Reservoir Characteristics</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#key-characteristics"><i class="fa fa-check"></i><b>7.2.1</b> Key Characteristics:</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#types-of-fluids"><i class="fa fa-check"></i><b>7.2.2</b> Types of Fluids</a></li>
+<li class="chapter" data-level="7.2.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#flow-regimes"><i class="fa fa-check"></i><b>7.2.3</b> Flow Regimes</a></li>
+<li class="chapter" data-level="7.2.4" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-geometry"><i class="fa fa-check"></i><b>7.2.4</b> Reservoir Geometry</a></li>
+<li class="chapter" data-level="7.2.5" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#number-of-flowing-fluids"><i class="fa fa-check"></i><b>7.2.5</b> Number of Flowing Fluids</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-rock"><i class="fa fa-check"></i><b>7.3</b> Reservoir Rock</a></li>
+<li class="chapter" data-level="7.4" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-drive-mechanisms"><i class="fa fa-check"></i><b>7.4</b> Reservoir Drive Mechanisms</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#natural-gas-drive"><i class="fa fa-check"></i><b>7.4.1</b> Natural Gas Drive</a></li>
+<li class="chapter" data-level="7.4.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#water-drive"><i class="fa fa-check"></i><b>7.4.2</b> Water Drive</a></li>
+<li class="chapter" data-level="7.4.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#other-drive-mechanisms"><i class="fa fa-check"></i><b>7.4.3</b> Other Drive Mechanisms</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-types"><i class="fa fa-check"></i><b>7.5</b> Reservoir Types</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#oil-reservoirs"><i class="fa fa-check"></i><b>7.5.1</b> Oil Reservoirs</a></li>
+<li class="chapter" data-level="7.5.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#gas-reservoirs"><i class="fa fa-check"></i><b>7.5.2</b> Gas Reservoirs</a></li>
+<li class="chapter" data-level="7.5.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#oil-and-gas-reservoirs"><i class="fa fa-check"></i><b>7.5.3</b> Oil and Gas Reservoirs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-evaluation"><i class="fa fa-check"></i><b>7.6</b> Reservoir Evaluation</a></li>
+<li class="chapter" data-level="7.7" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#chapter-summary-1"><i class="fa fa-check"></i><b>7.7</b> Chapter Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html"><i class="fa fa-check"></i><b>8</b> Fundamental Properties of Gas</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-behavior"><i class="fa fa-check"></i><b>8.1</b> Gas Behavior</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#ideal-gas-law"><i class="fa fa-check"></i><b>8.1.1</b> Ideal Gas Law</a></li>
+<li class="chapter" data-level="8.1.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#real-gas-behavior"><i class="fa fa-check"></i><b>8.1.2</b> Real Gas Behavior</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-composition"><i class="fa fa-check"></i><b>8.2</b> Gas Composition</a></li>
+<li class="chapter" data-level="8.3" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#phase-behavior"><i class="fa fa-check"></i><b>8.3</b> Phase Behavior</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#phase-diagrams"><i class="fa fa-check"></i><b>8.3.1</b> Phase Diagrams</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#review-of-gas-properties"><i class="fa fa-check"></i><b>8.4</b> Review of Gas Properties</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#real-gas-law"><i class="fa fa-check"></i><b>8.4.1</b> Real Gas law</a></li>
+<li class="chapter" data-level="8.4.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-z-factor"><i class="fa fa-check"></i><b>8.4.2</b> Gas z Factor</a></li>
+<li class="chapter" data-level="8.4.3" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-density"><i class="fa fa-check"></i><b>8.4.3</b> Gas Density</a></li>
+<li class="chapter" data-level="8.4.4" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>8.4.4</b> Isothermal Gas Compressibility</a></li>
+<li class="chapter" data-level="8.4.5" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>8.4.5</b> Gas formation volume factor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>9</b> Properties of Oil</a></li>
+<li class="chapter" data-level="10" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>10</b> Rock Properties</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>10.1</b> Surface and Interfacial Tension</a></li>
+<li class="chapter" data-level="10.2" data-path="rock-properties.html"><a href="rock-properties.html#capillary-pressure"><i class="fa fa-check"></i><b>10.2</b> Capillary Pressure</a></li>
+<li class="chapter" data-level="10.3" data-path="rock-properties.html"><a href="rock-properties.html#leverett-j-function"><i class="fa fa-check"></i><b>10.3</b> Leverett J-Function</a></li>
+<li class="chapter" data-level="10.4" data-path="rock-properties.html"><a href="rock-properties.html#permeability"><i class="fa fa-check"></i><b>10.4</b> Permeability</a></li>
+<li class="chapter" data-level="10.5" data-path="rock-properties.html"><a href="rock-properties.html#reservoir-heterogeneity"><i class="fa fa-check"></i><b>10.5</b> Reservoir Heterogeneity</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="rock-properties.html"><a href="rock-properties.html#vertical-heterogeneity"><i class="fa fa-check"></i><b>10.5.1</b> Vertical Heterogeneity</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="relative-permeability.html"><a href="relative-permeability.html"><i class="fa fa-check"></i><b>11</b> Relative Permeability</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="relative-permeability.html"><a href="relative-permeability.html#three-phase-relative-permeability"><i class="fa fa-check"></i><b>11.1</b> Three-phase relative permeability</a></li>
+<li class="chapter" data-level="11.2" data-path="relative-permeability.html"><a href="relative-permeability.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>11.2</b> Simplified Fractional Flow Equation</a></li>
+<li class="chapter" data-level="11.3" data-path="relative-permeability.html"><a href="relative-permeability.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>11.3</b> Buckley-Leverett Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>12</b> Volumetrics</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>12.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="well-testing.html"><a href="well-testing.html"><i class="fa fa-check"></i><b>13</b> Well Testing</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="well-testing.html"><a href="well-testing.html#fluid-flow-equations"><i class="fa fa-check"></i><b>13.1</b> Fluid Flow Equations</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="well-testing.html"><a href="well-testing.html#darcys-law"><i class="fa fa-check"></i><b>13.1.1</b> Darcy’s Law</a></li>
+<li class="chapter" data-level="13.1.2" data-path="well-testing.html"><a href="well-testing.html#linear-flow-of-slightly-compressible-fluids"><i class="fa fa-check"></i><b>13.1.2</b> Linear Flow of Slightly Compressible Fluids</a></li>
+<li class="chapter" data-level="13.1.3" data-path="well-testing.html"><a href="well-testing.html#linear-flow-of-compressible-fluids-gases"><i class="fa fa-check"></i><b>13.1.3</b> Linear Flow of Compressible Fluids (Gases)</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="well-testing.html"><a href="well-testing.html#unsteady-state-flow"><i class="fa fa-check"></i><b>13.2</b> Unsteady-State Flow</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="well-testing.html"><a href="well-testing.html#solutions-for-unsteady-state-flow"><i class="fa fa-check"></i><b>13.2.1</b> Solutions for Unsteady-State Flow</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="well-testing.html"><a href="well-testing.html#basic-transient-flow-equation"><i class="fa fa-check"></i><b>13.3</b> Basic Transient Flow Equation</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="well-testing.html"><a href="well-testing.html#derivation-of-flow-equation"><i class="fa fa-check"></i><b>13.3.1</b> Derivation of flow equation</a></li>
+<li class="chapter" data-level="13.3.2" data-path="well-testing.html"><a href="well-testing.html#radial-flow-of-slightly-compressible-fluids"><i class="fa fa-check"></i><b>13.3.2</b> Radial Flow of Slightly Compressible Fluids</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="water-influx.html"><a href="water-influx.html"><i class="fa fa-check"></i><b>14</b> Water Influx</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="water-influx.html"><a href="water-influx.html#classification-of-aquifers"><i class="fa fa-check"></i><b>14.1</b> Classification of Aquifers</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="water-influx.html"><a href="water-influx.html#degree-of-pressure-maintenance"><i class="fa fa-check"></i><b>14.1.1</b> Degree of Pressure Maintenance</a></li>
+<li class="chapter" data-level="14.1.2" data-path="water-influx.html"><a href="water-influx.html#outer-boundary-conditions"><i class="fa fa-check"></i><b>14.1.2</b> Outer Boundary Conditions</a></li>
+<li class="chapter" data-level="14.1.3" data-path="water-influx.html"><a href="water-influx.html#flow-regimes-1"><i class="fa fa-check"></i><b>14.1.3</b> Flow Regimes</a></li>
+<li class="chapter" data-level="14.1.4" data-path="water-influx.html"><a href="water-influx.html#flow-geometries"><i class="fa fa-check"></i><b>14.1.4</b> Flow Geometries</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="water-influx.html"><a href="water-influx.html#recognition-of-natural-water-influx"><i class="fa fa-check"></i><b>14.2</b> Recognition of Natural Water Influx</a></li>
+<li class="chapter" data-level="14.3" data-path="water-influx.html"><a href="water-influx.html#water-influx-models"><i class="fa fa-check"></i><b>14.3</b> Water Influx Models</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="water-influx.html"><a href="water-influx.html#the-pot-aquifer-model"><i class="fa fa-check"></i><b>14.3.1</b> The Pot Aquifer Model</a></li>
+<li class="chapter" data-level="14.3.2" data-path="water-influx.html"><a href="water-influx.html#schilthuis-steady-state-model"><i class="fa fa-check"></i><b>14.3.2</b> Schilthuis Steady-State Model</a></li>
+<li class="chapter" data-level="14.3.3" data-path="water-influx.html"><a href="water-influx.html#example-calculation"><i class="fa fa-check"></i><b>14.3.3</b> Example Calculation</a></li>
+<li class="chapter" data-level="14.3.4" data-path="water-influx.html"><a href="water-influx.html#python-code-schilthuis-steady-state-model"><i class="fa fa-check"></i><b>14.3.4</b> Python Code: Schilthuis Steady-State Model</a></li>
+<li class="chapter" data-level="14.3.5" data-path="water-influx.html"><a href="water-influx.html#hurst-modified-steady-state-model"><i class="fa fa-check"></i><b>14.3.5</b> Hurst Modified Steady-State Model</a></li>
+<li class="chapter" data-level="14.3.6" data-path="water-influx.html"><a href="water-influx.html#example-calculation-1"><i class="fa fa-check"></i><b>14.3.6</b> Example Calculation</a></li>
+<li class="chapter" data-level="14.3.7" data-path="water-influx.html"><a href="water-influx.html#python-code-hurst-modified-steady-state-model"><i class="fa fa-check"></i><b>14.3.7</b> Python Code: Hurst Modified Steady-State Model</a></li>
+<li class="chapter" data-level="14.3.8" data-path="water-influx.html"><a href="water-influx.html#van-everdingen-and-hurst-unsteady-state-model"><i class="fa fa-check"></i><b>14.3.8</b> van Everdingen and Hurst Unsteady-State Model</a></li>
+<li class="chapter" data-level="14.3.9" data-path="water-influx.html"><a href="water-influx.html#dimensionless-water-influx"><i class="fa fa-check"></i><b>14.3.9</b> Dimensionless Water Influx</a></li>
+<li class="chapter" data-level="14.3.10" data-path="water-influx.html"><a href="water-influx.html#carter-and-tracy-water-influx-model"><i class="fa fa-check"></i><b>14.3.10</b> Carter and Tracy Water Influx Model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="material-balance.html"><a href="material-balance.html"><i class="fa fa-check"></i><b>15</b> Material Balance</a></li>
+<li class="chapter" data-level="16" data-path="fractional-flow.html"><a href="fractional-flow.html"><i class="fa fa-check"></i><b>16</b> Fractional Flow</a></li>
+<li class="chapter" data-level="17" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>17</b> Pattern Floods</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>17.1</b> Recovery Efficiency</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>17.1.1</b> Patterns and Spacing</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>17.2</b> Pattern Recovery</a></li>
+<li class="chapter" data-level="17.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>17.3</b> aa</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>18</b> Gas and Water Coning</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>18.1</b> Coning in Vertical wells</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>18.1.1</b> Meyer-Garder Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>18.2</b> Coning in Horizontal wells</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="working-with-las-files.html"><a href="working-with-las-files.html"><i class="fa fa-check"></i><b>19</b> working with Las files</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#basic-example"><i class="fa fa-check"></i><b>19.1</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="rough.html"><a href="rough.html"><i class="fa fa-check"></i><b>20</b> rough</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applications of Python in Reservoir Engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="well-testing" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">13</span> Well Testing<a href="well-testing.html#well-testing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="fluid-flow-equations" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Fluid Flow Equations<a href="well-testing.html#fluid-flow-equations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Fluid flow equations are used to describe the behavior of fluids in reservoirs. These equations depend on variables such as flow type, fluid type, and reservoir conditions. By combining the <strong>conservation of mass equation</strong>, <strong>Darcy’s law</strong>, and <strong>equations of state</strong>, we derive the necessary flow equations.</p>
+<div id="darcys-law" class="section level3 hasAnchor" number="13.1.1">
+<h3><span class="header-section-number">13.1.1</span> Darcy’s Law<a href="well-testing.html#darcys-law" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Darcy’s law is the fundamental equation of fluid motion in porous media. It states that the velocity of a homogeneous fluid is proportional to the pressure gradient and inversely proportional to fluid viscosity.</p>
+<div id="linear-flow" class="section level4 hasAnchor" number="13.1.1.1">
+<h4><span class="header-section-number">13.1.1.1</span> Linear Flow:<a href="well-testing.html#linear-flow" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><span class="math display">\[
+v = \frac{q}{A} = -\frac{k}{\mu} \frac{\partial p}{\partial x}
+\]</span></p>
+<p>Where:
+- <span class="math inline">\(v\)</span>: Apparent velocity (cm/s)
+- <span class="math inline">\(q\)</span>: Volumetric flow rate (cm³/s)
+- <span class="math inline">\(A\)</span>: Cross-sectional area (cm²)
+- <span class="math inline">\(k\)</span>: Permeability (Darcies)
+- <span class="math inline">\(\mu\)</span>: Viscosity (cP)
+- <span class="math inline">\(\frac{\partial p}{\partial x}\)</span>: Pressure gradient (atm/cm)</p>
+</div>
+<div id="radial-flow" class="section level4 hasAnchor" number="13.1.1.2">
+<h4><span class="header-section-number">13.1.1.2</span> Radial Flow:<a href="well-testing.html#radial-flow" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For radial systems, Darcy’s law is expressed as:
+<span class="math display">\[
+v = \frac{q}{A_r} = \frac{k}{\mu} \frac{\partial p}{\partial r}
+\]</span></p>
+<p>Where:
+- <span class="math inline">\(A_r = 2 \pi r h\)</span>: Cross-sectional area for radial flow (cm²)
+- <span class="math inline">\(r\)</span>: Radial distance (cm)</p>
+</div>
+<div id="steady-state-flow" class="section level4 hasAnchor" number="13.1.1.3">
+<h4><span class="header-section-number">13.1.1.3</span> Steady-State Flow:<a href="well-testing.html#steady-state-flow" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In steady-state conditions, the pressure does not vary with time:
+<span class="math display">\[
+\frac{\partial p}{\partial t} = 0
+\]</span></p>
+<p>For incompressible fluids in a linear system:
+<span class="math display">\[
+q = \frac{k A (p_1 - p_2)}{\mu L}
+\]</span></p>
+<p>In field units:
+<span class="math display">\[
+q = 0.001127 \cdot \frac{k A (p_1 - p_2)}{\mu L}
+\]</span></p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb158-1"><a href="well-testing.html#cb158-1" tabindex="-1"></a><span class="co">### Python Code: Darcy’s Law for Steady-State Flow</span></span>
+<span id="cb158-2"><a href="well-testing.html#cb158-2" tabindex="-1"></a><span class="kw">def</span> darcy_flow_rate(permeability, area, pressure_difference, viscosity, length):</span>
+<span id="cb158-3"><a href="well-testing.html#cb158-3" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb158-4"><a href="well-testing.html#cb158-4" tabindex="-1"></a><span class="co">    Calculate flow rate using Darcy&#39;s law.</span></span>
+<span id="cb158-5"><a href="well-testing.html#cb158-5" tabindex="-1"></a></span>
+<span id="cb158-6"><a href="well-testing.html#cb158-6" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb158-7"><a href="well-testing.html#cb158-7" tabindex="-1"></a><span class="co">        permeability (float): Permeability in md.</span></span>
+<span id="cb158-8"><a href="well-testing.html#cb158-8" tabindex="-1"></a><span class="co">        area (float): Cross-sectional area in ft².</span></span>
+<span id="cb158-9"><a href="well-testing.html#cb158-9" tabindex="-1"></a><span class="co">        pressure_difference (float): Pressure difference in psi.</span></span>
+<span id="cb158-10"><a href="well-testing.html#cb158-10" tabindex="-1"></a><span class="co">        viscosity (float): Fluid viscosity in cp.</span></span>
+<span id="cb158-11"><a href="well-testing.html#cb158-11" tabindex="-1"></a><span class="co">        length (float): Length of the reservoir in ft.</span></span>
+<span id="cb158-12"><a href="well-testing.html#cb158-12" tabindex="-1"></a></span>
+<span id="cb158-13"><a href="well-testing.html#cb158-13" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb158-14"><a href="well-testing.html#cb158-14" tabindex="-1"></a><span class="co">        float: Flow rate in bbl/day.</span></span>
+<span id="cb158-15"><a href="well-testing.html#cb158-15" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb158-16"><a href="well-testing.html#cb158-16" tabindex="-1"></a>    conversion_factor <span class="op">=</span> <span class="fl">0.001127</span>  <span class="co"># Field unit conversion factor for Darcy&#39;s law</span></span>
+<span id="cb158-17"><a href="well-testing.html#cb158-17" tabindex="-1"></a>    <span class="cf">return</span> conversion_factor <span class="op">*</span> permeability <span class="op">*</span> area <span class="op">*</span> pressure_difference <span class="op">/</span> (viscosity <span class="op">*</span> length)</span>
+<span id="cb158-18"><a href="well-testing.html#cb158-18" tabindex="-1"></a></span>
+<span id="cb158-19"><a href="well-testing.html#cb158-19" tabindex="-1"></a><span class="co"># Example Usage</span></span>
+<span id="cb158-20"><a href="well-testing.html#cb158-20" tabindex="-1"></a>permeability <span class="op">=</span> <span class="dv">100</span>  <span class="co"># md</span></span>
+<span id="cb158-21"><a href="well-testing.html#cb158-21" tabindex="-1"></a>area <span class="op">=</span> <span class="dv">20</span> <span class="op">*</span> <span class="dv">300</span>  <span class="co"># Cross-sectional area (ft²)</span></span>
+<span id="cb158-22"><a href="well-testing.html#cb158-22" tabindex="-1"></a>pressure_difference <span class="op">=</span> <span class="dv">2000</span> <span class="op">-</span> <span class="dv">1990</span>  <span class="co"># psi</span></span>
+<span id="cb158-23"><a href="well-testing.html#cb158-23" tabindex="-1"></a>viscosity <span class="op">=</span> <span class="dv">2</span>  <span class="co"># cp</span></span>
+<span id="cb158-24"><a href="well-testing.html#cb158-24" tabindex="-1"></a>length <span class="op">=</span> <span class="dv">2000</span>  <span class="co"># ft</span></span>
+<span id="cb158-25"><a href="well-testing.html#cb158-25" tabindex="-1"></a></span>
+<span id="cb158-26"><a href="well-testing.html#cb158-26" tabindex="-1"></a>flow_rate <span class="op">=</span> darcy_flow_rate(permeability, area, pressure_difference, viscosity, length)</span>
+<span id="cb158-27"><a href="well-testing.html#cb158-27" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Flow Rate: </span><span class="sc">{</span>flow_rate<span class="sc">:.2f}</span><span class="ss"> bbl/day&quot;</span>)</span>
+<span id="cb158-28"><a href="well-testing.html#cb158-28" tabindex="-1"></a>Flow Rate: <span class="fl">1.69</span> bbl<span class="op">/</span>day</span></code></pre></div>
+</div>
+</div>
+<div id="linear-flow-of-slightly-compressible-fluids" class="section level3 hasAnchor" number="13.1.2">
+<h3><span class="header-section-number">13.1.2</span> Linear Flow of Slightly Compressible Fluids<a href="well-testing.html#linear-flow-of-slightly-compressible-fluids" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For slightly compressible fluids, the relationship between pressure and volume is given by:<br />
+<span class="math display">\[
+V = V_{ref} \cdot \exp\left(c \cdot (p_{ref} - p)\right)
+\]</span></p>
+<p>The flow rate, adjusted for compressibility, can be written as:<br />
+<span class="math display">\[
+q = q_{ref} \cdot \left[1 + c \cdot (p_{ref} - p)\right]
+\]</span></p>
+<p>Substituting this into Darcy’s law for linear flow:<br />
+<span class="math display">\[
+q_{ref} = \frac{0.001127 \cdot k \cdot A}{\mu \cdot c \cdot L} \cdot \ln\left(\frac{1 + c \cdot (p_{ref} - p_2)}{1 + c \cdot (p_{ref} - p_1)}\right)
+\]</span></p>
+<p>Where:
+- <span class="math inline">\(q_{ref}\)</span>: Flow rate at reference pressure (bbl/day)<br />
+- <span class="math inline">\(A\)</span>: Cross-sectional area (ft²)<br />
+- <span class="math inline">\(L\)</span>: Reservoir length (ft)<br />
+- <span class="math inline">\(k\)</span>: Permeability (md)<br />
+- <span class="math inline">\(\mu\)</span>: Viscosity (cp)<br />
+- <span class="math inline">\(c\)</span>: Compressibility coefficient (1/psi)<br />
+- <span class="math inline">\(p_1\)</span>: Upstream pressure (psi)<br />
+- <span class="math inline">\(p_2\)</span>: Downstream pressure (psi)<br />
+- <span class="math inline">\(p_{ref}\)</span>: Reference pressure (psi)</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb159-1"><a href="well-testing.html#cb159-1" tabindex="-1"></a><span class="co">### Python Code: Linear Flow of Slightly Compressible Fluids</span></span>
+<span id="cb159-2"><a href="well-testing.html#cb159-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb159-3"><a href="well-testing.html#cb159-3" tabindex="-1"></a></span>
+<span id="cb159-4"><a href="well-testing.html#cb159-4" tabindex="-1"></a><span class="kw">def</span> linear_flow_compressible(q_ref, permeability, area, viscosity, compressibility, length, p1, p2, p_ref):</span>
+<span id="cb159-5"><a href="well-testing.html#cb159-5" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb159-6"><a href="well-testing.html#cb159-6" tabindex="-1"></a><span class="co">    Calculate the flow rate for slightly compressible fluids in a linear system.</span></span>
+<span id="cb159-7"><a href="well-testing.html#cb159-7" tabindex="-1"></a></span>
+<span id="cb159-8"><a href="well-testing.html#cb159-8" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb159-9"><a href="well-testing.html#cb159-9" tabindex="-1"></a><span class="co">        q_ref (float): Flow rate at reference pressure (bbl/day).</span></span>
+<span id="cb159-10"><a href="well-testing.html#cb159-10" tabindex="-1"></a><span class="co">        permeability (float): Permeability in md.</span></span>
+<span id="cb159-11"><a href="well-testing.html#cb159-11" tabindex="-1"></a><span class="co">        area (float): Cross-sectional area in ft².</span></span>
+<span id="cb159-12"><a href="well-testing.html#cb159-12" tabindex="-1"></a><span class="co">        viscosity (float): Fluid viscosity in cp.</span></span>
+<span id="cb159-13"><a href="well-testing.html#cb159-13" tabindex="-1"></a><span class="co">        compressibility (float): Compressibility coefficient (1/psi).</span></span>
+<span id="cb159-14"><a href="well-testing.html#cb159-14" tabindex="-1"></a><span class="co">        length (float): Length of the reservoir in ft.</span></span>
+<span id="cb159-15"><a href="well-testing.html#cb159-15" tabindex="-1"></a><span class="co">        p1 (float): Upstream pressure in psi.</span></span>
+<span id="cb159-16"><a href="well-testing.html#cb159-16" tabindex="-1"></a><span class="co">        p2 (float): Downstream pressure in psi.</span></span>
+<span id="cb159-17"><a href="well-testing.html#cb159-17" tabindex="-1"></a><span class="co">        p_ref (float): Reference pressure in psi.</span></span>
+<span id="cb159-18"><a href="well-testing.html#cb159-18" tabindex="-1"></a></span>
+<span id="cb159-19"><a href="well-testing.html#cb159-19" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb159-20"><a href="well-testing.html#cb159-20" tabindex="-1"></a><span class="co">        float: Flow rate at the given pressures in bbl/day.</span></span>
+<span id="cb159-21"><a href="well-testing.html#cb159-21" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb159-22"><a href="well-testing.html#cb159-22" tabindex="-1"></a>    numerator <span class="op">=</span> <span class="fl">0.001127</span> <span class="op">*</span> permeability <span class="op">*</span> area</span>
+<span id="cb159-23"><a href="well-testing.html#cb159-23" tabindex="-1"></a>    denominator <span class="op">=</span> viscosity <span class="op">*</span> compressibility <span class="op">*</span> length</span>
+<span id="cb159-24"><a href="well-testing.html#cb159-24" tabindex="-1"></a>    ln_term <span class="op">=</span> math.log((<span class="dv">1</span> <span class="op">+</span> compressibility <span class="op">*</span> (p_ref <span class="op">-</span> p2)) <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> compressibility <span class="op">*</span> (p_ref <span class="op">-</span> p1)))</span>
+<span id="cb159-25"><a href="well-testing.html#cb159-25" tabindex="-1"></a>    <span class="cf">return</span> numerator <span class="op">/</span> denominator <span class="op">*</span> ln_term</span>
+<span id="cb159-26"><a href="well-testing.html#cb159-26" tabindex="-1"></a></span>
+<span id="cb159-27"><a href="well-testing.html#cb159-27" tabindex="-1"></a><span class="co"># Example Usage</span></span>
+<span id="cb159-28"><a href="well-testing.html#cb159-28" tabindex="-1"></a>permeability <span class="op">=</span> <span class="dv">100</span>  <span class="co"># md</span></span>
+<span id="cb159-29"><a href="well-testing.html#cb159-29" tabindex="-1"></a>area <span class="op">=</span> <span class="dv">6000</span>  <span class="co"># ft² (20 ft x 300 ft)</span></span>
+<span id="cb159-30"><a href="well-testing.html#cb159-30" tabindex="-1"></a>viscosity <span class="op">=</span> <span class="dv">2</span>  <span class="co"># cp</span></span>
+<span id="cb159-31"><a href="well-testing.html#cb159-31" tabindex="-1"></a>compressibility <span class="op">=</span> <span class="fl">2e-5</span>  <span class="co"># 1/psi</span></span>
+<span id="cb159-32"><a href="well-testing.html#cb159-32" tabindex="-1"></a>length <span class="op">=</span> <span class="dv">2000</span>  <span class="co"># ft</span></span>
+<span id="cb159-33"><a href="well-testing.html#cb159-33" tabindex="-1"></a>p1 <span class="op">=</span> <span class="dv">2000</span>  <span class="co"># psi</span></span>
+<span id="cb159-34"><a href="well-testing.html#cb159-34" tabindex="-1"></a>p2 <span class="op">=</span> <span class="dv">1990</span>  <span class="co"># psi</span></span>
+<span id="cb159-35"><a href="well-testing.html#cb159-35" tabindex="-1"></a>p_ref <span class="op">=</span> <span class="dv">2000</span>  <span class="co"># Reference pressure in psi</span></span>
+<span id="cb159-36"><a href="well-testing.html#cb159-36" tabindex="-1"></a></span>
+<span id="cb159-37"><a href="well-testing.html#cb159-37" tabindex="-1"></a>flow_rate <span class="op">=</span> linear_flow_compressible(</span>
+<span id="cb159-38"><a href="well-testing.html#cb159-38" tabindex="-1"></a>    q_ref<span class="op">=</span><span class="va">None</span>,  <span class="co"># Reference flow rate (not needed here)</span></span>
+<span id="cb159-39"><a href="well-testing.html#cb159-39" tabindex="-1"></a>    permeability<span class="op">=</span>permeability,</span>
+<span id="cb159-40"><a href="well-testing.html#cb159-40" tabindex="-1"></a>    area<span class="op">=</span>area,</span>
+<span id="cb159-41"><a href="well-testing.html#cb159-41" tabindex="-1"></a>    viscosity<span class="op">=</span>viscosity,</span>
+<span id="cb159-42"><a href="well-testing.html#cb159-42" tabindex="-1"></a>    compressibility<span class="op">=</span>compressibility,</span>
+<span id="cb159-43"><a href="well-testing.html#cb159-43" tabindex="-1"></a>    length<span class="op">=</span>length,</span>
+<span id="cb159-44"><a href="well-testing.html#cb159-44" tabindex="-1"></a>    p1<span class="op">=</span>p1,</span>
+<span id="cb159-45"><a href="well-testing.html#cb159-45" tabindex="-1"></a>    p2<span class="op">=</span>p2,</span>
+<span id="cb159-46"><a href="well-testing.html#cb159-46" tabindex="-1"></a>    p_ref<span class="op">=</span>p_ref</span>
+<span id="cb159-47"><a href="well-testing.html#cb159-47" tabindex="-1"></a>)</span>
+<span id="cb159-48"><a href="well-testing.html#cb159-48" tabindex="-1"></a></span>
+<span id="cb159-49"><a href="well-testing.html#cb159-49" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Flow Rate for Slightly Compressible Fluid: </span><span class="sc">{</span>flow_rate<span class="sc">:.2f}</span><span class="ss"> bbl/day&quot;</span>)</span>
+<span id="cb159-50"><a href="well-testing.html#cb159-50" tabindex="-1"></a>Flow Rate <span class="cf">for</span> Slightly Compressible Fluid: <span class="fl">1.69</span> bbl<span class="op">/</span>day</span></code></pre></div>
+</div>
+<div id="linear-flow-of-compressible-fluids-gases" class="section level3 hasAnchor" number="13.1.3">
+<h3><span class="header-section-number">13.1.3</span> Linear Flow of Compressible Fluids (Gases)<a href="well-testing.html#linear-flow-of-compressible-fluids-gases" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For compressible fluids such as gases, the flow rate equation is derived by incorporating the gas compressibility factor (<span class="math inline">\(Z\)</span>) and gas viscosity (<span class="math inline">\(\mu_g\)</span>) into Darcy’s law. This requires integrating the governing equations over the pressure range.</p>
+<div id="derivation-of-the-gas-flow-rate-equation" class="section level4 hasAnchor" number="13.1.3.1">
+<h4><span class="header-section-number">13.1.3.1</span> Derivation of the Gas Flow Rate Equation<a href="well-testing.html#derivation-of-the-gas-flow-rate-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p><strong>Real Gas Law</strong>:<br />
+The real gas law relates the pressure, volume, and temperature of a gas:<br />
+<span class="math display">\[
+p \cdot V = n \cdot Z \cdot R \cdot T
+\]</span>
+Where:</p>
+<ul>
+<li><span class="math inline">\(p\)</span>: Pressure (psi)</li>
+<li><span class="math inline">\(V\)</span>: Volume (ft³)</li>
+<li><span class="math inline">\(n\)</span>: Moles of gas</li>
+<li><span class="math inline">\(Z\)</span>: Gas compressibility factor (dimensionless)</li>
+<li><span class="math inline">\(R\)</span>: Gas constant (10.73 ft³·psi/°R·lb-mol)</li>
+<li><span class="math inline">\(T\)</span>: Temperature (°R)</li>
+</ul></li>
+<li><p><strong>Darcy’s Law for Radial Flow</strong>:<br />
+In steady-state conditions:
+<span class="math display">\[
+q = \frac{k}{\mu_g} \cdot \frac{2 \pi r h}{\ln(r_e / r_w)} \cdot \frac{\partial p}{\partial r}
+\]</span></p></li>
+<li><p><strong>Flow Rate at Standard Conditions</strong>:<br />
+Combining Darcy’s law and the real gas law, the gas flow rate at standard conditions (<span class="math inline">\(Q_{sc}\)</span>) becomes:
+<span class="math display">\[
+Q_{sc} = \frac{1422 \cdot k \cdot h \cdot T \cdot (p_e^2 - p_w^2)}{Z \cdot \mu_g \cdot \ln(r_e / r_w)}
+\]</span>
+Where:</p>
+<ul>
+<li><span class="math inline">\(Q_{sc}\)</span>: Flow rate at standard conditions (Mscf/day)</li>
+<li><span class="math inline">\(k\)</span>: Permeability (md)</li>
+<li><span class="math inline">\(h\)</span>: Reservoir thickness (ft)</li>
+<li><span class="math inline">\(T\)</span>: Reservoir temperature (°R)</li>
+<li><span class="math inline">\(p_e, p_w\)</span>: External and wellbore pressures (psi)</li>
+<li><span class="math inline">\(Z\)</span>: Gas compressibility factor (dimensionless)</li>
+<li><span class="math inline">\(\mu_g\)</span>: Gas viscosity (cp)</li>
+<li><span class="math inline">\(r_e, r_w\)</span>: Drainage and wellbore radii (ft)</li>
+</ul></li>
+</ol>
+<div class="sourceCode" id="cb160"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb160-1"><a href="well-testing.html#cb160-1" tabindex="-1"></a><span class="co">### Python Code: Radial Flow of Compressible Gases</span></span>
+<span id="cb160-2"><a href="well-testing.html#cb160-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb160-3"><a href="well-testing.html#cb160-3" tabindex="-1"></a></span>
+<span id="cb160-4"><a href="well-testing.html#cb160-4" tabindex="-1"></a><span class="kw">def</span> radial_flow_gas(permeability, thickness, temperature, external_pressure, wellbore_pressure, viscosity, compressibility_factor, drainage_radius, wellbore_radius):</span>
+<span id="cb160-5"><a href="well-testing.html#cb160-5" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb160-6"><a href="well-testing.html#cb160-6" tabindex="-1"></a><span class="co">    Calculate radial flow rate for compressible gases.</span></span>
+<span id="cb160-7"><a href="well-testing.html#cb160-7" tabindex="-1"></a></span>
+<span id="cb160-8"><a href="well-testing.html#cb160-8" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb160-9"><a href="well-testing.html#cb160-9" tabindex="-1"></a><span class="co">        permeability (float): Permeability in md.</span></span>
+<span id="cb160-10"><a href="well-testing.html#cb160-10" tabindex="-1"></a><span class="co">        thickness (float): Reservoir thickness in ft.</span></span>
+<span id="cb160-11"><a href="well-testing.html#cb160-11" tabindex="-1"></a><span class="co">        temperature (float): Reservoir temperature in °R.</span></span>
+<span id="cb160-12"><a href="well-testing.html#cb160-12" tabindex="-1"></a><span class="co">        external_pressure (float): External pressure in psi.</span></span>
+<span id="cb160-13"><a href="well-testing.html#cb160-13" tabindex="-1"></a><span class="co">        wellbore_pressure (float): Wellbore pressure in psi.</span></span>
+<span id="cb160-14"><a href="well-testing.html#cb160-14" tabindex="-1"></a><span class="co">        viscosity (float): Gas viscosity in cp.</span></span>
+<span id="cb160-15"><a href="well-testing.html#cb160-15" tabindex="-1"></a><span class="co">        compressibility_factor (float): Gas compressibility factor (Z).</span></span>
+<span id="cb160-16"><a href="well-testing.html#cb160-16" tabindex="-1"></a><span class="co">        drainage_radius (float): Drainage radius in ft.</span></span>
+<span id="cb160-17"><a href="well-testing.html#cb160-17" tabindex="-1"></a><span class="co">        wellbore_radius (float): Wellbore radius in ft.</span></span>
+<span id="cb160-18"><a href="well-testing.html#cb160-18" tabindex="-1"></a></span>
+<span id="cb160-19"><a href="well-testing.html#cb160-19" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb160-20"><a href="well-testing.html#cb160-20" tabindex="-1"></a><span class="co">        float: Gas flow rate at standard conditions (Mscf/day).</span></span>
+<span id="cb160-21"><a href="well-testing.html#cb160-21" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb160-22"><a href="well-testing.html#cb160-22" tabindex="-1"></a>    conversion_factor <span class="op">=</span> <span class="dv">1422</span>  <span class="co"># Field unit conversion factor for gas flow</span></span>
+<span id="cb160-23"><a href="well-testing.html#cb160-23" tabindex="-1"></a>    numerator <span class="op">=</span> permeability <span class="op">*</span> thickness <span class="op">*</span> temperature <span class="op">*</span> (external_pressure<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> wellbore_pressure<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb160-24"><a href="well-testing.html#cb160-24" tabindex="-1"></a>    denominator <span class="op">=</span> compressibility_factor <span class="op">*</span> viscosity <span class="op">*</span> math.log(drainage_radius <span class="op">/</span> wellbore_radius)</span>
+<span id="cb160-25"><a href="well-testing.html#cb160-25" tabindex="-1"></a>    <span class="cf">return</span> numerator <span class="op">/</span> (conversion_factor <span class="op">*</span> denominator)</span>
+<span id="cb160-26"><a href="well-testing.html#cb160-26" tabindex="-1"></a></span>
+<span id="cb160-27"><a href="well-testing.html#cb160-27" tabindex="-1"></a><span class="co"># Example Usage</span></span>
+<span id="cb160-28"><a href="well-testing.html#cb160-28" tabindex="-1"></a>permeability <span class="op">=</span> <span class="dv">100</span>  <span class="co"># md</span></span>
+<span id="cb160-29"><a href="well-testing.html#cb160-29" tabindex="-1"></a>thickness <span class="op">=</span> <span class="dv">30</span>  <span class="co"># ft</span></span>
+<span id="cb160-30"><a href="well-testing.html#cb160-30" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">520</span>  <span class="co"># °R</span></span>
+<span id="cb160-31"><a href="well-testing.html#cb160-31" tabindex="-1"></a>external_pressure <span class="op">=</span> <span class="dv">2500</span>  <span class="co"># psi</span></span>
+<span id="cb160-32"><a href="well-testing.html#cb160-32" tabindex="-1"></a>wellbore_pressure <span class="op">=</span> <span class="dv">1500</span>  <span class="co"># psi</span></span>
+<span id="cb160-33"><a href="well-testing.html#cb160-33" tabindex="-1"></a>viscosity <span class="op">=</span> <span class="fl">0.02</span>  <span class="co"># cp</span></span>
+<span id="cb160-34"><a href="well-testing.html#cb160-34" tabindex="-1"></a>compressibility_factor <span class="op">=</span> <span class="fl">0.8</span>  <span class="co"># Z-factor</span></span>
+<span id="cb160-35"><a href="well-testing.html#cb160-35" tabindex="-1"></a>drainage_radius <span class="op">=</span> <span class="dv">1000</span>  <span class="co"># ft</span></span>
+<span id="cb160-36"><a href="well-testing.html#cb160-36" tabindex="-1"></a>wellbore_radius <span class="op">=</span> <span class="fl">0.33</span>  <span class="co"># ft</span></span>
+<span id="cb160-37"><a href="well-testing.html#cb160-37" tabindex="-1"></a></span>
+<span id="cb160-38"><a href="well-testing.html#cb160-38" tabindex="-1"></a>flow_rate <span class="op">=</span> radial_flow_gas(</span>
+<span id="cb160-39"><a href="well-testing.html#cb160-39" tabindex="-1"></a>    permeability, thickness, temperature, external_pressure, wellbore_pressure,</span>
+<span id="cb160-40"><a href="well-testing.html#cb160-40" tabindex="-1"></a>    viscosity, compressibility_factor, drainage_radius, wellbore_radius</span>
+<span id="cb160-41"><a href="well-testing.html#cb160-41" tabindex="-1"></a>)</span>
+<span id="cb160-42"><a href="well-testing.html#cb160-42" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Gas Flow Rate (Radial): </span><span class="sc">{</span>flow_rate<span class="sc">:.2f}</span><span class="ss"> Mscf/day&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="unsteady-state-flow" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> Unsteady-State Flow<a href="well-testing.html#unsteady-state-flow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Unsteady-state flow, also known as transient flow, occurs when the pressure in the reservoir changes with time. Unlike steady-state or pseudosteady-state conditions, the pressure distribution in the reservoir is time-dependent.</p>
+<div id="governing-equation-for-unsteady-state-flow" class="section level4 hasAnchor" number="13.2.0.1">
+<h4><span class="header-section-number">13.2.0.1</span> Governing Equation for Unsteady-State Flow<a href="well-testing.html#governing-equation-for-unsteady-state-flow" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The governing equation for fluid flow in porous media is derived by combining the <strong>continuity equation</strong>, <strong>Darcy’s law</strong>, and <strong>fluid compressibility</strong>.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Continuity Equation</strong>:<br />
+The conservation of mass for a compressible fluid in a porous medium is given as:<br />
+<span class="math display">\[
+\frac{\partial}{\partial t} \left( \phi \rho \right) + \nabla \cdot (\rho \mathbf{v}) = 0
+\]</span><br />
+Where:</p>
+<ul>
+<li><span class="math inline">\(\phi\)</span>: Porosity (fraction)</li>
+<li><span class="math inline">\(\rho\)</span>: Fluid density (lb/ft³)</li>
+<li><span class="math inline">\(\mathbf{v}\)</span>: Velocity vector (ft/day)</li>
+</ul></li>
+<li><p><strong>Darcy’s Law</strong>:<br />
+Substituting Darcy’s law for flow velocity:
+<span class="math display">\[
+\mathbf{v} = -\frac{k}{\mu} \nabla p
+\]</span></p></li>
+<li><p><strong>Fluid Compressibility</strong>:<br />
+For slightly compressible fluids, density changes with pressure as:
+<span class="math display">\[
+\rho = \rho_0 \exp(c \cdot (p - p_0))
+\]</span></p></li>
+<li><p><strong>Radial Unsteady-State Flow</strong>:<br />
+Combining the above relationships and simplifying for radial flow, the governing equation becomes:
+<span class="math display">\[
+\frac{\partial p}{\partial t} = \frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial p}{\partial r} \right)
+\]</span><br />
+This is the <strong>diffusivity equation</strong>, describing pressure propagation in porous media.</p></li>
+</ol>
+</div>
+<div id="solutions-for-unsteady-state-flow" class="section level3 hasAnchor" number="13.2.1">
+<h3><span class="header-section-number">13.2.1</span> Solutions for Unsteady-State Flow<a href="well-testing.html#solutions-for-unsteady-state-flow" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Infinite Reservoir</strong>:<br />
+For a well in an infinite reservoir, the solution to the diffusivity equation is:
+<span class="math display">\[
+p(r, t) = p_i - \frac{q \mu}{4 \pi k h} \cdot \ln\left(\frac{4 k t}{\phi \mu c r^2}\right)
+\]</span><br />
+Where:
+<ul>
+<li><span class="math inline">\(p(r, t)\)</span>: Pressure at distance <span class="math inline">\(r\)</span> and time <span class="math inline">\(t\)</span> (psi)</li>
+<li><span class="math inline">\(p_i\)</span>: Initial reservoir pressure (psi)</li>
+<li><span class="math inline">\(q\)</span>: Flow rate (bbl/day)</li>
+<li><span class="math inline">\(k\)</span>: Permeability (md)</li>
+<li><span class="math inline">\(h\)</span>: Reservoir thickness (ft)</li>
+<li><span class="math inline">\(\phi\)</span>: Porosity (fraction)</li>
+<li><span class="math inline">\(\mu\)</span>: Fluid viscosity (cp)</li>
+<li><span class="math inline">\(c\)</span>: Compressibility coefficient (1/psi)</li>
+<li><span class="math inline">\(t\)</span>: Time (days)</li>
+<li><span class="math inline">\(r\)</span>: Radial distance (ft)</li>
+</ul></li>
+<li><strong>Semi-Infinite Reservoir with Wellbore Storage</strong>:<br />
+Incorporating wellbore storage effects:
+<span class="math display">\[
+p(r, t) = p_i - \frac{q \mu}{4 \pi k h} \cdot E_i \left( \frac{r^2 \phi \mu c}{4 k t} \right)
+\]</span><br />
+Where <span class="math inline">\(E_i\)</span> is the exponential integral function.</li>
+</ol>
+<div class="sourceCode" id="cb161"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb161-1"><a href="well-testing.html#cb161-1" tabindex="-1"></a><span class="co">### Python Code: Pressure Distribution for Unsteady-State Flow</span></span>
+<span id="cb161-2"><a href="well-testing.html#cb161-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb161-3"><a href="well-testing.html#cb161-3" tabindex="-1"></a></span>
+<span id="cb161-4"><a href="well-testing.html#cb161-4" tabindex="-1"></a><span class="kw">def</span> unsteady_state_pressure(initial_pressure, flow_rate, viscosity, permeability, thickness, time, porosity, compressibility, radius):</span>
+<span id="cb161-5"><a href="well-testing.html#cb161-5" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb161-6"><a href="well-testing.html#cb161-6" tabindex="-1"></a><span class="co">    Calculate pressure at a given radius and time during unsteady-state flow.</span></span>
+<span id="cb161-7"><a href="well-testing.html#cb161-7" tabindex="-1"></a></span>
+<span id="cb161-8"><a href="well-testing.html#cb161-8" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb161-9"><a href="well-testing.html#cb161-9" tabindex="-1"></a><span class="co">        initial_pressure (float): Initial reservoir pressure (psi).</span></span>
+<span id="cb161-10"><a href="well-testing.html#cb161-10" tabindex="-1"></a><span class="co">        flow_rate (float): Flow rate (bbl/day).</span></span>
+<span id="cb161-11"><a href="well-testing.html#cb161-11" tabindex="-1"></a><span class="co">        viscosity (float): Fluid viscosity (cp).</span></span>
+<span id="cb161-12"><a href="well-testing.html#cb161-12" tabindex="-1"></a><span class="co">        permeability (float): Permeability (md).</span></span>
+<span id="cb161-13"><a href="well-testing.html#cb161-13" tabindex="-1"></a><span class="co">        thickness (float): Reservoir thickness (ft).</span></span>
+<span id="cb161-14"><a href="well-testing.html#cb161-14" tabindex="-1"></a><span class="co">        time (float): Time since production started (days).</span></span>
+<span id="cb161-15"><a href="well-testing.html#cb161-15" tabindex="-1"></a><span class="co">        porosity (float): Porosity (fraction).</span></span>
+<span id="cb161-16"><a href="well-testing.html#cb161-16" tabindex="-1"></a><span class="co">        compressibility (float): Compressibility coefficient (1/psi).</span></span>
+<span id="cb161-17"><a href="well-testing.html#cb161-17" tabindex="-1"></a><span class="co">        radius (float): Radial distance from the well (ft).</span></span>
+<span id="cb161-18"><a href="well-testing.html#cb161-18" tabindex="-1"></a></span>
+<span id="cb161-19"><a href="well-testing.html#cb161-19" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb161-20"><a href="well-testing.html#cb161-20" tabindex="-1"></a><span class="co">        float: Pressure at the given radius and time (psi).</span></span>
+<span id="cb161-21"><a href="well-testing.html#cb161-21" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb161-22"><a href="well-testing.html#cb161-22" tabindex="-1"></a>    term1 <span class="op">=</span> (<span class="dv">4</span> <span class="op">*</span> permeability <span class="op">*</span> time) <span class="op">/</span> (porosity <span class="op">*</span> viscosity <span class="op">*</span> compressibility <span class="op">*</span> radius<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb161-23"><a href="well-testing.html#cb161-23" tabindex="-1"></a>    pressure_drop <span class="op">=</span> (flow_rate <span class="op">*</span> viscosity) <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> math.pi <span class="op">*</span> permeability <span class="op">*</span> thickness) <span class="op">*</span> math.log(term1)</span>
+<span id="cb161-24"><a href="well-testing.html#cb161-24" tabindex="-1"></a>    <span class="cf">return</span> initial_pressure <span class="op">-</span> pressure_drop</span>
+<span id="cb161-25"><a href="well-testing.html#cb161-25" tabindex="-1"></a></span>
+<span id="cb161-26"><a href="well-testing.html#cb161-26" tabindex="-1"></a><span class="co"># Example Usage</span></span>
+<span id="cb161-27"><a href="well-testing.html#cb161-27" tabindex="-1"></a>initial_pressure <span class="op">=</span> <span class="dv">3000</span>  <span class="co"># psi</span></span>
+<span id="cb161-28"><a href="well-testing.html#cb161-28" tabindex="-1"></a>flow_rate <span class="op">=</span> <span class="dv">500</span>  <span class="co"># bbl/day</span></span>
+<span id="cb161-29"><a href="well-testing.html#cb161-29" tabindex="-1"></a>viscosity <span class="op">=</span> <span class="dv">1</span>  <span class="co"># cp</span></span>
+<span id="cb161-30"><a href="well-testing.html#cb161-30" tabindex="-1"></a>permeability <span class="op">=</span> <span class="dv">50</span>  <span class="co"># md</span></span>
+<span id="cb161-31"><a href="well-testing.html#cb161-31" tabindex="-1"></a>thickness <span class="op">=</span> <span class="dv">20</span>  <span class="co"># ft</span></span>
+<span id="cb161-32"><a href="well-testing.html#cb161-32" tabindex="-1"></a>time <span class="op">=</span> <span class="dv">10</span>  <span class="co"># days</span></span>
+<span id="cb161-33"><a href="well-testing.html#cb161-33" tabindex="-1"></a>porosity <span class="op">=</span> <span class="fl">0.2</span>  <span class="co"># fraction</span></span>
+<span id="cb161-34"><a href="well-testing.html#cb161-34" tabindex="-1"></a>compressibility <span class="op">=</span> <span class="fl">1e-5</span>  <span class="co"># 1/psi</span></span>
+<span id="cb161-35"><a href="well-testing.html#cb161-35" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">500</span>  <span class="co"># ft</span></span>
+<span id="cb161-36"><a href="well-testing.html#cb161-36" tabindex="-1"></a></span>
+<span id="cb161-37"><a href="well-testing.html#cb161-37" tabindex="-1"></a>pressure <span class="op">=</span> unsteady_state_pressure(initial_pressure, flow_rate, viscosity, permeability, thickness, time, porosity, compressibility, radius)</span>
+<span id="cb161-38"><a href="well-testing.html#cb161-38" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Pressure at radius </span><span class="sc">{</span>radius<span class="sc">}</span><span class="ss"> ft and time </span><span class="sc">{</span>time<span class="sc">}</span><span class="ss"> days: </span><span class="sc">{</span>pressure<span class="sc">:.2f}</span><span class="ss"> psi&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="basic-transient-flow-equation" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> Basic Transient Flow Equation<a href="well-testing.html#basic-transient-flow-equation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>Basic Transient Flow Equation</strong> governs the behavior of unsteady-state flow in porous media. It is derived by combining fundamental principles of fluid dynamics: conservation of mass, Darcy’s law, and fluid compressibility.</p>
+<div id="derivation-of-flow-equation" class="section level3 hasAnchor" number="13.3.1">
+<h3><span class="header-section-number">13.3.1</span> Derivation of flow equation<a href="well-testing.html#derivation-of-flow-equation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="step-1-conservation-of-mass" class="section level4 hasAnchor" number="13.3.1.1">
+<h4><span class="header-section-number">13.3.1.1</span> Step 1: Conservation of Mass<a href="well-testing.html#step-1-conservation-of-mass" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <strong>continuity equation</strong> expresses the conservation of mass for a compressible fluid in porous media:
+<span class="math display">\[
+\frac{\partial}{\partial t} \left( \phi \rho \right) + \nabla \cdot (\rho \mathbf{v}) = 0
+\]</span>
+Where:
+- <span class="math inline">\(\phi\)</span>: Porosity (fraction)
+- <span class="math inline">\(\rho\)</span>: Fluid density (lb/ft³)
+- <span class="math inline">\(\mathbf{v}\)</span>: Velocity vector (ft/day)
+- <span class="math inline">\(t\)</span>: Time (days)</p>
+<p>For radial flow, this becomes:
+<span class="math display">\[
+\frac{\partial}{\partial t} \left( \phi \rho \right) + \frac{1}{r} \frac{\partial}{\partial r} (r \rho v) = 0
+\]</span></p>
+</div>
+<div id="step-2-substituting-darcys-law" class="section level4 hasAnchor" number="13.3.1.2">
+<h4><span class="header-section-number">13.3.1.2</span> Step 2: Substituting Darcy’s Law<a href="well-testing.html#step-2-substituting-darcys-law" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Darcy’s law for radial flow is:
+<span class="math display">\[
+v = -\frac{k}{\mu} \frac{\partial p}{\partial r}
+\]</span>
+Substituting <span class="math inline">\(v\)</span> into the continuity equation:
+<span class="math display">\[
+\frac{\partial}{\partial t} \left( \phi \rho \right) - \frac{1}{r} \frac{\partial}{\partial r} \left( r \rho \frac{k}{\mu} \frac{\partial p}{\partial r} \right) = 0
+\]</span></p>
+</div>
+<div id="step-3-slightly-compressible-fluids" class="section level4 hasAnchor" number="13.3.1.3">
+<h4><span class="header-section-number">13.3.1.3</span> Step 3: Slightly Compressible Fluids<a href="well-testing.html#step-3-slightly-compressible-fluids" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For slightly compressible fluids, density changes with pressure as:
+<span class="math display">\[
+\rho = \rho_0 \exp(c \cdot (p - p_0))
+\]</span>
+Where:
+- <span class="math inline">\(\rho_0\)</span>: Reference density (lb/ft³)
+- <span class="math inline">\(p_0\)</span>: Reference pressure (psi)
+- <span class="math inline">\(c\)</span>: Compressibility coefficient (1/psi)</p>
+<p>Using a first-order approximation for <span class="math inline">\(c \ll 1\)</span>:
+<span class="math display">\[
+\rho \approx \rho_0 \left( 1 + c \cdot (p - p_0) \right)
+\]</span>
+The time derivative of <span class="math inline">\(\rho\)</span> becomes:
+<span class="math display">\[
+\frac{\partial \rho}{\partial t} = \rho_0 c \frac{\partial p}{\partial t}
+\]</span></p>
+</div>
+<div id="step-4-substituting-fluid-compressibility" class="section level4 hasAnchor" number="13.3.1.4">
+<h4><span class="header-section-number">13.3.1.4</span> Step 4: Substituting Fluid Compressibility<a href="well-testing.html#step-4-substituting-fluid-compressibility" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Substituting the compressibility relationship into the continuity equation:
+<span class="math display">\[
+\phi \rho_0 c \frac{\partial p}{\partial t} = \frac{k}{\mu} \frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial p}{\partial r} \right)
+\]</span></p>
+</div>
+<div id="step-5-simplifying-to-the-diffusivity-equation" class="section level4 hasAnchor" number="13.3.1.5">
+<h4><span class="header-section-number">13.3.1.5</span> Step 5: Simplifying to the Diffusivity Equation<a href="well-testing.html#step-5-simplifying-to-the-diffusivity-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dividing through by <span class="math inline">\(\phi \rho_0 c\)</span>:
+<span class="math display">\[
+\frac{\partial p}{\partial t} = \frac{k}{\phi \mu c} \frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial p}{\partial r} \right)
+\]</span>
+Define the <strong>diffusivity constant</strong> as:
+<span class="math display">\[
+\eta = \frac{k}{\phi \mu c}
+\]</span>
+The equation simplifies to:
+<span class="math display">\[
+\frac{\partial p}{\partial t} = \eta \frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial p}{\partial r} \right)
+\]</span></p>
+<p>This is the <strong>radial diffusivity equation</strong>, governing transient flow in porous media.</p>
+</div>
+<div id="step-6-initial-and-boundary-conditions" class="section level4 hasAnchor" number="13.3.1.6">
+<h4><span class="header-section-number">13.3.1.6</span> Step 6: Initial and Boundary Conditions<a href="well-testing.html#step-6-initial-and-boundary-conditions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To solve the diffusivity equation, initial and boundary conditions must be defined:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Initial Condition</strong>:<br />
+At <span class="math inline">\(t = 0\)</span>, the reservoir pressure is uniform:
+<span class="math display">\[
+p(r, 0) = p_i
+\]</span></p></li>
+<li><p><strong>Outer Boundary Condition</strong>:<br />
+For an infinite reservoir, the pressure remains constant at large distances:
+<span class="math display">\[
+\lim_{r \to \infty} p(r, t) = p_i
+\]</span></p></li>
+<li><p><strong>Inner Boundary Condition</strong>:<br />
+At the wellbore (<span class="math inline">\(r = r_w\)</span>), the pressure depends on the flow rate:
+<span class="math display">\[
+q = -2 \pi r_w h \frac{k}{\mu} \frac{\partial p}{\partial r} \bigg|_{r = r_w}
+\]</span></p></li>
+</ol>
+</div>
+<div id="step-7-dimensionless-form-of-the-diffusivity-equation" class="section level4 hasAnchor" number="13.3.1.7">
+<h4><span class="header-section-number">13.3.1.7</span> Step 7: Dimensionless Form of the Diffusivity Equation<a href="well-testing.html#step-7-dimensionless-form-of-the-diffusivity-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Introducing <strong>dimensionless variables</strong>:
+<span class="math display">\[
+p_D = \frac{p_i - p}{p_i - p_w}, \quad r_D = \frac{r}{r_w}, \quad t_D = \frac{\eta t}{r_w^2}
+\]</span>
+The diffusivity equation becomes:
+<span class="math display">\[
+\frac{\partial p_D}{\partial t_D} = \frac{1}{r_D} \frac{\partial}{\partial r_D} \left( r_D \frac{\partial p_D}{\partial r_D} \right)
+\]</span></p>
+</div>
+<div id="step-8-analytical-solution-for-constant-flow-rate" class="section level4 hasAnchor" number="13.3.1.8">
+<h4><span class="header-section-number">13.3.1.8</span> Step 8: Analytical Solution for Constant Flow Rate<a href="well-testing.html#step-8-analytical-solution-for-constant-flow-rate" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For a constant flow rate <span class="math inline">\(q\)</span> at the wellbore, the pressure at any distance <span class="math inline">\(r\)</span> and time <span class="math inline">\(t\)</span> is:
+<span class="math display">\[
+p(r, t) = p_i - \frac{q \mu}{4 \pi k h} \cdot \ln\left( \frac{4 \eta t}{r^2} \right)
+\]</span></p>
+<p>At the wellbore (<span class="math inline">\(r = r_w\)</span>):
+<span class="math display">\[
+p_w = p_i - \frac{q \mu}{4 \pi k h} \cdot \ln\left( \frac{4 \eta t}{r_w^2} \right)
+\]</span></p>
+</div>
+<div id="final-equation" class="section level4 hasAnchor" number="13.3.1.9">
+<h4><span class="header-section-number">13.3.1.9</span> Final Equation:<a href="well-testing.html#final-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Substituting the diffusivity constant (<span class="math inline">\(\eta = \frac{k}{\phi \mu c}\)</span>) into the solution:
+<span class="math display">\[
+p_w = p_i - \frac{q \mu}{4 \pi k h} \cdot \ln\left( \frac{4 k t}{\phi \mu c r_w^2} \right)
+\]</span></p>
+<p>This is equation is representing the pressure at the wellbore during transient flow in a slightly compressible fluid.</p>
+</div>
+</div>
+<div id="radial-flow-of-slightly-compressible-fluids" class="section level3 hasAnchor" number="13.3.2">
+<h3><span class="header-section-number">13.3.2</span> Radial Flow of Slightly Compressible Fluids<a href="well-testing.html#radial-flow-of-slightly-compressible-fluids" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Radial flow of slightly compressible fluids involves deriving the governing equations by incorporating the compressibility effects into the radial flow model. The fluid is assumed to follow the slightly compressible behavior, making it suitable for real-world reservoir applications.</p>
+<div id="step-1-governing-diffusivity-equation" class="section level4 hasAnchor" number="13.3.2.1">
+<h4><span class="header-section-number">13.3.2.1</span> Step 1: Governing Diffusivity Equation<a href="well-testing.html#step-1-governing-diffusivity-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The governing equation for radial flow in porous media is:
+<span class="math display">\[
+\frac{\partial p}{\partial t} = \eta \frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial p}{\partial r} \right)
+\]</span>
+Where:
+- <span class="math inline">\(p\)</span>: Pressure (psi)
+- <span class="math inline">\(t\)</span>: Time (days)
+- <span class="math inline">\(r\)</span>: Radial distance from the wellbore (ft)
+- <span class="math inline">\(\eta = \frac{k}{\phi \mu c}\)</span>: Diffusivity constant</p>
+</div>
+<div id="step-2-dimensionless-variables" class="section level4 hasAnchor" number="13.3.2.2">
+<h4><span class="header-section-number">13.3.2.2</span> Step 2: Dimensionless Variables<a href="well-testing.html#step-2-dimensionless-variables" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To simplify the solution, introduce <strong>dimensionless variables</strong>:
+1. <strong>Dimensionless Pressure</strong>:
+<span class="math display">\[
+   p_D = \frac{p_i - p}{p_i - p_w}
+   \]</span>
+Where:
+- <span class="math inline">\(p_i\)</span>: Initial reservoir pressure (psi)
+- <span class="math inline">\(p_w\)</span>: Wellbore pressure (psi)</p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Dimensionless Radius</strong>:
+<span class="math display">\[
+r_D = \frac{r}{r_w}
+\]</span>
+Where:
+<ul>
+<li><span class="math inline">\(r_w\)</span>: Wellbore radius (ft)</li>
+</ul></li>
+<li><strong>Dimensionless Time</strong>:
+<span class="math display">\[
+t_D = \frac{\eta t}{r_w^2}
+\]</span></li>
+</ol>
+<p>Substituting these into the diffusivity equation:
+<span class="math display">\[
+\frac{\partial p_D}{\partial t_D} = \frac{1}{r_D} \frac{\partial}{\partial r_D} \left( r_D \frac{\partial p_D}{\partial r_D} \right)
+\]</span></p>
+</div>
+<div id="step-3-analytical-solution-for-constant-flow-rate" class="section level4 hasAnchor" number="13.3.2.3">
+<h4><span class="header-section-number">13.3.2.3</span> Step 3: Analytical Solution for Constant Flow Rate<a href="well-testing.html#step-3-analytical-solution-for-constant-flow-rate" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For a constant flow rate (<span class="math inline">\(q\)</span>) at the wellbore, the solution to the diffusivity equation in an infinite reservoir is:
+<span class="math display">\[
+p_D(r_D, t_D) = \frac{q \mu}{4 \pi k h} \cdot E_i \left( \frac{r_D^2}{4 t_D} \right)
+\]</span>
+Where:
+- <span class="math inline">\(E_i(x)\)</span>: Exponential integral function.</p>
+<p>At the wellbore (<span class="math inline">\(r_D = 1\)</span>), the pressure becomes:
+<span class="math display">\[
+p_D(1, t_D) = \frac{q \mu}{4 \pi k h} \cdot E_i \left( \frac{1}{4 t_D} \right)
+\]</span></p>
+</div>
+<div id="step-4-infinite-reservoir-assumptions" class="section level4 hasAnchor" number="13.3.2.4">
+<h4><span class="header-section-number">13.3.2.4</span> Step 4: Infinite Reservoir Assumptions<a href="well-testing.html#step-4-infinite-reservoir-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Using the properties of the exponential integral function:
+1. For small arguments (<span class="math inline">\(x \to 0\)</span>):
+<span class="math display">\[
+   E_i(x) \approx -\ln(x) - 0.5772
+   \]</span>
+Substituting <span class="math inline">\(x = \frac{1}{4 t_D}\)</span>, we have:
+<span class="math display">\[
+   p_D(1, t_D) = \frac{q \mu}{4 \pi k h} \cdot \left( -\ln(4 t_D) - 0.5772 \right)
+   \]</span></p>
+</div>
+<div id="step-5-pressure-at-the-wellbore" class="section level4 hasAnchor" number="13.3.2.5">
+<h4><span class="header-section-number">13.3.2.5</span> Step 5: Pressure at the Wellbore<a href="well-testing.html#step-5-pressure-at-the-wellbore" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Returning to dimensional variables, the wellbore pressure is:
+<span class="math display">\[
+p_w = p_i - \frac{q \mu}{4 \pi k h} \cdot \left( -\ln \left( \frac{4 k t}{\phi \mu c r_w^2} \right) - 0.5772 \right)
+\]</span></p>
+<p>Simplifying:
+<span class="math display">\[
+p_w = p_i - \frac{q \mu}{4 \pi k h} \cdot \ln \left( \frac{4 k t}{\phi \mu c r_w^2} \right) - \frac{q \mu}{4 \pi k h} \cdot 0.5772
+\]</span></p>
+</div>
+<div id="final-equation-1" class="section level4 hasAnchor" number="13.3.2.6">
+<h4><span class="header-section-number">13.3.2.6</span> Final Equation:<a href="well-testing.html#final-equation-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Converting the logarithmic term to base-10 for field units:
+<span class="math display">\[
+p_w = p_i - \frac{70.6 \cdot q \cdot \mu}{k \cdot h} \cdot \left( \log_{10} \left( \frac{4 k t}{\phi \mu c r_w^2} \right) + 0.87 \right)
+\]</span></p>
+<p>This is equation describes the pressure at the wellbore during transient flow of slightly compressible fluids.</p>
+<p>To obtain a solution to the diffusivity equation, it is necessary to specify an initial
+condition and two boundary conditions.
+The initial condition simply states that the reservoir is at a uniform pressure when production begins. This is true in almost all the cases.</p>
+<p>The two boundary
+conditions require that the well is producing at
+a constant production rate (or constant flowing bottom hole pressure) and the reservoir behaves as if it were infinite in size.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="volumetrics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="water-influx.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>14 Water Influx | Applications of Python in Reservoir Engineering</title>
+  <meta name="description" content="14 Water Influx | Applications of Python in Reservoir Engineering" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="14 Water Influx | Applications of Python in Reservoir Engineering" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="14 Water Influx | Applications of Python in Reservoir Engineering" />
+  
+  
+  
+
+<meta name="author" content="Pramod Azad" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="well-testing.html"/>
+<link rel="next" href="material-balance.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> License</a></li>
+<li class="chapter" data-level="2" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html"><i class="fa fa-check"></i><b>2</b> Introduction to Python for Reservoir Engineering</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#why-python"><i class="fa fa-check"></i><b>2.1</b> Why Python?</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#versatility"><i class="fa fa-check"></i><b>2.2</b> Versatility</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#readability-and-learnability"><i class="fa fa-check"></i><b>2.3</b> Readability and Learnability</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#open-source-community"><i class="fa fa-check"></i><b>2.4</b> Open Source Community</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#extensive-libraries"><i class="fa fa-check"></i><b>2.5</b> Extensive Libraries</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#conclusion-pythons-role-in-reservoir-engineering"><i class="fa fa-check"></i><b>2.6</b> Conclusion: Python’s Role in Reservoir Engineering</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#getting-started-with-python"><i class="fa fa-check"></i><b>2.7</b> Getting Started with Python</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#introduction"><i class="fa fa-check"></i><b>2.7.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.7.2" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#installing-python"><i class="fa fa-check"></i><b>2.7.2</b> Installing Python</a></li>
+<li class="chapter" data-level="2.7.3" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#choosing-a-python-distribution"><i class="fa fa-check"></i><b>2.7.3</b> Choosing a Python Distribution</a></li>
+<li class="chapter" data-level="2.7.4" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#downloading-anaconda"><i class="fa fa-check"></i><b>2.7.4</b> Downloading Anaconda</a></li>
+<li class="chapter" data-level="2.7.5" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#verifying-the-installation"><i class="fa fa-check"></i><b>2.7.5</b> Verifying the Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#setting-up-your-python-environment"><i class="fa fa-check"></i><b>2.8</b> Setting Up Your Python Environment</a>
+<ul>
+<li class="chapter" data-level="2.8.1" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#manual-virtual-environment"><i class="fa fa-check"></i><b>2.8.1</b> Manual Virtual Environment</a></li>
+<li class="chapter" data-level="2.8.2" data-path="introduction-to-python-for-reservoir-engineering.html"><a href="introduction-to-python-for-reservoir-engineering.html#creating-a-virtual-environment-with-anaconda"><i class="fa fa-check"></i><b>2.8.2</b> Creating a Virtual Environment with Anaconda</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="python-basics.html"><a href="python-basics.html"><i class="fa fa-check"></i><b>3</b> Python Basics</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="python-basics.html"><a href="python-basics.html#datatypes"><i class="fa fa-check"></i><b>3.0.1</b> Datatypes</a></li>
+<li class="chapter" data-level="3.1" data-path="python-basics.html"><a href="python-basics.html#lists"><i class="fa fa-check"></i><b>3.1</b> Lists</a></li>
+<li class="chapter" data-level="3.2" data-path="python-basics.html"><a href="python-basics.html#list-comprehensions"><i class="fa fa-check"></i><b>3.2</b> List comprehensions</a></li>
+<li class="chapter" data-level="3.3" data-path="python-basics.html"><a href="python-basics.html#tuples"><i class="fa fa-check"></i><b>3.3</b> Tuples</a></li>
+<li class="chapter" data-level="3.4" data-path="python-basics.html"><a href="python-basics.html#dictionaries"><i class="fa fa-check"></i><b>3.4</b> Dictionaries</a></li>
+<li class="chapter" data-level="3.5" data-path="python-basics.html"><a href="python-basics.html#set"><i class="fa fa-check"></i><b>3.5</b> Set</a></li>
+<li class="chapter" data-level="3.6" data-path="python-basics.html"><a href="python-basics.html#control-flow-and-functions"><i class="fa fa-check"></i><b>3.6</b> Control Flow and Functions</a></li>
+<li class="chapter" data-level="3.7" data-path="python-basics.html"><a href="python-basics.html#python-libraries-for-reservoir-engineering"><i class="fa fa-check"></i><b>3.7</b> Python Libraries for Reservoir Engineering</a></li>
+<li class="chapter" data-level="3.8" data-path="python-basics.html"><a href="python-basics.html#hands-on-practice"><i class="fa fa-check"></i><b>3.8</b> Hands-On Practice</a></li>
+<li class="chapter" data-level="3.9" data-path="python-basics.html"><a href="python-basics.html#chapter-summary"><i class="fa fa-check"></i><b>3.9</b> Chapter Summary</a></li>
+<li class="chapter" data-level="3.10" data-path="python-basics.html"><a href="python-basics.html#further-reading"><i class="fa fa-check"></i><b>3.10</b> Further Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simple-mathematics.html"><a href="simple-mathematics.html"><i class="fa fa-check"></i><b>4</b> Simple Mathematics</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#comparisons"><i class="fa fa-check"></i><b>4.1</b> Comparisons</a></li>
+<li class="chapter" data-level="4.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#conditionals"><i class="fa fa-check"></i><b>4.2</b> Conditionals</a></li>
+<li class="chapter" data-level="4.3" data-path="simple-mathematics.html"><a href="simple-mathematics.html#if-elif-and-else"><i class="fa fa-check"></i><b>4.3</b> if, elif, and else</a></li>
+<li class="chapter" data-level="4.4" data-path="simple-mathematics.html"><a href="simple-mathematics.html#boolean-operators"><i class="fa fa-check"></i><b>4.4</b> Boolean Operators</a></li>
+<li class="chapter" data-level="4.5" data-path="simple-mathematics.html"><a href="simple-mathematics.html#loops"><i class="fa fa-check"></i><b>4.5</b> Loops</a></li>
+<li class="chapter" data-level="4.6" data-path="simple-mathematics.html"><a href="simple-mathematics.html#for-loops"><i class="fa fa-check"></i><b>4.6</b> For loops</a></li>
+<li class="chapter" data-level="4.7" data-path="simple-mathematics.html"><a href="simple-mathematics.html#while-loop"><i class="fa fa-check"></i><b>4.7</b> While Loop</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="simple-mathematics.html"><a href="simple-mathematics.html#break-statement"><i class="fa fa-check"></i><b>4.7.1</b> <code>break</code> statement</a></li>
+<li class="chapter" data-level="4.7.2" data-path="simple-mathematics.html"><a href="simple-mathematics.html#continue-statement"><i class="fa fa-check"></i><b>4.7.2</b> <code>continue</code> statement</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html"><i class="fa fa-check"></i><b>5</b> Built in Modules and Functions</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#creating-a-module"><i class="fa fa-check"></i><b>5.1</b> Creating a module</a></li>
+<li class="chapter" data-level="5.2" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#installing-external-modules-using-pip"><i class="fa fa-check"></i><b>5.2</b> Installing external modules using pip</a></li>
+<li class="chapter" data-level="5.3" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#functions"><i class="fa fa-check"></i><b>5.3</b> Functions</a></li>
+<li class="chapter" data-level="5.4" data-path="built-in-modules-and-functions.html"><a href="built-in-modules-and-functions.html#lambda-function"><i class="fa fa-check"></i><b>5.4</b> Lambda function</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html"><i class="fa fa-check"></i><b>6</b> Introduction to Numpy</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#why-is-numpy-fast"><i class="fa fa-check"></i><b>6.1</b> Why is NumPy Fast?</a></li>
+<li class="chapter" data-level="6.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#n-dimensional-arrays"><i class="fa fa-check"></i><b>6.2</b> N-Dimensional Arrays</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#creating-ndarrays"><i class="fa fa-check"></i><b>6.2.1</b> Creating ndarrays</a></li>
+<li class="chapter" data-level="6.2.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#understanding-the-shape-and-dimensions-of-arrays"><i class="fa fa-check"></i><b>6.2.2</b> Understanding the Shape and Dimensions of Arrays</a></li>
+<li class="chapter" data-level="6.2.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#manipulating-and-operating-on-ndarrays"><i class="fa fa-check"></i><b>6.2.3</b> Manipulating and Operating on ndarrays</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#universal-functions-ufuncs"><i class="fa fa-check"></i><b>6.3</b> Universal Functions (ufuncs)</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#basic-arithmetic-operations"><i class="fa fa-check"></i><b>6.3.1</b> Basic Arithmetic Operations</a></li>
+<li class="chapter" data-level="6.3.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#mathematical-functions"><i class="fa fa-check"></i><b>6.3.2</b> Mathematical Functions</a></li>
+<li class="chapter" data-level="6.3.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#aggregation-functions-1"><i class="fa fa-check"></i><b>6.3.3</b> Aggregation Functions</a></li>
+<li class="chapter" data-level="6.3.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#broadcasting-for-operations-on-arrays-of-different-shapes"><i class="fa fa-check"></i><b>6.3.4</b> Broadcasting for Operations on Arrays of Different Shapes</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#array-manipulation"><i class="fa fa-check"></i><b>6.4</b> Array Manipulation</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#reshaping-arrays"><i class="fa fa-check"></i><b>6.4.1</b> Reshaping Arrays</a></li>
+<li class="chapter" data-level="6.4.2" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#concatenating-arrays"><i class="fa fa-check"></i><b>6.4.2</b> Concatenating Arrays</a></li>
+<li class="chapter" data-level="6.4.3" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#splitting-arrays"><i class="fa fa-check"></i><b>6.4.3</b> Splitting Arrays</a></li>
+<li class="chapter" data-level="6.4.4" data-path="introduction-to-numpy.html"><a href="introduction-to-numpy.html#indexing-and-slicing-1"><i class="fa fa-check"></i><b>6.4.4</b> Indexing and Slicing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html"><i class="fa fa-check"></i><b>7</b> Reservoir Engineering</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#introduction-1"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-characteristics"><i class="fa fa-check"></i><b>7.2</b> Reservoir Characteristics</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#key-characteristics"><i class="fa fa-check"></i><b>7.2.1</b> Key Characteristics:</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#types-of-fluids"><i class="fa fa-check"></i><b>7.2.2</b> Types of Fluids</a></li>
+<li class="chapter" data-level="7.2.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#flow-regimes"><i class="fa fa-check"></i><b>7.2.3</b> Flow Regimes</a></li>
+<li class="chapter" data-level="7.2.4" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-geometry"><i class="fa fa-check"></i><b>7.2.4</b> Reservoir Geometry</a></li>
+<li class="chapter" data-level="7.2.5" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#number-of-flowing-fluids"><i class="fa fa-check"></i><b>7.2.5</b> Number of Flowing Fluids</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-rock"><i class="fa fa-check"></i><b>7.3</b> Reservoir Rock</a></li>
+<li class="chapter" data-level="7.4" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-drive-mechanisms"><i class="fa fa-check"></i><b>7.4</b> Reservoir Drive Mechanisms</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#natural-gas-drive"><i class="fa fa-check"></i><b>7.4.1</b> Natural Gas Drive</a></li>
+<li class="chapter" data-level="7.4.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#water-drive"><i class="fa fa-check"></i><b>7.4.2</b> Water Drive</a></li>
+<li class="chapter" data-level="7.4.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#other-drive-mechanisms"><i class="fa fa-check"></i><b>7.4.3</b> Other Drive Mechanisms</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-types"><i class="fa fa-check"></i><b>7.5</b> Reservoir Types</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#oil-reservoirs"><i class="fa fa-check"></i><b>7.5.1</b> Oil Reservoirs</a></li>
+<li class="chapter" data-level="7.5.2" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#gas-reservoirs"><i class="fa fa-check"></i><b>7.5.2</b> Gas Reservoirs</a></li>
+<li class="chapter" data-level="7.5.3" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#oil-and-gas-reservoirs"><i class="fa fa-check"></i><b>7.5.3</b> Oil and Gas Reservoirs</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#reservoir-evaluation"><i class="fa fa-check"></i><b>7.6</b> Reservoir Evaluation</a></li>
+<li class="chapter" data-level="7.7" data-path="reservoir-engineering.html"><a href="reservoir-engineering.html#chapter-summary-1"><i class="fa fa-check"></i><b>7.7</b> Chapter Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html"><i class="fa fa-check"></i><b>8</b> Fundamental Properties of Gas</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-behavior"><i class="fa fa-check"></i><b>8.1</b> Gas Behavior</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#ideal-gas-law"><i class="fa fa-check"></i><b>8.1.1</b> Ideal Gas Law</a></li>
+<li class="chapter" data-level="8.1.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#real-gas-behavior"><i class="fa fa-check"></i><b>8.1.2</b> Real Gas Behavior</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-composition"><i class="fa fa-check"></i><b>8.2</b> Gas Composition</a></li>
+<li class="chapter" data-level="8.3" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#phase-behavior"><i class="fa fa-check"></i><b>8.3</b> Phase Behavior</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#phase-diagrams"><i class="fa fa-check"></i><b>8.3.1</b> Phase Diagrams</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#review-of-gas-properties"><i class="fa fa-check"></i><b>8.4</b> Review of Gas Properties</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#real-gas-law"><i class="fa fa-check"></i><b>8.4.1</b> Real Gas law</a></li>
+<li class="chapter" data-level="8.4.2" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-z-factor"><i class="fa fa-check"></i><b>8.4.2</b> Gas z Factor</a></li>
+<li class="chapter" data-level="8.4.3" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-density"><i class="fa fa-check"></i><b>8.4.3</b> Gas Density</a></li>
+<li class="chapter" data-level="8.4.4" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>8.4.4</b> Isothermal Gas Compressibility</a></li>
+<li class="chapter" data-level="8.4.5" data-path="fundamental-properties-of-gas.html"><a href="fundamental-properties-of-gas.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>8.4.5</b> Gas formation volume factor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>9</b> Properties of Oil</a></li>
+<li class="chapter" data-level="10" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>10</b> Rock Properties</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>10.1</b> Surface and Interfacial Tension</a></li>
+<li class="chapter" data-level="10.2" data-path="rock-properties.html"><a href="rock-properties.html#capillary-pressure"><i class="fa fa-check"></i><b>10.2</b> Capillary Pressure</a></li>
+<li class="chapter" data-level="10.3" data-path="rock-properties.html"><a href="rock-properties.html#leverett-j-function"><i class="fa fa-check"></i><b>10.3</b> Leverett J-Function</a></li>
+<li class="chapter" data-level="10.4" data-path="rock-properties.html"><a href="rock-properties.html#permeability"><i class="fa fa-check"></i><b>10.4</b> Permeability</a></li>
+<li class="chapter" data-level="10.5" data-path="rock-properties.html"><a href="rock-properties.html#reservoir-heterogeneity"><i class="fa fa-check"></i><b>10.5</b> Reservoir Heterogeneity</a>
+<ul>
+<li class="chapter" data-level="10.5.1" data-path="rock-properties.html"><a href="rock-properties.html#vertical-heterogeneity"><i class="fa fa-check"></i><b>10.5.1</b> Vertical Heterogeneity</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="relative-permeability.html"><a href="relative-permeability.html"><i class="fa fa-check"></i><b>11</b> Relative Permeability</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="relative-permeability.html"><a href="relative-permeability.html#three-phase-relative-permeability"><i class="fa fa-check"></i><b>11.1</b> Three-phase relative permeability</a></li>
+<li class="chapter" data-level="11.2" data-path="relative-permeability.html"><a href="relative-permeability.html#simplified-fractional-flow-equation"><i class="fa fa-check"></i><b>11.2</b> Simplified Fractional Flow Equation</a></li>
+<li class="chapter" data-level="11.3" data-path="relative-permeability.html"><a href="relative-permeability.html#buckley-leverett-theory"><i class="fa fa-check"></i><b>11.3</b> Buckley-Leverett Theory</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="volumetrics.html"><a href="volumetrics.html"><i class="fa fa-check"></i><b>12</b> Volumetrics</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="volumetrics.html"><a href="volumetrics.html#calculating-the-gas-inplace-by-volumetric-methods"><i class="fa fa-check"></i><b>12.1</b> Calculating the Gas inplace by volumetric methods</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="well-testing.html"><a href="well-testing.html"><i class="fa fa-check"></i><b>13</b> Well Testing</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="well-testing.html"><a href="well-testing.html#fluid-flow-equations"><i class="fa fa-check"></i><b>13.1</b> Fluid Flow Equations</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="well-testing.html"><a href="well-testing.html#darcys-law"><i class="fa fa-check"></i><b>13.1.1</b> Darcy’s Law</a></li>
+<li class="chapter" data-level="13.1.2" data-path="well-testing.html"><a href="well-testing.html#linear-flow-of-slightly-compressible-fluids"><i class="fa fa-check"></i><b>13.1.2</b> Linear Flow of Slightly Compressible Fluids</a></li>
+<li class="chapter" data-level="13.1.3" data-path="well-testing.html"><a href="well-testing.html#linear-flow-of-compressible-fluids-gases"><i class="fa fa-check"></i><b>13.1.3</b> Linear Flow of Compressible Fluids (Gases)</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="well-testing.html"><a href="well-testing.html#unsteady-state-flow"><i class="fa fa-check"></i><b>13.2</b> Unsteady-State Flow</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="well-testing.html"><a href="well-testing.html#solutions-for-unsteady-state-flow"><i class="fa fa-check"></i><b>13.2.1</b> Solutions for Unsteady-State Flow</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="well-testing.html"><a href="well-testing.html#basic-transient-flow-equation"><i class="fa fa-check"></i><b>13.3</b> Basic Transient Flow Equation</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="well-testing.html"><a href="well-testing.html#derivation-of-flow-equation"><i class="fa fa-check"></i><b>13.3.1</b> Derivation of flow equation</a></li>
+<li class="chapter" data-level="13.3.2" data-path="well-testing.html"><a href="well-testing.html#radial-flow-of-slightly-compressible-fluids"><i class="fa fa-check"></i><b>13.3.2</b> Radial Flow of Slightly Compressible Fluids</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="water-influx.html"><a href="water-influx.html"><i class="fa fa-check"></i><b>14</b> Water Influx</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="water-influx.html"><a href="water-influx.html#classification-of-aquifers"><i class="fa fa-check"></i><b>14.1</b> Classification of Aquifers</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="water-influx.html"><a href="water-influx.html#degree-of-pressure-maintenance"><i class="fa fa-check"></i><b>14.1.1</b> Degree of Pressure Maintenance</a></li>
+<li class="chapter" data-level="14.1.2" data-path="water-influx.html"><a href="water-influx.html#outer-boundary-conditions"><i class="fa fa-check"></i><b>14.1.2</b> Outer Boundary Conditions</a></li>
+<li class="chapter" data-level="14.1.3" data-path="water-influx.html"><a href="water-influx.html#flow-regimes-1"><i class="fa fa-check"></i><b>14.1.3</b> Flow Regimes</a></li>
+<li class="chapter" data-level="14.1.4" data-path="water-influx.html"><a href="water-influx.html#flow-geometries"><i class="fa fa-check"></i><b>14.1.4</b> Flow Geometries</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="water-influx.html"><a href="water-influx.html#recognition-of-natural-water-influx"><i class="fa fa-check"></i><b>14.2</b> Recognition of Natural Water Influx</a></li>
+<li class="chapter" data-level="14.3" data-path="water-influx.html"><a href="water-influx.html#water-influx-models"><i class="fa fa-check"></i><b>14.3</b> Water Influx Models</a>
+<ul>
+<li class="chapter" data-level="14.3.1" data-path="water-influx.html"><a href="water-influx.html#the-pot-aquifer-model"><i class="fa fa-check"></i><b>14.3.1</b> The Pot Aquifer Model</a></li>
+<li class="chapter" data-level="14.3.2" data-path="water-influx.html"><a href="water-influx.html#schilthuis-steady-state-model"><i class="fa fa-check"></i><b>14.3.2</b> Schilthuis Steady-State Model</a></li>
+<li class="chapter" data-level="14.3.3" data-path="water-influx.html"><a href="water-influx.html#example-calculation"><i class="fa fa-check"></i><b>14.3.3</b> Example Calculation</a></li>
+<li class="chapter" data-level="14.3.4" data-path="water-influx.html"><a href="water-influx.html#python-code-schilthuis-steady-state-model"><i class="fa fa-check"></i><b>14.3.4</b> Python Code: Schilthuis Steady-State Model</a></li>
+<li class="chapter" data-level="14.3.5" data-path="water-influx.html"><a href="water-influx.html#hurst-modified-steady-state-model"><i class="fa fa-check"></i><b>14.3.5</b> Hurst Modified Steady-State Model</a></li>
+<li class="chapter" data-level="14.3.6" data-path="water-influx.html"><a href="water-influx.html#example-calculation-1"><i class="fa fa-check"></i><b>14.3.6</b> Example Calculation</a></li>
+<li class="chapter" data-level="14.3.7" data-path="water-influx.html"><a href="water-influx.html#python-code-hurst-modified-steady-state-model"><i class="fa fa-check"></i><b>14.3.7</b> Python Code: Hurst Modified Steady-State Model</a></li>
+<li class="chapter" data-level="14.3.8" data-path="water-influx.html"><a href="water-influx.html#van-everdingen-and-hurst-unsteady-state-model"><i class="fa fa-check"></i><b>14.3.8</b> van Everdingen and Hurst Unsteady-State Model</a></li>
+<li class="chapter" data-level="14.3.9" data-path="water-influx.html"><a href="water-influx.html#dimensionless-water-influx"><i class="fa fa-check"></i><b>14.3.9</b> Dimensionless Water Influx</a></li>
+<li class="chapter" data-level="14.3.10" data-path="water-influx.html"><a href="water-influx.html#carter-and-tracy-water-influx-model"><i class="fa fa-check"></i><b>14.3.10</b> Carter and Tracy Water Influx Model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="material-balance.html"><a href="material-balance.html"><i class="fa fa-check"></i><b>15</b> Material Balance</a></li>
+<li class="chapter" data-level="16" data-path="fractional-flow.html"><a href="fractional-flow.html"><i class="fa fa-check"></i><b>16</b> Fractional Flow</a></li>
+<li class="chapter" data-level="17" data-path="pattern-floods.html"><a href="pattern-floods.html"><i class="fa fa-check"></i><b>17</b> Pattern Floods</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="pattern-floods.html"><a href="pattern-floods.html#recovery-efficiency"><i class="fa fa-check"></i><b>17.1</b> Recovery Efficiency</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="pattern-floods.html"><a href="pattern-floods.html#patterns-and-spacing"><i class="fa fa-check"></i><b>17.1.1</b> Patterns and Spacing</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="pattern-floods.html"><a href="pattern-floods.html#pattern-recovery"><i class="fa fa-check"></i><b>17.2</b> Pattern Recovery</a></li>
+<li class="chapter" data-level="17.3" data-path="pattern-floods.html"><a href="pattern-floods.html#aa"><i class="fa fa-check"></i><b>17.3</b> aa</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html"><i class="fa fa-check"></i><b>18</b> Gas and Water Coning</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-vertical-wells"><i class="fa fa-check"></i><b>18.1</b> Coning in Vertical wells</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#meyer-garder-correlation"><i class="fa fa-check"></i><b>18.1.1</b> Meyer-Garder Correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="gas-and-water-coning.html"><a href="gas-and-water-coning.html#coning-in-horizontal-wells"><i class="fa fa-check"></i><b>18.2</b> Coning in Horizontal wells</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="working-with-las-files.html"><a href="working-with-las-files.html"><i class="fa fa-check"></i><b>19</b> working with Las files</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="working-with-las-files.html"><a href="working-with-las-files.html#basic-example"><i class="fa fa-check"></i><b>19.1</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="rough.html"><a href="rough.html"><i class="fa fa-check"></i><b>20</b> rough</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Applications of Python in Reservoir Engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="water-influx" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">14</span> Water Influx<a href="water-influx.html#water-influx" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Water influx describes the encroachment of water into a hydrocarbon reservoir due to pressure differentials. This chapter explores various water influx mechanisms, aquifer classifications, and computational models for predicting and managing water influx in reservoir engineering.</p>
+<hr />
+<div id="classification-of-aquifers" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Classification of Aquifers<a href="water-influx.html#classification-of-aquifers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="degree-of-pressure-maintenance" class="section level3 hasAnchor" number="14.1.1">
+<h3><span class="header-section-number">14.1.1</span> Degree of Pressure Maintenance<a href="water-influx.html#degree-of-pressure-maintenance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Active water drive</li>
+<li>Partial water drive</li>
+<li>Limited water drive</li>
+</ul>
+</div>
+<div id="outer-boundary-conditions" class="section level3 hasAnchor" number="14.1.2">
+<h3><span class="header-section-number">14.1.2</span> Outer Boundary Conditions<a href="water-influx.html#outer-boundary-conditions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Infinite system</li>
+<li>Finite system</li>
+</ul>
+</div>
+<div id="flow-regimes-1" class="section level3 hasAnchor" number="14.1.3">
+<h3><span class="header-section-number">14.1.3</span> Flow Regimes<a href="water-influx.html#flow-regimes-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Steady-state</li>
+<li>Semi (pseudo) steady-state</li>
+<li>Unsteady-state</li>
+</ul>
+</div>
+<div id="flow-geometries" class="section level3 hasAnchor" number="14.1.4">
+<h3><span class="header-section-number">14.1.4</span> Flow Geometries<a href="water-influx.html#flow-geometries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Edge-water drive</li>
+<li>Bottom-water drive</li>
+<li>Linear-water drive</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="recognition-of-natural-water-influx" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Recognition of Natural Water Influx<a href="water-influx.html#recognition-of-natural-water-influx" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Identifying water influx using reservoir performance trends</li>
+<li>Calculating barrels withdrawn per psi change in reservoir pressure</li>
+<li>Recognizing the effects of undeveloped reservoir areas</li>
+</ul>
+<hr />
+</div>
+<div id="water-influx-models" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Water Influx Models<a href="water-influx.html#water-influx-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-pot-aquifer-model" class="section level3 hasAnchor" number="14.3.1">
+<h3><span class="header-section-number">14.3.1</span> The Pot Aquifer Model<a href="water-influx.html#the-pot-aquifer-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Pot Aquifer Model</strong> is the simplest representation of water influx. It assumes that the aquifer acts like a storage tank (or pot) and provides water influx based solely on the pressure difference between the aquifer and the reservoir. This model is widely used for reservoirs with limited water drive or where the aquifer size is relatively small compared to the reservoir.</p>
+<hr />
+<div id="assumptions-of-the-pot-aquifer-model" class="section level4 hasAnchor" number="14.3.1.1">
+<h4><span class="header-section-number">14.3.1.1</span> Assumptions of the Pot Aquifer Model<a href="water-influx.html#assumptions-of-the-pot-aquifer-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>The aquifer behaves as a single unit with uniform pressure.</li>
+<li>Water influx is proportional to the pressure difference between the aquifer and the reservoir.</li>
+<li>No time delay is considered for water flow within the aquifer.</li>
+<li>Compressibility of water and pore volume are constant.</li>
+</ol>
+<hr />
+</div>
+<div id="governing-equation" class="section level4 hasAnchor" number="14.3.1.2">
+<h4><span class="header-section-number">14.3.1.2</span> Governing Equation<a href="water-influx.html#governing-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The cumulative water influx (<span class="math inline">\(W_e\)</span>) is proportional to the pressure drop in the reservoir:
+<span class="math display">\[
+W_e = c_w \cdot V_a \cdot (p_a - p)
+\]</span>
+Where:
+- <span class="math inline">\(W_e\)</span>: Cumulative water influx (bbl)
+- <span class="math inline">\(c_w\)</span>: Water and pore compressibility (1/psi)
+- <span class="math inline">\(V_a\)</span>: Aquifer pore volume (bbl)
+- <span class="math inline">\(p_a\)</span>: Initial aquifer pressure (psi)
+- <span class="math inline">\(p\)</span>: Current reservoir pressure (psi)</p>
+<hr />
+</div>
+<div id="derivation-of-the-governing-equation" class="section level4 hasAnchor" number="14.3.1.3">
+<h4><span class="header-section-number">14.3.1.3</span> Derivation of the Governing Equation<a href="water-influx.html#derivation-of-the-governing-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><strong>Volume Change</strong>:<br />
+The volume of water entering the reservoir is due to the compression of water and the expansion of pore space:
+<span class="math display">\[
+\Delta V = c_w \cdot V_a \cdot \Delta p
+\]</span>
+Where:
+<ul>
+<li><span class="math inline">\(\Delta V\)</span>: Volume of water influx (bbl)</li>
+<li><span class="math inline">\(\Delta p = p_a - p\)</span>: Pressure drop (psi)</li>
+</ul></li>
+<li><strong>Cumulative Water Influx</strong>:<br />
+Integrating the volume change over time gives the cumulative water influx:
+<span class="math display">\[
+W_e = c_w \cdot V_a \cdot (p_a - p)
+\]</span></li>
+</ol>
+<hr />
+</div>
+<div id="practical-applications" class="section level4 hasAnchor" number="14.3.1.4">
+<h4><span class="header-section-number">14.3.1.4</span> Practical Applications<a href="water-influx.html#practical-applications" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p><strong>Small Aquifers</strong>:<br />
+This model is best suited for reservoirs with small or limited aquifers where pressure gradients within the aquifer can be neglected.</p></li>
+<li><p><strong>Initial Estimates</strong>:<br />
+The Pot Aquifer Model is often used for quick initial estimates of water influx before switching to more complex models.</p></li>
+</ol>
+<hr />
+<div class="sourceCode" id="cb162"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb162-1"><a href="water-influx.html#cb162-1" tabindex="-1"></a><span class="co"># Example Python Code: Pot Aquifer Model</span></span>
+<span id="cb162-2"><a href="water-influx.html#cb162-2" tabindex="-1"></a><span class="kw">def</span> pot_aquifer_water_influx(c_w, V_a, p_a, p):</span>
+<span id="cb162-3"><a href="water-influx.html#cb162-3" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb162-4"><a href="water-influx.html#cb162-4" tabindex="-1"></a><span class="co">    Calculate cumulative water influx using the Pot Aquifer Model.</span></span>
+<span id="cb162-5"><a href="water-influx.html#cb162-5" tabindex="-1"></a></span>
+<span id="cb162-6"><a href="water-influx.html#cb162-6" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb162-7"><a href="water-influx.html#cb162-7" tabindex="-1"></a><span class="co">        c_w (float): Water and pore compressibility (1/psi).</span></span>
+<span id="cb162-8"><a href="water-influx.html#cb162-8" tabindex="-1"></a><span class="co">        V_a (float): Aquifer pore volume (bbl).</span></span>
+<span id="cb162-9"><a href="water-influx.html#cb162-9" tabindex="-1"></a><span class="co">        p_a (float): Initial aquifer pressure (psi).</span></span>
+<span id="cb162-10"><a href="water-influx.html#cb162-10" tabindex="-1"></a><span class="co">        p (float): Current reservoir pressure (psi).</span></span>
+<span id="cb162-11"><a href="water-influx.html#cb162-11" tabindex="-1"></a></span>
+<span id="cb162-12"><a href="water-influx.html#cb162-12" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb162-13"><a href="water-influx.html#cb162-13" tabindex="-1"></a><span class="co">        float: Cumulative water influx (bbl).</span></span>
+<span id="cb162-14"><a href="water-influx.html#cb162-14" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb162-15"><a href="water-influx.html#cb162-15" tabindex="-1"></a>    <span class="cf">return</span> c_w <span class="op">*</span> V_a <span class="op">*</span> (p_a <span class="op">-</span> p)</span>
+<span id="cb162-16"><a href="water-influx.html#cb162-16" tabindex="-1"></a></span>
+<span id="cb162-17"><a href="water-influx.html#cb162-17" tabindex="-1"></a><span class="co"># Given parameters</span></span>
+<span id="cb162-18"><a href="water-influx.html#cb162-18" tabindex="-1"></a>c_w <span class="op">=</span> <span class="fl">3e-6</span>  <span class="co"># 1/psi</span></span>
+<span id="cb162-19"><a href="water-influx.html#cb162-19" tabindex="-1"></a>V_a <span class="op">=</span> <span class="fl">2e7</span>  <span class="co"># bbl</span></span>
+<span id="cb162-20"><a href="water-influx.html#cb162-20" tabindex="-1"></a>p_a <span class="op">=</span> <span class="dv">3000</span>  <span class="co"># psi</span></span>
+<span id="cb162-21"><a href="water-influx.html#cb162-21" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">2500</span>  <span class="co"># psi</span></span>
+<span id="cb162-22"><a href="water-influx.html#cb162-22" tabindex="-1"></a></span>
+<span id="cb162-23"><a href="water-influx.html#cb162-23" tabindex="-1"></a><span class="co"># Calculate cumulative water influx</span></span>
+<span id="cb162-24"><a href="water-influx.html#cb162-24" tabindex="-1"></a>W_e <span class="op">=</span> pot_aquifer_water_influx(c_w, V_a, p_a, p)</span>
+<span id="cb162-25"><a href="water-influx.html#cb162-25" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Cumulative Water Influx (W_e): </span><span class="sc">{</span>W_e<span class="sc">:.2f}</span><span class="ss"> bbl&quot;</span>)</span>
+<span id="cb162-26"><a href="water-influx.html#cb162-26" tabindex="-1"></a>Cumulative Water Influx (W_e): <span class="fl">30000.00</span> bbl</span></code></pre></div>
+</div>
+</div>
+<div id="schilthuis-steady-state-model" class="section level3 hasAnchor" number="14.3.2">
+<h3><span class="header-section-number">14.3.2</span> Schilthuis Steady-State Model<a href="water-influx.html#schilthuis-steady-state-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Schilthuis Steady-State Model</strong> assumes that water influx occurs under steady-state flow conditions, where the flow rate is constant, and the pressure gradient across the aquifer does not change with time. This model is widely used in cases where the aquifer quickly responds to pressure changes in the reservoir, maintaining steady flow.</p>
+<hr />
+<div id="assumptions-of-the-schilthuis-steady-state-model" class="section level4 hasAnchor" number="14.3.2.1">
+<h4><span class="header-section-number">14.3.2.1</span> Assumptions of the Schilthuis Steady-State Model<a href="water-influx.html#assumptions-of-the-schilthuis-steady-state-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>The aquifer behaves as an infinite system with no boundary effects.</li>
+<li>Steady-state flow conditions exist, meaning the pressure gradient across the aquifer remains constant.</li>
+<li>Water influx is directly proportional to the pressure difference between the aquifer and the reservoir.</li>
+</ol>
+<hr />
+</div>
+<div id="governing-equation-1" class="section level4 hasAnchor" number="14.3.2.2">
+<h4><span class="header-section-number">14.3.2.2</span> Governing Equation<a href="water-influx.html#governing-equation-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The rate of water influx (<span class="math inline">\(W_e\)</span>) is given by:
+<span class="math display">\[
+W_e = J \cdot (p_a - p)
+\]</span>
+Where:
+- <span class="math inline">\(W_e\)</span>: Water influx rate (bbl/day)
+- <span class="math inline">\(J\)</span>: Productivity index of the aquifer (bbl/day/psi)
+- <span class="math inline">\(p_a\)</span>: Average aquifer pressure (psi)
+- <span class="math inline">\(p\)</span>: Reservoir pressure (psi)</p>
+<p>The cumulative water influx over time is:
+<span class="math display">\[
+W_e(t) = J \cdot \int_0^t (p_a - p) \, dt
+\]</span></p>
+<hr />
+</div>
+<div id="derivation-of-the-steady-state-flow-equation" class="section level4 hasAnchor" number="14.3.2.3">
+<h4><span class="header-section-number">14.3.2.3</span> Derivation of the Steady-State Flow Equation<a href="water-influx.html#derivation-of-the-steady-state-flow-equation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p><strong>Darcy’s Law</strong>:<br />
+For radial flow in a porous medium:
+<span class="math display">\[
+q = \frac{2 \pi k h (p_a - p)}{\mu \ln(r_e / r_w)}
+\]</span></p></li>
+<li><p><strong>Aquifer Productivity Index (<span class="math inline">\(J\)</span>)</strong>:<br />
+Define the aquifer productivity index as:
+<span class="math display">\[
+J = \frac{2 \pi k h}{\mu \ln(r_e / r_w)}
+\]</span>
+Substituting this into Darcy’s law:
+<span class="math display">\[
+W_e = J \cdot (p_a - p)
+\]</span></p></li>
+<li><p><strong>Cumulative Water Influx</strong>:<br />
+To find the cumulative water influx over time, integrate the rate of water influx:
+<span class="math display">\[
+W_e(t) = \int_0^t W_e \, dt = J \cdot \int_0^t (p_a - p) \, dt
+\]</span></p></li>
+</ol>
+<hr />
+</div>
+<div id="applications-of-the-schilthuis-model" class="section level4 hasAnchor" number="14.3.2.4">
+<h4><span class="header-section-number">14.3.2.4</span> Applications of the Schilthuis Model<a href="water-influx.html#applications-of-the-schilthuis-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p><strong>Aquifers with Fast Response</strong>:<br />
+Suitable for aquifers where steady-state flow conditions are quickly established.</p></li>
+<li><p><strong>Pressure Maintenance</strong>:<br />
+Used to estimate the water influx required to maintain reservoir pressure during production.</p></li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="example-calculation" class="section level3 hasAnchor" number="14.3.3">
+<h3><span class="header-section-number">14.3.3</span> Example Calculation<a href="water-influx.html#example-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose the following parameters:
+- <span class="math inline">\(J = 100\)</span> bbl/day/psi
+- <span class="math inline">\(p_a = 3000\)</span> psi
+- <span class="math inline">\(p = 2500\)</span> psi
+- Time of interest: <span class="math inline">\(t = 10\)</span> days</p>
+<p>The water influx rate is:
+<span class="math display">\[
+W_e = J \cdot (p_a - p) = 100 \cdot (3000 - 2500) = 50000 \, \text{bbl/day}
+\]</span></p>
+<p>Cumulative water influx over 10 days is:
+<span class="math display">\[
+W_e(t) = W_e \cdot t = 50000 \cdot 10 = 500000 \, \text{bbl}
+\]</span></p>
+<hr />
+</div>
+<div id="python-code-schilthuis-steady-state-model" class="section level3 hasAnchor" number="14.3.4">
+<h3><span class="header-section-number">14.3.4</span> Python Code: Schilthuis Steady-State Model<a href="water-influx.html#python-code-schilthuis-steady-state-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb163"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb163-1"><a href="water-influx.html#cb163-1" tabindex="-1"></a><span class="kw">def</span> schilthuis_water_influx_rate(J, p_a, p):</span>
+<span id="cb163-2"><a href="water-influx.html#cb163-2" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb163-3"><a href="water-influx.html#cb163-3" tabindex="-1"></a><span class="co">    Calculate the water influx rate using the Schilthuis Steady-State Model.</span></span>
+<span id="cb163-4"><a href="water-influx.html#cb163-4" tabindex="-1"></a></span>
+<span id="cb163-5"><a href="water-influx.html#cb163-5" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb163-6"><a href="water-influx.html#cb163-6" tabindex="-1"></a><span class="co">        J (float): Productivity index of the aquifer (bbl/day/psi).</span></span>
+<span id="cb163-7"><a href="water-influx.html#cb163-7" tabindex="-1"></a><span class="co">        p_a (float): Average aquifer pressure (psi).</span></span>
+<span id="cb163-8"><a href="water-influx.html#cb163-8" tabindex="-1"></a><span class="co">        p (float): Reservoir pressure (psi).</span></span>
+<span id="cb163-9"><a href="water-influx.html#cb163-9" tabindex="-1"></a></span>
+<span id="cb163-10"><a href="water-influx.html#cb163-10" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb163-11"><a href="water-influx.html#cb163-11" tabindex="-1"></a><span class="co">        float: Water influx rate (bbl/day).</span></span>
+<span id="cb163-12"><a href="water-influx.html#cb163-12" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb163-13"><a href="water-influx.html#cb163-13" tabindex="-1"></a>    <span class="cf">return</span> J <span class="op">*</span> (p_a <span class="op">-</span> p)</span>
+<span id="cb163-14"><a href="water-influx.html#cb163-14" tabindex="-1"></a></span>
+<span id="cb163-15"><a href="water-influx.html#cb163-15" tabindex="-1"></a><span class="kw">def</span> cumulative_water_influx(W_e, time):</span>
+<span id="cb163-16"><a href="water-influx.html#cb163-16" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb163-17"><a href="water-influx.html#cb163-17" tabindex="-1"></a><span class="co">    Calculate the cumulative water influx over a given time period.</span></span>
+<span id="cb163-18"><a href="water-influx.html#cb163-18" tabindex="-1"></a></span>
+<span id="cb163-19"><a href="water-influx.html#cb163-19" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb163-20"><a href="water-influx.html#cb163-20" tabindex="-1"></a><span class="co">        W_e (float): Water influx rate (bbl/day).</span></span>
+<span id="cb163-21"><a href="water-influx.html#cb163-21" tabindex="-1"></a><span class="co">        time (float): Time period (days).</span></span>
+<span id="cb163-22"><a href="water-influx.html#cb163-22" tabindex="-1"></a></span>
+<span id="cb163-23"><a href="water-influx.html#cb163-23" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb163-24"><a href="water-influx.html#cb163-24" tabindex="-1"></a><span class="co">        float: Cumulative water influx (bbl).</span></span>
+<span id="cb163-25"><a href="water-influx.html#cb163-25" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb163-26"><a href="water-influx.html#cb163-26" tabindex="-1"></a>    <span class="cf">return</span> W_e <span class="op">*</span> time</span>
+<span id="cb163-27"><a href="water-influx.html#cb163-27" tabindex="-1"></a></span>
+<span id="cb163-28"><a href="water-influx.html#cb163-28" tabindex="-1"></a><span class="co"># Given parameters</span></span>
+<span id="cb163-29"><a href="water-influx.html#cb163-29" tabindex="-1"></a>J <span class="op">=</span> <span class="dv">100</span>  <span class="co"># bbl/day/psi</span></span>
+<span id="cb163-30"><a href="water-influx.html#cb163-30" tabindex="-1"></a>p_a <span class="op">=</span> <span class="dv">3000</span>  <span class="co"># psi</span></span>
+<span id="cb163-31"><a href="water-influx.html#cb163-31" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">2500</span>  <span class="co"># psi</span></span>
+<span id="cb163-32"><a href="water-influx.html#cb163-32" tabindex="-1"></a>time <span class="op">=</span> <span class="dv">10</span>  <span class="co"># days</span></span>
+<span id="cb163-33"><a href="water-influx.html#cb163-33" tabindex="-1"></a></span>
+<span id="cb163-34"><a href="water-influx.html#cb163-34" tabindex="-1"></a><span class="co"># Calculate water influx rate and cumulative water influx</span></span>
+<span id="cb163-35"><a href="water-influx.html#cb163-35" tabindex="-1"></a>W_e <span class="op">=</span> schilthuis_water_influx_rate(J, p_a, p)</span>
+<span id="cb163-36"><a href="water-influx.html#cb163-36" tabindex="-1"></a>W_e_cumulative <span class="op">=</span> cumulative_water_influx(W_e, time)</span>
+<span id="cb163-37"><a href="water-influx.html#cb163-37" tabindex="-1"></a></span>
+<span id="cb163-38"><a href="water-influx.html#cb163-38" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Water Influx Rate (W_e): </span><span class="sc">{</span>W_e<span class="sc">:.2f}</span><span class="ss"> bbl/day&quot;</span>)</span>
+<span id="cb163-39"><a href="water-influx.html#cb163-39" tabindex="-1"></a>Water Influx Rate (W_e): <span class="fl">50000.00</span> bbl<span class="op">/</span>day</span>
+<span id="cb163-40"><a href="water-influx.html#cb163-40" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Cumulative Water Influx (W_e(t)): </span><span class="sc">{</span>W_e_cumulative<span class="sc">:.2f}</span><span class="ss"> bbl&quot;</span>)</span>
+<span id="cb163-41"><a href="water-influx.html#cb163-41" tabindex="-1"></a>Cumulative Water Influx (W_e(t)): <span class="fl">500000.00</span> bbl</span></code></pre></div>
+<p>Solving one example:</p>
+<p><strong>Example:</strong> The aquifer is under a steady-state flowing
+condition with an estimated water influx
+constant of 130 bbl/day/psi. Given the initial
+reservoir pressure is 3500 psi, calculate the
+cumulative water influx after 100, 200, 300,
+and 400 days using the steady-state model.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>time (days)</strong></th>
+<th align="center"><strong>p (psi)</strong></th>
+<th align="center"><strong>pi-p (psi)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0</td>
+<td align="center">3500</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">100</td>
+<td align="center">3450</td>
+<td align="center">50</td>
+</tr>
+<tr class="odd">
+<td align="center">200</td>
+<td align="center">3410</td>
+<td align="center">90</td>
+</tr>
+<tr class="even">
+<td align="center">300</td>
+<td align="center">3380</td>
+<td align="center">120</td>
+</tr>
+<tr class="odd">
+<td align="center">400</td>
+<td align="center">3340</td>
+<td align="center">160</td>
+</tr>
+</tbody>
+</table>
+<p>the python code to solve the given problem is as follows:</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb164-1"><a href="water-influx.html#cb164-1" tabindex="-1"></a><span class="kw">def</span> calculate_water_influx(c, pressure_data, t_intervals, initial_pressure):</span>
+<span id="cb164-2"><a href="water-influx.html#cb164-2" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb164-3"><a href="water-influx.html#cb164-3" tabindex="-1"></a><span class="co">    Calculate cumulative water influx using the Schilthuis steady-state model.</span></span>
+<span id="cb164-4"><a href="water-influx.html#cb164-4" tabindex="-1"></a></span>
+<span id="cb164-5"><a href="water-influx.html#cb164-5" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb164-6"><a href="water-influx.html#cb164-6" tabindex="-1"></a><span class="co">        c (float): Water influx constant (bbl/day/psi).</span></span>
+<span id="cb164-7"><a href="water-influx.html#cb164-7" tabindex="-1"></a><span class="co">        pressure_data (list): Reservoir pressures at different times (psi).</span></span>
+<span id="cb164-8"><a href="water-influx.html#cb164-8" tabindex="-1"></a><span class="co">        t_intervals (list): Time intervals corresponding to pressures (days).</span></span>
+<span id="cb164-9"><a href="water-influx.html#cb164-9" tabindex="-1"></a><span class="co">        initial_pressure (float): Initial reservoir pressure (psi).</span></span>
+<span id="cb164-10"><a href="water-influx.html#cb164-10" tabindex="-1"></a></span>
+<span id="cb164-11"><a href="water-influx.html#cb164-11" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb164-12"><a href="water-influx.html#cb164-12" tabindex="-1"></a><span class="co">        list: Cumulative water influx values at each time step (bbl).</span></span>
+<span id="cb164-13"><a href="water-influx.html#cb164-13" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb164-14"><a href="water-influx.html#cb164-14" tabindex="-1"></a>    cumulative_influx <span class="op">=</span> []</span>
+<span id="cb164-15"><a href="water-influx.html#cb164-15" tabindex="-1"></a>    previous_influx <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb164-16"><a href="water-influx.html#cb164-16" tabindex="-1"></a>    delta_pressure <span class="op">=</span> []</span>
+<span id="cb164-17"><a href="water-influx.html#cb164-17" tabindex="-1"></a>    delta_time <span class="op">=</span> []</span>
+<span id="cb164-18"><a href="water-influx.html#cb164-18" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(t_intervals)):</span>
+<span id="cb164-19"><a href="water-influx.html#cb164-19" tabindex="-1"></a>        </span>
+<span id="cb164-20"><a href="water-influx.html#cb164-20" tabindex="-1"></a>        delta_p <span class="op">=</span> (initial_pressure <span class="op">-</span> pressure_data[i])</span>
+<span id="cb164-21"><a href="water-influx.html#cb164-21" tabindex="-1"></a>        delta_t <span class="op">=</span> t_intervals[i] <span class="op">-</span> (t_intervals[i <span class="op">-</span> <span class="dv">1</span>] <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span>)</span>
+<span id="cb164-22"><a href="water-influx.html#cb164-22" tabindex="-1"></a>        delta_pressure.append(delta_p)</span>
+<span id="cb164-23"><a href="water-influx.html#cb164-23" tabindex="-1"></a>        delta_time.append(delta_t)</span>
+<span id="cb164-24"><a href="water-influx.html#cb164-24" tabindex="-1"></a>        </span>
+<span id="cb164-25"><a href="water-influx.html#cb164-25" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(delta_pressure)<span class="op">-</span><span class="dv">2</span>, <span class="bu">len</span>(delta_pressure)):</span>
+<span id="cb164-26"><a href="water-influx.html#cb164-26" tabindex="-1"></a>            water_influx <span class="op">=</span> c <span class="op">*</span> delta_pressure[j] <span class="op">*</span> delta_time[j]<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb164-27"><a href="water-influx.html#cb164-27" tabindex="-1"></a>            previous_influx <span class="op">+=</span> water_influx</span>
+<span id="cb164-28"><a href="water-influx.html#cb164-28" tabindex="-1"></a>            </span>
+<span id="cb164-29"><a href="water-influx.html#cb164-29" tabindex="-1"></a>        cumulative_influx.append(previous_influx)</span>
+<span id="cb164-30"><a href="water-influx.html#cb164-30" tabindex="-1"></a>    <span class="cf">return</span> cumulative_influx</span>
+<span id="cb164-31"><a href="water-influx.html#cb164-31" tabindex="-1"></a></span>
+<span id="cb164-32"><a href="water-influx.html#cb164-32" tabindex="-1"></a><span class="co"># Given data</span></span>
+<span id="cb164-33"><a href="water-influx.html#cb164-33" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">130</span>  <span class="co"># Water influx constant (bbl/day/psi)</span></span>
+<span id="cb164-34"><a href="water-influx.html#cb164-34" tabindex="-1"></a>initial_pressure <span class="op">=</span> <span class="dv">3500</span>  <span class="co"># psi</span></span>
+<span id="cb164-35"><a href="water-influx.html#cb164-35" tabindex="-1"></a>pressure_data <span class="op">=</span> [<span class="dv">3500</span>, <span class="dv">3450</span>, <span class="dv">3410</span>, <span class="dv">3380</span>, <span class="dv">3340</span>]  <span class="co"># psi</span></span>
+<span id="cb164-36"><a href="water-influx.html#cb164-36" tabindex="-1"></a>t_intervals <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>]  <span class="co"># days</span></span>
+<span id="cb164-37"><a href="water-influx.html#cb164-37" tabindex="-1"></a></span>
+<span id="cb164-38"><a href="water-influx.html#cb164-38" tabindex="-1"></a><span class="co"># Calculate cumulative water influx</span></span>
+<span id="cb164-39"><a href="water-influx.html#cb164-39" tabindex="-1"></a>cumulative_influx <span class="op">=</span> calculate_water_influx(c, pressure_data, t_intervals, initial_pressure)</span>
+<span id="cb164-40"><a href="water-influx.html#cb164-40" tabindex="-1"></a></span>
+<span id="cb164-41"><a href="water-influx.html#cb164-41" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb164-42"><a href="water-influx.html#cb164-42" tabindex="-1"></a><span class="cf">for</span> t, influx <span class="kw">in</span> <span class="bu">zip</span>(t_intervals, cumulative_influx):</span>
+<span id="cb164-43"><a href="water-influx.html#cb164-43" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;_&quot;</span><span class="op">*</span><span class="dv">50</span>)</span>
+<span id="cb164-44"><a href="water-influx.html#cb164-44" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Day </span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">: Cumulative Water Influx = </span><span class="sc">{</span>influx<span class="sc">:.2f}</span><span class="ss"> bbl&quot;</span>)</span>
+<span id="cb164-45"><a href="water-influx.html#cb164-45" tabindex="-1"></a>__________________________________________________</span>
+<span id="cb164-46"><a href="water-influx.html#cb164-46" tabindex="-1"></a>Day <span class="dv">0</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">0.00</span> bbl</span>
+<span id="cb164-47"><a href="water-influx.html#cb164-47" tabindex="-1"></a>__________________________________________________</span>
+<span id="cb164-48"><a href="water-influx.html#cb164-48" tabindex="-1"></a>Day <span class="dv">100</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">325000.00</span> bbl</span>
+<span id="cb164-49"><a href="water-influx.html#cb164-49" tabindex="-1"></a>__________________________________________________</span>
+<span id="cb164-50"><a href="water-influx.html#cb164-50" tabindex="-1"></a>Day <span class="dv">200</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">1235000.00</span> bbl</span>
+<span id="cb164-51"><a href="water-influx.html#cb164-51" tabindex="-1"></a>__________________________________________________</span>
+<span id="cb164-52"><a href="water-influx.html#cb164-52" tabindex="-1"></a>Day <span class="dv">300</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">2600000.00</span> bbl</span>
+<span id="cb164-53"><a href="water-influx.html#cb164-53" tabindex="-1"></a>__________________________________________________</span>
+<span id="cb164-54"><a href="water-influx.html#cb164-54" tabindex="-1"></a>Day <span class="dv">400</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">4420000.00</span> bbl</span></code></pre></div>
+</div>
+<div id="hurst-modified-steady-state-model" class="section level3 hasAnchor" number="14.3.5">
+<h3><span class="header-section-number">14.3.5</span> Hurst Modified Steady-State Model<a href="water-influx.html#hurst-modified-steady-state-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Hurst Modified Steady-State Model</strong> refines the Schilthuis steady-state model by considering the time-dependent behavior of finite aquifers. This model accounts for the fact that steady-state conditions are not immediately established and that aquifers exhibit transient behavior before reaching equilibrium.</p>
+<hr />
+<div id="assumptions-of-the-hurst-modified-model" class="section level4 hasAnchor" number="14.3.5.1">
+<h4><span class="header-section-number">14.3.5.1</span> Assumptions of the Hurst Modified Model<a href="water-influx.html#assumptions-of-the-hurst-modified-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>The aquifer is finite and bounded, resulting in time-dependent water influx.</li>
+<li>The pressure gradient across the aquifer changes with time until steady-state flow is established.</li>
+<li>The aquifer eventually reaches steady-state conditions if sufficient time is allowed.</li>
+</ol>
+<hr />
+</div>
+<div id="governing-equation-2" class="section level4 hasAnchor" number="14.3.5.2">
+<h4><span class="header-section-number">14.3.5.2</span> Governing Equation<a href="water-influx.html#governing-equation-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The cumulative water influx (<span class="math inline">\(W_e(t)\)</span>) is expressed as:
+<span class="math display">\[
+W_e(t) = W_e^* \cdot \left(1 - e^{-\beta t}\right)
+\]</span>
+Where:
+- <span class="math inline">\(W_e(t)\)</span>: Cumulative water influx at time <span class="math inline">\(t\)</span> (bbl)
+- <span class="math inline">\(W_e^*\)</span>: Maximum (steady-state) water influx (bbl)
+- <span class="math inline">\(\beta\)</span>: Time constant (1/day)
+- <span class="math inline">\(t\)</span>: Time (days)</p>
+<hr />
+</div>
+<div id="derivation-of-the-governing-equation-1" class="section level4 hasAnchor" number="14.3.5.3">
+<h4><span class="header-section-number">14.3.5.3</span> Derivation of the Governing Equation<a href="water-influx.html#derivation-of-the-governing-equation-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p><strong>Steady-State Maximum Water Influx</strong>:<br />
+Under steady-state conditions, the water influx rate is constant and reaches a maximum value:
+<span class="math display">\[
+W_e^* = J \cdot (p_a - p)
+\]</span>
+Where <span class="math inline">\(J\)</span> is the aquifer productivity index.</p></li>
+<li><p><strong>Time-Dependent Behavior</strong>:<br />
+For a finite aquifer, the water influx rate increases over time as the pressure gradient propagates through the aquifer. This time dependency is modeled as:
+<span class="math display">\[
+W_e(t) = W_e^* \cdot \left(1 - e^{-\beta t}\right)
+\]</span>
+The exponential term <span class="math inline">\(\left(1 - e^{-\beta t}\right)\)</span> accounts for the delayed establishment of steady-state conditions.</p></li>
+<li><p><strong>Time Constant (<span class="math inline">\(\beta\)</span>)</strong>:<br />
+The time constant is defined as:
+<span class="math display">\[
+\beta = \frac{k}{\phi \mu c \cdot V_a}
+\]</span>
+Where:</p>
+<ul>
+<li><span class="math inline">\(k\)</span>: Permeability (md)</li>
+<li><span class="math inline">\(\phi\)</span>: Porosity (fraction)</li>
+<li><span class="math inline">\(\mu\)</span>: Fluid viscosity (cp)</li>
+<li><span class="math inline">\(c\)</span>: Total compressibility (1/psi)</li>
+<li><span class="math inline">\(V_a\)</span>: Aquifer pore volume (bbl)</li>
+</ul></li>
+</ol>
+<hr />
+</div>
+<div id="applications-of-the-hurst-modified-model" class="section level4 hasAnchor" number="14.3.5.4">
+<h4><span class="header-section-number">14.3.5.4</span> Applications of the Hurst Modified Model<a href="water-influx.html#applications-of-the-hurst-modified-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li><p><strong>Finite Aquifers</strong>:<br />
+This model is ideal for reservoirs with finite aquifers where boundary effects significantly influence water influx.</p></li>
+<li><p><strong>Transient Behavior</strong>:<br />
+Used to predict water influx during the early stages of production before steady-state conditions are established.</p></li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="example-calculation-1" class="section level3 hasAnchor" number="14.3.6">
+<h3><span class="header-section-number">14.3.6</span> Example Calculation<a href="water-influx.html#example-calculation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose the following parameters:
+- <span class="math inline">\(W_e^* = 100000\)</span> bbl
+- <span class="math inline">\(\beta = 0.005\)</span> 1/day
+- Time: <span class="math inline">\(t = [0, 50, 100, 150, 200]\)</span> days</p>
+<p>The cumulative water influx at each time step can be calculated using:
+<span class="math display">\[
+W_e(t) = W_e^* \cdot \left(1 - e^{-\beta t}\right)
+\]</span></p>
+<hr />
+</div>
+<div id="python-code-hurst-modified-steady-state-model" class="section level3 hasAnchor" number="14.3.7">
+<h3><span class="header-section-number">14.3.7</span> Python Code: Hurst Modified Steady-State Model<a href="water-influx.html#python-code-hurst-modified-steady-state-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb165"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb165-1"><a href="water-influx.html#cb165-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb165-2"><a href="water-influx.html#cb165-2" tabindex="-1"></a></span>
+<span id="cb165-3"><a href="water-influx.html#cb165-3" tabindex="-1"></a><span class="kw">def</span> hurst_modified_water_influx(W_e_star, beta, times):</span>
+<span id="cb165-4"><a href="water-influx.html#cb165-4" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb165-5"><a href="water-influx.html#cb165-5" tabindex="-1"></a><span class="co">    Calculate cumulative water influx using the Hurst Modified Steady-State Equation.</span></span>
+<span id="cb165-6"><a href="water-influx.html#cb165-6" tabindex="-1"></a></span>
+<span id="cb165-7"><a href="water-influx.html#cb165-7" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb165-8"><a href="water-influx.html#cb165-8" tabindex="-1"></a><span class="co">        W_e_star (float): Maximum steady-state water influx (bbl).</span></span>
+<span id="cb165-9"><a href="water-influx.html#cb165-9" tabindex="-1"></a><span class="co">        beta (float): Time constant (1/day).</span></span>
+<span id="cb165-10"><a href="water-influx.html#cb165-10" tabindex="-1"></a><span class="co">        times (list): List of time points (days).</span></span>
+<span id="cb165-11"><a href="water-influx.html#cb165-11" tabindex="-1"></a></span>
+<span id="cb165-12"><a href="water-influx.html#cb165-12" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb165-13"><a href="water-influx.html#cb165-13" tabindex="-1"></a><span class="co">        list: Cumulative water influx at each time point (bbl).</span></span>
+<span id="cb165-14"><a href="water-influx.html#cb165-14" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb165-15"><a href="water-influx.html#cb165-15" tabindex="-1"></a>    <span class="cf">return</span> [W_e_star <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> math.exp(<span class="op">-</span>beta <span class="op">*</span> t)) <span class="cf">for</span> t <span class="kw">in</span> times]</span>
+<span id="cb165-16"><a href="water-influx.html#cb165-16" tabindex="-1"></a></span>
+<span id="cb165-17"><a href="water-influx.html#cb165-17" tabindex="-1"></a><span class="co"># Given parameters</span></span>
+<span id="cb165-18"><a href="water-influx.html#cb165-18" tabindex="-1"></a>W_e_star <span class="op">=</span> <span class="dv">100000</span>  <span class="co"># bbl</span></span>
+<span id="cb165-19"><a href="water-influx.html#cb165-19" tabindex="-1"></a>beta <span class="op">=</span> <span class="fl">0.005</span>  <span class="co"># 1/day</span></span>
+<span id="cb165-20"><a href="water-influx.html#cb165-20" tabindex="-1"></a>times <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">200</span>]  <span class="co"># days</span></span>
+<span id="cb165-21"><a href="water-influx.html#cb165-21" tabindex="-1"></a></span>
+<span id="cb165-22"><a href="water-influx.html#cb165-22" tabindex="-1"></a><span class="co"># Calculate cumulative water influx</span></span>
+<span id="cb165-23"><a href="water-influx.html#cb165-23" tabindex="-1"></a>water_influx <span class="op">=</span> hurst_modified_water_influx(W_e_star, beta, times)</span>
+<span id="cb165-24"><a href="water-influx.html#cb165-24" tabindex="-1"></a></span>
+<span id="cb165-25"><a href="water-influx.html#cb165-25" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb165-26"><a href="water-influx.html#cb165-26" tabindex="-1"></a><span class="cf">for</span> t, W_e <span class="kw">in</span> <span class="bu">zip</span>(times, water_influx):</span>
+<span id="cb165-27"><a href="water-influx.html#cb165-27" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Day </span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">: Cumulative Water Influx = </span><span class="sc">{</span>W_e<span class="sc">:.2f}</span><span class="ss"> bbl&quot;</span>)</span>
+<span id="cb165-28"><a href="water-influx.html#cb165-28" tabindex="-1"></a>Day <span class="dv">0</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">0.00</span> bbl</span>
+<span id="cb165-29"><a href="water-influx.html#cb165-29" tabindex="-1"></a>Day <span class="dv">50</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">22119.92</span> bbl</span>
+<span id="cb165-30"><a href="water-influx.html#cb165-30" tabindex="-1"></a>Day <span class="dv">100</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">39346.93</span> bbl</span>
+<span id="cb165-31"><a href="water-influx.html#cb165-31" tabindex="-1"></a>Day <span class="dv">150</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">52763.34</span> bbl</span>
+<span id="cb165-32"><a href="water-influx.html#cb165-32" tabindex="-1"></a>Day <span class="dv">200</span>: Cumulative Water Influx <span class="op">=</span> <span class="fl">63212.06</span> bbl</span></code></pre></div>
+<p>solving one more</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb166-1"><a href="water-influx.html#cb166-1" tabindex="-1"></a></span>
+<span id="cb166-2"><a href="water-influx.html#cb166-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb166-3"><a href="water-influx.html#cb166-3" tabindex="-1"></a></span>
+<span id="cb166-4"><a href="water-influx.html#cb166-4" tabindex="-1"></a><span class="kw">def</span> hurst_cumulative_water_influx(time_intervals, delta_pressure, C, a):</span>
+<span id="cb166-5"><a href="water-influx.html#cb166-5" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb166-6"><a href="water-influx.html#cb166-6" tabindex="-1"></a><span class="co">    Calculate cumulative water influx using the Hurst equation.</span></span>
+<span id="cb166-7"><a href="water-influx.html#cb166-7" tabindex="-1"></a></span>
+<span id="cb166-8"><a href="water-influx.html#cb166-8" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb166-9"><a href="water-influx.html#cb166-9" tabindex="-1"></a><span class="co">        time_intervals (list): List of time intervals (days).</span></span>
+<span id="cb166-10"><a href="water-influx.html#cb166-10" tabindex="-1"></a><span class="co">        delta_pressure (list): Pressure drop values (psi) corresponding to time intervals.</span></span>
+<span id="cb166-11"><a href="water-influx.html#cb166-11" tabindex="-1"></a><span class="co">        C (float): Coefficient of the Hurst equation.</span></span>
+<span id="cb166-12"><a href="water-influx.html#cb166-12" tabindex="-1"></a><span class="co">        a (float): Aquifer parameter for time dependence.</span></span>
+<span id="cb166-13"><a href="water-influx.html#cb166-13" tabindex="-1"></a></span>
+<span id="cb166-14"><a href="water-influx.html#cb166-14" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb166-15"><a href="water-influx.html#cb166-15" tabindex="-1"></a><span class="co">        list: Cumulative water influx values (MMbbl) at each time step.</span></span>
+<span id="cb166-16"><a href="water-influx.html#cb166-16" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb166-17"><a href="water-influx.html#cb166-17" tabindex="-1"></a>   </span>
+<span id="cb166-18"><a href="water-influx.html#cb166-18" tabindex="-1"></a>    cumulative_influx <span class="op">=</span> []</span>
+<span id="cb166-19"><a href="water-influx.html#cb166-19" tabindex="-1"></a>    total_influx <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb166-20"><a href="water-influx.html#cb166-20" tabindex="-1"></a></span>
+<span id="cb166-21"><a href="water-influx.html#cb166-21" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(time_intervals)):</span>
+<span id="cb166-22"><a href="water-influx.html#cb166-22" tabindex="-1"></a>        t1, t2 <span class="op">=</span> time_intervals[i <span class="op">-</span> <span class="dv">1</span>], time_intervals[i]</span>
+<span id="cb166-23"><a href="water-influx.html#cb166-23" tabindex="-1"></a>        dp1, dp2 <span class="op">=</span> delta_pressure[i <span class="op">-</span> <span class="dv">1</span>], delta_pressure[i]</span>
+<span id="cb166-24"><a href="water-influx.html#cb166-24" tabindex="-1"></a></span>
+<span id="cb166-25"><a href="water-influx.html#cb166-25" tabindex="-1"></a>        ln_t1, ln_t2 <span class="op">=</span> (<span class="dv">0</span> <span class="cf">if</span> t1 <span class="op">==</span><span class="dv">0</span> <span class="cf">else</span> math.log(a <span class="op">*</span> t1)), math.log(a <span class="op">*</span> t2)</span>
+<span id="cb166-26"><a href="water-influx.html#cb166-26" tabindex="-1"></a>        avg_dp <span class="op">=</span> (dp1 <span class="op">+</span> dp2) <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb166-27"><a href="water-influx.html#cb166-27" tabindex="-1"></a>        delta_t <span class="op">=</span> t2 <span class="op">-</span> t1</span>
+<span id="cb166-28"><a href="water-influx.html#cb166-28" tabindex="-1"></a></span>
+<span id="cb166-29"><a href="water-influx.html#cb166-29" tabindex="-1"></a>        <span class="co"># Incremental water influx using the Hurst equation</span></span>
+<span id="cb166-30"><a href="water-influx.html#cb166-30" tabindex="-1"></a>        delta_influx <span class="op">=</span> C <span class="op">*</span> avg_dp <span class="op">*</span> delta_t <span class="op">/</span> (ln_t2 <span class="op">-</span> ln_t1)</span>
+<span id="cb166-31"><a href="water-influx.html#cb166-31" tabindex="-1"></a>        total_influx <span class="op">+=</span> delta_influx</span>
+<span id="cb166-32"><a href="water-influx.html#cb166-32" tabindex="-1"></a>        cumulative_influx.append(total_influx)</span>
+<span id="cb166-33"><a href="water-influx.html#cb166-33" tabindex="-1"></a></span>
+<span id="cb166-34"><a href="water-influx.html#cb166-34" tabindex="-1"></a>    <span class="cf">return</span> cumulative_influx</span>
+<span id="cb166-35"><a href="water-influx.html#cb166-35" tabindex="-1"></a></span>
+<span id="cb166-36"><a href="water-influx.html#cb166-36" tabindex="-1"></a><span class="co"># Given data</span></span>
+<span id="cb166-37"><a href="water-influx.html#cb166-37" tabindex="-1"></a>time_intervals <span class="op">=</span> [<span class="dv">0</span>, <span class="fl">182.5</span>, <span class="fl">365.0</span>, <span class="fl">547.5</span>, <span class="fl">730.0</span>, <span class="fl">912.5</span>, <span class="fl">1095.0</span>]  <span class="co"># days</span></span>
+<span id="cb166-38"><a href="water-influx.html#cb166-38" tabindex="-1"></a>delta_pressure <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">19</span>, <span class="dv">84</span>, <span class="dv">150</span>, <span class="dv">246</span>, <span class="dv">308</span>, <span class="dv">377</span>]  <span class="co"># psi</span></span>
+<span id="cb166-39"><a href="water-influx.html#cb166-39" tabindex="-1"></a>C <span class="op">=</span> <span class="dv">50</span>  <span class="co"># coefficient of the Hurst equation (MMbbl/psi)</span></span>
+<span id="cb166-40"><a href="water-influx.html#cb166-40" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">0.064</span>  <span class="co"># aquifer time-dependent parameter</span></span>
+<span id="cb166-41"><a href="water-influx.html#cb166-41" tabindex="-1"></a></span>
+<span id="cb166-42"><a href="water-influx.html#cb166-42" tabindex="-1"></a><span class="co"># Calculate cumulative water influx</span></span>
+<span id="cb166-43"><a href="water-influx.html#cb166-43" tabindex="-1"></a>cumulative_influx <span class="op">=</span> hurst_cumulative_water_influx(time_intervals, delta_pressure, C, a)</span>
+<span id="cb166-44"><a href="water-influx.html#cb166-44" tabindex="-1"></a></span>
+<span id="cb166-45"><a href="water-influx.html#cb166-45" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb166-46"><a href="water-influx.html#cb166-46" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Time (days) | Cumulative Water Influx (MMbbl)&quot;</span>)</span>
+<span id="cb166-47"><a href="water-influx.html#cb166-47" tabindex="-1"></a>Time (days) <span class="op">|</span> Cumulative Water Influx (MMbbl)</span>
+<span id="cb166-48"><a href="water-influx.html#cb166-48" tabindex="-1"></a><span class="cf">for</span> t, influx <span class="kw">in</span> <span class="bu">zip</span>(time_intervals[<span class="dv">1</span>:], cumulative_influx):  <span class="co"># Skip first time interval (t=0)</span></span>
+<span id="cb166-49"><a href="water-influx.html#cb166-49" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>t<span class="sc">:&gt;10}</span><span class="ss"> | </span><span class="sc">{</span>influx<span class="sc">:&gt;25.3f}</span><span class="ss"> MMbbl&quot;</span>)</span>
+<span id="cb166-50"><a href="water-influx.html#cb166-50" tabindex="-1"></a>     <span class="fl">182.5</span> <span class="op">|</span>                 <span class="fl">35269.245</span> MMbbl</span>
+<span id="cb166-51"><a href="water-influx.html#cb166-51" tabindex="-1"></a>     <span class="fl">365.0</span> <span class="op">|</span>                <span class="fl">713245.746</span> MMbbl</span>
+<span id="cb166-52"><a href="water-influx.html#cb166-52" tabindex="-1"></a>     <span class="fl">547.5</span> <span class="op">|</span>               <span class="fl">3346332.980</span> MMbbl</span>
+<span id="cb166-53"><a href="water-influx.html#cb166-53" tabindex="-1"></a>     <span class="fl">730.0</span> <span class="op">|</span>               <span class="fl">9626703.475</span> MMbbl</span>
+<span id="cb166-54"><a href="water-influx.html#cb166-54" tabindex="-1"></a>     <span class="fl">912.5</span> <span class="op">|</span>              <span class="fl">20954053.000</span> MMbbl</span>
+<span id="cb166-55"><a href="water-influx.html#cb166-55" tabindex="-1"></a>    <span class="fl">1095.0</span> <span class="op">|</span>              <span class="fl">38095813.717</span> MMbbl</span></code></pre></div>
+</div>
+<div id="van-everdingen-and-hurst-unsteady-state-model" class="section level3 hasAnchor" number="14.3.8">
+<h3><span class="header-section-number">14.3.8</span> van Everdingen and Hurst Unsteady-State Model<a href="water-influx.html#van-everdingen-and-hurst-unsteady-state-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Infinite aquifer</li>
+<li>Bounded aquifer</li>
+</ul>
+</div>
+<div id="dimensionless-water-influx" class="section level3 hasAnchor" number="14.3.9">
+<h3><span class="header-section-number">14.3.9</span> Dimensionless Water Influx<a href="water-influx.html#dimensionless-water-influx" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Dimensionless time and radius</li>
+<li>Application of dimensionless water influx constants</li>
+</ul>
+</div>
+<div id="carter-and-tracy-water-influx-model" class="section level3 hasAnchor" number="14.3.10">
+<h3><span class="header-section-number">14.3.10</span> Carter and Tracy Water Influx Model<a href="water-influx.html#carter-and-tracy-water-influx-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Simplified computation without superposition</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="well-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="material-balance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
