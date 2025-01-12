@@ -260,9 +260,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4.3" data-path="properties-of-gas.html"><a href="properties-of-gas.html#gas-density"><i class="fa fa-check"></i><b>7.4.3</b> Gas Density</a></li>
 <li class="chapter" data-level="7.4.4" data-path="properties-of-gas.html"><a href="properties-of-gas.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>7.4.4</b> Isothermal Gas Compressibility</a></li>
 <li class="chapter" data-level="7.4.5" data-path="properties-of-gas.html"><a href="properties-of-gas.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>7.4.5</b> Gas formation volume factor</a></li>
+<li class="chapter" data-level="7.4.6" data-path="properties-of-gas.html"><a href="properties-of-gas.html#gas-viscocity"><i class="fa fa-check"></i><b>7.4.6</b> Gas Viscocity</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>8</b> Properties of Oil</a></li>
+<li class="chapter" data-level="8" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>8</b> Properties of Oil</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="properties-of-oil.html"><a href="properties-of-oil.html#properties-of-crude-oil-systems"><i class="fa fa-check"></i><b>8.1</b> Properties of Crude Oil Systems</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="properties-of-oil.html"><a href="properties-of-oil.html#density-and-specific-gravity"><i class="fa fa-check"></i><b>8.1.1</b> <strong>Density and Specific Gravity</strong></a></li>
+<li class="chapter" data-level="8.1.2" data-path="properties-of-oil.html"><a href="properties-of-oil.html#viscosity"><i class="fa fa-check"></i><b>8.1.2</b> <strong>Viscosity</strong></a></li>
+<li class="chapter" data-level="8.1.3" data-path="properties-of-oil.html"><a href="properties-of-oil.html#composition"><i class="fa fa-check"></i><b>8.1.3</b> <strong>Composition</strong></a></li>
+<li class="chapter" data-level="8.1.4" data-path="properties-of-oil.html"><a href="properties-of-oil.html#solution-gas-oil-ratio-gor"><i class="fa fa-check"></i><b>8.1.4</b> <strong>Solution Gas-Oil Ratio (GOR)</strong></a></li>
+<li class="chapter" data-level="8.1.5" data-path="properties-of-oil.html"><a href="properties-of-oil.html#bubble-point-pressure"><i class="fa fa-check"></i><b>8.1.5</b> <strong>Bubble Point Pressure</strong></a></li>
+<li class="chapter" data-level="8.1.6" data-path="properties-of-oil.html"><a href="properties-of-oil.html#formation-volume-factor"><i class="fa fa-check"></i><b>8.1.6</b> <strong>Formation Volume Factor</strong></a></li>
+<li class="chapter" data-level="8.1.7" data-path="properties-of-oil.html"><a href="properties-of-oil.html#compressibility"><i class="fa fa-check"></i><b>8.1.7</b> <strong>Compressibility</strong></a></li>
+<li class="chapter" data-level="8.1.8" data-path="properties-of-oil.html"><a href="properties-of-oil.html#thermal-properties"><i class="fa fa-check"></i><b>8.1.8</b> <strong>Thermal Properties</strong></a></li>
+<li class="chapter" data-level="8.1.9" data-path="properties-of-oil.html"><a href="properties-of-oil.html#basic-oil-properties-from-compositions"><i class="fa fa-check"></i><b>8.1.9</b> <strong>Basic oil properties from compositions</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="properties-of-oil.html"><a href="properties-of-oil.html#empirical-correlations"><i class="fa fa-check"></i><b>8.2</b> Empirical correlations</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="properties-of-oil.html"><a href="properties-of-oil.html#vasquez-and-beggs-correlations"><i class="fa fa-check"></i><b>8.2.1</b> Vasquez and Beggs Correlations</a></li>
+<li class="chapter" data-level="8.2.2" data-path="properties-of-oil.html"><a href="properties-of-oil.html#standing"><i class="fa fa-check"></i><b>8.2.2</b> Standing</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>9</b> Rock Properties</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>9.1</b> Surface and Interfacial Tension</a></li>
@@ -378,40 +398,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="meyer-garder-correlation" class="section level3 hasAnchor" number="17.1.1">
 <h3><span class="header-section-number">17.1.1</span> Meyer-Garder Correlation<a href="gas-and-water-coning.html#meyer-garder-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In 1954 Meyer and Garder suggested following relation in Gas Oil Coning System</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb172-1"><a href="gas-and-water-coning.html#cb172-1" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb172-2"><a href="gas-and-water-coning.html#cb172-2" tabindex="-1"></a><span class="co">#Sample Data</span></span>
-<span id="cb172-3"><a href="gas-and-water-coning.html#cb172-3" tabindex="-1"></a></span>
-<span id="cb172-4"><a href="gas-and-water-coning.html#cb172-4" tabindex="-1"></a>Kh <span class="op">=</span> <span class="dv">110</span>    <span class="co">#md</span></span>
-<span id="cb172-5"><a href="gas-and-water-coning.html#cb172-5" tabindex="-1"></a>Kro <span class="op">=</span> <span class="fl">0.85</span>  <span class="co"># oil relative permeability</span></span>
-<span id="cb172-6"><a href="gas-and-water-coning.html#cb172-6" tabindex="-1"></a>po <span class="op">=</span> <span class="fl">47.5</span>   <span class="co"># lb/ft3 (oil Density)</span></span>
-<span id="cb172-7"><a href="gas-and-water-coning.html#cb172-7" tabindex="-1"></a>pg <span class="op">=</span> <span class="fl">5.1</span>    <span class="co"># lb/ft3 (gas Density)</span></span>
-<span id="cb172-8"><a href="gas-and-water-coning.html#cb172-8" tabindex="-1"></a>mu<span class="op">=</span> <span class="fl">0.73</span>    <span class="co"># cp (Oil viscosity)</span></span>
-<span id="cb172-9"><a href="gas-and-water-coning.html#cb172-9" tabindex="-1"></a>fvf <span class="op">=</span> <span class="fl">1.1</span>   <span class="co"># bbl/STB</span></span>
-<span id="cb172-10"><a href="gas-and-water-coning.html#cb172-10" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">40</span>      <span class="co">#ft (oil column thickness)</span></span>
-<span id="cb172-11"><a href="gas-and-water-coning.html#cb172-11" tabindex="-1"></a>hp <span class="op">=</span> <span class="dv">15</span>     <span class="co">#ft (perforation interval)</span></span>
-<span id="cb172-12"><a href="gas-and-water-coning.html#cb172-12" tabindex="-1"></a>Dt <span class="op">=</span> <span class="dv">25</span>     <span class="co"># ft (depth of GOC from top of perforation)</span></span>
-<span id="cb172-13"><a href="gas-and-water-coning.html#cb172-13" tabindex="-1"></a>rw <span class="op">=</span> <span class="fl">0.25</span>   <span class="co">#ft (wellbore radius)</span></span>
-<span id="cb172-14"><a href="gas-and-water-coning.html#cb172-14" tabindex="-1"></a>re <span class="op">=</span> <span class="dv">660</span>    <span class="co"># ft (drainage radius)</span></span>
-<span id="cb172-15"><a href="gas-and-water-coning.html#cb172-15" tabindex="-1"></a></span>
-<span id="cb172-16"><a href="gas-and-water-coning.html#cb172-16" tabindex="-1"></a>Qc <span class="op">=</span> <span class="fl">0.0000246</span><span class="op">*</span>(po<span class="op">-</span>pg)<span class="op">*</span>(Kh<span class="op">*</span>Kro<span class="op">/</span>(mu<span class="op">*</span>fvf))<span class="op">*</span>(h<span class="op">**</span><span class="dv">2</span><span class="op">-</span>(h<span class="op">-</span>Dt)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>math.log(re<span class="op">/</span>rw)</span>
-<span id="cb172-17"><a href="gas-and-water-coning.html#cb172-17" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Critical Oil rate = </span><span class="sc">{</span>Qc<span class="sc">}</span><span class="ss"> STB/day&#39;</span>)</span>
-<span id="cb172-18"><a href="gas-and-water-coning.html#cb172-18" tabindex="-1"></a>Critical Oil rate <span class="op">=</span> <span class="fl">21.19601914346511</span> STB<span class="op">/</span>day</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb175-1"><a href="gas-and-water-coning.html#cb175-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb175-2"><a href="gas-and-water-coning.html#cb175-2" tabindex="-1"></a><span class="co">#Sample Data</span></span>
+<span id="cb175-3"><a href="gas-and-water-coning.html#cb175-3" tabindex="-1"></a></span>
+<span id="cb175-4"><a href="gas-and-water-coning.html#cb175-4" tabindex="-1"></a>Kh <span class="op">=</span> <span class="dv">110</span>    <span class="co">#md</span></span>
+<span id="cb175-5"><a href="gas-and-water-coning.html#cb175-5" tabindex="-1"></a>Kro <span class="op">=</span> <span class="fl">0.85</span>  <span class="co"># oil relative permeability</span></span>
+<span id="cb175-6"><a href="gas-and-water-coning.html#cb175-6" tabindex="-1"></a>po <span class="op">=</span> <span class="fl">47.5</span>   <span class="co"># lb/ft3 (oil Density)</span></span>
+<span id="cb175-7"><a href="gas-and-water-coning.html#cb175-7" tabindex="-1"></a>pg <span class="op">=</span> <span class="fl">5.1</span>    <span class="co"># lb/ft3 (gas Density)</span></span>
+<span id="cb175-8"><a href="gas-and-water-coning.html#cb175-8" tabindex="-1"></a>mu<span class="op">=</span> <span class="fl">0.73</span>    <span class="co"># cp (Oil viscosity)</span></span>
+<span id="cb175-9"><a href="gas-and-water-coning.html#cb175-9" tabindex="-1"></a>fvf <span class="op">=</span> <span class="fl">1.1</span>   <span class="co"># bbl/STB</span></span>
+<span id="cb175-10"><a href="gas-and-water-coning.html#cb175-10" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">40</span>      <span class="co">#ft (oil column thickness)</span></span>
+<span id="cb175-11"><a href="gas-and-water-coning.html#cb175-11" tabindex="-1"></a>hp <span class="op">=</span> <span class="dv">15</span>     <span class="co">#ft (perforation interval)</span></span>
+<span id="cb175-12"><a href="gas-and-water-coning.html#cb175-12" tabindex="-1"></a>Dt <span class="op">=</span> <span class="dv">25</span>     <span class="co"># ft (depth of GOC from top of perforation)</span></span>
+<span id="cb175-13"><a href="gas-and-water-coning.html#cb175-13" tabindex="-1"></a>rw <span class="op">=</span> <span class="fl">0.25</span>   <span class="co">#ft (wellbore radius)</span></span>
+<span id="cb175-14"><a href="gas-and-water-coning.html#cb175-14" tabindex="-1"></a>re <span class="op">=</span> <span class="dv">660</span>    <span class="co"># ft (drainage radius)</span></span>
+<span id="cb175-15"><a href="gas-and-water-coning.html#cb175-15" tabindex="-1"></a></span>
+<span id="cb175-16"><a href="gas-and-water-coning.html#cb175-16" tabindex="-1"></a>Qc <span class="op">=</span> <span class="fl">0.0000246</span><span class="op">*</span>(po<span class="op">-</span>pg)<span class="op">*</span>(Kh<span class="op">*</span>Kro<span class="op">/</span>(mu<span class="op">*</span>fvf))<span class="op">*</span>(h<span class="op">**</span><span class="dv">2</span><span class="op">-</span>(h<span class="op">-</span>Dt)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>math.log(re<span class="op">/</span>rw)</span>
+<span id="cb175-17"><a href="gas-and-water-coning.html#cb175-17" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Critical Oil rate = </span><span class="sc">{</span>Qc<span class="sc">}</span><span class="ss"> STB/day&#39;</span>)</span>
+<span id="cb175-18"><a href="gas-and-water-coning.html#cb175-18" tabindex="-1"></a>Critical Oil rate <span class="op">=</span> <span class="fl">21.19601914346511</span> STB<span class="op">/</span>day</span></code></pre></div>
 <p>for Oil water system:</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb173-1"><a href="gas-and-water-coning.html#cb173-1" tabindex="-1"></a><span class="co">#same data as above example</span></span>
-<span id="cb173-2"><a href="gas-and-water-coning.html#cb173-2" tabindex="-1"></a></span>
-<span id="cb173-3"><a href="gas-and-water-coning.html#cb173-3" tabindex="-1"></a>pw <span class="op">=</span> <span class="fl">63.76</span>  <span class="co"># lb/ft3 (water Density)</span></span>
-<span id="cb173-4"><a href="gas-and-water-coning.html#cb173-4" tabindex="-1"></a></span>
-<span id="cb173-5"><a href="gas-and-water-coning.html#cb173-5" tabindex="-1"></a>Qc <span class="op">=</span> <span class="fl">0.0000246</span><span class="op">*</span>(pw<span class="op">-</span>po)<span class="op">*</span>(Kh<span class="op">*</span>Kro<span class="op">/</span>(mu<span class="op">*</span>fvf))<span class="op">*</span>(h<span class="op">**</span><span class="dv">2</span><span class="op">-</span>hp<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>math.log(re<span class="op">/</span>rw)</span>
-<span id="cb173-6"><a href="gas-and-water-coning.html#cb173-6" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Critical Oil rate = </span><span class="sc">{</span>Qc<span class="sc">}</span><span class="ss"> STB/day&#39;</span>)</span>
-<span id="cb173-7"><a href="gas-and-water-coning.html#cb173-7" tabindex="-1"></a>Critical Oil rate <span class="op">=</span> <span class="fl">8.12847337907412</span> STB<span class="op">/</span>day</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb176-1"><a href="gas-and-water-coning.html#cb176-1" tabindex="-1"></a><span class="co">#same data as above example</span></span>
+<span id="cb176-2"><a href="gas-and-water-coning.html#cb176-2" tabindex="-1"></a></span>
+<span id="cb176-3"><a href="gas-and-water-coning.html#cb176-3" tabindex="-1"></a>pw <span class="op">=</span> <span class="fl">63.76</span>  <span class="co"># lb/ft3 (water Density)</span></span>
+<span id="cb176-4"><a href="gas-and-water-coning.html#cb176-4" tabindex="-1"></a></span>
+<span id="cb176-5"><a href="gas-and-water-coning.html#cb176-5" tabindex="-1"></a>Qc <span class="op">=</span> <span class="fl">0.0000246</span><span class="op">*</span>(pw<span class="op">-</span>po)<span class="op">*</span>(Kh<span class="op">*</span>Kro<span class="op">/</span>(mu<span class="op">*</span>fvf))<span class="op">*</span>(h<span class="op">**</span><span class="dv">2</span><span class="op">-</span>hp<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>math.log(re<span class="op">/</span>rw)</span>
+<span id="cb176-6"><a href="gas-and-water-coning.html#cb176-6" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Critical Oil rate = </span><span class="sc">{</span>Qc<span class="sc">}</span><span class="ss"> STB/day&#39;</span>)</span>
+<span id="cb176-7"><a href="gas-and-water-coning.html#cb176-7" tabindex="-1"></a>Critical Oil rate <span class="op">=</span> <span class="fl">8.12847337907412</span> STB<span class="op">/</span>day</span></code></pre></div>
 <p>for gas Oil water system:</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb174-1"><a href="gas-and-water-coning.html#cb174-1" tabindex="-1"></a><span class="co">#same data as above example</span></span>
-<span id="cb174-2"><a href="gas-and-water-coning.html#cb174-2" tabindex="-1"></a></span>
-<span id="cb174-3"><a href="gas-and-water-coning.html#cb174-3" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">65</span>      <span class="co">#ft (oil column thickness)</span></span>
-<span id="cb174-4"><a href="gas-and-water-coning.html#cb174-4" tabindex="-1"></a></span>
-<span id="cb174-5"><a href="gas-and-water-coning.html#cb174-5" tabindex="-1"></a>Qc <span class="op">=</span> <span class="fl">0.0000246</span><span class="op">*</span>(Kh<span class="op">*</span>Kro<span class="op">/</span>(mu<span class="op">*</span>fvf))<span class="op">*</span>((h<span class="op">**</span><span class="dv">2</span><span class="op">-</span>hp<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>math.log(re<span class="op">/</span>rw))<span class="op">*</span>((pw<span class="op">-</span>po)<span class="op">*</span>((po<span class="op">-</span>pg)<span class="op">/</span>(pw<span class="op">-</span>pg))<span class="op">**</span><span class="dv">2</span><span class="op">+</span>((po<span class="op">-</span>pg)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>(po<span class="op">-</span>pg)<span class="op">/</span>(pw<span class="op">-</span>pg))<span class="op">**</span><span class="dv">2</span>))</span>
-<span id="cb174-6"><a href="gas-and-water-coning.html#cb174-6" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Critical Oil rate = </span><span class="sc">{</span>Qc<span class="sc">}</span><span class="ss"> STB/day&#39;</span>)</span>
-<span id="cb174-7"><a href="gas-and-water-coning.html#cb174-7" tabindex="-1"></a>Critical Oil rate <span class="op">=</span> <span class="fl">17.091889596019843</span> STB<span class="op">/</span>day</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb177-1"><a href="gas-and-water-coning.html#cb177-1" tabindex="-1"></a><span class="co">#same data as above example</span></span>
+<span id="cb177-2"><a href="gas-and-water-coning.html#cb177-2" tabindex="-1"></a></span>
+<span id="cb177-3"><a href="gas-and-water-coning.html#cb177-3" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">65</span>      <span class="co">#ft (oil column thickness)</span></span>
+<span id="cb177-4"><a href="gas-and-water-coning.html#cb177-4" tabindex="-1"></a></span>
+<span id="cb177-5"><a href="gas-and-water-coning.html#cb177-5" tabindex="-1"></a>Qc <span class="op">=</span> <span class="fl">0.0000246</span><span class="op">*</span>(Kh<span class="op">*</span>Kro<span class="op">/</span>(mu<span class="op">*</span>fvf))<span class="op">*</span>((h<span class="op">**</span><span class="dv">2</span><span class="op">-</span>hp<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>math.log(re<span class="op">/</span>rw))<span class="op">*</span>((pw<span class="op">-</span>po)<span class="op">*</span>((po<span class="op">-</span>pg)<span class="op">/</span>(pw<span class="op">-</span>pg))<span class="op">**</span><span class="dv">2</span><span class="op">+</span>((po<span class="op">-</span>pg)<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>(po<span class="op">-</span>pg)<span class="op">/</span>(pw<span class="op">-</span>pg))<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb177-6"><a href="gas-and-water-coning.html#cb177-6" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Critical Oil rate = </span><span class="sc">{</span>Qc<span class="sc">}</span><span class="ss"> STB/day&#39;</span>)</span>
+<span id="cb177-7"><a href="gas-and-water-coning.html#cb177-7" tabindex="-1"></a>Critical Oil rate <span class="op">=</span> <span class="fl">17.091889596019843</span> STB<span class="op">/</span>day</span></code></pre></div>
 </div>
 </div>
 <div id="coning-in-horizontal-wells" class="section level2 hasAnchor" number="17.2">

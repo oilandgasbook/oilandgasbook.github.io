@@ -260,9 +260,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.4.3" data-path="properties-of-gas.html"><a href="properties-of-gas.html#gas-density"><i class="fa fa-check"></i><b>7.4.3</b> Gas Density</a></li>
 <li class="chapter" data-level="7.4.4" data-path="properties-of-gas.html"><a href="properties-of-gas.html#isothermal-gas-compressibility"><i class="fa fa-check"></i><b>7.4.4</b> Isothermal Gas Compressibility</a></li>
 <li class="chapter" data-level="7.4.5" data-path="properties-of-gas.html"><a href="properties-of-gas.html#gas-formation-volume-factor"><i class="fa fa-check"></i><b>7.4.5</b> Gas formation volume factor</a></li>
+<li class="chapter" data-level="7.4.6" data-path="properties-of-gas.html"><a href="properties-of-gas.html#gas-viscocity"><i class="fa fa-check"></i><b>7.4.6</b> Gas Viscocity</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>8</b> Properties of Oil</a></li>
+<li class="chapter" data-level="8" data-path="properties-of-oil.html"><a href="properties-of-oil.html"><i class="fa fa-check"></i><b>8</b> Properties of Oil</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="properties-of-oil.html"><a href="properties-of-oil.html#properties-of-crude-oil-systems"><i class="fa fa-check"></i><b>8.1</b> Properties of Crude Oil Systems</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="properties-of-oil.html"><a href="properties-of-oil.html#density-and-specific-gravity"><i class="fa fa-check"></i><b>8.1.1</b> <strong>Density and Specific Gravity</strong></a></li>
+<li class="chapter" data-level="8.1.2" data-path="properties-of-oil.html"><a href="properties-of-oil.html#viscosity"><i class="fa fa-check"></i><b>8.1.2</b> <strong>Viscosity</strong></a></li>
+<li class="chapter" data-level="8.1.3" data-path="properties-of-oil.html"><a href="properties-of-oil.html#composition"><i class="fa fa-check"></i><b>8.1.3</b> <strong>Composition</strong></a></li>
+<li class="chapter" data-level="8.1.4" data-path="properties-of-oil.html"><a href="properties-of-oil.html#solution-gas-oil-ratio-gor"><i class="fa fa-check"></i><b>8.1.4</b> <strong>Solution Gas-Oil Ratio (GOR)</strong></a></li>
+<li class="chapter" data-level="8.1.5" data-path="properties-of-oil.html"><a href="properties-of-oil.html#bubble-point-pressure"><i class="fa fa-check"></i><b>8.1.5</b> <strong>Bubble Point Pressure</strong></a></li>
+<li class="chapter" data-level="8.1.6" data-path="properties-of-oil.html"><a href="properties-of-oil.html#formation-volume-factor"><i class="fa fa-check"></i><b>8.1.6</b> <strong>Formation Volume Factor</strong></a></li>
+<li class="chapter" data-level="8.1.7" data-path="properties-of-oil.html"><a href="properties-of-oil.html#compressibility"><i class="fa fa-check"></i><b>8.1.7</b> <strong>Compressibility</strong></a></li>
+<li class="chapter" data-level="8.1.8" data-path="properties-of-oil.html"><a href="properties-of-oil.html#thermal-properties"><i class="fa fa-check"></i><b>8.1.8</b> <strong>Thermal Properties</strong></a></li>
+<li class="chapter" data-level="8.1.9" data-path="properties-of-oil.html"><a href="properties-of-oil.html#basic-oil-properties-from-compositions"><i class="fa fa-check"></i><b>8.1.9</b> <strong>Basic oil properties from compositions</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="properties-of-oil.html"><a href="properties-of-oil.html#empirical-correlations"><i class="fa fa-check"></i><b>8.2</b> Empirical correlations</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="properties-of-oil.html"><a href="properties-of-oil.html#vasquez-and-beggs-correlations"><i class="fa fa-check"></i><b>8.2.1</b> Vasquez and Beggs Correlations</a></li>
+<li class="chapter" data-level="8.2.2" data-path="properties-of-oil.html"><a href="properties-of-oil.html#standing"><i class="fa fa-check"></i><b>8.2.2</b> Standing</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="rock-properties.html"><a href="rock-properties.html"><i class="fa fa-check"></i><b>9</b> Rock Properties</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="rock-properties.html"><a href="rock-properties.html#surface-and-interfacial-tension"><i class="fa fa-check"></i><b>9.1</b> Surface and Interfacial Tension</a></li>
@@ -468,13 +488,13 @@ This chapter delves into the intricacies of natural gas systems as relevant to g
 <span id="cb128-26"><a href="properties-of-gas.html#cb128-26" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
 <span id="cb128-27"><a href="properties-of-gas.html#cb128-27" tabindex="-1"></a><span class="op">&lt;</span>Figure size <span class="dv">800</span><span class="er">x600</span> <span class="cf">with</span> <span class="dv">0</span> Axes<span class="op">&gt;</span></span>
 <span id="cb128-28"><a href="properties-of-gas.html#cb128-28" tabindex="-1"></a>plt.contourf(P, T, fugacity_methane, levels<span class="op">=</span><span class="dv">20</span>, cmap<span class="op">=</span><span class="st">&#39;coolwarm&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb128-29"><a href="properties-of-gas.html#cb128-29" tabindex="-1"></a><span class="op">&lt;</span>matplotlib.contour.QuadContourSet <span class="bu">object</span> at <span class="bn">0x12b120eb0</span><span class="op">&gt;</span></span>
+<span id="cb128-29"><a href="properties-of-gas.html#cb128-29" tabindex="-1"></a><span class="op">&lt;</span>matplotlib.contour.QuadContourSet <span class="bu">object</span> at <span class="bn">0x10a3ba9a0</span><span class="op">&gt;</span></span>
 <span id="cb128-30"><a href="properties-of-gas.html#cb128-30" tabindex="-1"></a>plt.contourf(P, T, fugacity_ethane, levels<span class="op">=</span><span class="dv">20</span>, cmap<span class="op">=</span><span class="st">&#39;coolwarm&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb128-31"><a href="properties-of-gas.html#cb128-31" tabindex="-1"></a><span class="op">/</span>Users<span class="op">/</span>anitakumari<span class="op">/</span>azad<span class="op">/</span>coding<span class="op">/</span>Python<span class="op">/</span>venv<span class="op">/</span>lib<span class="op">/</span>python3<span class="fl">.9</span><span class="op">/</span>site<span class="op">-</span>packages<span class="op">/</span>matplotlib<span class="op">/</span>contour.py:<span class="dv">1222</span>: <span class="pp">RuntimeWarning</span>: overflow encountered <span class="kw">in</span> add</span>
 <span id="cb128-32"><a href="properties-of-gas.html#cb128-32" tabindex="-1"></a>  <span class="va">self</span>.layers <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> (<span class="va">self</span>._levels[:<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> <span class="va">self</span>._levels[<span class="dv">1</span>:])</span>
-<span id="cb128-33"><a href="properties-of-gas.html#cb128-33" tabindex="-1"></a><span class="op">&lt;</span>matplotlib.contour.QuadContourSet <span class="bu">object</span> at <span class="bn">0x12b234640</span><span class="op">&gt;</span></span>
+<span id="cb128-33"><a href="properties-of-gas.html#cb128-33" tabindex="-1"></a><span class="op">&lt;</span>matplotlib.contour.QuadContourSet <span class="bu">object</span> at <span class="bn">0x10a442bb0</span><span class="op">&gt;</span></span>
 <span id="cb128-34"><a href="properties-of-gas.html#cb128-34" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">&#39;Fugacity Coefficient&#39;</span>)</span>
-<span id="cb128-35"><a href="properties-of-gas.html#cb128-35" tabindex="-1"></a><span class="op">&lt;</span>matplotlib.colorbar.Colorbar <span class="bu">object</span> at <span class="bn">0x12b20ed00</span><span class="op">&gt;</span></span>
+<span id="cb128-35"><a href="properties-of-gas.html#cb128-35" tabindex="-1"></a><span class="op">&lt;</span>matplotlib.colorbar.Colorbar <span class="bu">object</span> at <span class="bn">0x10a49dcd0</span><span class="op">&gt;</span></span>
 <span id="cb128-36"><a href="properties-of-gas.html#cb128-36" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Pressure (bar)&#39;</span>)</span>
 <span id="cb128-37"><a href="properties-of-gas.html#cb128-37" tabindex="-1"></a>Text(<span class="fl">0.5</span>, <span class="dv">0</span>, <span class="st">&#39;Pressure (bar)&#39;</span>)</span>
 <span id="cb128-38"><a href="properties-of-gas.html#cb128-38" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Temperature (K)&#39;</span>)</span>
@@ -625,9 +645,9 @@ Sutton developed a correlation that estimates</p>
 <span id="cb134-5"><a href="properties-of-gas.html#cb134-5" tabindex="-1"></a>Ppc <span class="op">=</span> [<span class="fl">756.8</span> <span class="op">-</span><span class="dv">131</span><span class="op">*</span>sg <span class="op">-</span> <span class="fl">3.6</span> <span class="op">*</span> sg<span class="op">*</span>sg <span class="cf">for</span> sg <span class="kw">in</span> Sg]</span>
 <span id="cb134-6"><a href="properties-of-gas.html#cb134-6" tabindex="-1"></a>Tpc <span class="op">=</span> [<span class="fl">169.2</span> <span class="op">+</span> <span class="fl">349.5</span><span class="op">*</span>sg <span class="op">-</span> <span class="dv">74</span> <span class="op">*</span> sg<span class="op">*</span>sg <span class="cf">for</span> sg <span class="kw">in</span> Sg]</span>
 <span id="cb134-7"><a href="properties-of-gas.html#cb134-7" tabindex="-1"></a>plt.plot(Sg, Ppc, <span class="st">&#39;r-&#39;</span>)</span>
-<span id="cb134-8"><a href="properties-of-gas.html#cb134-8" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x12b491b20</span><span class="op">&gt;</span>]</span>
+<span id="cb134-8"><a href="properties-of-gas.html#cb134-8" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x10a6c8be0</span><span class="op">&gt;</span>]</span>
 <span id="cb134-9"><a href="properties-of-gas.html#cb134-9" tabindex="-1"></a>plt.plot(Sg, Tpc, <span class="st">&#39;b-&#39;</span>)</span>
-<span id="cb134-10"><a href="properties-of-gas.html#cb134-10" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x12b49ca30</span><span class="op">&gt;</span>]</span>
+<span id="cb134-10"><a href="properties-of-gas.html#cb134-10" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x10a6d37c0</span><span class="op">&gt;</span>]</span>
 <span id="cb134-11"><a href="properties-of-gas.html#cb134-11" tabindex="-1"></a>plt.grid()</span>
 <span id="cb134-12"><a href="properties-of-gas.html#cb134-12" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
 <span id="cb134-13"><a href="properties-of-gas.html#cb134-13" tabindex="-1"></a>Text(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
@@ -659,14 +679,14 @@ Sutton developed a correlation that estimates</p>
 <span id="cb135-9"><a href="properties-of-gas.html#cb135-9" tabindex="-1"></a></span>
 <span id="cb135-10"><a href="properties-of-gas.html#cb135-10" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
 <span id="cb135-11"><a href="properties-of-gas.html#cb135-11" tabindex="-1"></a>ax.plot(Sg, Ppc, <span class="st">&#39;r-&#39;</span>)</span>
-<span id="cb135-12"><a href="properties-of-gas.html#cb135-12" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x12b4ac100</span><span class="op">&gt;</span>]</span>
+<span id="cb135-12"><a href="properties-of-gas.html#cb135-12" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x10a6c8700</span><span class="op">&gt;</span>]</span>
 <span id="cb135-13"><a href="properties-of-gas.html#cb135-13" tabindex="-1"></a>ax.plot(Sg, Tpc, <span class="st">&#39;b-&#39;</span>)</span>
-<span id="cb135-14"><a href="properties-of-gas.html#cb135-14" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x12b4acf70</span><span class="op">&gt;</span>]</span>
+<span id="cb135-14"><a href="properties-of-gas.html#cb135-14" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x10a712f10</span><span class="op">&gt;</span>]</span>
 <span id="cb135-15"><a href="properties-of-gas.html#cb135-15" tabindex="-1"></a></span>
 <span id="cb135-16"><a href="properties-of-gas.html#cb135-16" tabindex="-1"></a>ax.plot(Sg, P_pc_corr, <span class="st">&#39;r--&#39;</span>)</span>
-<span id="cb135-17"><a href="properties-of-gas.html#cb135-17" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x12b4910d0</span><span class="op">&gt;</span>]</span>
+<span id="cb135-17"><a href="properties-of-gas.html#cb135-17" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x10a6a49d0</span><span class="op">&gt;</span>]</span>
 <span id="cb135-18"><a href="properties-of-gas.html#cb135-18" tabindex="-1"></a>ax.plot(Sg, T_pc_corr, <span class="st">&#39;b--&#39;</span>)</span>
-<span id="cb135-19"><a href="properties-of-gas.html#cb135-19" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x12b46a730</span><span class="op">&gt;</span>]</span>
+<span id="cb135-19"><a href="properties-of-gas.html#cb135-19" tabindex="-1"></a>[<span class="op">&lt;</span>matplotlib.lines.Line2D <span class="bu">object</span> at <span class="bn">0x10a70ae20</span><span class="op">&gt;</span>]</span>
 <span id="cb135-20"><a href="properties-of-gas.html#cb135-20" tabindex="-1"></a></span>
 <span id="cb135-21"><a href="properties-of-gas.html#cb135-21" tabindex="-1"></a>ax.grid()</span>
 <span id="cb135-22"><a href="properties-of-gas.html#cb135-22" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Pseudo-critical Pressure and Temperature (psia and R)&#39;</span>)</span>
@@ -1033,6 +1053,95 @@ P_{pc} = 677 + 15.0 \gamma_g - 37.5 \gamma_g^2
 <span id="cb146-26"><a href="properties-of-gas.html#cb146-26" tabindex="-1"></a>Pseudo<span class="op">-</span>critical Temperature (Tpc): <span class="fl">373.97</span> °R</span>
 <span id="cb146-27"><a href="properties-of-gas.html#cb146-27" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Pseudo-critical Pressure (Ppc): </span><span class="sc">{</span>Ppc<span class="sc">:.2f}</span><span class="ss"> psia&quot;</span>)</span>
 <span id="cb146-28"><a href="properties-of-gas.html#cb146-28" tabindex="-1"></a>Pseudo<span class="op">-</span>critical Pressure (Ppc): <span class="fl">670.91</span> psia</span></code></pre></div>
+</div>
+</div>
+<div id="gas-viscocity" class="section level3 hasAnchor" number="7.4.6">
+<h3><span class="header-section-number">7.4.6</span> Gas Viscocity<a href="properties-of-gas.html#gas-viscocity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The viscosity of a fluid is a measure of the internal fluid friction (resistance)
+to flow. If the friction between layers of the fluid is small, it has low
+viscosity. The viscosity of a fluid is generally defined as the ratio of the shear
+force per unit area to the local velocity gradient. Viscosities are
+expressed in terms of poises, centipoise, or micropoises.</p>
+<div id="the-lee-gonzalez-eakin-method" class="section level4 hasAnchor" number="7.4.6.1">
+<h4><span class="header-section-number">7.4.6.1</span> The Lee-Gonzalez-Eakin Method<a href="properties-of-gas.html#the-lee-gonzalez-eakin-method" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The Lee-Gonzalez-Eakin Method is used to calculate gas viscosity (<span class="math inline">\(\mu_g\)</span>) at reservoir conditions. The method involves the following steps:</p>
+</div>
+<div id="step-1-calculate-the-initial-viscosity-mu_g0" class="section level4 hasAnchor" number="7.4.6.2">
+<h4><span class="header-section-number">7.4.6.2</span> Step 1: Calculate the Initial Viscosity (<span class="math inline">\(\mu_{g0}\)</span>)<a href="properties-of-gas.html#step-1-calculate-the-initial-viscosity-mu_g0" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The gas viscosity at atmospheric pressure (<span class="math inline">\(\mu_{g0}\)</span>) is given by:</p>
+<p><span class="math display">\[
+\mu_{g0} = \frac{(9.4 + 0.02 M) T^{1.5}}{209 + 19 M + T}
+\]</span></p>
+<p>where:
+- <span class="math inline">\(\mu_{g0}\)</span>: Gas viscosity at atmospheric pressure (cp)
+- <span class="math inline">\(M\)</span>: Molecular weight of the gas (lb/lb-mol)
+- <span class="math inline">\(T\)</span>: Gas temperature (°R)</p>
+</div>
+<div id="step-2-calculate-the-correction-factor-k" class="section level4 hasAnchor" number="7.4.6.3">
+<h4><span class="header-section-number">7.4.6.3</span> Step 2: Calculate the Correction Factor (<span class="math inline">\(K\)</span>)<a href="properties-of-gas.html#step-2-calculate-the-correction-factor-k" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The correction factor (<span class="math inline">\(K\)</span>) accounts for the effect of pressure and is given by:</p>
+<p><span class="math display">\[
+K = \frac{0.0001 P}{(0.62 - 0.23 K_1 + 0.066 K_1^2 + 0.086 K_1^4) \cdot \left( \frac{T}{K_2} \right)^{0.5}}
+\]</span></p>
+<p>where:
+- <span class="math inline">\(P\)</span>: Pressure (psia)
+- <span class="math inline">\(K_1\)</span>: Intermediate term, <span class="math inline">\(K_1 = \frac{P_{pc}}{T_{pc}}\)</span>
+- <span class="math inline">\(K_2\)</span>: Intermediate term, <span class="math inline">\(K_2 = 3.5 + 986/T + 0.01 M\)</span></p>
+</div>
+<div id="step-3-calculate-the-final-viscosity-mu_g" class="section level4 hasAnchor" number="7.4.6.4">
+<h4><span class="header-section-number">7.4.6.4</span> Step 3: Calculate the Final Viscosity (<span class="math inline">\(\mu_g\)</span>)<a href="properties-of-gas.html#step-3-calculate-the-final-viscosity-mu_g" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The final gas viscosity (<span class="math inline">\(\mu_g\)</span>) is:</p>
+<p><span class="math display">\[
+\mu_g = 10^{-4} \cdot \mu_{g0} \cdot (1 + K)
+\]</span></p>
+<p>where:
+- <span class="math inline">\(\mu_g\)</span>: Gas viscosity at reservoir pressure (cp)
+- <span class="math inline">\(\mu_{g0}\)</span>: Gas viscosity at atmospheric pressure (cp)
+- <span class="math inline">\(K\)</span>: Correction factor</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb147-1"><a href="properties-of-gas.html#cb147-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb147-2"><a href="properties-of-gas.html#cb147-2" tabindex="-1"></a></span>
+<span id="cb147-3"><a href="properties-of-gas.html#cb147-3" tabindex="-1"></a><span class="kw">def</span> lee_gonzalez_eakin_viscosity(M, T, P, Tpc, Ppc):</span>
+<span id="cb147-4"><a href="properties-of-gas.html#cb147-4" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb147-5"><a href="properties-of-gas.html#cb147-5" tabindex="-1"></a><span class="co">    Calculate gas viscosity using the Lee-Gonzalez-Eakin Method.</span></span>
+<span id="cb147-6"><a href="properties-of-gas.html#cb147-6" tabindex="-1"></a></span>
+<span id="cb147-7"><a href="properties-of-gas.html#cb147-7" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb147-8"><a href="properties-of-gas.html#cb147-8" tabindex="-1"></a><span class="co">        M (float): Molecular weight of the gas (lb/lb-mol).</span></span>
+<span id="cb147-9"><a href="properties-of-gas.html#cb147-9" tabindex="-1"></a><span class="co">        T (float): Gas temperature (°R).</span></span>
+<span id="cb147-10"><a href="properties-of-gas.html#cb147-10" tabindex="-1"></a><span class="co">        P (float): Pressure (psia).</span></span>
+<span id="cb147-11"><a href="properties-of-gas.html#cb147-11" tabindex="-1"></a><span class="co">        Tpc (float): Pseudo-critical temperature (°R).</span></span>
+<span id="cb147-12"><a href="properties-of-gas.html#cb147-12" tabindex="-1"></a><span class="co">        Ppc (float): Pseudo-critical pressure (psia).</span></span>
+<span id="cb147-13"><a href="properties-of-gas.html#cb147-13" tabindex="-1"></a></span>
+<span id="cb147-14"><a href="properties-of-gas.html#cb147-14" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb147-15"><a href="properties-of-gas.html#cb147-15" tabindex="-1"></a><span class="co">        float: Gas viscosity (cp).</span></span>
+<span id="cb147-16"><a href="properties-of-gas.html#cb147-16" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb147-17"><a href="properties-of-gas.html#cb147-17" tabindex="-1"></a>    <span class="co"># Step 1: Calculate gas viscosity at atmospheric pressure (mu_g0)</span></span>
+<span id="cb147-18"><a href="properties-of-gas.html#cb147-18" tabindex="-1"></a>    mu_g0 <span class="op">=</span> (<span class="fl">9.4</span> <span class="op">+</span> <span class="fl">0.02</span> <span class="op">*</span> M) <span class="op">*</span> T<span class="op">**</span><span class="fl">1.5</span> <span class="op">/</span> (<span class="dv">209</span> <span class="op">+</span> <span class="dv">19</span> <span class="op">*</span> M <span class="op">+</span> T)</span>
+<span id="cb147-19"><a href="properties-of-gas.html#cb147-19" tabindex="-1"></a></span>
+<span id="cb147-20"><a href="properties-of-gas.html#cb147-20" tabindex="-1"></a>    <span class="co"># Step 2: Calculate the correction factor (K)</span></span>
+<span id="cb147-21"><a href="properties-of-gas.html#cb147-21" tabindex="-1"></a>    K1 <span class="op">=</span> Ppc <span class="op">/</span> Tpc</span>
+<span id="cb147-22"><a href="properties-of-gas.html#cb147-22" tabindex="-1"></a>    K2 <span class="op">=</span> <span class="fl">3.5</span> <span class="op">+</span> <span class="dv">986</span> <span class="op">/</span> T <span class="op">+</span> <span class="fl">0.01</span> <span class="op">*</span> M</span>
+<span id="cb147-23"><a href="properties-of-gas.html#cb147-23" tabindex="-1"></a>    K <span class="op">=</span> (<span class="fl">0.0001</span> <span class="op">*</span> P) <span class="op">/</span> ((<span class="fl">0.62</span> <span class="op">-</span> <span class="fl">0.23</span> <span class="op">*</span> K1 <span class="op">+</span> <span class="fl">0.066</span> <span class="op">*</span> K1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="fl">0.086</span> <span class="op">*</span> K1<span class="op">**</span><span class="dv">4</span>) <span class="op">*</span> (T <span class="op">/</span> K2)<span class="op">**</span><span class="fl">0.5</span>)</span>
+<span id="cb147-24"><a href="properties-of-gas.html#cb147-24" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;k2 = </span><span class="sc">{</span>K2<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb147-25"><a href="properties-of-gas.html#cb147-25" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;mugo = </span><span class="sc">{</span>mu_g0<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb147-26"><a href="properties-of-gas.html#cb147-26" tabindex="-1"></a>    <span class="co"># Step 3: Calculate gas viscosity at reservoir pressure (mu_g)</span></span>
+<span id="cb147-27"><a href="properties-of-gas.html#cb147-27" tabindex="-1"></a>    mu_g <span class="op">=</span> mu_g0 <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> K)<span class="op">*</span><span class="dv">10</span><span class="op">**</span>(<span class="op">-</span><span class="dv">4</span>)</span>
+<span id="cb147-28"><a href="properties-of-gas.html#cb147-28" tabindex="-1"></a></span>
+<span id="cb147-29"><a href="properties-of-gas.html#cb147-29" tabindex="-1"></a>    <span class="cf">return</span> mu_g</span>
+<span id="cb147-30"><a href="properties-of-gas.html#cb147-30" tabindex="-1"></a></span>
+<span id="cb147-31"><a href="properties-of-gas.html#cb147-31" tabindex="-1"></a><span class="co"># Example usage</span></span>
+<span id="cb147-32"><a href="properties-of-gas.html#cb147-32" tabindex="-1"></a>M <span class="op">=</span> <span class="fl">20.85</span>        <span class="co"># Molecular weight of the gas (example value)</span></span>
+<span id="cb147-33"><a href="properties-of-gas.html#cb147-33" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">600.0</span>        <span class="co"># Reservoir temperature in °R (example value)</span></span>
+<span id="cb147-34"><a href="properties-of-gas.html#cb147-34" tabindex="-1"></a>P <span class="op">=</span> <span class="fl">3000.0</span>       <span class="co"># Reservoir pressure in psia (example value)</span></span>
+<span id="cb147-35"><a href="properties-of-gas.html#cb147-35" tabindex="-1"></a>Tpc <span class="op">=</span> <span class="fl">370.0</span>      <span class="co"># Pseudo-critical temperature in °R (example value)</span></span>
+<span id="cb147-36"><a href="properties-of-gas.html#cb147-36" tabindex="-1"></a>Ppc <span class="op">=</span> <span class="fl">670.0</span>      <span class="co"># Pseudo-critical pressure in psia (example value)</span></span>
+<span id="cb147-37"><a href="properties-of-gas.html#cb147-37" tabindex="-1"></a></span>
+<span id="cb147-38"><a href="properties-of-gas.html#cb147-38" tabindex="-1"></a>mu_g <span class="op">=</span> lee_gonzalez_eakin_viscosity(M, T, P, Tpc, Ppc)</span>
+<span id="cb147-39"><a href="properties-of-gas.html#cb147-39" tabindex="-1"></a>k2 <span class="op">=</span> <span class="fl">5.35</span></span>
+<span id="cb147-40"><a href="properties-of-gas.html#cb147-40" tabindex="-1"></a>mugo <span class="op">=</span> <span class="fl">119.72</span></span>
+<span id="cb147-41"><a href="properties-of-gas.html#cb147-41" tabindex="-1"></a></span>
+<span id="cb147-42"><a href="properties-of-gas.html#cb147-42" tabindex="-1"></a><span class="co"># Output the result</span></span>
+<span id="cb147-43"><a href="properties-of-gas.html#cb147-43" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Gas viscosity (mu_g): </span><span class="sc">{</span>mu_g<span class="sc">:.5f}</span><span class="ss"> cp&quot;</span>)</span>
+<span id="cb147-44"><a href="properties-of-gas.html#cb147-44" tabindex="-1"></a>Gas viscosity (mu_g): <span class="fl">0.01222</span> cp</span></code></pre></div>
 
 </div>
 </div>
